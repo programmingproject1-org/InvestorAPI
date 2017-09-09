@@ -1,0 +1,40 @@
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.xml
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.deps.json
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.runtimeconfig.json
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.runtimeconfig.dev.json
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.dll
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.pdb
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Contracts.dll
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.dll
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.InMemoryRepositories.dll
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.MarketDataService.dll
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Contracts.pdb
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Contracts.xml
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.InMemoryRepositories.pdb
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.MarketDataService.pdb
+D:\Desktop\InvestorGame\InvestorGame\bin\Debug\netcoreapp2.0\InvestorGame.Domain.pdb
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.csprojResolveAssemblyReference.cache
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.csproj.CoreCompileInputs.cache
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.AssemblyInfoInputs.cache
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.AssemblyInfo.cs
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.dll
+D:\Desktop\InvestorGame\InvestorGame\obj\Debug\netcoreapp2.0\InvestorGame.pdb
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.xml
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.deps.json
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.runtimeconfig.json
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.runtimeconfig.dev.json
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.dll
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.pdb
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Contracts.dll
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Domain.dll
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Domain.InMemoryRepositories.dll
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Contracts.pdb
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Contracts.xml
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Domain.InMemoryRepositories.pdb
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\bin\Debug\netcoreapp2.0\InvestorApi.Domain.pdb
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.csproj.CoreCompileInputs.cache
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.AssemblyInfoInputs.cache
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.AssemblyInfo.cs
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.dll
+D:\Documents\Visual Studio 2017\Projects\InvestorApi\src\InvestorApi\obj\Debug\netcoreapp2.0\InvestorApi.pdb

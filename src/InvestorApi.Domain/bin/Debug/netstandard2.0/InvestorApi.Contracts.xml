@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestorApi.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:InvestorApi.Contracts.Dtos.UserInfo">
+            <summary>
+            Contains information about a user (investor or administrator).
+            </summary>
+        </member>
+        <member name="M:InvestorApi.Contracts.Dtos.UserInfo.#ctor(System.Guid,System.String,System.String,InvestorApi.Contracts.UserLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:InvestorApi.Contracts.Dtos.UserInfo"/> class.
+            </summary>
+            <param name="id">The unique identifier of the user.</param>
+            <param name="email">The email address.</param>
+            <param name="displayName">The display name.</param>
+            <param name="level">The permission level.</param>
+        </member>
+        <member name="P:InvestorApi.Contracts.Dtos.UserInfo.Id">
+            <summary>
+            Gets the unique identifier of the user.
+            </summary>
+        </member>
+        <member name="P:InvestorApi.Contracts.Dtos.UserInfo.Email">
+            <summary>
+            Gets the email address.
+            </summary>
+        </member>
+        <member name="P:InvestorApi.Contracts.Dtos.UserInfo.DisplayName">
+            <summary>
+            Gets the display name.
+            </summary>
+        </member>
+        <member name="P:InvestorApi.Contracts.Dtos.UserInfo.Level">
+            <summary>
+            Gets the permission level.
+            </summary>
+        </member>
+        <member name="T:InvestorApi.Contracts.IUserService">
+            <summary>
+            A domain service to manage users (investors, administrators).
+            </summary>
+        </member>
+        <member name="M:InvestorApi.Contracts.IUserService.Login(System.String,System.String)">
+            <summary>
+            Attempts to authenticate a user by email address and password.
+            </summary>
+            <param name="email">The email address.</param>
+            <param name="password">The clear-text password.</param>
+            <returns>The details of the user if authentication was successful; otherwise false.</returns>
+        </member>
+        <member name="M:InvestorApi.Contracts.IUserService.RegisterUser(System.String,System.String,System.String)">
+            <summary>
+            Registers a new user.
+            </summary>
+            <param name="displayName">The display name.</param>
+            <param name="email">The email address.</param>
+            <param name="password">The clear-text password.</param>
+            <returns>The identifier of the newly created user.</returns>
+        </member>
+        <member name="M:InvestorApi.Contracts.IUserService.MakeUserAdministrator(System.Guid)">
+            <summary>
+            Makes an existing user an administrator.
+            </summary>
+            <param name="userId">The unique identifier of the user to update.</param>
+        </member>
+        <member name="M:InvestorApi.Contracts.IUserService.DeleteUser(System.Guid)">
+            <summary>
+            Deletes an existing user.
+            </summary>
+            <param name="userId">The unique identifier of the user to delete.</param>
+        </member>
+        <member name="T:InvestorApi.Contracts.UserLevel">
+            <summary>
+            Specified the level of a user.
+            </summary>
+        </member>
+        <member name="F:InvestorApi.Contracts.UserLevel.Friend">
+            <summary>
+            The user is just a friend invited by another user.
+            </summary>
+        </member>
+        <member name="F:InvestorApi.Contracts.UserLevel.Investor">
+            <summary>
+            The user is an investor (player).
+            </summary>
+        </member>
+        <member name="F:InvestorApi.Contracts.UserLevel.Administrator">
+            <summary>
+            The user has administrative privilegues.
+            </summary>
+        </member>
+    </members>
+</doc>

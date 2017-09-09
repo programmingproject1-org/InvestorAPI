@@ -340,3 +340,4 @@ applicationhost.config
 /Sample/Microservice1Db/Microservice1Db.jfm
 /Sample/Database/Microservice1/Microservice1.jfm
 /.vs/
+src/.vs/

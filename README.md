@@ -13,21 +13,19 @@ https://www.microsoft.com/net/download/core
 
 ## Build & Deployment
 
-### Notes
+#### Notes
 AppVeyor is used to build the solution and run the unit tests after every commit. However it is not used for deployment because it does not support seem to support Docker and Heroku.
 
-### Prerequisites
-Download the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+#### Prerequisites
+* Make sure you have Docker installed and running.
+* Download the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 
-### Build
-1. Select 'Release' as the build configuration.
-2. Select 'docker-compose' as the start up project.
-3. Build the project (press F5)
-4. Run the commands below
+#### Build & Deploy Docker Container
+1. In Visual Studio, build the 'docker-compose' project with 'Release' configuration.
+2. Open a command prompt in the directory where the *.dockerfile* is located and run the commands below.
 
 ```
 heroku login
 heroku container:login
-heroku container:push web --app [app-name]
-heroku open --app [app-name]
+heroku container:push web --app investor-api
 ```

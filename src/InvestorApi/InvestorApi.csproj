@@ -26,6 +26,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
   </ItemGroup>
@@ -40,8 +41,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InvestorApi.Contracts\InvestorApi.Contracts.csproj" />
-    <ProjectReference Include="..\InvestorApi.Domain.InMemoryRepositories\InvestorApi.Domain.InMemoryRepositories.csproj" />
     <ProjectReference Include="..\InvestorApi.Domain\InvestorApi.Domain.csproj" />
+    <ProjectReference Include="..\InvestorApi.Repositories\InvestorApi.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

@@ -25,7 +25,7 @@ namespace InvestorApi.Models
         /// Gets or sets the password in clear-text.
         /// </summary>
         [Required]
-        [MinLength(6)]
+        [MinLength(8)]
         public string Password { get; set; }
     }
 }

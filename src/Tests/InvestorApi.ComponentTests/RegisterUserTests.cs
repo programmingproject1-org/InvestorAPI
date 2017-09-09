@@ -15,7 +15,7 @@ namespace InvestorApi.ComponentTests
 
         public RegisterUserTests()
         {
-            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
+            _server = new TestServer(new WebHostBuilder().UseStartup<TestStartup>());
             _client = _server.CreateClient();
         }
 
@@ -56,9 +56,9 @@ namespace InvestorApi.ComponentTests
         }
 
         [Fact]
-        public async Task PasswordMustBeAtLeastSixCharactersError()
+        public async Task PasswordMustBeAtLeastEightCharactersError()
         {
-            await ExecuteTest("John Smith", "john@gmail.com", "sec", 400);
+            await ExecuteTest("John Smith", "john@gmail.com", "secret", 400);
         }
 
         private async Task ExecuteTest(string displayName, string email, string password, int expectedStatusCode)

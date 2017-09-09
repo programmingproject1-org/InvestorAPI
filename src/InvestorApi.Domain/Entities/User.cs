@@ -5,6 +5,11 @@ namespace InvestorApi.Domain.Entities
 {
     public class User
     {
+        private User()
+        {
+            // Required by Entity Framework.
+        }
+
         private User(Guid id, string displayName, string email, string hashedPassword, UserLevel level)
         {
             Id = id;

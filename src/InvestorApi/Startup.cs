@@ -1,12 +1,13 @@
 using InvestorApi.Domain;
-using InvestorApi.Domain.InMemoryRepositories;
 using InvestorApi.Filters;
+using InvestorApi.Repositories;
 using InvestorApi.Security;
 using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -96,7 +97,9 @@ namespace InvestorApi
             });
 
             DomainModule.ConfigureServices(services);
-            InMemoryRepositoriesModule.ConfigureServices(services);
+            RepositoriesModule.ConfigureServices(services);
+
+            services.AddDbContext<DataContext>(ConfigureDbContext);
         }
 
         /// <summary>
@@ -118,6 +121,15 @@ namespace InvestorApi
                 options.SwaggerEndpoint($"/swagger/v1_0/swagger.json", "Investor API");
                 options.DocExpansion("list");
             });
+        }
+
+        /// <summary>
+        /// Configures the database context.
+        /// </summary>
+        /// <param name="options">The database context builder options.</param>
+        protected virtual void ConfigureDbContext(DbContextOptionsBuilder options)
+        {
+            RepositoriesModule.ConfigureDbContext(options);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace InvestorApi.Domain.Entities
     {
         private User()
         {
-            // Required by Entity Framework.
+            // Required for instantiation by repository.
         }
 
         private User(Guid id, string displayName, string email, string hashedPassword, UserLevel level)

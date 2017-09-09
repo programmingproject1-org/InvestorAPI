@@ -12,6 +12,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestorApi.Domain.InMemory
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6BD54B63-99D4-472F-8CE2-CBF597ECC66B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5D9A909D-C10D-4B8A-976B-248DE8AE09D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestorApi.ComponentTests", "Tests\InvestorApi.ComponentTests\InvestorApi.ComponentTests.csproj", "{CBF748F4-B50F-45E2-B5F1-856060962DCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +42,16 @@ Global
 		{6BD54B63-99D4-472F-8CE2-CBF597ECC66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BD54B63-99D4-472F-8CE2-CBF597ECC66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BD54B63-99D4-472F-8CE2-CBF597ECC66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF748F4-B50F-45E2-B5F1-856060962DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF748F4-B50F-45E2-B5F1-856060962DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF748F4-B50F-45E2-B5F1-856060962DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF748F4-B50F-45E2-B5F1-856060962DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBF748F4-B50F-45E2-B5F1-856060962DCA} = {5D9A909D-C10D-4B8A-976B-248DE8AE09D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31AA9DE8-DA87-4F05-B494-3E0AFC137B98}

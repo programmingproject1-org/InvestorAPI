@@ -7,18 +7,13 @@ init:
   - cmd: git config --global core.autocrlf true
 install:
 before_build:
-  - cmd: dotnet --version
   - cmd: dotnet restore ./src/InvestorApi.sln --verbosity m
 build_script:
   - cmd: dotnet publish ./src/InvestorApi/InvestorApi.csproj
 after_build:
 artifacts:
 clone_depth: 1
-#test_script:
-  # restore packages for our unit tests
-  #- cmd: dotnet restore ./tests/tests.csproj --verbosity m
-  # run the unit tests (requires changing into the test directory)
-  #- cmd: cd tests
-  #- cmd: dotnet xunit
+test_script:
+  - cmd: dotnet test ./src/Tests/InvestorApi.ComponentTests/InvestorApi.ComponentTests.csproj
 on_finish :
 deploy: off

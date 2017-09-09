@@ -1,0 +1,13 @@
+﻿using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+
+namespace InvestorApi.ComponentTests.Internal
+{
+    internal class JsonContent : StringContent
+    {
+        public JsonContent(object content) :
+            base(JsonConvert.SerializeObject(content), Encoding.UTF8, "application/json")
+        { }
+    }
+}

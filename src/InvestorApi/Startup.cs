@@ -17,8 +17,15 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace InvestorApi
 {
-    internal class Startup
+    /// <summary>
+    /// The ASP.NET MVC startup class.
+    /// </summary>
+    public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="env">The env.</param>
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -30,8 +37,15 @@ namespace InvestorApi
             Configuration = builder.Build();
         }
 
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
         public IConfigurationRoot Configuration { get; }
 
+        /// <summary>
+        /// Configures the service container.
+        /// </summary>
+        /// <param name="services">The service container.</param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options =>
@@ -78,12 +92,19 @@ namespace InvestorApi
                 options.OperationFilter<SwaggerBearerAuthorizationOperationFilter>();
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.xml");
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.Contracts.xml");
+                options.DocumentFilter<ResourceDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
             });
 
             DomainModule.ConfigureServices(services);
             InMemoryRepositoriesModule.ConfigureServices(services);
         }
 
+        /// <summary>
+        /// Configures the application.
+        /// </summary>
+        /// <param name="app">The application builder instance.</param>
+        /// <param name="env">The hosting environment.</param>
+        /// <param name="loggerFactory">The logger factory.</param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));

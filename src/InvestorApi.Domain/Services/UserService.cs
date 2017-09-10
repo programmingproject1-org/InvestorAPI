@@ -19,6 +19,12 @@ namespace InvestorApi.Domain.Services
             _passwordHashingProvider = passwordHashingProvider;
         }
 
+        public UserInfo GetUserInfo(Guid userId)
+        {
+            var user = _userRepository.GetById(userId);
+            return user?.ToUserInfo();
+        }
+
         public ListResult<UserInfo> ListUsers(int pageNumber, int pageSize)
         {
             var result = _userRepository.ListUsers(pageNumber, pageSize);

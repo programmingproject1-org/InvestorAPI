@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -56,6 +58,11 @@ namespace InvestorApi
                 options.Filters.Add(new ModelStateValidationFilter());
                 options.Filters.Add(new EntityNotFoundExceptionFilter());
                 options.Filters.Add(new ValidationExceptionFilter());
+            })
+            .AddJsonOptions(options =>
+            {
+                options.SerializerSettings.Converters.Add(new StringEnumConverter());
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
 
             services.AddCors();
@@ -78,22 +85,21 @@ namespace InvestorApi
             services.AddAuthorization(options =>
             {
                 options.AddPolicy(
-                    AuthorizationPolicies.Investors,
-                    policy => policy.RequireClaim(JwtRegisteredClaimNames.Aud, JwtSettings.InvestorAudience));
-
-                options.AddPolicy(
                     AuthorizationPolicies.Administrators,
                     policy => policy.RequireClaim(JwtRegisteredClaimNames.Aud, JwtSettings.AdministratorAudience));
             });
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1_0", new Info { Title = "Investor API", Version = "1.0" });
+                options.SwaggerDoc(SwaggerConstants.InvestorsGroup, new Info { Title = SwaggerConstants.InvestorsTitle, Version = "1.0" });
+                options.SwaggerDoc(SwaggerConstants.AdministratorsGroup, new Info { Title = SwaggerConstants.AdministratorsTitle, Version = "1.0" });
+
                 options.DescribeAllEnumsAsStrings();
                 options.OperationFilter<SwaggerBearerAuthorizationOperationFilter>();
+                options.DocumentFilter<ResourceDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
+
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.xml");
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.Contracts.xml");
-                options.DocumentFilter<ResourceDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
             });
 
             DomainModule.ConfigureServices(services);
@@ -118,7 +124,8 @@ namespace InvestorApi
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint($"/swagger/v1_0/swagger.json", "Investor API");
+                options.SwaggerEndpoint($"/swagger/{SwaggerConstants.InvestorsGroup}/swagger.json", SwaggerConstants.InvestorsTitle);
+                options.SwaggerEndpoint($"/swagger/{SwaggerConstants.AdministratorsGroup}/swagger.json", SwaggerConstants.AdministratorsTitle);
                 options.DocExpansion("list");
             });
         }

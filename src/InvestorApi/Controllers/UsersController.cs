@@ -1,11 +1,11 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using InvestorApi.Extensions;
 using InvestorApi.Models;
-using InvestorApi.Security;
+using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System;
 
 namespace InvestorApi.Controllers
 {
@@ -13,6 +13,7 @@ namespace InvestorApi.Controllers
     /// The API controller provides management operations for users.
     /// </summary>
     [Route("api/1.0/users")]
+    [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
     public class UsersController : Controller
     {
         private IUserService _userService;
@@ -27,28 +28,30 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
-        /// Gets all existing users.
+        /// Gets user profile.
         /// </summary>
         /// <remarks>
-        /// The API operation enables administrators to retrieve a list of all existing users.
-        /// The caller must provide a valid access token and must be an `administrator`.
+        /// The API operation enables users to retrieve their own user profile.
         /// </remarks>
-        /// <param name="pageNumber">Gets the page number to return.</param>
-        /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The action response.</returns>
-        [HttpGet("")]
-        [Authorize(Policy = AuthorizationPolicies.Administrators)]
-        [SwaggerResponse(200, Description = "Success", Type = typeof(ListResult<UserInfo>))]
+        [HttpGet]
+        [Authorize]
+        [SwaggerResponse(200, Description = "Success", Type = typeof(UserInfo))]
         [SwaggerResponse(401, Description = "User not authenticated")]
-        [SwaggerResponse(403, Description = "User not authorized")]
-        public IActionResult ListUsers(int? pageNumber, int? pageSize)
+        public IActionResult GetUser()
         {
-            var users = _userService.ListUsers(pageNumber ?? 1, pageSize ?? 100);
-            return Ok(users);
+            var user = _userService.GetUserInfo(Request.GetUserId());
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
         }
 
         /// <summary>
-        /// Create a new user.
+        /// Create a new user profile.
         /// </summary>
         /// <remarks>
         /// The API operation enables users to register as new user.
@@ -66,23 +69,19 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
-        /// Delete an existing user.
+        /// Delete user profile.
         /// </summary>
         /// <remarks>
-        /// The API operation enables administrators to delete an existing user.
-        /// The caller must provide a valid access token and must be an `administrator`.
+        /// The API operation enables users to delete their own user profile.
         /// </remarks>
-        /// <param name="userId">The unique identifier of the user to delete.</param>
         /// <returns>The action response.</returns>
-        [HttpDelete("{userId:guid}")]
-        [Authorize(Policy = AuthorizationPolicies.Administrators)]
+        [HttpDelete]
+        [Authorize]
         [SwaggerResponse(204, Description = "User successfully deleted")]
         [SwaggerResponse(401, Description = "User not authenticated")]
-        [SwaggerResponse(403, Description = "User not authorized")]
-        [SwaggerResponse(404, Description = "User not found")]
-        public IActionResult DeleteUser([FromRoute]Guid userId)
+        public IActionResult DeleteUser()
         {
-            _userService.DeleteUser(userId);
+            _userService.DeleteUser(Request.GetUserId());
             return StatusCode(204);
         }
     }

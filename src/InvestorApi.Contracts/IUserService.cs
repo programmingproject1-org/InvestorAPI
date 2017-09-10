@@ -10,6 +10,12 @@ namespace InvestorApi.Contracts
     public interface IUserService
     {
         /// <summary>
+        /// Gets the user with the supplied id.
+        /// </summary>
+        /// <returns>The user with the supplied id.</returns>
+        UserInfo GetUserInfo(Guid userId);
+
+        /// <summary>
         /// Gets all users.
         /// </summary>
         /// <param name="pageNumber">Gets the page number to return.</param>

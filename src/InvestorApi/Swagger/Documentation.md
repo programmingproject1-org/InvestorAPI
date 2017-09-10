@@ -5,17 +5,14 @@ This API provides the backend functionality for the Budding Share Market Investo
 ## Usage
 
 ### Authentication
-Users can use the `/token` endpoint to authenticate with user name and password and retrieve a JSON Web Token ([JWT](https://jwt.io)) in return.
+Users can use the `/token` endpoint to authenticate with their email address and password and retrieve a JSON Web Token ([JWT](https://jwt.io)) in return.
 The token must be provided to most other API operations via `Authorization` HTTP header using `Bearer` scheme.
 
 ```
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-Please note that the token expires after 7 days.
-
-### Authorization
-The API can be used by investors and administrators. However, most operations require the user to be a member of one or the other role. Attempts to access APIs without the required role membership will result in a 403 response.
+Please note, the token expires after 7 days.
 
 ### Content Types
 The API only supports `application/json` content type.

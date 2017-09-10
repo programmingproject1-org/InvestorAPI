@@ -19,6 +19,12 @@ namespace InvestorApi.Domain.Services
             _passwordHashingProvider = passwordHashingProvider;
         }
 
+        public ListResult<UserInfo> ListUsers(int pageNumber, int pageSize)
+        {
+            var result = _userRepository.ListUsers(pageNumber, pageSize);
+            return result.Convert(user => user.ToUserInfo());
+        }
+
         public UserInfo Login(string email, string password)
         {
             User user = _userRepository.GetByEmail(email);
@@ -33,7 +39,7 @@ namespace InvestorApi.Domain.Services
                 return null;
             }
 
-            return new UserInfo(user.Id, user.Email, user.DisplayName, user.Level);
+            return user.ToUserInfo();
         }
 
         public Guid RegisterUser(string displayName, string email, string password)

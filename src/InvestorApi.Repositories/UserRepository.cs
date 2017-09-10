@@ -1,4 +1,5 @@
-﻿using InvestorApi.Domain.Entities;
+﻿using InvestorApi.Contracts;
+using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
@@ -25,6 +26,19 @@ namespace InvestorApi.Repositories
         public User GetByEmail(string email)
         {
             return _context.Users.FirstOrDefault(user => user.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public ListResult<User> ListUsers(int pageNumber, int pageSize)
+        {
+            var count = _context.Users.Count();
+
+            var items = _context.Users
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .OrderBy(user => user.DisplayName)
+                .ToList();
+
+            return new ListResult<User>(items, pageNumber, pageSize, count);
         }
 
         public void Save(User user)

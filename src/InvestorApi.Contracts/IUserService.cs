@@ -1,5 +1,6 @@
 using InvestorApi.Contracts.Dtos;
 using System;
+using System.Collections.Generic;
 
 namespace InvestorApi.Contracts
 {
@@ -8,6 +9,14 @@ namespace InvestorApi.Contracts
     /// </summary>
     public interface IUserService
     {
+        /// <summary>
+        /// Gets all users.
+        /// </summary>
+        /// <param name="pageNumber">Gets the page number to return.</param>
+        /// <param name="pageSize">Gets the page size to apply.</param>
+        /// <returns>All users in the system.</returns>
+        ListResult<UserInfo> ListUsers(int pageNumber, int pageSize);
+
         /// <summary>
         /// Attempts to authenticate a user by email address and password.
         /// </summary>

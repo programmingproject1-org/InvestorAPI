@@ -4,9 +4,6 @@ using InvestorApi.Models;
 using InvestorApi.Security;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
 namespace InvestorApi.Controllers
 {
@@ -42,31 +39,22 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(401, Description = "Authentication failure.")]
         public IActionResult Login([FromBody]Login body)
         {
-            UserInfo result = _userService.Login(body.Email, body.Password);
+            UserInfo user = _userService.Login(body.Email, body.Password);
 
-            if (result == null)
+            if (user == null)
             {
                 return StatusCode(401);
             }
 
-            Claim[] claims = new Claim[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, result.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName, result.DisplayName),
-                new Claim(JwtRegisteredClaimNames.Email, result.Email)
-            };
-
-            JwtSecurityToken jwt = new JwtSecurityToken(
-                JwtSettings.Issuer,
-                result.Level == UserLevel.Administrator ? JwtSettings.AdministratorAudience : JwtSettings.InvestorAudience,
-                claims,
-                DateTime.UtcNow,
-                DateTime.UtcNow.Add(JwtSettings.Expiration),
-                JwtSettings.SigningCredentials);
+            var accessToken = JwtIssuer.Issue(
+                user.Id,
+                user.DisplayName,
+                user.Email,
+                user.Level == UserLevel.Administrator);
 
             return Ok(new LoginResponse
             {
-                AccessToken = new JwtSecurityTokenHandler().WriteToken(jwt),
+                AccessToken = accessToken,
                 Expires = (int)JwtSettings.Expiration.TotalSeconds
             });
         }

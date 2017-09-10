@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace InvestorApi.ComponentTests.Internal
 {
@@ -13,7 +12,7 @@ namespace InvestorApi.ComponentTests.Internal
 
         protected override void ConfigureDbContext(DbContextOptionsBuilder options)
         {
-            options.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString());
+            options.UseInMemoryDatabase(databaseName: "Component Tests");
         }
     }
 }

@@ -12,10 +12,10 @@ The token must be provided to most other API operations via `Authorization` HTTP
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-Please note that the token expires after 60 minutes.
+Please note that the token expires after 7 days.
 
 ### Authorization
-The API can be used by investors and administrators. However, most operations require the user to be a member of one or the other role. Attempts to access APIs without the required role membership will result in a 401 response.
+The API can be used by investors and administrators. However, most operations require the user to be a member of one or the other role. Attempts to access APIs without the required role membership will result in a 403 response.
 
 ### Content Types
 The API only supports `application/json` content type.

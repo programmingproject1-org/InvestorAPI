@@ -1,4 +1,5 @@
 using InvestorApi.Contracts;
+using InvestorApi.Contracts.Dtos;
 using System;
 
 namespace InvestorApi.Domain.Entities
@@ -37,6 +38,11 @@ namespace InvestorApi.Domain.Entities
         public void MakeAdministrator()
         {
             Level = UserLevel.Administrator;
+        }
+
+        public UserInfo ToUserInfo()
+        {
+            return new UserInfo(Id, Email, DisplayName, Level);
         }
     }
 }

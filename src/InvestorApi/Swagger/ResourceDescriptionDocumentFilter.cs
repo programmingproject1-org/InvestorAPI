@@ -36,10 +36,8 @@ namespace InvestorApi.Swagger
 
             if (swaggerDoc.Info.Description == null)
             {
-                swaggerDoc.Info.Description = string.Empty;
+                swaggerDoc.Info.Description = LoadResource();
             }
-
-            swaggerDoc.Info.Description += LoadResource();
         }
 
         private string LoadResource()

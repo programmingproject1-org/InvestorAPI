@@ -1,3 +1,4 @@
+using InvestorApi.Contracts;
 using InvestorApi.Domain.Entities;
 using System;
 
@@ -8,6 +9,8 @@ namespace InvestorApi.Domain.Repositories
         User GetById(Guid userId);
 
         User GetByEmail(string email);
+
+        ListResult<User> ListUsers(int pageNumber, int pageSize);
 
         void Save(User user);
 

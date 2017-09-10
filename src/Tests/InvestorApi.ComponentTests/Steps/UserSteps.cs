@@ -33,9 +33,21 @@ namespace InvestorApi.ComponentTests.Steps
             return context;
         }
 
-        public static TestContext WhenIListUsers(this TestContext context, int pageNumber, int pageSize)
+        public static TestContext WhenIListUsers(this TestContext context, int? pageNumber, int? pageSize)
         {
-            context.Get($"/users?pageNumber={pageNumber}&pageSize={pageSize}");
+            string resourceUrl = "/users";
+
+            if (pageNumber.HasValue)
+            {
+                resourceUrl += $"?pageNumber={pageNumber}";
+            }
+
+            if (pageSize.HasValue)
+            {
+                resourceUrl += $"&pageSize={pageSize}";
+            }
+
+            context.Get(resourceUrl);
             return context;
         }
     }

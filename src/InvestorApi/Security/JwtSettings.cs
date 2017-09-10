@@ -12,7 +12,7 @@ namespace InvestorApi.Security
 
         public const string AdministratorAudience = "Administrator";
 
-        public static readonly TimeSpan Expiration = TimeSpan.FromHours(1);
+        public static readonly TimeSpan Expiration = TimeSpan.FromDays(7);
 
         public static readonly byte[] SigningKey = Encoding.ASCII.GetBytes("`6qj+{3fEmd['Z)`~=L7K>gpJ&gh47?-");
 

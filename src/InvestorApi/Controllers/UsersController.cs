@@ -43,7 +43,7 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(403, Description = "User not authorized")]
         public IActionResult ListUsers(int? pageNumber, int? pageSize)
         {
-            var users = _userService.ListUsers(pageNumber ?? 0, pageSize ?? 100);
+            var users = _userService.ListUsers(pageNumber ?? 1, pageSize ?? 100);
             return Ok(users);
         }
 

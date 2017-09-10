@@ -6,8 +6,19 @@ namespace InvestorApi.ComponentTests
 {
     public class ListUsers
     {
-        [Fact(DisplayName = "List Users - Success non-paged")]
+        [Fact(DisplayName = "List Users - Success with default")]
         public void Success()
+        {
+            new TestContext()
+                .GivenImAdministrator()
+                .GivenUsersExist(5)
+                .WhenIListUsers(null, null)
+                .ThenStatusCodeShouldBe(200)
+                .ThenListResultShouldBe(5, 5);
+        }
+
+        [Fact(DisplayName = "List Users - Success non-paged")]
+        public void SuccessNonPages()
         {
             new TestContext()
                 .GivenImAdministrator()

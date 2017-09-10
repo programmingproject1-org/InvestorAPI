@@ -5,6 +5,14 @@ namespace InvestorApi.ComponentTests.Steps
 {
     internal static class UserSteps
     {
+        public static TestContext GivenImAuthenticatedAs(this TestContext context, string displayName, string email, string password)
+        {
+            context.WhenICreateUser(displayName, email, password);
+            context.Post("/token", new Login { Email = email, Password = password });
+            context.SetAccessToken(context.ReadResponse<LoginResponse>().AccessToken);
+            return context;
+        }
+
         public static TestContext GivenUserExists(this TestContext context, string displayName, string email, string password)
         {
             return context.WhenICreateUser(displayName, email, password);
@@ -33,9 +41,21 @@ namespace InvestorApi.ComponentTests.Steps
             return context;
         }
 
+        public static TestContext WhenIDeleteUser(this TestContext context)
+        {
+            context.Delete("/users");
+            return context;
+        }
+
+        public static TestContext WhenIGetUser(this TestContext context)
+        {
+            context.Get("/users");
+            return context;
+        }
+
         public static TestContext WhenIListUsers(this TestContext context, int? pageNumber, int? pageSize)
         {
-            string resourceUrl = "/users";
+            string resourceUrl = "/admin/users";
 
             if (pageNumber.HasValue)
             {

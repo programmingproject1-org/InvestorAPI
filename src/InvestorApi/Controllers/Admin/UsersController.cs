@@ -28,7 +28,7 @@ namespace InvestorApi.Controllers.Admin
         }
 
         /// <summary>
-        /// Gets all existing users.
+        /// Get all existing users.
         /// </summary>
         /// <remarks>
         /// The API operation enables administrators to retrieve a list of all existing users.

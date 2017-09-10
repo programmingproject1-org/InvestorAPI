@@ -12,6 +12,7 @@ namespace InvestorApi.Models
         /// </summary>
         [Required]
         [MinLength(5)]
+        [MaxLength(30)]
         public string DisplayName { get; set; }
 
         /// <summary>
@@ -19,6 +20,7 @@ namespace InvestorApi.Models
         /// </summary>
         [Required]
         [EmailAddress]
+        [MaxLength(100)]
         public string Email { get; set; }
 
         /// <summary>
@@ -26,6 +28,7 @@ namespace InvestorApi.Models
         /// </summary>
         [Required]
         [MinLength(8)]
+        [MaxLength(30)]
         public string Password { get; set; }
     }
 }

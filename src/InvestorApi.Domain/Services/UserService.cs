@@ -62,7 +62,7 @@ namespace InvestorApi.Domain.Services
         {
             User user = GetUser(userId);
             user.MakeAdministrator();
-            _userRepository.Delete(user);
+            _userRepository.Save(user);
         }
 
         public void DeleteUser(Guid userId)

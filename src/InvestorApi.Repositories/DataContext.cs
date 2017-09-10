@@ -18,9 +18,9 @@ namespace InvestorApi.Repositories
             {
                 entity.HasKey(user => user.Id);
                 entity.Property(user => user.Id).IsRequired();
-                entity.Property(user => user.DisplayName).IsRequired().HasMaxLength(30);
-                entity.Property(user => user.Email).IsRequired().HasMaxLength(50);
-                entity.Property(user => user.HashedPassword).IsRequired().HasMaxLength(30);
+                entity.Property(user => user.DisplayName).IsRequired();
+                entity.Property(user => user.Email).IsRequired();
+                entity.Property(user => user.HashedPassword).IsRequired();
                 entity.Property(user => user.Level).IsRequired();
             });
         }

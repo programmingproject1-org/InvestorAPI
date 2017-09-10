@@ -28,7 +28,7 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
-        /// Gets user profile.
+        /// Get user profile.
         /// </summary>
         /// <remarks>
         /// The API operation enables users to retrieve their own user profile.

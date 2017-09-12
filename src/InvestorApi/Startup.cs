@@ -51,6 +51,8 @@ namespace InvestorApi
         /// <param name="services">The service container.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddMvc(options =>
             {
                 options.InputFormatters.RemoveType<JsonPatchInputFormatter>();
@@ -64,8 +66,6 @@ namespace InvestorApi
                 options.SerializerSettings.Converters.Add(new StringEnumConverter());
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
-
-            services.AddCors();
 
             services.AddAuthentication(options =>
             {
@@ -120,12 +120,14 @@ namespace InvestorApi
             loggerFactory.AddDebug();
 
             app.UseAuthentication();
-            app.UseMvc();
+
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
+
+            app.UseMvc();
 
             app.UseSwagger();
             app.UseSwaggerUI(options =>

@@ -121,6 +121,12 @@ namespace InvestorApi
 
             app.UseAuthentication();
             app.UseMvc();
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {

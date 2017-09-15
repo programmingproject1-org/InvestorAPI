@@ -39,8 +39,7 @@ namespace InvestorApi.Domain.Services
                 return null;
             }
 
-            string hashedPassword = _passwordHashingProvider.ComputeHash(password);
-            if (!_passwordHashingProvider.VerifyHash(password, hashedPassword))
+            if (!_passwordHashingProvider.VerifyHash(password, user.HashedPassword))
             {
                 return null;
             }

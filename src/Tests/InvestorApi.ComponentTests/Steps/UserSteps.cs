@@ -28,6 +28,12 @@ namespace InvestorApi.ComponentTests.Steps
             return context;
         }
 
+        public static TestContext WhenIAuthenticateAs(this TestContext context, string email, string password)
+        {
+            context.Post("/token", new Login { Email = email, Password = password });
+            return context;
+        }
+
         public static TestContext WhenICreateUser(this TestContext context, string displayName, string email, string password)
         {
             var request = new CreateUser

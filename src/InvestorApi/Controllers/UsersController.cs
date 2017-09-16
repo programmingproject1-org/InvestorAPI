@@ -32,6 +32,7 @@ namespace InvestorApi.Controllers
         /// </summary>
         /// <remarks>
         /// The API operation enables users to retrieve their own user profile.
+        /// The caller must provide a valid access token.
         /// </remarks>
         /// <returns>The action response.</returns>
         [HttpGet]
@@ -73,6 +74,7 @@ namespace InvestorApi.Controllers
         /// </summary>
         /// <remarks>
         /// The API operation enables users to delete their own user profile.
+        /// The caller must provide a valid access token.
         /// </remarks>
         /// <returns>The action response.</returns>
         [HttpDelete]

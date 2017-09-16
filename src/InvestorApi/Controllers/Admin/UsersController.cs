@@ -34,8 +34,8 @@ namespace InvestorApi.Controllers.Admin
         /// The API operation enables administrators to retrieve a list of all existing users.
         /// The caller must provide a valid access token and must be an `Administrator`.
         /// </remarks>
-        /// <param name="pageNumber">Gets the page number to return.</param>
-        /// <param name="pageSize">Gets the page size to apply.</param>
+        /// <param name="pageNumber">The page number to return. (Default = 1)</param>
+        /// <param name="pageSize">The page size to apply. (Default = 100)</param>
         /// <returns>The action response.</returns>
         [HttpGet("")]
         [Authorize(Policy = AuthorizationPolicies.Administrators)]

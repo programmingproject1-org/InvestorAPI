@@ -20,12 +20,18 @@ namespace InvestorApi.Repositories
 
         public User GetById(Guid userId)
         {
-            return _context.Users.Find(userId);
+            return _context.Users
+                .Include(user => user.Accounts)
+                .Where(user => user.Id == userId)
+                .FirstOrDefault();
         }
 
         public User GetByEmail(string email)
         {
-            return _context.Users.FirstOrDefault(user => user.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+            return _context.Users
+                .Include(user => user.Accounts)
+                .Where(user => user.Email.Equals(email, StringComparison.OrdinalIgnoreCase))
+                .FirstOrDefault();
         }
 
         public ListResult<User> ListUsers(int pageNumber, int pageSize)

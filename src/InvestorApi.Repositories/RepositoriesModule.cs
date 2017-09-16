@@ -10,6 +10,7 @@ namespace InvestorApi.Repositories
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
         }
 
         public static void ConfigureDbContext(DbContextOptionsBuilder options)

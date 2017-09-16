@@ -1,5 +1,6 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Exceptions;
 using InvestorApi.Domain.Providers;
@@ -11,11 +12,16 @@ namespace InvestorApi.Domain.Services
     internal class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IAccountService _accountService;
         private readonly PasswordHashingProvider _passwordHashingProvider;
 
-        public UserService(IUserRepository userRepository, PasswordHashingProvider passwordHashingProvider)
+        public UserService(
+            IUserRepository userRepository,
+            IAccountService accountService,
+            PasswordHashingProvider passwordHashingProvider)
         {
             _userRepository = userRepository;
+            _accountService = accountService;
             _passwordHashingProvider = passwordHashingProvider;
         }
 
@@ -51,8 +57,9 @@ namespace InvestorApi.Domain.Services
         {
             string hashedPassword = _passwordHashingProvider.ComputeHash(password);
             User user = User.Register(displayName, email, hashedPassword);
-
             _userRepository.Save(user);
+
+            _accountService.CreateAccount(user.Id, null);
 
             return user.Id;
         }

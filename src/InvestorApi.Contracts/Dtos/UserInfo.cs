@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace InvestorApi.Contracts.Dtos
 {
@@ -14,12 +15,14 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="email">The email address.</param>
         /// <param name="displayName">The display name.</param>
         /// <param name="level">The permission level.</param>
-        public UserInfo(Guid id, string email, string displayName, UserLevel level)
+        /// <param name="accounts">The user's trading accounts.</param>
+        public UserInfo(Guid id, string email, string displayName, UserLevel level, IReadOnlyCollection<AccountInfo> accounts)
         {
             Id = id;
             Email = email;
             DisplayName = displayName;
             Level = level;
+            Accounts = accounts;
         }
 
         /// <summary>
@@ -41,5 +44,10 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the permission level.
         /// </summary>
         public UserLevel Level { get; private set; }
+
+        /// <summary>
+        /// Gets the user's trading accounts.
+        /// </summary>
+        public IReadOnlyCollection<AccountInfo> Accounts { get; private set; }
     }
 }

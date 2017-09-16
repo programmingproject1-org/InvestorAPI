@@ -12,17 +12,37 @@ namespace InvestorApi.Repositories
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<Position> Positions { get; set; }
+
+        public DbSet<Transaction> Transactions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var userEntity = modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(user => user.Id);
-                entity.Property(user => user.Id).IsRequired();
-                entity.Property(user => user.DisplayName).IsRequired();
-                entity.Property(user => user.Email).IsRequired();
-                entity.Property(user => user.HashedPassword).IsRequired();
-                entity.Property(user => user.Level).IsRequired();
+                entity.HasKey(e => e.Id);
             });
+
+            modelBuilder.Entity<Account>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+            });
+
+            modelBuilder.Entity<Position>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+            });
+
+            modelBuilder.Entity<Transaction>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+            });
+
+            modelBuilder.Entity<User>().HasMany(e => e.Accounts);
+            modelBuilder.Entity<Account>().HasMany(e => e.Positions);
+            modelBuilder.Entity<Account>().HasMany(e => e.Transactions);
         }
     }
 }

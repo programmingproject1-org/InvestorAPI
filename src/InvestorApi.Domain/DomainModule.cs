@@ -10,6 +10,7 @@ namespace InvestorApi.Domain
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAccountService, AccountService>();
 
             services.AddSingleton<PasswordHashingProvider>();
         }

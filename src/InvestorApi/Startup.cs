@@ -59,6 +59,7 @@ namespace InvestorApi
                 options.OutputFormatters.RemoveType<StringOutputFormatter>();
                 options.Filters.Add(new ModelStateValidationFilter());
                 options.Filters.Add(new EntityNotFoundExceptionFilter());
+                options.Filters.Add(new InvalidTradeExceptionFilter());
                 options.Filters.Add(new ValidationExceptionFilter());
             })
             .AddJsonOptions(options =>
@@ -96,7 +97,8 @@ namespace InvestorApi
 
                 options.DescribeAllEnumsAsStrings();
                 options.OperationFilter<SwaggerBearerAuthorizationOperationFilter>();
-                options.DocumentFilter<ResourceDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
+                options.OperationFilter<SwaggerExamplesDocumentFilter>();
+                options.DocumentFilter<SwaggerDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
 
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.xml");
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.Contracts.xml");

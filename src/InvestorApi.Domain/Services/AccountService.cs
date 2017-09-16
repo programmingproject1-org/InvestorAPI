@@ -26,7 +26,9 @@ namespace InvestorApi.Domain.Services
 
         public Guid CreateAccount(Guid userId, string name)
         {
-            throw new NotImplementedException();
+            Account account = Account.CreateNew(userId, name ?? "Default Account", 1000000);
+            _accountRepository.Save(account);
+            return account.Id;
         }
 
         public void DeleteAccount(Guid userId, Guid accountId)

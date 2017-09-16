@@ -67,7 +67,8 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Account not found")]
         public IActionResult ListTransactions([FromRoute]Guid accountId, [FromQuery]int? pageNumber, [FromQuery]int? pageSize)
         {
-            return StatusCode(501);
+            var transactions = _accountsService.ListTransactions(Request.GetUserId(), accountId, pageNumber ?? 1, pageSize ?? 100);
+            return Ok(transactions);
         }
 
         /// <summary>
@@ -89,7 +90,19 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Account or share not found")]
         public IActionResult PlaceOrder([FromRoute]Guid accountId, [FromBody]PlaceOrder order)
         {
-            return StatusCode(501);
+            switch (order.Side)
+            {
+                case OrderSide.Buy:
+                    _accountsService.BuySharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity);
+                    return StatusCode(201);
+
+                case OrderSide.Sell:
+                    _accountsService.SellSharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity);
+                    return StatusCode(201);
+
+                default:
+                    return StatusCode(400);
+            }
         }
     }
 }

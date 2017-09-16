@@ -1,3 +1,7 @@
+-- Table: public."Users"
+
+-- DROP TABLE public."Users";
+
 CREATE TABLE public."Users"
 (
     "Id" uuid NOT NULL,

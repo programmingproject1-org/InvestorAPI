@@ -26,13 +26,15 @@ namespace InvestorApi.Repositories
 
         public ListResult<Transaction> ListTransactions(Guid accountId, int pageNumber, int pageSize)
         {
-            var count = _context.Transactions.Count();
+            var count = _context.Transactions
+                .Where(transaction => transaction.AccountId == accountId)
+                .Count();
 
             var items = _context.Transactions
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
                 .Where(transaction => transaction.AccountId == accountId)
                 .OrderByDescending(transaction => transaction.TimestampUtc)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .ToList();
 
             return new ListResult<Transaction>(items, pageNumber, pageSize, count);

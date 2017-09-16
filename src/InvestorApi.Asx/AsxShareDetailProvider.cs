@@ -99,7 +99,7 @@ namespace InvestorApi.Asx
 
             var name = values[0].Substring(1, values[0].Length - 2);
             var symbol = values[1];
-            var industry = values[2].Substring(1, values[2].Length - 2);
+            var industry = values[2].Substring(1, values[2].Length - 3);
 
             if (industry == "Not Applic")
             {

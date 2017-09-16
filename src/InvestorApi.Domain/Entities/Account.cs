@@ -1,3 +1,4 @@
+using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
 using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Exceptions;
@@ -49,7 +50,7 @@ namespace InvestorApi.Domain.Entities
             Positions.Clear();
 
             Transactions.Clear();
-            Transactions.Add(Transaction.Create(this, "Account opened", initialBalance, initialBalance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Transfer, "Account opened", initialBalance, initialBalance));
 
             Balance = initialBalance;
         }
@@ -81,13 +82,13 @@ namespace InvestorApi.Domain.Entities
             }
 
             Balance = Balance - amount;
-            Transactions.Add(Transaction.Create(this, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Buy, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
 
             Balance = Balance - percentageCommission;
-            Transactions.Add(Transaction.Create(this, $"Fee {percentageCommissionAmount:N2}%", -percentageCommission, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommissionAmount:N2}%", -percentageCommission, Balance));
 
             Balance = Balance - fixedCommission;
-            Transactions.Add(Transaction.Create(this, $"Fee", -fixedCommission, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommission, Balance));
         }
 
         public void SellShares(string symbol, int quantity, decimal price, Commissions commissions)
@@ -119,13 +120,13 @@ namespace InvestorApi.Domain.Entities
             }
 
             Balance = Balance + amount;
-            Transactions.Add(Transaction.Create(this, $"Sold {quantity} shares of {symbol} for ${price:N2} each", amount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Sell, $"Sold {quantity} shares of {symbol} for ${price:N2} each", amount, Balance));
 
             Balance = Balance - percentageCommissionAmount;
-            Transactions.Add(Transaction.Create(this, $"Fee {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
 
             Balance = Balance - fixedCommissionAmount;
-            Transactions.Add(Transaction.Create(this, $"Fee", -fixedCommissionAmount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommissionAmount, Balance));
         }
 
         internal AccountInfo ToAccountInfo()

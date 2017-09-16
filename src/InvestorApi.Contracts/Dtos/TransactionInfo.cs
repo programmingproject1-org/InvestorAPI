@@ -8,15 +8,17 @@ namespace InvestorApi.Contracts
     public class TransactionInfo
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionInfo"/> class.
+        /// Initializes a new instance of the <see cref="TransactionInfo" /> class.
         /// </summary>
         /// <param name="timestampUtc">The date and time when the transaction occurred in UTC.</param>
+        /// <param name="type">The type of the transaction.</param>
         /// <param name="description">The description.</param>
         /// <param name="amount">The transaction amount.</param>
         /// <param name="balance">The account balance after the transaction.</param>
-        public TransactionInfo(DateTime timestampUtc, string description, decimal amount, decimal balance)
+        public TransactionInfo(DateTime timestampUtc, TransactionType type, string description, decimal amount, decimal balance)
         {
             TimestampUtc = timestampUtc;
+            Type = type;
             Description = description;
             Amount = amount;
             Balance = balance;
@@ -26,6 +28,11 @@ namespace InvestorApi.Contracts
         /// Gets the date and time when the transaction occurred in UTC.
         /// </summary>
         public DateTime TimestampUtc { get; private set; }
+
+        /// <summary>
+        /// Gets the type of the transaction.
+        /// </summary>
+        public TransactionType Type { get; private set; }
 
         /// <summary>
         /// Gets the description.

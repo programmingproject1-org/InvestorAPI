@@ -56,7 +56,8 @@ namespace InvestorApi.Contracts
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to buy.</param>
-        void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity);
+        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce);
 
         /// <summary>
         /// Sells the supplied quantity of shares at the current market price.
@@ -65,6 +66,7 @@ namespace InvestorApi.Contracts
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to sell.</param>
-        void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity);
+        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce);
     }
 }

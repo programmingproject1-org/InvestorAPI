@@ -10,6 +10,7 @@ CREATE TABLE public."Transactions"
     "Amount" money NOT NULL,
     "TimestampUtc" timestamp without time zone NOT NULL,
     "Balance" money NOT NULL,
+    "Type" smallint,
     CONSTRAINT "Transactions_pkey" PRIMARY KEY ("Id"),
     CONSTRAINT "Transactions_Accounts" FOREIGN KEY ("AccountId")
         REFERENCES public."Accounts" ("Id") MATCH SIMPLE

@@ -156,11 +156,11 @@ namespace InvestorApi.Controllers
             switch (order.Side)
             {
                 case OrderSide.Buy:
-                    _accountsService.BuySharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity);
+                    _accountsService.BuySharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
                     return StatusCode(201);
 
                 case OrderSide.Sell:
-                    _accountsService.SellSharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity);
+                    _accountsService.SellSharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
                     return StatusCode(201);
 
                 default:

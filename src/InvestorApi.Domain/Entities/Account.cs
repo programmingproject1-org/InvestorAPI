@@ -24,6 +24,7 @@ namespace InvestorApi.Domain.Entities
             UserId = userId;
             Name = name;
             Balance = 0;
+            LastNonce = 0;
         }
 
         public Guid Id { get; private set; }
@@ -33,6 +34,8 @@ namespace InvestorApi.Domain.Entities
         public string Name { get; private set; }
 
         public decimal Balance { get; private set; }
+
+        public int LastNonce { get; private set; }
 
         public ICollection<Position> Positions { get; private set; }
 
@@ -55,13 +58,15 @@ namespace InvestorApi.Domain.Entities
             Balance = initialBalance;
         }
 
-        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions)
+        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions, int nonce)
         {
+            CheckNonce(nonce);
+
             decimal amount = quantity * price;
-            decimal fixedCommission = commissions.Fixed.Single(c => c.Min <= amount && c.Max >= amount).Value;
-            decimal percentageCommissionAmount = commissions.Percentage.Single(c => c.Min <= amount && c.Max >= amount).Value;
-            decimal percentageCommission = amount * percentageCommissionAmount / 100;
-            decimal totalFees = percentageCommission + fixedCommission;
+            decimal fixedCommissionAmount = GetCommission(commissions.Fixed, amount);
+            decimal percentageCommission = GetCommission(commissions.Percentage, amount);
+            decimal percentageCommissionAmount = amount * percentageCommission / 100;
+            decimal totalFees = percentageCommissionAmount + fixedCommissionAmount;
             decimal totalAmount = amount + totalFees;
 
             if (totalAmount > Balance)
@@ -84,18 +89,20 @@ namespace InvestorApi.Domain.Entities
             Balance = Balance - amount;
             Transactions.Add(Transaction.Create(this, TransactionType.Buy, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
 
-            Balance = Balance - percentageCommission;
-            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommissionAmount:N2}%", -percentageCommission, Balance));
+            Balance = Balance - percentageCommissionAmount;
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
 
-            Balance = Balance - fixedCommission;
-            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommission, Balance));
+            Balance = Balance - fixedCommissionAmount;
+            Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommissionAmount, Balance));
         }
 
-        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions)
+        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions, int nonce)
         {
+            CheckNonce(nonce);
+
             decimal amount = quantity * price;
-            decimal fixedCommissionAmount = commissions.Fixed.Single(c => c.Min <= amount && c.Max >= amount).Value;
-            decimal percentageCommission = commissions.Percentage.Single(c => c.Min <= amount && c.Max >= amount).Value;
+            decimal fixedCommissionAmount = GetCommission(commissions.Fixed, amount);
+            decimal percentageCommission = GetCommission(commissions.Percentage, amount);
             decimal percentageCommissionAmount = amount * percentageCommission / 100;
             decimal totalFees = percentageCommissionAmount + fixedCommissionAmount;
             decimal totalAmount = totalFees - amount;
@@ -132,6 +139,33 @@ namespace InvestorApi.Domain.Entities
         internal AccountInfo ToAccountInfo()
         {
             return new AccountInfo(Id, Name, Balance);
+        }
+
+        private void CheckNonce(int nonce)
+        {
+            if (nonce <= LastNonce)
+            {
+                throw new InvalidTradeException("The nonce value is invalid. It might indicate a duplicate order.");
+            }
+
+            LastNonce = nonce;
+        }
+
+        private decimal GetCommission(IEnumerable<CommissionRange> commissionRanges, decimal amount)
+        {
+            var range = commissionRanges.FirstOrDefault(c => c.Min <= amount && c.Max >= amount);
+            if (range == null)
+            {
+                var max = commissionRanges.Max(c => c.Max);
+                if (amount > max)
+                {
+                    throw new InvalidTradeException($"The amount exceeds the permitted maximum of ${max:N2}.");
+                }
+
+                throw new InvalidTradeException($"No commission range found for amount ${amount:N2}.");
+            }
+
+            return range.Value;
         }
     }
 }

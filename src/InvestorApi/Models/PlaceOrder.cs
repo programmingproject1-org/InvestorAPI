@@ -26,5 +26,11 @@ namespace InvestorApi.Models
         [Required]
         [Range(1, 1000000)]
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Gets or sets a unique number used to detect suplicate messages.
+        /// </summary>
+        [Required]
+        public int Nonce { get; set; }
     }
 }

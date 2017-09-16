@@ -8,6 +8,7 @@ CREATE TABLE public."Accounts"
     "UserId" uuid NOT NULL,
     "Name" text COLLATE pg_catalog."default" NOT NULL,
     "Balance" money NOT NULL,
+    "LastNonce" integer NOT NULL,
     CONSTRAINT "Accounts_pkey" PRIMARY KEY ("Id"),
     CONSTRAINT "Accounts_Users" FOREIGN KEY ("UserId")
         REFERENCES public."Users" ("Id") MATCH SIMPLE

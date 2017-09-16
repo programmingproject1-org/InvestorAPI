@@ -85,7 +85,7 @@ namespace InvestorApi.Domain.Services
             _accountRepository.Save(account);
         }
 
-        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity)
+        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
@@ -96,11 +96,11 @@ namespace InvestorApi.Domain.Services
             Commissions commissions = _settingService.GetBuyCommissions();
 
             Account account = GetAccount(userId, accountId);
-            account.BuyShares(symbol, quantity, quote.Ask, commissions);
+            account.BuyShares(symbol, quantity, quote.Ask, commissions, nonce);
             _accountRepository.Save(account);
         }
 
-        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity)
+        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
@@ -111,7 +111,7 @@ namespace InvestorApi.Domain.Services
             Commissions commissions = _settingService.GetSellCommissions();
 
             Account account = GetAccount(userId, accountId);
-            account.SellShares(symbol, quantity, quote.Bid, commissions);
+            account.SellShares(symbol, quantity, quote.Bid, commissions, nonce);
             _accountRepository.Save(account);
         }
 

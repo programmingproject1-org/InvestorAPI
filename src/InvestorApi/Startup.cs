@@ -1,8 +1,10 @@
+using InvestorApi.Asx;
 using InvestorApi.Domain;
 using InvestorApi.Filters;
 using InvestorApi.Repositories;
 using InvestorApi.Security;
 using InvestorApi.Swagger;
+using InvestorApi.Yahoo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -106,6 +108,8 @@ namespace InvestorApi
 
             DomainModule.ConfigureServices(services);
             RepositoriesModule.ConfigureServices(services);
+            AsxModule.ConfigureServices(services);
+            YahooModule.ConfigureServices(services);
 
             services.AddDbContext<DataContext>(ConfigureDbContext);
         }
@@ -116,7 +120,7 @@ namespace InvestorApi
         /// <param name="app">The application builder instance.</param>
         /// <param name="env">The hosting environment.</param>
         /// <param name="loggerFactory">The logger factory.</param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public virtual void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();

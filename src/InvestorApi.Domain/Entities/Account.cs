@@ -54,11 +54,11 @@ namespace InvestorApi.Domain.Entities
             Balance = initialBalance;
         }
 
-        public void BuyShares(string symbol, int quantity, decimal price)
+        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions)
         {
             decimal amount = quantity * price;
-            decimal fixedCommission = 50m;
-            decimal percentageCommissionAmount = 1m;
+            decimal fixedCommission = commissions.Fixed.Single(c => c.Min <= amount && c.Max >= amount).Value;
+            decimal percentageCommissionAmount = commissions.Percentage.Single(c => c.Min <= amount && c.Max >= amount).Value;
             decimal percentageCommission = amount * percentageCommissionAmount / 100;
             decimal totalFees = percentageCommission + fixedCommission;
             decimal totalAmount = amount + totalFees;
@@ -84,17 +84,17 @@ namespace InvestorApi.Domain.Entities
             Transactions.Add(Transaction.Create(this, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
 
             Balance = Balance - percentageCommission;
-            Transactions.Add(Transaction.Create(this, $"Brokerage Fee {percentageCommissionAmount:N2}%", -percentageCommission, Balance));
+            Transactions.Add(Transaction.Create(this, $"Fee {percentageCommissionAmount:N2}%", -percentageCommission, Balance));
 
             Balance = Balance - fixedCommission;
-            Transactions.Add(Transaction.Create(this, $"Brokerage Fee", -fixedCommission, Balance));
+            Transactions.Add(Transaction.Create(this, $"Fee", -fixedCommission, Balance));
         }
 
-        public void SellShares(string symbol, int quantity, decimal price)
+        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions)
         {
             decimal amount = quantity * price;
-            decimal fixedCommissionAmount = 50m;
-            decimal percentageCommission = 0.25m;
+            decimal fixedCommissionAmount = commissions.Fixed.Single(c => c.Min <= amount && c.Max >= amount).Value;
+            decimal percentageCommission = commissions.Percentage.Single(c => c.Min <= amount && c.Max >= amount).Value;
             decimal percentageCommissionAmount = amount * percentageCommission / 100;
             decimal totalFees = percentageCommissionAmount + fixedCommissionAmount;
             decimal totalAmount = totalFees - amount;
@@ -122,10 +122,10 @@ namespace InvestorApi.Domain.Entities
             Transactions.Add(Transaction.Create(this, $"Sold {quantity} shares of {symbol} for ${price:N2} each", amount, Balance));
 
             Balance = Balance - percentageCommissionAmount;
-            Transactions.Add(Transaction.Create(this, $"Brokerage Fee {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
+            Transactions.Add(Transaction.Create(this, $"Fee {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
 
             Balance = Balance - fixedCommissionAmount;
-            Transactions.Add(Transaction.Create(this, $"Brokerage Fee", -fixedCommissionAmount, Balance));
+            Transactions.Add(Transaction.Create(this, $"Fee", -fixedCommissionAmount, Balance));
         }
 
         internal AccountInfo ToAccountInfo()

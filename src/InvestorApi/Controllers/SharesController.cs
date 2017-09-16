@@ -14,6 +14,20 @@ namespace InvestorApi.Controllers
     [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
     public class SharesController : Controller
     {
+        private IShareDetailsProvider _shareDetailsProvider;
+        private IShareQuoteProvider _shareQuoteProvider;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharesController"/> class.
+        /// </summary>
+        /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareDetailsProvider"/>.</param>
+        /// <param name="shareQuoteProvider">Injected instance of <see cref="IShareQuoteProvider"/>.</param>
+        public SharesController(IShareDetailsProvider shareDetailsProvider, IShareQuoteProvider shareQuoteProvider)
+        {
+            _shareDetailsProvider = shareDetailsProvider;
+            _shareQuoteProvider = shareQuoteProvider;
+        }
+
         /// <summary>
         /// Search for shares.
         /// </summary>
@@ -31,7 +45,8 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(401, Description = "Authorization failed")]
         public IActionResult FindShares([FromQuery]string searchTerm, [FromQuery]int? pageNumber, [FromQuery]int? pageSize)
         {
-            return StatusCode(501);
+            var details = _shareDetailsProvider.FindShareDetails(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
+            return Ok(details);
         }
 
         /// <summary>
@@ -50,7 +65,14 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Share not found.")]
         public IActionResult GetQuote([FromRoute]string symbol)
         {
-            return StatusCode(501);
+            var quote = _shareQuoteProvider.GetQuote(symbol);
+
+            if (quote == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(quote);
         }
     }
 }

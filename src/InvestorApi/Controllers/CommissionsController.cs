@@ -1,3 +1,4 @@
+using InvestorApi.Contracts;
 using InvestorApi.Contracts.Settings;
 using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +14,17 @@ namespace InvestorApi.Controllers
     [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
     public class CommissionsController : Controller
     {
+        private ISettingService _settingService;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommissionsController"/> class.
+        /// </summary>
+        /// <param name="settingService">Injected instance of <see cref="ISettingService"/>.</param>
+        public CommissionsController(ISettingService settingService)
+        {
+            _settingService = settingService;
+        }
+
         /// <summary>
         /// Get the commission table for buy orders.
         /// </summary>
@@ -26,7 +38,8 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(200, Description = "Success.", Type = typeof(Commissions))]
         public IActionResult GetBuyCommissions()
         {
-            return StatusCode(501);
+            Commissions commissions = _settingService.GetBuyCommissions();
+            return Ok(commissions);
         }
 
         /// <summary>
@@ -42,7 +55,8 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(200, Description = "Success.", Type = typeof(Commissions))]
         public IActionResult GetSellCommissions()
         {
-            return StatusCode(501);
+            Commissions commissions = _settingService.GetSellCommissions();
+            return Ok(commissions);
         }
     }
 }

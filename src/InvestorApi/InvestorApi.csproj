@@ -40,9 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InvestorApi.Asx\InvestorApi.Asx.csproj" />
     <ProjectReference Include="..\InvestorApi.Contracts\InvestorApi.Contracts.csproj" />
     <ProjectReference Include="..\InvestorApi.Domain\InvestorApi.Domain.csproj" />
     <ProjectReference Include="..\InvestorApi.Repositories\InvestorApi.Repositories.csproj" />
+    <ProjectReference Include="..\InvestorApi.Yahoo\InvestorApi.Yahoo.csproj" />
   </ItemGroup>
 
 </Project>

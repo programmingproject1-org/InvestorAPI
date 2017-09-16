@@ -11,6 +11,7 @@ namespace InvestorApi.Domain
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ISettingService, SettingService>();
 
             services.AddSingleton<PasswordHashingProvider>();
         }

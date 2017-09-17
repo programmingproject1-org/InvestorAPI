@@ -98,12 +98,19 @@ namespace InvestorApi
                 options.SwaggerDoc(SwaggerConstants.AdministratorsGroup, new Info { Title = SwaggerConstants.AdministratorsTitle, Version = "1.0" });
 
                 options.DescribeAllEnumsAsStrings();
-                options.OperationFilter<SwaggerBearerAuthorizationOperationFilter>();
                 options.OperationFilter<SwaggerExamplesDocumentFilter>();
                 options.DocumentFilter<SwaggerDescriptionDocumentFilter>("InvestorApi.Swagger.Documentation.md");
 
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.xml");
                 options.IncludeXmlComments(AppContext.BaseDirectory + "InvestorApi.Contracts.xml");
+
+                options.AddSecurityDefinition("Bearer", new ApiKeyScheme()
+                {
+                    Description = "Enter: Bearer {token}",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
             });
 
             DomainModule.ConfigureServices(services);

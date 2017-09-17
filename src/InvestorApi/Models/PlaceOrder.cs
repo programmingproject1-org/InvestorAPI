@@ -31,6 +31,6 @@ namespace InvestorApi.Models
         /// Gets or sets a unique number used to detect suplicate messages.
         /// </summary>
         [Required]
-        public int Nonce { get; set; }
+        public long Nonce { get; set; }
     }
 }

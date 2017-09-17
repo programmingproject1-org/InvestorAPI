@@ -85,7 +85,7 @@ namespace InvestorApi.Domain.Services
             _accountRepository.Save(account);
         }
 
-        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce)
+        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
@@ -100,7 +100,7 @@ namespace InvestorApi.Domain.Services
             _accountRepository.Save(account);
         }
 
-        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, int nonce)
+        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)

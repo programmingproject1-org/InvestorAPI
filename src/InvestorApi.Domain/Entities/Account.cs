@@ -35,7 +35,7 @@ namespace InvestorApi.Domain.Entities
 
         public decimal Balance { get; private set; }
 
-        public int LastNonce { get; private set; }
+        public long LastNonce { get; private set; }
 
         public ICollection<Position> Positions { get; private set; }
 
@@ -58,7 +58,7 @@ namespace InvestorApi.Domain.Entities
             Balance = initialBalance;
         }
 
-        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions, int nonce)
+        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
         {
             CheckNonce(nonce);
 
@@ -96,7 +96,7 @@ namespace InvestorApi.Domain.Entities
             Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommissionAmount, Balance));
         }
 
-        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions, int nonce)
+        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
         {
             CheckNonce(nonce);
 
@@ -141,7 +141,7 @@ namespace InvestorApi.Domain.Entities
             return new AccountInfo(Id, Name, Balance);
         }
 
-        private void CheckNonce(int nonce)
+        private void CheckNonce(long nonce)
         {
             if (nonce <= LastNonce)
             {

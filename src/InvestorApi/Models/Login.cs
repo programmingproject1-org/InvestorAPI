@@ -11,7 +11,7 @@ namespace InvestorApi.Models
         /// Gets or sets the email address.
         /// </summary>
         [Required]
-        [EmailAddress]
+        [RegularExpression(ValidationRegularExpressions.EmailAddress, ErrorMessage = "The email address is invalid.")]
         public string Email { get; set; }
 
         /// <summary>

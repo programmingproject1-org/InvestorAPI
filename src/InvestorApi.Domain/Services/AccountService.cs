@@ -46,7 +46,7 @@ namespace InvestorApi.Domain.Services
                     Detail = shareDetails[p.Symbol],
                     Quote = quotes[p.Symbol],
                 })
-                .Select(i => new PositionInfo(i.Detail.Symbol, i.Detail.Name, i.Position.Quantity, i.Position.AveragePrice, i.Quote.LastPrice))
+                .Select(i => new PositionInfo(i.Detail.Symbol, i.Detail.Name, i.Position.Quantity, i.Position.AveragePrice, i.Quote.Last))
                 .ToList();
 
             return new AccountDetails(account.Id, account.Name, account.Balance, positions);

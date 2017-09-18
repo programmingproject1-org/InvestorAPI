@@ -4,6 +4,8 @@ using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.Linq;
 
 namespace InvestorApi.Controllers
 {
@@ -58,6 +60,7 @@ namespace InvestorApi.Controllers
         /// </remarks>
         /// <param name="symbol">The symbol of the share to return.</param>
         /// <returns>The action response.</returns>
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet("{symbol}/quote")]
         [Authorize]
         [SwaggerResponse(200, Type = typeof(Quote))]
@@ -73,6 +76,30 @@ namespace InvestorApi.Controllers
             }
 
             return Ok(quote);
+        }
+
+        /// <summary>
+        /// Get current quotes for a list of shares.
+        /// </summary>
+        /// <remarks>
+        /// The API operation enables investors to retrieve the current quote for the shares with the supplied symbols.
+        /// The caller must provide a valid access token.
+        /// </remarks>
+        /// <param name="symbols">The symbols of the share to return, separated by commas.</param>
+        /// <returns>The action response.</returns>
+        [HttpGet("quotes")]
+        [Authorize]
+        [SwaggerResponse(200, Type = typeof(Quote[]))]
+        [SwaggerResponse(401, Description = "Authorization failed")]
+        public IActionResult GetQuotes([FromQuery]string symbols)
+        {
+            var items = symbols
+                .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(s => s.Trim().ToUpperInvariant())
+                .ToArray();
+
+            var quotes = _shareQuoteProvider.GetQuotes(items);
+            return Ok(quotes.Values);
         }
     }
 }

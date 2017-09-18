@@ -19,8 +19,7 @@ namespace InvestorApi.Repositories
             string url = Environment.GetEnvironmentVariable("DATABASE_URL");
             if (string.IsNullOrEmpty(url))
             {
-                url = "postgres://wmjepiakfzqvwv:28db1b434fb4e6b6b9f7710476623687496aebc4e4b8f82048a5668fcc8071fe@ec2-54-221-207-192.compute-1.amazonaws.com:5432/d48fqc1i7c9r2o";
-                //throw new InvalidOperationException("Environment variable with database connection string not found.");
+                throw new InvalidOperationException("Environment variable with database connection string not found.");
             }
 
             string[] urlSegments = url.Split(new[] { '/', ':', '@' }, StringSplitOptions.RemoveEmptyEntries);

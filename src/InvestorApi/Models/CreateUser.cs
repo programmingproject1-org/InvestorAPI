@@ -19,7 +19,7 @@ namespace InvestorApi.Models
         /// Gets or sets the email address.
         /// </summary>
         [Required]
-        [EmailAddress]
+        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "The email address is invalid.")]
         [MaxLength(100)]
         public string Email { get; set; }
 

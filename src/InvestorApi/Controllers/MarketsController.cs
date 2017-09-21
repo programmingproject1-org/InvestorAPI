@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace InvestorApi.Controllers
 {
@@ -39,7 +40,7 @@ namespace InvestorApi.Controllers
         [Authorize]
         [SwaggerResponse(200, Type = typeof(MarketInfo))]
         [SwaggerResponse(401, Description = "Authorization failed")]
-        public IActionResult GetMarket(string symbol)
+        public IActionResult GetMarket([FromRoute][Required][MinLength(3)]string symbol)
         {
             if (!symbol.Equals("ASX", StringComparison.OrdinalIgnoreCase))
             {

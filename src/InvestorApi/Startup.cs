@@ -59,6 +59,7 @@ namespace InvestorApi
             {
                 options.InputFormatters.RemoveType<JsonPatchInputFormatter>();
                 options.OutputFormatters.RemoveType<StringOutputFormatter>();
+                options.Filters.Add(new ParameterValidationFilter());
                 options.Filters.Add(new ModelStateValidationFilter());
                 options.Filters.Add(new EntityNotFoundExceptionFilter());
                 options.Filters.Add(new InvalidTradeExceptionFilter());

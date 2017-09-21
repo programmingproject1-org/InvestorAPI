@@ -80,7 +80,7 @@ namespace InvestorApi.Asx
                 {
                     var csv = client.GetStringAsync(Address).Result;
                     _shares = csv
-                        .Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+                        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
                         .Skip(2)
                         .Select(line => ReadCsvLine(line))
                         .Where(line => line != null)
@@ -99,7 +99,7 @@ namespace InvestorApi.Asx
 
             var name = values[0].Substring(1, values[0].Length - 2);
             var symbol = values[1];
-            var industry = values[2].Substring(1, values[2].Length - 3);
+            var industry = values[2].Substring(1, values[2].Length - 2);
 
             if (industry == "Not Applic")
             {

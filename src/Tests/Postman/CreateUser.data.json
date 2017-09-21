@@ -1,0 +1,290 @@
+﻿[
+	{
+		"displayName": "",
+		"email": "test1@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName is empty"
+	},
+	{
+		"displayName": "     ",
+		"email": "test2@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName only contains space characters"
+	},
+	{
+		"displayName": "abc",
+		"email": "test3@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName is shorter than 3 characters"
+	},
+	{
+		"displayName": ";:=,. ",
+		"email": "test4@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName only contains punctuation characters / special characters"
+	},
+	{
+		"displayName": "$*\"'''",
+		"email": "test5@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName only contains punctuation / special characters"
+	},
+	{
+		"displayName": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"email": "test6@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName is longer than 30 characters"
+	},
+	{
+		"displayName": "<div class='test'>Test</div>",
+		"email": "test7@test.com",
+		"password": "12345678",
+		"is_displayName_valid": false,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName contains HTML markup"
+	},
+	{
+		"displayName": "😀😀😀😀",
+		"email": "test8@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "displayName contains unicode emojis"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test9@test",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email missing zzz in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email missing yyy in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@..com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has '.' as yyy in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "te st@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has space in xxx in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email is longer than 100 characters"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@.",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email missing yyy and zzz in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has multiple '@'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "te@st@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has multiple '@'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@test.c om",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has space character in zzz in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@test..",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has '.' as zzz in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@test..com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has double '.' between yyy and zzz in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": ",;:=+@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has only punctuation in xxx in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "   @test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": false,
+		"is_password_valid": true,
+		"scenario": "email has space characters in xxx in 'xxx@yyy.zzz'"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test10@test.com",
+		"password": "1234567",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is less than 8 characters long"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test@test.com",
+		"password": "",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is empty"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test11@test.com",
+		"password": "",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is 8 space characters"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test13@test.com",
+		"password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is more than 30 characters long"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test14@test.com",
+		"password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa😀",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is more than 30 characters * sizeof(char) with an emoji"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test15@test.com",
+		"password": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": false,
+		"scenario": "password is many characters long"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test17@test.com",
+		"password": "你好。我的车在哪里？我不知道我在哪里。",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "password is Chinese characters"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test18@test.com",
+		"password": "12345678",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "input is valid"
+	},
+	{
+		"displayName": "Test User",
+		"email": "test19@student.rmit.test.com",
+		"password": "popoçe!èçcnds;:=,",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "input is valid"
+	},
+	{
+		"displayName": "我的车在哪里",
+		"email": "test20@student.rmit.test.com",
+		"password": "blablabbsclsdk,clsk,clksdn",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "input is valid"
+	},
+	{
+		"displayName": "我éo的车在😀哪里",
+		"email": "test21@student.rmit.test.com",
+		"password": "我的车在哪里M；",
+		"is_displayName_valid": true,
+		"is_email_valid": true,
+		"is_password_valid": true,
+		"scenario": "input is valid"
+	}
+]

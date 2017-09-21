@@ -12,6 +12,7 @@ namespace InvestorApi.Models
         /// </summary>
         [Required]
         [MinLength(3)]
+        [RegularExpression(ValidationRegularExpressions.AlphaNumeric)]
         public string Name { get; set; }
     }
 }

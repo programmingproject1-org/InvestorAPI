@@ -18,6 +18,7 @@ namespace InvestorApi.Models
         /// </summary>
         [Required]
         [MinLength(3)]
+        [RegularExpression(ValidationRegularExpressions.Symbol)]
         public string Symbol { get; set; }
 
         /// <summary>

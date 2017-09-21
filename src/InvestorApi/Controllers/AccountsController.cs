@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace InvestorApi.Controllers
 {
@@ -128,7 +129,10 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(401, Description = "User not authenticated")]
         [SwaggerResponse(403, Description = "User not authorized")]
         [SwaggerResponse(404, Description = "Account not found")]
-        public IActionResult ListTransactions([FromRoute]Guid accountId, [FromQuery]int? pageNumber, [FromQuery]int? pageSize)
+        public IActionResult ListTransactions(
+            [FromRoute]Guid accountId,
+            [FromQuery][Range(1, 1000)]int? pageNumber,
+            [FromQuery][Range(1, 100)]int? pageSize)
         {
             var transactions = _accountsService.ListTransactions(Request.GetUserId(), accountId, pageNumber ?? 1, pageSize ?? 100);
             return Ok(transactions);

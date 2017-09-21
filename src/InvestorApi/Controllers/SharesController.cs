@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace InvestorApi.Controllers
@@ -45,7 +46,10 @@ namespace InvestorApi.Controllers
         [Authorize]
         [SwaggerResponse(200, Type = typeof(ListResult<ShareDetails>))]
         [SwaggerResponse(401, Description = "Authorization failed")]
-        public IActionResult FindShares([FromQuery]string searchTerm, [FromQuery]int? pageNumber, [FromQuery]int? pageSize)
+        public IActionResult FindShares(
+            [FromQuery][Required][MinLength(1)]string searchTerm,
+            [FromQuery][Range(1, 1000)]int? pageNumber,
+            [FromQuery][Range(1, 100)]int? pageSize)
         {
             var details = _shareDetailsProvider.FindShareDetails(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
             return Ok(details);
@@ -66,7 +70,7 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(200, Type = typeof(Quote))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Share not found.")]
-        public IActionResult GetQuote([FromRoute]string symbol)
+        public IActionResult GetQuote([FromRoute][MinLength(3)]string symbol)
         {
             var quote = _shareQuoteProvider.GetQuote(symbol);
 
@@ -91,7 +95,7 @@ namespace InvestorApi.Controllers
         [Authorize]
         [SwaggerResponse(200, Type = typeof(Quote[]))]
         [SwaggerResponse(401, Description = "Authorization failed")]
-        public IActionResult GetQuotes([FromQuery]string symbols)
+        public IActionResult GetQuotes([FromQuery][MinLength(3)]string symbols)
         {
             var items = symbols
                 .Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)

@@ -3,6 +3,7 @@ using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace InvestorApi.Domain.Services
 {
@@ -39,7 +40,21 @@ namespace InvestorApi.Domain.Services
             if (_defaultAccountSettings == null)
             {
                 var setting = _settingRepository.GetByKey(DefaultAccountSettingsKey);
-                _defaultAccountSettings = JsonConvert.DeserializeObject<DefaultAccountSettings>(setting.Value);
+                if (setting == null)
+                {
+                    // No settings found - Create the application default settings.
+                    _defaultAccountSettings = new DefaultAccountSettings
+                    {
+                        Name = "Default Account",
+                        InitialBalance = 1000000
+                    };
+
+                    SaveDefaultAccountSettings(_defaultAccountSettings);
+                }
+                else
+                {
+                    _defaultAccountSettings = JsonConvert.DeserializeObject<DefaultAccountSettings>(setting.Value);
+                }
             }
 
             return _defaultAccountSettings;
@@ -65,7 +80,27 @@ namespace InvestorApi.Domain.Services
             if (_buyCommissions == null)
             {
                 var setting = _settingRepository.GetByKey(BuyCommissionsKey);
-                _buyCommissions = JsonConvert.DeserializeObject<Commissions>(setting.Value);
+                if (setting == null)
+                {
+                    // No settings found - Create the application default settings.
+                    _buyCommissions = new Commissions
+                    {
+                        Fixed = new List<CommissionRange>
+                        {
+                            new CommissionRange { Min = 0, Max = 1000000, Value = 50 }
+                        },
+                        Percentage = new List<CommissionRange>
+                        {
+                            new CommissionRange { Min = 0, Max = 1000000, Value = 1 }
+                        }
+                    };
+
+                    SaveBuyCommissions(_buyCommissions);
+                }
+                else
+                {
+                    _buyCommissions = JsonConvert.DeserializeObject<Commissions>(setting.Value);
+                }
             }
 
             return _buyCommissions;
@@ -91,6 +126,28 @@ namespace InvestorApi.Domain.Services
             if (_sellCommissions == null)
             {
                 var setting = _settingRepository.GetByKey(SellCommissionsKey);
+                if (setting == null)
+                {
+                    // No settings found - Create the application default settings.
+                    _sellCommissions = new Commissions
+                    {
+                        Fixed = new List<CommissionRange>
+                        {
+                            new CommissionRange { Min = 0, Max = 1000000, Value = 50 }
+                        },
+                        Percentage = new List<CommissionRange>
+                        {
+                            new CommissionRange { Min = 0, Max = 1000000, Value = 0.25m }
+                        }
+                    };
+
+                    SaveSellCommissions(_sellCommissions);
+                }
+                else
+                {
+                    _sellCommissions = JsonConvert.DeserializeObject<Commissions>(setting.Value);
+                }
+
                 _sellCommissions = JsonConvert.DeserializeObject<Commissions>(setting.Value);
             }
 

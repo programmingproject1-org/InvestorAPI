@@ -15,7 +15,14 @@ namespace InvestorApi.Repositories
             services.AddScoped<ISettingRepository, SettingRepository>();
         }
 
-        public static void ConfigureDbContext(DbContextOptionsBuilder options)
+        public static void ConfigureInMemoryDbContext(IServiceCollection services)
+        {
+            // For testing and debugging, we use an in-mempry database. That way we don't have to
+            // configure database connection information in development environments.
+            services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Test Database"));
+        }
+
+        public static void ConfigurePostgresDbContext(IServiceCollection services)
         {
             // Heroku injects the database connection URL as an environment variable.
             string url = Environment.GetEnvironmentVariable("DATABASE_URL");
@@ -36,7 +43,7 @@ namespace InvestorApi.Repositories
             string connection = $"Host={host};Port={port};Database={database};Username={username};Password={password};SSL Mode=Require;Trust Server Certificate=True";
 
             // Now initialize Entity Framework with Postgres driver.
-            options.UseNpgsql(connection);
+            services.AddDbContext<DataContext>(options => options.UseNpgsql(connection));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using System.Text;
 
@@ -17,7 +18,8 @@ namespace InvestorApi.ComponentTests.Internal
 
         public TestContext()
         {
-            _server = new TestServer(new WebHostBuilder().UseStartup<TestStartup>());
+            Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
+            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
         }
 
         public HttpResponseMessage LastResponse { get; private set; }

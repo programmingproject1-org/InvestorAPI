@@ -17,7 +17,7 @@ https://www.microsoft.com/net/download/core
 AppVeyor is used to build the solution and run the unit tests after every commit. However it is not used for deployment because it does not support seem to support Docker and Heroku.
 
 #### Prerequisites
-* Make sure you have Docker installed and running.
+* Make sure you have Docker installed and running: https://www.docker.com/docker-windows
 * Download the Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
 
 #### Build & Deploy Docker Container

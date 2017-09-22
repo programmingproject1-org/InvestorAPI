@@ -4,8 +4,15 @@ using InvestorApi.Domain.Utilities;
 
 namespace InvestorApi.Domain.Services
 {
+    /// <summary>
+    /// Provides information about the ASX Market.
+    /// </summary>
     internal class MarketInformationService : IMarketInformationService
     {
+        /// <summary>
+        /// Gets the market information.
+        /// </summary>
+        /// <returns>The market information.</returns>
         public MarketInfo GetMarket()
         {
             var market = new AsxMarket();

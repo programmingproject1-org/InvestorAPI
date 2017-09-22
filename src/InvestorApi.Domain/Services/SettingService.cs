@@ -3,10 +3,12 @@ using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace InvestorApi.Domain.Services
 {
+    /// <summary>
+    /// A service to provide access to system settings.
+    /// </summary>
     public class SettingService : ISettingService
     {
         private const string DefaultAccountSettingsKey = "DEFAULT_ACCOUNT_SETTINGS";
@@ -19,11 +21,19 @@ namespace InvestorApi.Domain.Services
         private Commissions _buyCommissions;
         private Commissions _sellCommissions;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SettingService"/> class.
+        /// </summary>
+        /// <param name="settingRepository">The setting repository.</param>
         public SettingService(ISettingRepository settingRepository)
         {
             _settingRepository = settingRepository;
         }
 
+        /// <summary>
+        /// Gets the default account settings.
+        /// </summary>
+        /// <returns></returns>
         public DefaultAccountSettings GetDefaultAccountSettings()
         {
             if (_defaultAccountSettings == null)
@@ -35,6 +45,10 @@ namespace InvestorApi.Domain.Services
             return _defaultAccountSettings;
         }
 
+        /// <summary>
+        /// Saves the default account settings.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
         public void SaveDefaultAccountSettings(DefaultAccountSettings settings)
         {
             var value = JsonConvert.SerializeObject(settings);
@@ -42,6 +56,10 @@ namespace InvestorApi.Domain.Services
             _settingRepository.Save(setting);
         }
 
+        /// <summary>
+        /// Gets the buy commissions.
+        /// </summary>
+        /// <returns></returns>
         public Commissions GetBuyCommissions()
         {
             if (_buyCommissions == null)
@@ -53,6 +71,10 @@ namespace InvestorApi.Domain.Services
             return _buyCommissions;
         }
 
+        /// <summary>
+        /// Saves the buy commissions.
+        /// </summary>
+        /// <param name="commissions">The commissions.</param>
         public void SaveBuyCommissions(Commissions commissions)
         {
             var value = JsonConvert.SerializeObject(commissions);
@@ -60,6 +82,10 @@ namespace InvestorApi.Domain.Services
             _settingRepository.Save(setting);
         }
 
+        /// <summary>
+        /// Gets the sell commissions.
+        /// </summary>
+        /// <returns></returns>
         public Commissions GetSellCommissions()
         {
             if (_sellCommissions == null)
@@ -71,6 +97,10 @@ namespace InvestorApi.Domain.Services
             return _sellCommissions;
         }
 
+        /// <summary>
+        /// Saves the sell commissions.
+        /// </summary>
+        /// <param name="commissions">The commissions.</param>
         public void SaveSellCommissions(Commissions commissions)
         {
             var value = JsonConvert.SerializeObject(commissions);

@@ -7,10 +7,20 @@ using System.Net.Http;
 
 namespace InvestorApi.Yahoo
 {
+    /// <summary>
+    /// Implements a quote provider using Yahoo.
+    /// API Documentation:
+    /// http://wern-ancheta.com/blog/2015/04/05/getting-started-with-the-yahoo-finance-api/
+    /// </summary>
     internal class YahooQuoteProvider : IShareQuoteProvider
     {
         private static readonly HttpClient _client = new HttpClient();
 
+        /// <summary>
+        /// Returned the current quote for the share with the provided symbol.
+        /// </summary>
+        /// <param name="symbol">The share symbol to retrun the quote for.</param>
+        /// <returns>The crrent quote for the share.</returns>
         public Quote GetQuote(string symbol)
         {
             var quotes = GetQuotes(new[] { symbol });
@@ -22,12 +32,19 @@ namespace InvestorApi.Yahoo
             return null;
         }
 
+        /// <summary>
+        /// Returned the current quote for the shares with the provided symbols.
+        /// </summary>
+        /// <param name="symbols">The share symbols to retrun the quotes for.</param>
+        /// <returns>The crrent quotes for the shares.</returns>
         public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
         {
+            // Download the data as CSV.
             var symbolQuery = string.Join(",", symbols.Select(s => s + ".AX"));
             var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3gh";
-
             var csv = _client.GetStringAsync(address).Result;
+
+            // Parse the data.
             return csv
                 .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(line => ReadCsvLine(line))

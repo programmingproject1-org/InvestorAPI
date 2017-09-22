@@ -7,6 +7,7 @@ namespace InvestorApi.Asx
     {
         public static void ConfigureServices(IServiceCollection services)
         {
+            // Register the provider in the dependency injection container.
             services.AddSingleton<IShareDetailsProvider>(new AsxShareDetailProvider());
         }
     }

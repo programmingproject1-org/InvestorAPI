@@ -12,7 +12,6 @@ namespace InvestorApi.Domain.Entities
     {
         private Account()
         {
-            // Required for instantiation by repository.
             Positions = new List<Position>();
             Transactions = new List<Transaction>();
         }
@@ -60,8 +59,10 @@ namespace InvestorApi.Domain.Entities
 
         public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
         {
+            // Check the nonce value. This will though an exception if invalid.
             CheckNonce(nonce);
 
+            // Calculate all the individual amounts.
             decimal amount = quantity * price;
             decimal fixedCommissionAmount = GetCommission(commissions.Fixed, amount);
             decimal percentageCommission = GetCommission(commissions.Percentage, amount);
@@ -74,8 +75,8 @@ namespace InvestorApi.Domain.Entities
                 throw new InvalidTradeException($"The total amount of the transction exceeds the current account balance by ${(totalAmount - Balance):N2}.");
             }
 
+            // Find an existing position to update. If none exist, create a new one.
             Position position = Positions.FirstOrDefault(p => p.Symbol == symbol);
-
             if (position != null)
             {
                 position.Buy(quantity, price, totalFees);
@@ -86,6 +87,7 @@ namespace InvestorApi.Domain.Entities
                 Positions.Add(position);
             }
 
+            // Create the transaction records and update the balances.
             Balance = Balance - amount;
             Transactions.Add(Transaction.Create(this, TransactionType.Buy, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
 
@@ -98,8 +100,10 @@ namespace InvestorApi.Domain.Entities
 
         public void SellShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
         {
+            // Check the nonce value. This will though an exception if invalid.
             CheckNonce(nonce);
 
+            // Calculate all the individual amounts.
             decimal amount = quantity * price;
             decimal fixedCommissionAmount = GetCommission(commissions.Fixed, amount);
             decimal percentageCommission = GetCommission(commissions.Percentage, amount);
@@ -112,8 +116,8 @@ namespace InvestorApi.Domain.Entities
                 throw new InvalidTradeException($"The total amount of the transction exceeds the current account balance by ${(totalAmount - Balance):N2}.");
             }
 
+            // Update the position.
             Position position = Positions.FirstOrDefault(p => p.Symbol == symbol);
-
             if (position == null || position.Quantity < quantity)
             {
                 throw new InvalidTradeException($"You cannot sell {quantity} shares of {symbol} because the current position is only {position?.Quantity ?? 0}.");
@@ -126,6 +130,7 @@ namespace InvestorApi.Domain.Entities
                 Positions.Remove(position);
             }
 
+            // Create the transaction records and update the balances.
             Balance = Balance + amount;
             Transactions.Add(Transaction.Create(this, TransactionType.Sell, $"Sold {quantity} shares of {symbol} for ${price:N2} each", amount, Balance));
 
@@ -153,6 +158,7 @@ namespace InvestorApi.Domain.Entities
 
         private decimal GetCommission(IEnumerable<CommissionRange> commissionRanges, decimal amount)
         {
+            // Find the range into which the amount falls.
             var range = commissionRanges.FirstOrDefault(c => c.Min <= amount && c.Max >= amount);
             if (range == null)
             {

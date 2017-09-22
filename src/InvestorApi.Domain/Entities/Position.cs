@@ -36,6 +36,7 @@ namespace InvestorApi.Domain.Entities
 
         public void Buy(int additionalQuantity, decimal price, decimal brokerageFees)
         {
+            // Calculate the new average price.
             AveragePrice = ((Quantity * AveragePrice) + (additionalQuantity * price) + brokerageFees) / (Quantity + additionalQuantity);
             Quantity += additionalQuantity;
         }

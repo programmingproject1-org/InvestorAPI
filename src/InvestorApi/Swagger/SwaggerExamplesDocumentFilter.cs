@@ -1,14 +1,21 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using Swashbuckle.AspNetCore.Swagger;
+using System;
 using System.Linq;
 
 namespace InvestorApi.Swagger
 {
+    /// <summary>
+    /// This operation filter adds useful sample values to properties in Swagger specifications.
+    /// </summary>
+    /// <seealso cref="Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter" />
     internal sealed class SwaggerExamplesDocumentFilter : IOperationFilter
     {
+        /// <summary>
+        /// Applies the specified operation.
+        /// </summary>
+        /// <param name="operation">The operation.</param>
+        /// <param name="context">The operation filter context.</param>
         public void Apply(Operation operation, OperationFilterContext context)
         {
             if (operation == null)
@@ -34,6 +41,11 @@ namespace InvestorApi.Swagger
             }
         }
 
+        /// <summary>
+        /// Sets the property sample values.
+        /// </summary>
+        /// <param name="schemaRegistry">The schema registry.</param>
+        /// <param name="schemaRef">The reference of the schema to process.</param>
         private void SetProperties(ISchemaRegistry schemaRegistry, string schemaRef)
         {
             var schemaName = schemaRef.Split('/').Last();

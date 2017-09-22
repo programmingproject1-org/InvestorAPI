@@ -29,7 +29,7 @@ namespace InvestorApi.Contracts
         /// <param name="industry">The industry.</param>
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
-        /// <returns></returns>
+        /// <returns>The list of shares which match the search criteria.</returns>
         ListResult<ShareDetails> FindShareDetails(string searchTerm, string industry, int pageNumber, int pageSize);
     }
 }

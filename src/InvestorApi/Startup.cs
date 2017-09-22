@@ -135,6 +135,7 @@ namespace InvestorApi
 
             app.UseAuthentication();
 
+            // Enabled CORS to allow access from browser applications on different domains.
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()

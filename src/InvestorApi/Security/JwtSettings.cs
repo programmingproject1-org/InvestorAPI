@@ -4,6 +4,9 @@ using System.Text;
 
 namespace InvestorApi.Security
 {
+    /// <summary>
+    /// Contains the values required for issuing and validating JWT access tokens.
+    /// </summary>
     internal static class JwtSettings
     {
         public const string Issuer = "InvestorApi";

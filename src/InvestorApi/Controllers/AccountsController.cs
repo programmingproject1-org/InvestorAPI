@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace InvestorApi.Controllers
 {
@@ -151,7 +152,7 @@ namespace InvestorApi.Controllers
         /// <returns>The action response.</returns>
         [HttpPost("{accountId:guid}/orders")]
         [Authorize]
-        [SwaggerResponse(201, Description = "Shares successfully bought.")]
+        [SwaggerResponse(200, typeof(AccountDetails))]
         [SwaggerResponse(400, Description = "Invalid order.")]
         [SwaggerResponse(401, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Account or share not found")]
@@ -161,15 +162,18 @@ namespace InvestorApi.Controllers
             {
                 case OrderSide.Buy:
                     _accountsService.BuySharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
-                    return StatusCode(201);
+                    break;
 
                 case OrderSide.Sell:
                     _accountsService.SellSharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
-                    return StatusCode(201);
+                    break;
 
                 default:
                     return StatusCode(400);
             }
+
+            var account = _accountsService.GetAccountDetails(Request.GetUserId(), accountId);
+            return Ok(account);
         }
     }
 }

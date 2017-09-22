@@ -10,6 +10,9 @@ using System.Linq;
 
 namespace InvestorApi.Domain.Services
 {
+    /// <summary>
+    /// A domain service to manage trading accounts.
+    /// </summary>
     internal class AccountService : IAccountService
     {
         private readonly ISettingService _settingService;
@@ -17,6 +20,13 @@ namespace InvestorApi.Domain.Services
         private readonly IShareQuoteProvider _shareQuoteProvider;
         private readonly IShareDetailsProvider _shareDetailsProvider;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountService"/> class.
+        /// </summary>
+        /// <param name="settingService">The setting service.</param>
+        /// <param name="accountRepository">The account repository.</param>
+        /// <param name="shareQuoteProvider">The share quote provider.</param>
+        /// <param name="shareDetailsProvider">The share details provider.</param>
         public AccountService(
             ISettingService settingService,
             IAccountRepository accountRepository,
@@ -29,6 +39,12 @@ namespace InvestorApi.Domain.Services
             _shareDetailsProvider = shareDetailsProvider;
         }
 
+        /// <summary>
+        /// Gets detailed information about a specific trading accounts.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user to retrieve the trading account for.</param>
+        /// <param name="accountId">The unique identifier of the account to return.</param>
+        /// <returns>The trading account details.</returns>
         public AccountDetails GetAccountDetails(Guid userId, Guid accountId)
         {
             Account account = GetAccount(userId, accountId);
@@ -52,6 +68,14 @@ namespace InvestorApi.Domain.Services
             return new AccountDetails(account.Id, account.Name, account.Balance, positions);
         }
 
+        /// <summary>
+        /// Lists the account's transactions.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user to retrieve the trading account for.</param>
+        /// <param name="accountId">The unique identifier of the account to return.</param>
+        /// <param name="pageNumber">Gets the page number to return.</param>
+        /// <param name="pageSize">Gets the page size to apply.</param>
+        /// <returns>The transactions.</returns>
         public ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, int pageNumber, int pageSize)
         {
             // Verify that account exists and belongs to the user.
@@ -61,6 +85,12 @@ namespace InvestorApi.Domain.Services
             return result.Convert(transaction => transaction.ToTransactionInfo());
         }
 
+        /// <summary>
+        /// Opens the new trading account.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user who owns the trading account.</param>
+        /// <param name="name">The account name.</param>
+        /// <returns>The identifier of the newly created account.</returns>
         public Guid CreateAccount(Guid userId, string name)
         {
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
@@ -70,12 +100,22 @@ namespace InvestorApi.Domain.Services
             return account.Id;
         }
 
+        /// <summary>
+        /// Delete an existing trading account.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user who owns the trading account.</param>
+        /// <param name="accountId">The unique identifier of the account to delete.</param>
         public void DeleteAccount(Guid userId, Guid accountId)
         {
             Account account = GetAccount(userId, accountId);
             _accountRepository.Delete(account);
         }
 
+        /// <summary>
+        /// Resets a trading account to its starting state.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user who owns the trading account.</param>
+        /// <param name="accountId">The unique identifier of the account to reset.</param>
         public void ResetAccount(Guid userId, Guid accountId)
         {
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
@@ -85,6 +125,14 @@ namespace InvestorApi.Domain.Services
             _accountRepository.Save(account);
         }
 
+        /// <summary>
+        /// Buys the supplied quantity of shares at the current market price.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user who owns the trading account.</param>
+        /// <param name="accountId">The unique identifier of the account.</param>
+        /// <param name="symbol">The share symbol.</param>
+        /// <param name="quantity">The quantity to buy.</param>
+        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
         public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
@@ -100,6 +148,14 @@ namespace InvestorApi.Domain.Services
             _accountRepository.Save(account);
         }
 
+        /// <summary>
+        /// Sells the supplied quantity of shares at the current market price.
+        /// </summary>
+        /// <param name="userId">The unique identifier of the user who owns the trading account.</param>
+        /// <param name="accountId">The unique identifier of the account.</param>
+        /// <param name="symbol">The share symbol.</param>
+        /// <param name="quantity">The quantity to sell.</param>
+        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
         public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);

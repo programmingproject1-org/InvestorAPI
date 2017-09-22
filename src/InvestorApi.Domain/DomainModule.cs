@@ -9,6 +9,7 @@ namespace InvestorApi.Domain
     {
         public static void ConfigureServices(IServiceCollection services)
         {
+            // Register the domain services in the dependency injection container.
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ISettingService, SettingService>();

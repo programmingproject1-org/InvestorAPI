@@ -5,6 +5,7 @@ The REST API for the Budding Share Market Investor Project.
 
 ## Contributing
 
+#### Environment
 The solution is written with .NET Core 2.0 and C#. In order to contribute you must either install Visual Studio 2017 Community Edition (free, but only available for Windows only) or Visual Studio Code (free). Both can be downloaded from here: 
 https://www.visualstudio.com/downloads/
 
@@ -14,7 +15,7 @@ https://www.microsoft.com/net/download/core
 ## Build & Deployment
 
 #### Notes
-AppVeyor is used to build the solution and run the unit tests after every commit. However it is not used for deployment because it does not support seem to support Docker and Heroku.
+AppVeyor is used to build the solution and run the unit tests after every commit. However it is not used for deployment because it does not support Docker and Heroku.
 
 #### Prerequisites
 * Make sure you have Docker installed and running: https://www.docker.com/docker-windows

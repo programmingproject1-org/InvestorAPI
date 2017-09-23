@@ -4,6 +4,7 @@ using InvestorApi.Filters;
 using InvestorApi.Repositories;
 using InvestorApi.Security;
 using InvestorApi.Swagger;
+using InvestorApi.Swagger.UI;
 using InvestorApi.Yahoo;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -145,6 +146,7 @@ namespace InvestorApi
             // Enable Swagger and Swagger UI to make exploration of the API easier.
             app.UseSwagger();
             app.UseSwaggerUI(SwaggerConfig.ConfigureUI);
+            app.UseSwaggerBearerAuthorization();
         }
     }
 }

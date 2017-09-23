@@ -33,6 +33,8 @@ namespace InvestorApi.Swagger
             options.SwaggerEndpoint($"/swagger/{SwaggerConstants.InvestorsGroup}/swagger.json", SwaggerConstants.InvestorsTitle);
             options.SwaggerEndpoint($"/swagger/{SwaggerConstants.AdministratorsGroup}/swagger.json", SwaggerConstants.AdministratorsTitle);
             options.DocExpansion("list");
+
+            options.InjectOnCompleteJavaScript("customizations/BearerAuth.js");
         }
     }
 }

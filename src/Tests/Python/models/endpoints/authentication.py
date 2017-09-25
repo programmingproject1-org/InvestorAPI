@@ -4,6 +4,7 @@
 import requests
 import json
 import base64
+from . import request_config
 
 from models.response_summary import ResponseSummary
 
@@ -19,7 +20,7 @@ class Authentication():
 		self.payload = {"email": self.user.email, "password": self.user.password}
 
 	def fetch(self):
-		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False).encode('utf8'), headers = self.header, verify = False)
+		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False).encode('utf8'), headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def validate_token(self):
 		token_payload = (self.token.split('.'))[1]

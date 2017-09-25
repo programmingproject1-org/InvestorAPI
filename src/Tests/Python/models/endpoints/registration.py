@@ -3,6 +3,7 @@
 
 import requests
 import json
+from . import request_config
 
 from models.response_summary import ResponseSummary
 
@@ -18,7 +19,7 @@ class Registration():
 		self.payload = {"displayName": self.user.displayName, "email": self.user.email, "password": self.user.password}
 
 	def fetch(self):
-		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False).encode('utf8'), headers = self.header, verify = False)
+		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False).encode('utf8'), headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
 		error_messages = []

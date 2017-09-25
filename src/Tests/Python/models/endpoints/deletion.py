@@ -3,7 +3,7 @@
 
 import requests
 import json
-
+from . import request_config
 from models.response_summary import ResponseSummary
 
 class Deletion():
@@ -17,7 +17,7 @@ class Deletion():
 		self.fetch()
 
 	def fetch(self):
-		self.response = requests.delete(self.url, headers = self.header, verify = False)
+		self.response = requests.delete(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
 		error_messages = []

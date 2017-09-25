@@ -53,20 +53,80 @@ class AuthenticationTestCase(unittest.TestCase):
 
 		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
 
-	# def test_authentication_passwordIsEmpty(self):
-	# 	pass
+	def test_authentication_passwordIsEmpty(self):
+		"""A user cannot sign in with an empty password"""
+		test_user = User("John Doe", "johndoe@test.com", "")
+		api = ApiFacade(test_user)
+		outcome = api.authenticate_user()
 
-	# def test_authentication_emailAndPasswordAreEmpty(self):
-	# 	pass
+		error_messages = []
+		error_messages.append({"Failure on Test data": str(test_user)})
+		error_messages.append(outcome.error_messages)
+		error_messages_for_display = "\n\nTEST FAILED - Received HTTP: {0}: {1}".format(outcome.response_code, error_messages)
 
-	# def test_authentication_emailIsIncorrect(self):
-	# 	pass
+		correct_response = outcome.response_code != 400 and outcome.response_code != 401
 
-	# def test_authentication_passwordIsIncorrect(self):
-	# 	pass
+		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
 
-	# def test_authentication_emailAndPasswordAreIncorrect(self):
-	# 	pass
+	def test_authentication_emailAndPasswordAreEmpty(self):
+		"""A user cannot sign in with an empty email and an empty password"""
+		test_user = User("John Doe", "", "")
+		api = ApiFacade(test_user)
+		outcome = api.authenticate_user()
+
+		error_messages = []
+		error_messages.append({"Failure on Test data": str(test_user)})
+		error_messages.append(outcome.error_messages)
+		error_messages_for_display = "\n\nTEST FAILED - Received HTTP: {0}: {1}".format(outcome.response_code, error_messages)
+
+		correct_response = outcome.response_code != 400 and outcome.response_code != 401
+
+		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
+
+	def test_authentication_emailIsIncorrect(self):
+		"""A user cannot sign in with an incorrect email"""
+		test_user = User("John Doe", "incorrect@test.com", "12345678")
+		api = ApiFacade(test_user)
+		outcome = api.authenticate_user()
+
+		error_messages = []
+		error_messages.append({"Failure on Test data": str(test_user)})
+		error_messages.append(outcome.error_messages)
+		error_messages_for_display = "\n\nTEST FAILED - Received HTTP: {0}: {1}".format(outcome.response_code, error_messages)
+
+		correct_response = outcome.response_code != 400 and outcome.response_code != 401
+
+		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
+
+	def test_authentication_passwordIsIncorrect(self):
+		"""A user cannot sign in with an incorrect password"""
+		test_user = User("John Doe", "incorrect@test.com", "1234568")
+		api = ApiFacade(test_user)
+		outcome = api.authenticate_user()
+
+		error_messages = []
+		error_messages.append({"Failure on Test data": str(test_user)})
+		error_messages.append(outcome.error_messages)
+		error_messages_for_display = "\n\nTEST FAILED - Received HTTP: {0}: {1}".format(outcome.response_code, error_messages)
+
+		correct_response = outcome.response_code != 400 and outcome.response_code != 401
+
+		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
+
+	def test_authentication_emailAndPasswordAreIncorrect(self):
+		"""A user cannot sign in with an incorrect email and an incorrect password"""
+		test_user = User("John Doe", "incorrect@test.com", "bla")
+		api = ApiFacade(test_user)
+		outcome = api.authenticate_user()
+
+		error_messages = []
+		error_messages.append({"Failure on Test data": str(test_user)})
+		error_messages.append(outcome.error_messages)
+		error_messages_for_display = "\n\nTEST FAILED - Received HTTP: {0}: {1}".format(outcome.response_code, error_messages)
+
+		correct_response = outcome.response_code != 400 and outcome.response_code != 401
+
+		self.assertEqual(outcome.is_success or correct_response, False, msg = error_messages_for_display)
 
 if __name__ == "__main__":
 	unittest.main()

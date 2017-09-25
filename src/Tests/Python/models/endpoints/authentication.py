@@ -48,7 +48,10 @@ class Authentication():
 				is_success = False
 		else:
 			is_success = False
-			response_body = self.response.json()
+			try:
+				response_body = self.response.json()
+			except:
+				response_body = {}
 
 			if self.response.status_code == 401:
 				error_messages.append({"Message": "Unauthorized"})

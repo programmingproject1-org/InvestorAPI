@@ -1,0 +1,52 @@
+[
+	{
+		"displayName": "<script>alert('x')</script>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<p>I am a paragraph</p>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<span class='bla'>hello</span>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<script></script>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<nav><ul>bla</ul></nav>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<a href='http://goo.it'>x</a>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<script>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "</html>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<body>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "<script>var x = 2;</script>",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	}
+]

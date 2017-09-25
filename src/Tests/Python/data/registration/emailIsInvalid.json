@@ -1,0 +1,67 @@
+[
+	{
+		"displayName": "John Doe",
+		"email": "test@test",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@..com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "te st@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "aaaaaaaaaa@testaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@.",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "te@st@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@test.c om",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "   @test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": ",;:=+@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@test..com...",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "test@test. ",
+		"password": "12345678"
+	}
+]

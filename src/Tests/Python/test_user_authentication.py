@@ -9,7 +9,7 @@ from models.api_facade import ApiFacade
 from models.user_investor import User
 from models.response_summary import ResponseSummary
 
-class AuthenticationTestCase(unittest.TestCase):
+class UserAuthenticationTestCase(unittest.TestCase):
 	def setUp(self):
 		self.clean_up = True
 		self.created_user = User("John Doe", "johndoe@test.com", "12345678")

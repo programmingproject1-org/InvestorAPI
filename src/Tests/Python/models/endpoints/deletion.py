@@ -10,6 +10,8 @@ class Deletion():
 	def __init__(self, url, user, token):
 		self.url = url
 		self.user = user
+		if token is None:
+			token = ""
 		self.token = token
 		self.header = {"Content-Type": "application/json", "Authorization": "Bearer " + token}
 		self.fetch()
@@ -24,7 +26,11 @@ class Deletion():
 			is_success = True
 		else:
 			is_success = False
-			response_body = self.response.json()
+			
+			try:
+				response_body = self.response.json()
+			except:
+				response_body = {}
 
 			if self.response.status_code == 401:
 				error_messages.append({"Message": "Unauthorized"})

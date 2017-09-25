@@ -18,16 +18,22 @@ namespace InvestorApi.Controllers
     public class SharesController : Controller
     {
         private IShareDetailsProvider _shareDetailsProvider;
+        private ISharePriceProvider _sharePriceProvider;
         private IShareQuoteProvider _shareQuoteProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
         /// </summary>
         /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareDetailsProvider"/>.</param>
+        /// <param name="sharePriceProvider">Injected instance of <see cref="ISharePriceProvider"/>.</param>
         /// <param name="shareQuoteProvider">Injected instance of <see cref="IShareQuoteProvider"/>.</param>
-        public SharesController(IShareDetailsProvider shareDetailsProvider, IShareQuoteProvider shareQuoteProvider)
+        public SharesController(
+            IShareDetailsProvider shareDetailsProvider,
+            ISharePriceProvider sharePriceProvider,
+            IShareQuoteProvider shareQuoteProvider)
         {
             _shareDetailsProvider = shareDetailsProvider;
+            _sharePriceProvider = sharePriceProvider;
             _shareQuoteProvider = shareQuoteProvider;
         }
 
@@ -56,30 +62,36 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
-        /// Get current quote for a share.
+        /// Get historical prices for a share.
         /// </summary>
         /// <remarks>
-        /// The API operation enables investors to retrieve the current quote for the share with the supplied symbol.
+        /// The API operation enables investors to retrieve historical prices for the share with the supplied symbol.
         /// The caller must provide a valid access token.
         /// </remarks>
-        /// <param name="symbol">The symbol of the share to return.</param>
+        /// <param name="symbol">The symbol of the share to return prices for.</param>
+        /// <param name="startTime">The start time of the period.</param>
+        /// <param name="endTime">The end time of the period.</param>
+        /// <param name="intervalMinutes">The price interval (in minutes).</param>
         /// <returns>The action response.</returns>
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpGet("{symbol}/quote")]
+        [HttpGet("{symbol}/prices")]
         [Authorize]
-        [SwaggerResponse(200, Type = typeof(Quote))]
+        [SwaggerResponse(200, Type = typeof(SharePrice[]))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Share not found.")]
-        public IActionResult GetQuote([FromRoute][MinLength(3)]string symbol)
+        public IActionResult GetPrices(
+            [FromRoute][MinLength(3)]string symbol,
+            [FromQuery][Required]DateTime startTime,
+            [FromQuery][Required]DateTime endTime,
+            [FromQuery][Required]int intervalMinutes)
         {
-            var quote = _shareQuoteProvider.GetQuote(symbol);
+            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, startTime, endTime, intervalMinutes);
 
-            if (quote == null)
+            if (prices == null)
             {
                 return NotFound();
             }
 
-            return Ok(quote);
+            return Ok(prices);
         }
 
         /// <summary>

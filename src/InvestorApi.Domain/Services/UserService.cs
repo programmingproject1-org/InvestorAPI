@@ -1,6 +1,5 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
-using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Exceptions;
 using InvestorApi.Domain.Providers;
@@ -16,6 +15,7 @@ namespace InvestorApi.Domain.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IAccountService _accountService;
+        private readonly IWatchlistService _watchlistService;
         private readonly PasswordHashingProvider _passwordHashingProvider;
 
         /// <summary>
@@ -23,14 +23,17 @@ namespace InvestorApi.Domain.Services
         /// </summary>
         /// <param name="userRepository">The user repository.</param>
         /// <param name="accountService">The account service.</param>
+        /// <param name="watchlistService">The watchlist service.</param>
         /// <param name="passwordHashingProvider">The password hashing provider.</param>
         public UserService(
             IUserRepository userRepository,
             IAccountService accountService,
+            IWatchlistService watchlistService,
             PasswordHashingProvider passwordHashingProvider)
         {
             _userRepository = userRepository;
             _accountService = accountService;
+            _watchlistService = watchlistService;
             _passwordHashingProvider = passwordHashingProvider;
         }
 
@@ -96,7 +99,10 @@ namespace InvestorApi.Domain.Services
             _userRepository.Save(user);
 
             // Create the user's default account.
-            _accountService.CreateAccount(user.Id, null);
+            _accountService.CreateAccount(user.Id, "Default Account");
+
+            // Create the user's default watchlist.
+            _watchlistService.CreateWatchlist(user.Id, "Default Watchlist", new[] { "BHP", "CBA", "TLS", "WOW" });
 
             return user.Id;
         }

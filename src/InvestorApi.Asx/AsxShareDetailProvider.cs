@@ -27,7 +27,7 @@ namespace InvestorApi.Asx
         }
 
         /// <summary>
-        /// Returned detailed information for the share with the provided symbol.
+        /// Returns detailed information for the share with the provided symbol.
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the details for.</param>
         /// <returns>The share details.</returns>
@@ -44,7 +44,7 @@ namespace InvestorApi.Asx
         }
 
         /// <summary>
-        /// Returned detailed information for the shares with the provided symbols.
+        /// Returns detailed information for the shares with the provided symbols.
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the details for.</param>
         /// <returns>The share details.</returns>

@@ -34,6 +34,7 @@ namespace InvestorApi.Repositories
         {
             return _context.Users
                 .Include(user => user.Accounts)
+                .Include(user => user.Watchlists)
                 .Where(user => user.Id == userId)
                 .FirstOrDefault();
         }
@@ -47,6 +48,7 @@ namespace InvestorApi.Repositories
         {
             return _context.Users
                 .Include(user => user.Accounts)
+                .Include(user => user.Watchlists)
                 .Where(user => user.Email.Equals(email, StringComparison.OrdinalIgnoreCase))
                 .FirstOrDefault();
         }

@@ -10,8 +10,8 @@ namespace InvestorApi.Domain.Entities
     {
         private User()
         {
-            // Required for instantiation by repository.
             Accounts = new List<Account>();
+            Watchlists = new List<Watchlist>();
         }
 
         private User(Guid id, string displayName, string email, string hashedPassword, UserLevel level)
@@ -36,6 +36,8 @@ namespace InvestorApi.Domain.Entities
 
         public ICollection<Account> Accounts { get; private set; }
 
+        public ICollection<Watchlist> Watchlists { get; private set; }
+
         public static User Register(string displayName, string email, string password)
         {
             return new User(Guid.NewGuid(), displayName, email, password, UserLevel.Investor);
@@ -49,7 +51,9 @@ namespace InvestorApi.Domain.Entities
         internal UserInfo ToUserInfo()
         {
             var accounts = Accounts.Select(a => a.ToAccountInfo()).ToList();
-            return new UserInfo(Id, Email, DisplayName, Level, accounts);
+            var watchlists = Watchlists.Select(a => a.ToWatchlistInfo()).ToList();
+
+            return new UserInfo(Id, Email, DisplayName, Level, accounts, watchlists);
         }
     }
 }

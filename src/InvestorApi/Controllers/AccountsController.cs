@@ -51,27 +51,6 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
-        /// Create a new trading account.
-        /// </summary>
-        /// <remarks>
-        /// The API operation enables investors to create a new trading account.
-        /// The caller must provide a valid access token.
-        /// </remarks>
-        /// <param name="body">The details of the new trading account.</param>
-        /// <returns>The action response.</returns>
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpPost]
-        [Authorize]
-        [SwaggerResponse(201, Description = "New account successfully created.")]
-        [SwaggerResponse(400, Description = "Request failed validation.")]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        public IActionResult CreateAccount([FromBody]CreateAccount body)
-        {
-            _accountsService.CreateAccount(Request.GetUserId(), body.Name);
-            return StatusCode(201);
-        }
-
-        /// <summary>
         /// Reset an existing trading account.
         /// </summary>
         /// <remarks>
@@ -80,7 +59,6 @@ namespace InvestorApi.Controllers
         /// </remarks>
         /// <param name="accountId">The unique identifier of the trading account to reset.</param>
         /// <returns>The action response.</returns>
-        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPut("{accountId:guid}")]
         [Authorize]
         [SwaggerResponse(201, Description = "Account successfully reset.")]
@@ -90,27 +68,6 @@ namespace InvestorApi.Controllers
         {
             _accountsService.ResetAccount(Request.GetUserId(), accountId);
             return StatusCode(201);
-        }
-
-        /// <summary>
-        /// Delete an existing trading account.
-        /// </summary>
-        /// <remarks>
-        /// The API operation enables investors to delete an existing trading account.
-        /// The caller must provide a valid access token.
-        /// </remarks>
-        /// <param name="accountId">The unique identifier of the trading account to delete.</param>
-        /// <returns>The action response.</returns>
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpDelete("{accountId:guid}")]
-        [Authorize]
-        [SwaggerResponse(204, Description = "Account successfully deleted")]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        [SwaggerResponse(404, Description = "Account not found")]
-        public IActionResult DeleteAccount([FromRoute]Guid accountId)
-        {
-            _accountsService.DeleteAccount(Request.GetUserId(), accountId);
-            return StatusCode(204);
         }
 
         /// <summary>

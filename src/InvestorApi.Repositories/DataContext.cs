@@ -12,6 +12,8 @@ namespace InvestorApi.Repositories
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Watchlist> Watchlists { get; set; }
+
         public DbSet<Account> Accounts { get; set; }
 
         public DbSet<Position> Positions { get; set; }
@@ -24,6 +26,10 @@ namespace InvestorApi.Repositories
         {
             modelBuilder.Entity<User>().HasKey(e => e.Id);
             modelBuilder.Entity<User>().HasMany(e => e.Accounts);
+            modelBuilder.Entity<User>().HasMany(e => e.Watchlists);
+
+            modelBuilder.Entity<Watchlist>().HasKey(e => e.Id);
+            modelBuilder.Entity<Watchlist>().Property(e => e.Symbols).HasColumnType("Character_varying");
 
             modelBuilder.Entity<Account>().HasKey(e => e.Id);
             modelBuilder.Entity<Account>().HasMany(e => e.Positions);

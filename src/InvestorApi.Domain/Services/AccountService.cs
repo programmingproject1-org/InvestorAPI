@@ -95,7 +95,7 @@ namespace InvestorApi.Domain.Services
         {
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
 
-            Account account = Account.CreateNew(userId, name ?? settings.Name, settings.InitialBalance);
+            Account account = Account.CreateNew(userId, name, settings.InitialBalance);
             _accountRepository.Save(account);
             return account.Id;
         }

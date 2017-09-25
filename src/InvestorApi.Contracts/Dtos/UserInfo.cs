@@ -16,13 +16,16 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="displayName">The display name.</param>
         /// <param name="level">The permission level.</param>
         /// <param name="accounts">The user's trading accounts.</param>
-        public UserInfo(Guid id, string email, string displayName, UserLevel level, IReadOnlyCollection<AccountInfo> accounts)
+        /// <param name="watchlists">The user's watchlists.</param>
+        public UserInfo(Guid id, string email, string displayName, UserLevel level,
+            IReadOnlyCollection<AccountInfo> accounts, IReadOnlyCollection<WatchlistInfo> watchlists)
         {
             Id = id;
             Email = email;
             DisplayName = displayName;
             Level = level;
             Accounts = accounts;
+            Watchlists = watchlists;
         }
 
         /// <summary>
@@ -49,5 +52,10 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the user's trading accounts.
         /// </summary>
         public IReadOnlyCollection<AccountInfo> Accounts { get; private set; }
+
+        /// <summary>
+        /// Gets the user's watchlists.
+        /// </summary>
+        public IReadOnlyCollection<WatchlistInfo> Watchlists { get; private set; }
     }
 }

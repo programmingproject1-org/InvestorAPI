@@ -12,15 +12,15 @@ namespace InvestorApi.Yahoo
     /// API Documentation:
     /// http://wern-ancheta.com/blog/2015/04/05/getting-started-with-the-yahoo-finance-api/
     /// </summary>
-    internal class YahooQuoteProvider : IShareQuoteProvider
+    internal class YahooShareQuoteProvider : IShareQuoteProvider
     {
         private static readonly HttpClient _client = new HttpClient();
 
         /// <summary>
-        /// Returned the current quote for the share with the provided symbol.
+        /// Returns the current quote for the share with the provided symbol.
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the quote for.</param>
-        /// <returns>The crrent quote for the share.</returns>
+        /// <returns>The current quote for the share.</returns>
         public Quote GetQuote(string symbol)
         {
             var quotes = GetQuotes(new[] { symbol });
@@ -33,10 +33,10 @@ namespace InvestorApi.Yahoo
         }
 
         /// <summary>
-        /// Returned the current quote for the shares with the provided symbols.
+        /// Returns the current quote for the shares with the provided symbols.
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the quotes for.</param>
-        /// <returns>The crrent quotes for the shares.</returns>
+        /// <returns>The crurent quotes for the shares.</returns>
         public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
         {
             // Download the data as CSV.

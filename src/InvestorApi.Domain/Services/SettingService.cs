@@ -45,7 +45,6 @@ namespace InvestorApi.Domain.Services
                     // No settings found - Create the application default settings.
                     _defaultAccountSettings = new DefaultAccountSettings
                     {
-                        Name = "Default Account",
                         InitialBalance = 1000000
                     };
 

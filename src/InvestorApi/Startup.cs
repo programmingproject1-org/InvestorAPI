@@ -109,16 +109,6 @@ namespace InvestorApi
             RepositoriesModule.ConfigureServices(services);
             AsxModule.ConfigureServices(services);
             YahooModule.ConfigureServices(services);
-
-            // Create the database context. In the development environment, we just use an in-memory database.
-            if (Environment.IsDevelopment())
-            {
-                RepositoriesModule.ConfigureInMemoryDbContext(services);
-            }
-            else
-            {
-                RepositoriesModule.ConfigurePostgresDbContext(services);
-            }
         }
 
         /// <summary>

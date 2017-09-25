@@ -11,6 +11,7 @@ namespace InvestorApi.Domain
         {
             // Register the domain services in the dependency injection container.
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWatchlistService, WatchlistService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<IMarketInformationService, MarketInformationService>();

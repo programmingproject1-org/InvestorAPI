@@ -11,18 +11,14 @@ namespace InvestorApi.Repositories
         {
             // Register the repositories in the dependency injection container.
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWatchlistRepository, WatchlistRepository>();
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<ISettingRepository, SettingRepository>();
+
+            ConfigurePostgresDbContext(services);
         }
 
-        public static void ConfigureInMemoryDbContext(IServiceCollection services)
-        {
-            // For testing and debugging, we use an in-mempry database. That way we don't have to
-            // configure database connection information in development environments.
-            services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Test Database"));
-        }
-
-        public static void ConfigurePostgresDbContext(IServiceCollection services)
+        private static void ConfigurePostgresDbContext(IServiceCollection services)
         {
             // Heroku injects the database connection URL as an environment variable.
             string url = Environment.GetEnvironmentVariable("DATABASE_URL");

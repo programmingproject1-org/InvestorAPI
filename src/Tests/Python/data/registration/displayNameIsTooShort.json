@@ -1,0 +1,52 @@
+[
+	{
+		"displayName": "x",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "x x",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "x  x",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "1276",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "...",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "天气天气",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "   ",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "8 8 ",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "yèço",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "koko",
+		"email": "johndoe@test.com",
+		"password": "12345678"
+	}
+]

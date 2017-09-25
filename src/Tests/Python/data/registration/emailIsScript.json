@@ -1,0 +1,52 @@
+[
+	{
+		"displayName": "John Doe",
+		"email": "<script>alert('')</script>@g.co",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "<p>johndoe</p>@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "john@<p>.com</p>",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "</span>@<div>.com.au",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "<div class='bla'>@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "</script>@test.<script>",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "<script>alert('bla')</script>",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "</html>bla@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "aaa<html>aaa@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "12<div>765@test.com",
+		"password": "12345678"
+	}
+]

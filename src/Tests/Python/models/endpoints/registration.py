@@ -36,8 +36,6 @@ class Registration():
 				for validationError in response_body["validationErrors"]:
 					error_messages.append({"Message": validationError})
 
-			error_messages.append({"Failure on Test data": str(self.user)})
-
 		self.response_summary = ResponseSummary(is_success, error_messages, self.response.status_code)
 
 		return self.response_summary

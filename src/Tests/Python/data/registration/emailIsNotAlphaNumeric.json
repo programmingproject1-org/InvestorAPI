@@ -1,0 +1,52 @@
+[
+	{
+		"displayName": "John Doe",
+		"email": ",$^@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "john!doe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "john..,;.@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "johndoe@te$t.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "jojo!&@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "!ç§yiuj@(à!.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "john#doe@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "t3st0_-'@test.com",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "§è!@è!§.!è§",
+		"password": "12345678"
+	},
+	{
+		"displayName": "John Doe",
+		"email": "§§§§@§§§.§§§",
+		"password": "12345678"
+	}
+]

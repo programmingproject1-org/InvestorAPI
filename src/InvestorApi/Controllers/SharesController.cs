@@ -71,7 +71,8 @@ namespace InvestorApi.Controllers
         /// <param name="symbol">The symbol of the share to return prices for.</param>
         /// <param name="startTime">The start time of the period.</param>
         /// <param name="endTime">The end time of the period.</param>
-        /// <param name="intervalMinutes">The price interval (in minutes).</param>
+        /// <param name="interval">The price interval. Possible values are: 1m, 1h</param>
+        /// <param name="range">The date range. Possible values are: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max</param>
         /// <returns>The action response.</returns>
         [HttpGet("{symbol}/prices")]
         [Authorize]
@@ -80,11 +81,12 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Share not found.")]
         public IActionResult GetPrices(
             [FromRoute][MinLength(3)]string symbol,
-            [FromQuery][Required]DateTime startTime,
-            [FromQuery][Required]DateTime endTime,
-            [FromQuery][Required]int intervalMinutes)
+            [FromQuery]DateTime? startTime,
+            [FromQuery]DateTime? endTime,
+            [FromQuery]string interval,
+            [FromQuery]string range)
         {
-            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, startTime, endTime, intervalMinutes);
+            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, startTime, endTime, interval, range);
 
             if (prices == null)
             {

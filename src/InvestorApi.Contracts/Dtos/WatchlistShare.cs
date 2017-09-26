@@ -11,11 +11,15 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="symbol">The share symbol.</param>
         /// <param name="name">The name of the share.</param>
         /// <param name="lastPrice">The last paid market price.</param>
-        public WatchlistShare(string symbol, string name, decimal lastPrice)
+        /// <param name="change">The day's change.</param>
+        /// <param name="changePercent">The day's change in percent.</param>
+        public WatchlistShare(string symbol, string name, decimal lastPrice, decimal change, decimal changePercent)
         {
             Symbol = symbol;
             Name = name;
             LastPrice = lastPrice;
+            Change = change;
+            ChangePercent = changePercent;
         }
 
         /// <summary>
@@ -32,5 +36,15 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the last paid market price.
         /// </summary>
         public decimal LastPrice { get; private set; }
+
+        /// <summary>
+        /// Gets the day's change.
+        /// </summary>
+        public decimal Change { get; private set; }
+
+        /// <summary>
+        /// Gets the day's change in percent.
+        /// </summary>
+        public decimal ChangePercent { get; private set; }
     }
 }

@@ -51,7 +51,7 @@ namespace InvestorApi.Domain.Services
                     Detail = shareDetails[symbol],
                     Quote = quotes[symbol],
                 })
-                .Select(i => new WatchlistShare(i.Symbol, i.Detail.Name, i.Quote.Last))
+                .Select(i => new WatchlistShare(i.Symbol, i.Detail.Name, i.Quote.Last, i.Quote.Change, i.Quote.ChangePercent))
                 .ToList();
 
             return new WatchlistDetails(watchlist.Id, watchlist.Name, shares);

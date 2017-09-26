@@ -41,7 +41,7 @@ namespace InvestorApi.Yahoo
         {
             // Download the data as CSV.
             var symbolQuery = string.Join(",", symbols.Select(s => s + ".AX"));
-            var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3gh";
+            var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3ghc1p2";
             var csv = _client.GetStringAsync(address).Result;
 
             // Parse the data.
@@ -67,8 +67,10 @@ namespace InvestorApi.Yahoo
                 var lastSize = int.Parse(values[6]);
                 var dayLow = decimal.Parse(values[7]);
                 var dayHigh = decimal.Parse(values[8]);
+                var change = decimal.Parse(values[9]);
+                var changePercent = decimal.Parse(values[10].Substring(1, values[10].Length - 3));
 
-                return new Quote(symbol, ask, askSize, bid, bidSize, last, lastSize, dayLow, dayHigh);
+                return new Quote(symbol, ask, askSize, bid, bidSize, last, lastSize, change, changePercent, dayLow, dayHigh);
             }
             catch (FormatException)
             {

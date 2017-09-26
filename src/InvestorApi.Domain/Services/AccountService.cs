@@ -58,11 +58,11 @@ namespace InvestorApi.Domain.Services
             List<PositionInfo> positions = account.Positions
                 .Select(p => new
                 {
-                    Position = p,
-                    Detail = shareDetails[p.Symbol],
-                    Quote = quotes[p.Symbol],
+                    P = p,
+                    D = shareDetails[p.Symbol],
+                    Q = quotes[p.Symbol],
                 })
-                .Select(i => new PositionInfo(i.Detail.Symbol, i.Detail.Name, i.Position.Quantity, i.Position.AveragePrice, i.Quote.Last))
+                .Select(i => new PositionInfo(i.D.Symbol, i.D.Name, i.P.Quantity, i.P.AveragePrice, i.Q.Last, i.Q.Change, i.Q.ChangePercent))
                 .ToList();
 
             return new AccountDetails(account.Id, account.Name, account.Balance, positions);

@@ -10,7 +10,7 @@ from models.user_investor import User
 from models.response_summary import ResponseSummary
 
 @ddt
-class RegistrationTestCase(unittest.TestCase):
+class UserRegistrationTestCase(unittest.TestCase):
 	def setUp(self):
 		self.clean_up = True
 

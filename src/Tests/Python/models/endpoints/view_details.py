@@ -6,7 +6,7 @@ import json
 from . import request_config
 from models.response_summary import ResponseSummary
 
-class Deletion():
+class ViewDetails():
 	def __init__(self, url, user, token):
 		self.url = url
 		self.user = user
@@ -17,13 +17,27 @@ class Deletion():
 		self.fetch()
 
 	def fetch(self):
-		self.response = requests.delete(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
+		self.response = requests.get(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
 		error_messages = []
 
-		if self.response.status_code == 204:
+		if self.response.status_code == 200:
 			is_success = True
+			try:
+				response_body = self.response.json()
+				if len(response_body["accounts"]) != 1:
+					error_messages.append({"Message": "User does not have exactly 1 account"})
+				if response_body["displayName"] != self.user.displayName:
+					error_messages.append({"Message": "displayName does not match"})
+				if response_body["email"] != self.user.email:
+					error_messages.append({"Message": "email does not match"})
+				if response_body["level"] != self.user.level:
+					error_messages.append({"Message": "level does not match"})
+				if len(error_messages) > 0:
+					is_success = False
+			except:
+				response_body = {}
 		else:
 			is_success = False
 			

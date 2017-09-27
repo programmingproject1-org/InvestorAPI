@@ -31,7 +31,7 @@ namespace InvestorApi.Filters
 
             if (!context.ModelState.IsValid)
             {
-                context.Result = new BadRequestObjectResult(context.ModelState);
+                context.Result = new BadRequestObjectResult(new { Message = context.ModelState.First().Value.Errors.First().ErrorMessage });
             }
         }
 

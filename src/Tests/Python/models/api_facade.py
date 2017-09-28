@@ -4,6 +4,7 @@
 from .endpoints.registration import Registration
 from .endpoints.authentication import Authentication
 from .endpoints.deletion import Deletion
+from .endpoints.view_details import ViewDetails
 
 API_URL = "https://investor-api.herokuapp.com/api/1.0"
 REGISTER_URL = API_URL + "/users"
@@ -27,7 +28,7 @@ class ApiFacade:
 		deletion = Deletion(DELETION_URL, token)
 		return deletion.get_outcome()
 
-	# def view_details(self, expected_status, user):
-	# 	view_details = ViewDetails(VIEW_DETAILS_URL, user, self.token)
-	# 	return view_details.get_outcome()
+	def view_details(self, token):
+		view_details = ViewDetails(VIEW_DETAILS_URL, token)
+		return view_details.get_outcome()
 

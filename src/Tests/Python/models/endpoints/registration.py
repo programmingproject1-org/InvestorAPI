@@ -5,38 +5,31 @@ import requests
 import json
 from . import request_config
 
-from models.response_summary import ResponseSummary
-
 class Registration():
-	def __init__(self, url, user):
+	def __init__(self, url, displayName, email, password):
 		self.url = url
-		self.user = user
+		self.displayName = displayName
+		self.email = email
+		self.password = password
 		self.header = {"Content-Type": "application/json", "charset": "UTF-8"}
 		self.init_payload()
 		self.fetch()
 
 	def init_payload(self):
-		self.payload = {"displayName": self.user.displayName, "email": self.user.email, "password": self.user.password}
+		self.payload = {"displayName": self.displayName, "email": self.email, "password": self.password}
 
 	def fetch(self):
-		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False).encode('utf8'), headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
+		self.response = requests.post(self.url, data = json.dumps(self.payload, ensure_ascii=False)
+			.encode('utf8'), headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
-		error_messages = []
+		message = None
 
-		if self.response.status_code == 201:
-			is_success = True
-		else:
-			is_success = False
-			response_body = self.response.json()
+		if self.response.text:
+			try:
+				response_body = self.response.json()
+				message = response_body["message"]
+			except ValueError:
+				pass
 
-			if "message" in response_body:
-				error_messages.append({"Message": response_body["message"]})
-
-			if "validationErrors" in response_body:
-				for validationError in response_body["validationErrors"]:
-					error_messages.append({"Message": validationError})
-
-		self.response_summary = ResponseSummary(is_success, error_messages, self.response.status_code)
-
-		return self.response_summary
+		return (self.response.status_code, message)

@@ -39,6 +39,11 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(401, Description = "Authentication failure.")]
         public IActionResult Login([FromBody]Login body)
         {
+            if (string.IsNullOrEmpty(body.Password) || body.Password.Length < 8)
+            {
+                return StatusCode(401);
+            }
+
             UserInfo user = _userService.Login(body.Email, body.Password);
 
             if (user == null)

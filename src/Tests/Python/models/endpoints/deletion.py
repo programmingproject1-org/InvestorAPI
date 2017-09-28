@@ -4,37 +4,20 @@
 import requests
 import json
 from . import request_config
-from models.response_summary import ResponseSummary
 
 class Deletion():
-	def __init__(self, url, user, token):
+	def __init__(self, url, token):
 		self.url = url
-		self.user = user
+		self.init_header(token)
+		self.fetch()
+
+	def init_header(self, token):
 		if token is None:
 			token = ""
-		self.token = token
 		self.header = {"Content-Type": "application/json", "Authorization": "Bearer " + token}
-		self.fetch()
 
 	def fetch(self):
 		self.response = requests.delete(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
-		error_messages = []
-
-		if self.response.status_code == 204:
-			is_success = True
-		else:
-			is_success = False
-			
-			try:
-				response_body = self.response.json()
-			except:
-				response_body = {}
-
-			if self.response.status_code == 401:
-				error_messages.append({"Message": "Unauthorized"})
-
-		self.response_summary = ResponseSummary(is_success, error_messages, self.response.status_code)
-
-		return self.response_summary
+		return self.response.status_code

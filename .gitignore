@@ -341,3 +341,5 @@ applicationhost.config
 /Sample/Database/Microservice1/Microservice1.jfm
 /.vs/
 src/.vs/
+*.pyc
+*.pyc

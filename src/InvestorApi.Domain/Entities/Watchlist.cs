@@ -40,7 +40,12 @@ namespace InvestorApi.Domain.Entities
 
         public void AddShare(string symbol)
         {
-            var symbols = Symbols.ToList();
+            if (Symbols.Any(s => s == symbol))
+            {
+                return;
+            }
+
+            var symbols = Symbols.ToList() ?? new List<string>();
             symbols.Add(symbol);
             Symbols = symbols.ToArray();
         }

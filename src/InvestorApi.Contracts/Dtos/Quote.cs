@@ -19,8 +19,8 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="changePercent">The day's change in percent.</param>
         /// <param name="dayLow">The day's low.</param>
         /// <param name="dayHigh">The day's high.</param>
-        public Quote(string symbol, decimal ask, int askSize, decimal bid, int bidSize,
-            decimal last, int lastSize, decimal change, decimal changePercent, decimal dayLow, decimal dayHigh)
+        public Quote(string symbol, decimal ask, long askSize, decimal bid, long bidSize,
+            decimal last, long lastSize, decimal change, decimal changePercent, decimal dayLow, decimal dayHigh)
         {
             Symbol = symbol;
             Ask = ask;
@@ -48,7 +48,7 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Gets the current ask size.
         /// </summary>
-        public int AskSize { get; private set; }
+        public long AskSize { get; private set; }
 
         /// <summary>
         /// Gets the current bid price.
@@ -58,7 +58,7 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Gets the current bid size.
         /// </summary>
-        public int BidSize { get; private set; }
+        public long BidSize { get; private set; }
 
         /// <summary>
         /// Gets the last paid market price.
@@ -68,7 +68,7 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Gets the last traded size.
         /// </summary>
-        public int LastSize { get; private set; }
+        public long LastSize { get; private set; }
 
         /// <summary>
         /// Gets the day's change.

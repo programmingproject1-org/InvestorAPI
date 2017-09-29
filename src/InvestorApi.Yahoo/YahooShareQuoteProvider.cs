@@ -40,7 +40,7 @@ namespace InvestorApi.Yahoo
         public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
         {
             // Download the data as CSV.
-            var symbolQuery = string.Join(",", symbols.Select(s => s + ".AX"));
+            var symbolQuery = string.Join(",", symbols.Distinct().Select(s => s + ".AX"));
             var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3ghc1p2";
             var csv = _client.GetStringAsync(address).Result;
 
@@ -60,11 +60,11 @@ namespace InvestorApi.Yahoo
 
                 var symbol = values[0].Substring(1, values[0].Length - 2).Split('.').First();
                 var ask = decimal.Parse(values[1]);
-                var askSize = int.Parse(values[2]);
+                var askSize = long.Parse(values[2]);
                 var bid = decimal.Parse(values[3]);
-                var bidSize = int.Parse(values[4]);
+                var bidSize = long.Parse(values[4]);
                 var last = decimal.Parse(values[5]);
-                var lastSize = int.Parse(values[6]);
+                var lastSize = long.Parse(values[6]);
                 var dayLow = decimal.Parse(values[7]);
                 var dayHigh = decimal.Parse(values[8]);
                 var change = decimal.Parse(values[9]);

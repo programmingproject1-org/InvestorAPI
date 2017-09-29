@@ -56,6 +56,7 @@ namespace InvestorApi.Domain.Services
                 .GetQuotes(account.Positions.Select(position => position.Symbol));
 
             List<PositionInfo> positions = account.Positions
+                .Where(p => shareDetails.ContainsKey(p.Symbol) && quotes.ContainsKey(p.Symbol))
                 .Select(p => new
                 {
                     P = p,

@@ -45,6 +45,7 @@ namespace InvestorApi.Domain.Services
                 .GetQuotes(watchlist.Symbols);
 
             List<WatchlistShare> shares = watchlist.Symbols
+                .Where(symbol => shareDetails.ContainsKey(symbol) && quotes.ContainsKey(symbol))
                 .Select(symbol => new
                 {
                     Symbol = symbol,

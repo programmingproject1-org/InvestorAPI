@@ -53,6 +53,7 @@ namespace InvestorApi.Asx
             Load();
 
             return symbols
+                .Distinct()
                 .Select(symbol => GetShareDetails(symbol))
                 .ToDictionary(share => share.Symbol);
         }

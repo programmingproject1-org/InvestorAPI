@@ -20,12 +20,4 @@ class ViewDetails():
 		self.response = requests.get(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
-		json_details = None
-
-		if self.response.text:
-			try:
-				json_details = self.response.json()
-			except ValueError:
-				pass
-
-		return (self.response.status_code, json_details)
+		return self.response

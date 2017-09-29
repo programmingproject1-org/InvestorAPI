@@ -6,6 +6,7 @@ from pprint import pprint
 from third_party.ddt.ddt import ddt, data, file_data, unpack
 
 from models.api_facade import ApiFacade
+from models.response_validator import ResponseValidator
 
 TEST_USER = {
 			"displayName": "John Doe", 
@@ -94,21 +95,49 @@ class UserViewDetailsTestCase(unittest.TestCase):
 
 	def test_viewDetails_success(self):
 		"""An authenticated user can view their user account details"""
-		expected_status = 200
+		expected_response_code = 200
+		input_data = ("John Doe", "johndoe@test.com", "12345678")
+		account_model = {
+			"id": {"key_only": True, "is_collection": False},
+			"name": {"key_only": False, "is_collection": False, "value": "Default Account"},
+			"balance": {"key_only": False, "is_collection": False, "value": 1000000}
+		}
+
+		watchlist_model = {
+			"id": {"key_only": True, "is_collection": False},
+			"name": {"key_only": False, "is_collection": False, "value": "Default Watchlist"}
+		}
+
+		model = {
+				"id": {"key_only": True, "is_collection": False},
+				"email": {"key_only": False, "is_collection": False, "value": TEST_USER["email"]},
+				"displayName": {"key_only": False, "is_collection": False, "value": TEST_USER["displayName"]},
+				"level": {"key_only": False, "is_collection": False, "value": TEST_USER["level"]},
+				"accounts": {"key_only": False, "is_collection": True, "model": account_model},
+				"watchlists": {"key_only": False, "is_collection": True, "model": watchlist_model}
+		}
 		api = ApiFacade()
-		response_code, json_details = api.view_details(TOKEN)
-		self.assertEqual(response_code, expected_status, msg = "Expected [HTTP {0}]; Got [HTTP - {1}]".format(expected_status, response_code))
-		
-		is_success, errors = self.validate_details(json_details, TEST_USER)
-		self.assertEqual(is_success, True, msg = "Failed: {0}; Got: [HTTP {1}]; Expected: [HTTP {2}]"
-			.format(errors, response_code, expected_status))
+		response = api.view_details(TOKEN)
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+
+		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
 
 	def test_deletion_userIsNotAuthenticated(self):
 		"""An unauthenticated user cannot delete their user account"""
-		expected_status = 401
+		expected_response_code = 401
+		input_data = ("John Doe", "johndoe@test.com", "12345678")
+		model = None
 		api = ApiFacade()
-		response_code, json_details = api.view_details(None)
-		self.assertEqual(response_code, expected_status, msg = "Expected [HTTP {0}]; Got [HTTP - {1}]".format(expected_status, response_code))
+		response = api.view_details(token = None)
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+
+		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
 
 if __name__ == "__main__":
 	unittest.main()

@@ -23,13 +23,4 @@ class Registration():
 			.encode('utf8'), headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
-		message = None
-
-		if self.response.text:
-			try:
-				response_body = self.response.json()
-				message = response_body["message"]
-			except ValueError:
-				pass
-
-		return (self.response.status_code, message)
+		return self.response

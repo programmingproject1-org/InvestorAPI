@@ -1,0 +1,52 @@
+[
+  {
+    "companyName": "ISHARES S&P MID-CAP ETF",
+    "symbol": "IJH",
+    "industry": "Not Applic"
+  },
+  {
+    "companyName": "MOQ LIMITED",
+    "symbol": "MOQ",
+    "industry": "Software & Services"
+  },
+  {
+    "companyName": "1-PAGE LIMITED",
+    "symbol": "1PG",
+    "industry": "Software & Services"
+  },
+  {
+    "companyName": "1300 SMILES LIMITED",
+    "symbol": "ONT",
+    "industry": "Health Care Equipment & Services"
+  },
+  {
+    "companyName": "1ST GROUP LIMITED",
+    "symbol": "1ST",
+    "industry": "Health Care Equipment & Services"
+  },
+  {
+    "companyName": "333D LIMITED",
+    "symbol": "T3D",
+    "industry": "Technology Hardware & Equipment"
+  },
+  {
+    "companyName": "360 CAPITAL GROUP",
+    "symbol": "TGP",
+    "industry": "Real Estate"
+  },
+  {
+    "companyName": "360 CAPITAL TOTAL RETURN FUND",
+    "symbol": "TOT",
+    "industry": "Not Applic"
+  },
+  {
+    "companyName": "3D OIL LIMITED",
+    "symbol": "TDO",
+    "industry": "Energy"
+  },
+  {
+    "companyName": "3D RESOURCES LIMITED",
+    "symbol": "DDD",
+    "industry": "Materials"
+  }
+]

@@ -49,8 +49,8 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def tearDown(self):
 		pass
 
-	@file_data("data/current_quotes/sample_success.json")
-	def test_get_single_quote_success(self, companyName, symbol, industry):
+	@file_data("data/current_quotes/singe_symbol_success.json")
+	def test_get_single_quote_success(self, symbol):
 		global TOKEN
 		api = ApiFacade()
 		response = api.get_current_quotes(symbol, TOKEN)
@@ -79,6 +79,38 @@ class CurrentQuotesTestCase(unittest.TestCase):
 		correct_body = validator.response_body_success()
 		self.assertEqual(correct_status, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
 		self.assertEqual(correct_body, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
+
+	@file_data("data/current_quotes/multiple_symbols_success.json")
+	def test_get_multiple_quotes_success(self, symbols):
+		global TOKEN
+		api = ApiFacade()
+		response = api.get_current_quotes(symbols, TOKEN)
+		expected_response_code = 200
+		symbols_list = symbols.split(',')
+		model = {
+			"key_only": False,
+			"is_collection": True,
+			"accept_empty": False,
+			"model": {
+				"symbol": {"key_only": False, "is_collection": False, "value": symbols_list},
+				"ask": {"key_only": True, "is_collection": False},
+				"askSize": {"key_only": True, "is_collection": False},
+				"bid": {"key_only": True, "is_collection": False},
+				"bidSize": {"key_only": True, "is_collection": False},
+				"last": {"key_only": True, "is_collection": False},
+				"lastSize": {"key_only": True, "is_collection": False},
+				"change": {"key_only": True, "is_collection": False},
+				"changePercent": {"key_only": True, "is_collection": False},
+				"dayLow": {"key_only": True, "is_collection": False},
+				"dayHigh": {"key_only": True, "is_collection": False}
+			}
+		}
+
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+		self.assertEqual(correct_status, True, msg = "On Symbol [{0}] - {1}".format(symbols, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On Symbol [{0}] - {1}".format(symbols, validator.get_errors()))
 
 if __name__ == "__main__":
 	unittest.main()

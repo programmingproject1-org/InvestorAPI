@@ -16,16 +16,19 @@ class UserRegistrationTestCase(unittest.TestCase):
 		pass
 
 	def clean_up(self, email, password, api, response_code):
+		""" Clean up to run after each test to delete test user if created """
 		if response_code != 201: return
 		auth_status_code, token = api.authenticate_user(email, password)
 		if token is not None and api.delete_user(token) != 204:
 			print("Could not delete test user [{0}, {1}]".format(email, password))
 
 	def validate_response(self, response_code, response_message, expected_response_code, expected_messages = None):
+		""" Check that response matches expectation """
 		is_pass = ((response_code == expected_response_code) and (expected_messages is None or response_message in expected_messages))
 		return is_pass
 
 	def stringify_result(self, displayName, email, password, server_response_code, server_message, expected_status, expected_messages):
+		""" Return a string summing up the test run """
 		if expected_messages is None:
 			expected_messages = ['None']
 
@@ -35,6 +38,7 @@ class UserRegistrationTestCase(unittest.TestCase):
 		return result
 
 	def run_test(self, displayName, email, password, expected_messages, expected_status):
+		""" Driver to be used by each test """
 		api = ApiFacade()
 		response_code, response_message = api.register_user(displayName, email, password)
 		outcome = self.validate_response(response_code, response_message, expected_status, expected_messages)

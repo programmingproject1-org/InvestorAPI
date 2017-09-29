@@ -31,23 +31,6 @@ TOKEN = None
 
 @ddt
 class CurrentQuotesTestCase(unittest.TestCase):
-
-	def validate_response(self, json_data):
-		if json_data is None: return (False, ["Response was none"])
-		errors = []
-		keys = ["symbol", "ask", "askSize", "bid", "bidSize", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
-		for key in keys:
-			if key not in json_data[0]:
-				errors.append("Missing key: {0}".format(key))
-				print(key)
-
-		if len(errors) == 0:
-			is_success = True
-		else:
-			is_success = False
-
-		return (is_success, errors)
-
 	@classmethod
 	def setUpClass(cls):
 		global TOKEN
@@ -66,12 +49,12 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def tearDown(self):
 		pass
 
-	@file_data("data/current_quotes/success.json")
+	@file_data("data/current_quotes/sample_success.json")
 	def test_get_single_quote_success(self, companyName, symbol, industry):
 		global TOKEN
 		api = ApiFacade()
 		response = api.get_current_quotes(symbol, TOKEN)
-
+		expected_response_code = 200
 		model = {
 			"key_only": False,
 			"is_collection": True,
@@ -91,9 +74,11 @@ class CurrentQuotesTestCase(unittest.TestCase):
 			}
 		}
 
-		validator = ResponseValidator(response, 200, model)
-		self.assertEqual(validator.response_code_success(), True, msg = validator.get_errors())
-		self.assertEqual(validator.response_body_success(), True, msg = validator.get_errors())
-		return 
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+		self.assertEqual(correct_status, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
+
 if __name__ == "__main__":
 	unittest.main()

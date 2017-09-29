@@ -37,6 +37,11 @@ class Authentication():
 	# 	return all(validation == True for validation in validations)
 
 	def get_outcome(self):
+
+		return (self.response, self.get_token())
+
+	def get_token(self):
+
 		token = None
 		error = None
 
@@ -44,11 +49,9 @@ class Authentication():
 			try:
 				response_body = self.response.json()
 				token = response_body["accessToken"]
-				# if not self.validate_token(self.token):
-				# 	error = "Token is invalid"
 			except ValueError:
 				pass
 			except KeyError:
 				token = None
 
-		return (self.response.status_code, token)
+		return token

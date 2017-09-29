@@ -206,11 +206,12 @@ class ResponseValidator:
 			for key in acceptable_model:
 				if key not in server_json:
 					self.body_errors.append("Missing key: [{0}]".format(key))
-				elif isinstance(acceptable_model[key]["value"], list):
-					if server_json[key] not in acceptable_model[key]["value"]:
+				if "value" in acceptable_model[key]:
+					if isinstance(acceptable_model[key]["value"], list):
+						if server_json[key] not in acceptable_model[key]["value"]:
+							self.body_errors.append("Expected value: [{0}]; Received value: [{1}] instead".format(acceptable_model[key]["value"], server_json[key]))
+					elif server_json[key] != acceptable_model[key]["value"]:
 						self.body_errors.append("Expected value: [{0}]; Received value: [{1}] instead".format(acceptable_model[key]["value"], server_json[key]))
-				elif server_json[key] != acceptable_model[key]["value"]:
-					self.body_errors.append("Expected value: [{0}]; Received value: [{1}] instead".format(acceptable_model[key]["value"], server_json[key]))
 
 		if len(self.body_errors) != 0:
 			return False

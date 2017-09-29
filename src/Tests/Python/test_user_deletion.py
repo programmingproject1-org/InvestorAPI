@@ -6,6 +6,7 @@ from pprint import pprint
 from third_party.ddt.ddt import ddt, data, file_data, unpack
 
 from models.api_facade import ApiFacade
+from models.response_validator import ResponseValidator
 
 class UserDeletionTestCase(unittest.TestCase):
 
@@ -21,19 +22,35 @@ class UserDeletionTestCase(unittest.TestCase):
 
 	def test_deletion_success(self):
 		"""An authenticated user can delete their user account"""
+		expected_messages = None
+		expected_response_code = 204
+		input_data = ("John Doe", "johndoe@test.com", "12345678")
+		model = None
 		api = ApiFacade()
-		user_params = ("John Doe", "johndoe@test.com", "12345678")
-		response_code = api.register_user(*user_params)
-		response_code, token = api.authenticate_user(*user_params[1:3])
-		response_code = api.delete_user(token)
-		self.assertEqual(response_code, 204, msg = "For data: [{0}]; Got: [HTTP {1}]; Expected: [HTTP {2}]"
-			.format(';'.join(user_params), response_code, 204))
+		response = api.register_user(*input_data)
+		response, token = api.authenticate_user(*input_data[1:3])
+		response = api.delete_user(token)
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+
+		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
 
 	def test_deletion_userIsNotAuthenticated(self):
 		"""An unauthenticated user cannot delete their user account"""
+		expected_messages = None
+		expected_response_code = 401
+		input_data = (None, None, None)
+		model = None
 		api = ApiFacade()
-		response_code = api.delete_user(token = None)
-		self.assertEqual(response_code, 401, msg = "Got: [HTTP {0}]; Expected: [HTTP {1}]".format(response_code, 401))
+		response = api.delete_user(token = None)
+		validator = ResponseValidator(response, expected_response_code, model)
+		correct_status, status = validator.response_code_success()
+		correct_body = validator.response_body_success()
+
+		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
 
 if __name__ == "__main__":
 	unittest.main()

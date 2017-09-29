@@ -20,4 +20,4 @@ class Deletion():
 		self.response = requests.delete(self.url, headers = self.header, verify = request_config.VERIFY_HTTPS_REQUEST)
 
 	def get_outcome(self):
-		return self.response.status_code
+		return self.response

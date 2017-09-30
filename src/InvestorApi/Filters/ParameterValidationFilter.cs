@@ -11,7 +11,7 @@ namespace InvestorApi.Filters
 {
     /// <summary>
     /// The filter automatically aborts a request and returns an HTTP 400 response if the
-    /// URL prameters have any data annotation valiation attributes which fail validation.
+    /// URL parameters have any data annotation validation attributes which fail validation.
     /// </summary>
     internal sealed class ParameterValidationFilter : IActionFilter
     {
@@ -52,7 +52,7 @@ namespace InvestorApi.Filters
             // does not contain the parameter value at all if is wasn't supplied by the caller.
             var argumentstoValidate = parametersWithValidators.Select(p => GetArgumentValue(p.Key, context.ActionArguments));
 
-            // Now check all valication attributes with the parameter value.
+            // Now check all validation attributes with the parameter value.
             foreach (var argument in argumentstoValidate)
             {
                 var validators = parametersWithValidators[argument.Key];

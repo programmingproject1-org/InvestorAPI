@@ -10,7 +10,7 @@ namespace InvestorApi.Contracts
     public interface ISharePriceProvider
     {
         /// <summary>
-        /// Returnes the hstorical prices for a shere within a specified period.
+        /// Returns the historical prices for a share within a specified period.
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the prices for.</param>
         /// <param name="startTime">The start time of the period.</param>

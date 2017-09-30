@@ -56,7 +56,7 @@ namespace InvestorApi.Contracts
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to buy.</param>
-        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce);
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace InvestorApi.Contracts
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to sell.</param>
-        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce);
     }
 }

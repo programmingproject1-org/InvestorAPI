@@ -16,7 +16,7 @@ namespace InvestorApi.Contracts
         Investor = 1,
 
         /// <summary>
-        /// The user has administrative privilegues.
+        /// The user has administrative privileges.
         /// </summary>
         Administrator = 2
     }

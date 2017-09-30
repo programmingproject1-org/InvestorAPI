@@ -133,7 +133,7 @@ namespace InvestorApi.Domain.Services
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to buy.</param>
-        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
@@ -156,7 +156,7 @@ namespace InvestorApi.Domain.Services
         /// <param name="accountId">The unique identifier of the account.</param>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to sell.</param>
-        /// <param name="nonce">The nonce value required to detect suplicate orders.</param>
+        /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);

@@ -6,6 +6,7 @@ from .request_extensions.authentication_request import AuthenticationRequest
 from .request_extensions.deletion_request import DeletionRequest
 from .request_extensions.viewdetails_request import ViewDetailsRequest
 from .request_extensions.currentquotes_request import CurrentQuotesRequest
+from .request_extensions.buyshare_request import BuyShareRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -51,7 +52,11 @@ class ApiFacade:
 		session.close()
 		return response
 
-	# def buy_share(self, symbol, token):
-	# 	buy_share = BuyShare(CURRENT_BUY_SHARE_URL, symbol, token)
-	# 	return buy_share.get_outcome()
+	@staticmethod
+	def buy_share(token, account_id, symbol, quantity):
+		session = Session()
+		request = BuyShareRequest(session, token, account_id, symbol, quantity)
+		response = request.get_response()
+		session.close()
+		return response
 

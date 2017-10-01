@@ -10,7 +10,7 @@ from api_client.api_facade import ApiFacade
 displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
 
 @ddt
-class AddToWatchlistTestCase(unittest.TestCase):
+class RemoveFromWatchlistTestCase(unittest.TestCase):
 	@classmethod
 	def setUpClass(cls):
 		global displayName, email, password
@@ -31,11 +31,11 @@ class AddToWatchlistTestCase(unittest.TestCase):
 		pass
 
 	@file_data("data/current_quotes/single_symbol_success.json")
-	def test_add_to_watchlist_success(self, symbol):
-		"""A user can add a share to their watchlist"""
+	def test_remove_from_watchlist_success(self, symbol):
+		"""A user can remove a share to their watchlist"""
 		global displayName, email, password
 
-		expected_response_code = 201
+		expected_response_code = 204
 		symbol = symbol
 		
 		authentication_response = ApiFacade.authenticate_user(email, password)
@@ -51,13 +51,25 @@ class AddToWatchlistTestCase(unittest.TestCase):
 		# get updated watchlist
 		viewwatchlist_response = ApiFacade.get_watchlist(token, watchlist_id)
 
+		print("ADDED:")
+		pprint(viewwatchlist_response.get_json_body())
+
+		# remove symbol from watchlist
+		removefromwatchlist_response = ApiFacade.remove_from_watchlist(token, watchlist_id, symbol)
+
+		# get updated watchlist
+		viewwatchlist_response = ApiFacade.get_watchlist(token, watchlist_id)
+		
+		print("REMOVED:")
+		pprint(viewwatchlist_response.get_json_body())
+
 		# check request went through
-		self.assertEqual(addtowatchlist_response.get_http_status(), expected_response_code, 
+		self.assertEqual(removefromwatchlist_response.get_http_status(), expected_response_code, 
 			msg = "Expected HTTP{0}; got HTTP{1}"
-			.format(expected_response_code, addtowatchlist_response.get_http_status()))
+			.format(expected_response_code, removefromwatchlist_response.get_http_status()))
 
 		# check watchlist has been updated
-		self.assertIsNotNone(viewwatchlist_response.get_share_by_symbol(symbol), 
+		self.assertIsNone(removefromwatchlist_response.get_share_by_symbol(symbol), 
 			msg = "Expected updated watchlist to contain {0} symbol {1}; got {2} match"
 			.format(1, symbol, str(None)))
 

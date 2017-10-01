@@ -4,9 +4,9 @@
 import json
 from pprint import pprint
 
-class AddToWatchlistResponseWrapper():
+class RemoveFromWatchlistResponseWrapper():
 
-	SUCCESS_STATUS = 201
+	SUCCESS_STATUS = 204
 
 	def __init__(self, response):
 		self.response = response

@@ -31,7 +31,7 @@ class ViewWatchlistResponseWrapper():
 		return self.get_json_body()["shares"]
 
 	def get_share_by_symbol(self, symbol):
-		for quote in self.get_all_shares():
-			if quote["symbol"] == symbol:
-				return quote
+		for share in self.get_all_shares():
+			if share["symbol"] == symbol:
+				return share
 		return None

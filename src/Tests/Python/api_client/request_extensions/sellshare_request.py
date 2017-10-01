@@ -4,6 +4,7 @@
 from requests import Request
 import json
 import time
+from pprint import pprint
 
 from api_client.response_wrappers.sellshare_response_wrapper import SellShareResponseWrapper
 
@@ -17,7 +18,7 @@ class SellShareRequest(Request):
 		self.side = side
 		self.symbol = symbol
 		self.quantity = quantity
-		self.nonce = int(time.time())
+		self.nonce = int(time.time()) + 50
 		self.make_request()
 		self.session = session
 

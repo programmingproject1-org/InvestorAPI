@@ -9,6 +9,7 @@ from .request_extensions.currentquotes_request import CurrentQuotesRequest
 from .request_extensions.buyshare_request import BuyShareRequest
 from .request_extensions.sellshare_request import SellShareRequest
 from .request_extensions.viewwatchlist_request import ViewWatchlistRequest
+from .request_extensions.addtowatchlist_request import AddToWatchlistRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -74,6 +75,14 @@ class ApiFacade:
 	def get_watchlist(token, watchlist_id):
 		session = Session()
 		request = ViewWatchlistRequest(session, token, watchlist_id)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def add_to_watchlist(token, watchlist_id, symbol):
+		session = Session()
+		request = AddToWatchlistRequest(session, token, watchlist_id, symbol)
 		response = request.get_response()
 		session.close()
 		return response

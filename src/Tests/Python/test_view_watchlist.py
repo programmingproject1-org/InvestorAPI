@@ -25,7 +25,7 @@ class ViewWatchlistTestCase(unittest.TestCase):
 
 	def test_get_watchlist_success(self):
 		expected_response_code = 200
-		expected_keys_in_quote = ["symbol", "name", "lastPrice", "change", "changePercent"]
+		expected_keys_in_share = ["symbol", "name", "lastPrice", "change", "changePercent"]
 		
 		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
 		registration_response = ApiFacade.register_user(displayName, email, password)
@@ -45,9 +45,9 @@ class ViewWatchlistTestCase(unittest.TestCase):
 			msg = "Expected HTTP{0}; got HTTP{1}"
 			.format(expected_response_code, viewwatchlist_response.get_http_status()))
 
-		for quote in viewwatchlist_response.get_all_shares():
-			for k in expected_keys_in_quote:
-				self.assertIsNotNone(quote[k], msg = "Expected value for key [{0}]; got [{1}]".format(str(k), str(None)))
+		for share in viewwatchlist_response.get_all_shares():
+			for k in expected_keys_in_share:
+				self.assertIsNotNone(share[k], msg = "Expected value for key [{0}]; got [{1}]".format(str(k), str(None)))
 
 if __name__ == "__main__":
 	unittest.main()

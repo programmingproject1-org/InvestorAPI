@@ -23,6 +23,7 @@ class BuyShareTestCase(unittest.TestCase):
 		pass
 
 	def test_buy_shares_success(self):
+		"""A user can buy shares if balance is sufficient"""
 		expected_response_code = 200
 		symbol_to_buy = "ANZ" 
 		quantity = 100
@@ -38,7 +39,9 @@ class BuyShareTestCase(unittest.TestCase):
 
 		buyshare_response = ApiFacade.buy_share(token, account_id, symbol_to_buy, quantity)
 
-		self.assertEqual(buyshare_response.get_http_status(), 200, msg = "Not 200 OK")
+		self.assertEqual(buyshare_response.get_http_status(), expected_response_code, 
+			msg = "Expected HTTP{0}; got HTTP{1}"
+			.format(expected_response_code, buyshare_response.get_http_status()))
 
 if __name__ == "__main__":
 	unittest.main()

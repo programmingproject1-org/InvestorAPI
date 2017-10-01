@@ -60,6 +60,14 @@ class ViewDetailsResponseWrapper():
 			user_accounts = None
 		return user_accounts
 
+	def get_main_account_id(self):
+		try:
+			body = self.get_json_body()
+			user_account_id = body["accounts"][0]["id"]
+		except:
+			user_account_id = None
+		return user_account_id
+
 	def get_watchlists(self):
 		try:
 			body = self.get_json_body()

@@ -1,29 +1,84 @@
 [
-  {
-    "symbols": "IJH,MOQ"
-  },
-  {
-    "symbols": "MOQ,IJH"
-  },
-  {
-    "symbols": "ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "1ST,ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "T3D,1ST,ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "TGP,T3D,1ST,ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "TOT,TGP,T3D,1ST,ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "TDO,TOT,TGP,T3D,1ST,ONT,IJH,MOQ"
-  },
-  {
-    "symbols": "DDD,TDO,TOT,TGP,T3D,1ST,ONT,IJH,MOQ"
-  }
+   {
+      "symbols":[
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "MOQ",
+         "IJH"
+      ]
+   },
+   {
+      "symbols":[
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "T3D",
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "TGP",
+         "T3D",
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "TOT",
+         "TGP",
+         "T3D",
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "TDO",
+         "TOT",
+         "TGP",
+         "T3D",
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   },
+   {
+      "symbols":[
+         "DDD",
+         "TDO",
+         "TOT",
+         "TGP",
+         "T3D",
+         "1ST",
+         "ONT",
+         "IJH",
+         "MOQ"
+      ]
+   }
 ]

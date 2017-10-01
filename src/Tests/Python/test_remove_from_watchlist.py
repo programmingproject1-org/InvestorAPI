@@ -48,20 +48,11 @@ class RemoveFromWatchlistTestCase(unittest.TestCase):
 		# add symbol to watchlist
 		addtowatchlist_response = ApiFacade.add_to_watchlist(token, watchlist_id, symbol)
 
-		# get updated watchlist
-		viewwatchlist_response = ApiFacade.get_watchlist(token, watchlist_id)
-
-		print("ADDED:")
-		pprint(viewwatchlist_response.get_json_body())
-
 		# remove symbol from watchlist
 		removefromwatchlist_response = ApiFacade.remove_from_watchlist(token, watchlist_id, symbol)
 
 		# get updated watchlist
 		viewwatchlist_response = ApiFacade.get_watchlist(token, watchlist_id)
-		
-		print("REMOVED:")
-		pprint(viewwatchlist_response.get_json_body())
 
 		# check request went through
 		self.assertEqual(removefromwatchlist_response.get_http_status(), expected_response_code, 

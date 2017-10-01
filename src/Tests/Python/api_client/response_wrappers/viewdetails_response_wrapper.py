@@ -75,3 +75,11 @@ class ViewDetailsResponseWrapper():
 		except:
 			user_watchlists = None
 		return user_watchlists
+
+	def get_main_watchlist_id(self):
+		try:
+			body = self.get_json_body()
+			watchlist_id = body["watchlists"][0]["id"]
+		except:
+			watchlist_id = None
+		return watchlist_id

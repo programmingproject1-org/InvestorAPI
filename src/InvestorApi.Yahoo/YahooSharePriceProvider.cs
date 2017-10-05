@@ -54,10 +54,10 @@ namespace InvestorApi.Yahoo
             return Enumerable.Range(0, timestamp.Length)
                 .Select(i => new SharePrice(
                     ReadTimestamp(timestamp[i], offset),
-                    open[i].HasValue ? Math.Round(open[i].Value, 2) : (decimal?)null,
-                    high[i].HasValue ? Math.Round(high[i].Value, 2) : (decimal?)null,
-                    low[i].HasValue ? Math.Round(low[i].Value, 2) : (decimal?)null,
-                    close[i].HasValue ? Math.Round(close[i].Value, 2) : (decimal?)null,
+                    open[i].HasValue ? Math.Round(open[i].Value, 3) : (decimal?)null,
+                    high[i].HasValue ? Math.Round(high[i].Value, 3) : (decimal?)null,
+                    low[i].HasValue ? Math.Round(low[i].Value, 3) : (decimal?)null,
+                    close[i].HasValue ? Math.Round(close[i].Value, 3) : (decimal?)null,
                     volume[i]))
                 .ToList();
         }

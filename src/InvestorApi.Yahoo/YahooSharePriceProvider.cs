@@ -45,19 +45,19 @@ namespace InvestorApi.Yahoo
             JToken result = results["chart"]["result"][0];
             int offset = result["meta"]["gmtoffset"].Value<int>();
             long[] timestamp = result["timestamp"].Values<long>().ToArray();
-            decimal[] low = result["indicators"]["quote"][0]["low"].Values<decimal>().ToArray();
-            decimal[] high = result["indicators"]["quote"][0]["high"].Values<decimal>().ToArray();
-            decimal[] open = result["indicators"]["quote"][0]["open"].Values<decimal>().ToArray();
-            decimal[] close = result["indicators"]["quote"][0]["close"].Values<decimal>().ToArray();
-            long[] volume = result["indicators"]["quote"][0]["volume"].Values<long>().ToArray();
+            decimal?[] low = result["indicators"]["quote"][0]["low"].Values<decimal?>().ToArray();
+            decimal?[] high = result["indicators"]["quote"][0]["high"].Values<decimal?>().ToArray();
+            decimal?[] open = result["indicators"]["quote"][0]["open"].Values<decimal?>().ToArray();
+            decimal?[] close = result["indicators"]["quote"][0]["close"].Values<decimal?>().ToArray();
+            long?[] volume = result["indicators"]["quote"][0]["volume"].Values<long?>().ToArray();
 
             return Enumerable.Range(0, timestamp.Length)
                 .Select(i => new SharePrice(
                     ReadTimestamp(timestamp[i], offset),
-                    Math.Round(open[i], 2),
-                    Math.Round(high[i], 2),
-                    Math.Round(low[i], 2),
-                    Math.Round(close[i], 2),
+                    open[i].HasValue ? Math.Round(open[i].Value, 2) : (decimal?)null,
+                    high[i].HasValue ? Math.Round(high[i].Value, 2) : (decimal?)null,
+                    low[i].HasValue ? Math.Round(low[i].Value, 2) : (decimal?)null,
+                    close[i].HasValue ? Math.Round(close[i].Value, 2) : (decimal?)null,
                     volume[i]))
                 .ToList();
         }

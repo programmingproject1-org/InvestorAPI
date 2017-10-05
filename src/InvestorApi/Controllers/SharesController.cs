@@ -86,8 +86,9 @@ namespace InvestorApi.Controllers
         /// The caller must provide a valid access token.
         /// </remarks>
         /// <param name="symbol">The symbol of the share to return prices for.</param>
-        /// <param name="endTime">The end time of the period.</param>
         /// <param name="range">The date range. Possible values are: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max</param>
+        /// <param name="interval">The interval. Possible values are: 2m, 15m, 1h, 1d, 1wk, 1mo</param>
+        /// <param name="endTime">The end time of the period.</param>
         /// <returns>The action response.</returns>
         [HttpGet("{symbol}/prices")]
         [Authorize]
@@ -96,15 +97,27 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Share not found.")]
         public IActionResult GetPrices(
             [FromRoute][MinLength(3)]string symbol,
-            [FromQuery]DateTime? endTime,
-            [FromQuery]string range)
+            [FromQuery][Required]string range,
+            [FromQuery]string interval,
+            [FromQuery]DateTime? endTime)
         {
-            if (!_intervals.ContainsKey(range))
+            if (string.IsNullOrEmpty(range) || !_intervals.ContainsKey(range))
             {
                 throw new ValidationException("Invalid range specified.");
             }
 
-            var interval = _intervals[range];
+            if (interval != null)
+            {
+                if (_intervals.Values.All(value => value != interval))
+                {
+                    throw new ValidationException("Invalid interval specified.");
+                }
+            }
+            else
+            {
+                interval = _intervals[range];
+            }
+
             var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, endTime ?? DateTime.UtcNow, range, interval);
             if (prices == null)
             {

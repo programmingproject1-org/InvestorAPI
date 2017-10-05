@@ -18,30 +18,30 @@ namespace InvestorApi.Models
         /// Gets the opening price.
         /// </summary>
         [JsonProperty("o")]
-        public decimal Open { get; set; }
+        public decimal? Open { get; set; }
 
         /// <summary>
         /// Gets the highest price in the period.
         /// </summary>
         [JsonProperty("h")]
-        public decimal High { get; set; }
+        public decimal? High { get; set; }
 
         /// <summary>
         /// Gets the lowest price in the period.
         /// </summary>
         [JsonProperty("l")]
-        public decimal Low { get; set; }
+        public decimal? Low { get; set; }
 
         /// <summary>
         /// Gets the closing price.
         /// </summary>
         [JsonProperty("c")]
-        public decimal Close { get; set; }
+        public decimal? Close { get; set; }
 
         /// <summary>
         /// Gets the traded volume.
         /// </summary>
         [JsonProperty("v")]
-        public long Volume { get; set; }
+        public long? Volume { get; set; }
     }
 }

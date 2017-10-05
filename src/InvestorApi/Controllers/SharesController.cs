@@ -1,10 +1,12 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using InvestorApi.Models;
 using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -17,6 +19,21 @@ namespace InvestorApi.Controllers
     [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
     public class SharesController : Controller
     {
+        private static readonly IDictionary<string, string> _intervals = new Dictionary<string, string>()
+        {
+            ["1d"] = "2m",
+            ["5d"] = "15m",
+            ["1mo"] = "1h",
+            ["3mo"] = "1d",
+            ["6mo"] = "1d",
+            ["ytd"] = "1d",
+            ["1y"] = "1wk",
+            ["2y"] = "1wk",
+            ["5y"] = "1mo",
+            ["10y"] = "1mo",
+            ["max"] = "1mo"
+        };
+
         private IShareDetailsProvider _shareDetailsProvider;
         private ISharePriceProvider _sharePriceProvider;
         private IShareQuoteProvider _shareQuoteProvider;
@@ -69,9 +86,7 @@ namespace InvestorApi.Controllers
         /// The caller must provide a valid access token.
         /// </remarks>
         /// <param name="symbol">The symbol of the share to return prices for.</param>
-        /// <param name="startTime">The start time of the period.</param>
         /// <param name="endTime">The end time of the period.</param>
-        /// <param name="interval">The price interval. Possible values are: 1m, 1h</param>
         /// <param name="range">The date range. Possible values are: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max</param>
         /// <returns>The action response.</returns>
         [HttpGet("{symbol}/prices")]
@@ -81,19 +96,37 @@ namespace InvestorApi.Controllers
         [SwaggerResponse(404, Description = "Share not found.")]
         public IActionResult GetPrices(
             [FromRoute][MinLength(3)]string symbol,
-            [FromQuery]DateTime? startTime,
             [FromQuery]DateTime? endTime,
-            [FromQuery]string interval,
             [FromQuery]string range)
         {
-            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, startTime, endTime, interval, range);
+            if (!_intervals.ContainsKey(range))
+            {
+                throw new ValidationException("Invalid range specified.");
+            }
 
+            var interval = _intervals[range];
+            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, endTime ?? DateTime.UtcNow, range, interval);
             if (prices == null)
             {
                 return NotFound();
             }
 
-            return Ok(prices);
+            var response = new PriceResponse
+            {
+                Range = range,
+                Interval = interval,
+                Prices = prices.Select(p => new Price
+                {
+                    Timestamp = p.Timestamp,
+                    Open = p.Open,
+                    High = p.High,
+                    Low = p.Low,
+                    Close = p.Close,
+                    Volume = p.Volume
+                })
+            };
+
+            return Ok(response);
         }
 
         /// <summary>

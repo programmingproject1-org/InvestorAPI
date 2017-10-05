@@ -20,10 +20,12 @@ namespace InvestorApi.Domain.Repositories
         /// Lists the account transactions.
         /// </summary>
         /// <param name="accountId">The account identifier.</param>
+        /// <param name="startDate">The start date of the range to return.</param>
+        /// <param name="endDate">The end date of the range to return.</param>
         /// <param name="pageNumber">The page number.</param>
         /// <param name="pageSize">The size of the page.</param>
         /// <returns>The transactions.</returns>
-        ListResult<Transaction> ListTransactions(Guid accountId, int pageNumber, int pageSize);
+        ListResult<Transaction> ListTransactions(Guid accountId, DateTime? startDate, DateTime? endDate, int pageNumber, int pageSize);
 
         /// <summary>
         /// Saves the specified account.

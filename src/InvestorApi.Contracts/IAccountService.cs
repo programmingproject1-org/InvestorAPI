@@ -22,10 +22,12 @@ namespace InvestorApi.Contracts
         /// </summary>
         /// <param name="userId">The unique identifier of the user to retrieve the trading account for.</param>
         /// <param name="accountId">The unique identifier of the account to return.</param>
+        /// <param name="startDate">The start date of the range to return.</param>
+        /// <param name="endDate">The end date of the range to return.</param>
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The transactions.</returns>
-        ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, int pageNumber, int pageSize);
+        ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, DateTime? startDate, DateTime? endDate, int pageNumber, int pageSize);
 
         /// <summary>
         /// Opens the new trading account.

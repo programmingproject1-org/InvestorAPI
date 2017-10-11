@@ -12,6 +12,8 @@ from .request_extensions.viewwatchlist_request import ViewWatchlistRequest
 from .request_extensions.addtowatchlist_request import AddToWatchlistRequest
 from .request_extensions.removefromwatchlist_request import RemoveFromWatchlistRequest
 from .request_extensions.historicalprices_request import HistoricalPricesRequest
+from .request_extensions.viewportfolio_request import ViewPortfolioRequest
+from .request_extensions.viewtransactions_request import ViewTransactionsRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -98,11 +100,29 @@ class ApiFacade:
 		return response
 
 	@staticmethod
-	def get_historical_prices(token, symbol, start_time = None,
-		end_time = None, interval = None, date_range = None):
+	def get_historical_prices(token, symbol, end_time = None,
+		interval = None, date_range = None):
 		session = Session()
-		request = HistoricalPricesRequest(session, token, symbol, start_time, 
-			end_time, interval, date_range)
+		request = HistoricalPricesRequest(session, token, symbol, end_time, 
+			interval, date_range)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_portfolio(token, account_id):
+		session = Session()
+		request = ViewPortfolioRequest(session, token, account_id)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_transactions(token, account_id, page_number = None, 
+		page_size = None, start_date = None, end_date = None):
+		session = Session()
+		request = ViewTransactionsRequest(session, token, account_id, page_number, 
+			page_size, start_date, end_date)
 		response = request.get_response()
 		session.close()
 		return response

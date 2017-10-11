@@ -3,6 +3,7 @@
 
 from requests import Request
 import json
+from pprint import pprint
 
 from api_client.response_wrappers.historicalprices_response_wrapper import HistoricalPricesResponseWrapper
 
@@ -10,12 +11,11 @@ class HistoricalPricesRequest(Request):
 
 	URL = "https://investor-api.herokuapp.com/api/1.0/shares/SYMBOL/prices"
 
-	def __init__(self, session, token, symbol, start_time = None,
-		end_time = None, interval = None, date_range = None):
+	def __init__(self, session, token, symbol, end_time = None,
+		interval = None, date_range = None):
 
 		self.token = token
 		self.symbol = symbol
-		self.start_time = start_time
 		self.end_time = end_time
 		self.interval = interval
 		self.date_range = date_range
@@ -25,23 +25,22 @@ class HistoricalPricesRequest(Request):
 	def make_request(self):
 		self.URL = self.URL.replace('SYMBOL', str(self.symbol))
 		payload_data = {}
-		if self.start_time is not None:
-			payload_data["start_time"] = self.start_time
 		if self.end_time is not None:
-			payload_data["end_time"] = self.end_time
+			payload_data["endTime"] = self.end_time
 		if self.interval is not None:
 			payload_data["interval"] = self.interval
 		if self.date_range is not None:
-			payload_data["date_range"] = self.date_range
+			payload_data["range"] = self.date_range
 
-		payload = json.dumps(payload_data, ensure_ascii = False).encode('utf8')
+		pprint(self.URL)
+		#pprint(payload_data)
 
 		headers = {
 			"Content-Type": "application/json",
 			"Authorization": "Bearer " + str(self.token)
 		}
-
-		super().__init__('GET', url = self.URL, headers = headers, data = payload)
+		#pprint(headers)
+		super().__init__('GET', url = self.URL, headers = headers, params = payload_data)
 
 	def get_response(self):
 		response = self.session.send(super().prepare())

@@ -43,6 +43,12 @@ namespace InvestorApi.Yahoo
 
             JObject results = JObject.Parse(responseContent);
             JToken result = results["chart"]["result"][0];
+
+            if (result["timestamp"] == null)
+            {
+                return new List<SharePrice>();
+            }
+
             int offset = result["meta"]["gmtoffset"].Value<int>();
             long[] timestamp = result["timestamp"].Values<long>().ToArray();
             decimal?[] low = result["indicators"]["quote"][0]["low"].Values<decimal?>().ToArray();

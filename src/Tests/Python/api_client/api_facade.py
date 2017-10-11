@@ -12,6 +12,7 @@ from .request_extensions.viewwatchlist_request import ViewWatchlistRequest
 from .request_extensions.addtowatchlist_request import AddToWatchlistRequest
 from .request_extensions.removefromwatchlist_request import RemoveFromWatchlistRequest
 from .request_extensions.historicalprices_request import HistoricalPricesRequest
+from .request_extensions.viewportfolio_request import ViewPortfolioRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -103,6 +104,14 @@ class ApiFacade:
 		session = Session()
 		request = HistoricalPricesRequest(session, token, symbol, end_time, 
 			interval, date_range)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_portfolio(token, account_id):
+		session = Session()
+		request = ViewPortfolioRequest(session, token, account_id)
 		response = request.get_response()
 		session.close()
 		return response

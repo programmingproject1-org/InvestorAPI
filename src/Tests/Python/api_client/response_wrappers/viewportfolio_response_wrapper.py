@@ -22,14 +22,14 @@ class ViewPortfolioResponseWrapper():
 		return body
 
 	def get_id(self):
-		return get_json_body()["id"]
+		return self.get_json_body()["id"]
 
 	def get_name(self):
-		return get_json_body()["name"]
+		return self.get_json_body()["name"]
 
 	def get_balance(self):
-		return get_json_body()["balance"]
+		return self.get_json_body()["balance"]
 
 	def get_positions(self):
-		positions = get_json_body()["positions"]
+		positions = self.get_json_body()["positions"]
 		return positions

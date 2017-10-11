@@ -98,11 +98,11 @@ class ApiFacade:
 		return response
 
 	@staticmethod
-	def get_historical_prices(token, symbol, start_time = None,
-		end_time = None, interval = None, date_range = None):
+	def get_historical_prices(token, symbol, end_time = None,
+		interval = None, date_range = None):
 		session = Session()
-		request = HistoricalPricesRequest(session, token, symbol, start_time, 
-			end_time, interval, date_range)
+		request = HistoricalPricesRequest(session, token, symbol, end_time, 
+			interval, date_range)
 		response = request.get_response()
 		session.close()
 		return response

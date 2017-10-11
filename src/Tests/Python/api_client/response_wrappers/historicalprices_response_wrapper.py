@@ -21,4 +21,14 @@ class HistoricalPricesResponseWrapper():
 		return body
 
 	def get_all_data_points(self):
-		return self.get_json_body()
+		if self.get_json_body() is None:
+			return None
+		return self.get_json_body()["prices"]
+
+	def get_message(self):
+		try:
+			body = self.get_json_body()
+			message = body["message"]
+		except:
+			message = None
+		return message

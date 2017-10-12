@@ -15,7 +15,7 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="lastPrice">The last paid market price.</param>
         /// <param name="change">The day's change.</param>
         /// <param name="changePercent">The day's change in percent.</param>
-        public PositionInfo(string symbol, string name, int quantity, decimal averagePrice,
+        public PositionInfo(string symbol, string name, long quantity, decimal averagePrice,
             decimal lastPrice, decimal change, decimal changePercent)
         {
             Symbol = symbol;
@@ -40,7 +40,7 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Gets the number of shares held.
         /// </summary>
-        public int Quantity { get; private set; }
+        public long Quantity { get; private set; }
 
         /// <summary>
         /// Gets the average purchase price.

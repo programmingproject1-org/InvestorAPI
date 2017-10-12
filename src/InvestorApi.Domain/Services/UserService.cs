@@ -108,13 +108,14 @@ namespace InvestorApi.Domain.Services
         }
 
         /// <summary>
-        /// Makes an existing user an administrator.
+        /// Changes the level of an existing user.
         /// </summary>
         /// <param name="userId">The unique identifier of the user to update.</param>
-        public void MakeUserAdministrator(Guid userId)
+        /// <param name="level">The new user level.</param>
+        public void SetLevel(Guid userId, UserLevel level)
         {
             User user = GetUser(userId);
-            user.MakeAdministrator();
+            user.SetLevel(level);
             _userRepository.Save(user);
         }
 

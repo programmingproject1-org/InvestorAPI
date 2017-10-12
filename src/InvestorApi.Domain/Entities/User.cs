@@ -43,9 +43,9 @@ namespace InvestorApi.Domain.Entities
             return new User(Guid.NewGuid(), displayName, email, password, UserLevel.Investor);
         }
 
-        public void MakeAdministrator()
+        public void SetLevel(UserLevel level)
         {
-            Level = UserLevel.Administrator;
+            Level = level;
         }
 
         internal UserInfo ToUserInfo()

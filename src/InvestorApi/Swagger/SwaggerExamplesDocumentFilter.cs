@@ -77,6 +77,9 @@ namespace InvestorApi.Swagger
                         case "quantity":
                             property.Value.Example = 100;
                             break;
+                        case "level":
+                            property.Value.Example = "Administrator";
+                            break;
                     }
 
                     if (property.Value.Ref != null)

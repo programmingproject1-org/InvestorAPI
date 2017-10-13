@@ -1,6 +1,5 @@
 using InvestorApi.Contracts.Dtos;
 using System;
-using System.Collections.Generic;
 
 namespace InvestorApi.Contracts
 {

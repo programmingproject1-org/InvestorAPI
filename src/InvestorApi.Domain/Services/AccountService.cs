@@ -48,7 +48,16 @@ namespace InvestorApi.Domain.Services
         public AccountDetails GetAccountDetails(Guid userId, Guid accountId)
         {
             Account account = GetAccount(userId, accountId);
+            return GetAccountDetails(account);
+        }
 
+        /// <summary>
+        /// Gets detailed information about a specific trading accounts.
+        /// </summary>
+        /// <param name="account">The trading account to return the details for.</param>
+        /// <returns>The trading account details.</returns>
+        public AccountDetails GetAccountDetails(Account account)
+        {
             IReadOnlyDictionary<string, ShareDetails> shareDetails = _shareDetailsProvider
                 .GetShareDetails(account.Positions.Select(position => position.Symbol));
 

@@ -1,6 +1,7 @@
 using InvestorApi.Contracts;
 using InvestorApi.Domain.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace InvestorApi.Domain.Repositories
 {
@@ -22,6 +23,12 @@ namespace InvestorApi.Domain.Repositories
         /// <param name="email">The email address.</param>
         /// <returns>The matching user.</returns>
         User GetByEmail(string email);
+
+        /// <summary>
+        /// Lists all users.
+        /// </summary>
+        /// <returns>The users.</returns>
+        IReadOnlyCollection<User> ListAllUsersWithAccounts();
 
         /// <summary>
         /// Lists all users.

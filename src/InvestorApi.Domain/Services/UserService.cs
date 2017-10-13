@@ -108,14 +108,21 @@ namespace InvestorApi.Domain.Services
         }
 
         /// <summary>
-        /// Changes the level of an existing user.
+        /// Updates an existing user.
         /// </summary>
         /// <param name="userId">The unique identifier of the user to update.</param>
+        /// <param name="displayName">The display name.</param>
+        /// <param name="email">The email address.</param>
         /// <param name="level">The new user level.</param>
-        public void SetLevel(Guid userId, UserLevel level)
+        public void EditUser(Guid userId, string displayName, string email, UserLevel? level)
         {
             User user = GetUser(userId);
-            user.SetLevel(level);
+
+            user.EditUser(
+                displayName ?? user.DisplayName,
+                email ?? user.Email,
+                level ?? user.Level);
+
             _userRepository.Save(user);
         }
 

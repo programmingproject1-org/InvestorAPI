@@ -65,6 +65,9 @@ namespace InvestorApi.Swagger
                         case "side":
                             property.Value.Example = "Buy";
                             break;
+                        case "displayName":
+                            property.Value.Example = "John Doe";
+                            break;
                         case "email":
                             property.Value.Example = "user@host.com";
                             break;

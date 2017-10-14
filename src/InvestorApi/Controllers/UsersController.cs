@@ -56,7 +56,7 @@ namespace InvestorApi.Controllers
         /// </summary>
         /// <remarks>
         /// The API operation enables users to register as new user.
-        /// The operation does not require an access token. Note that the email address must be unqiue.
+        /// The operation does not require an access token. Note that the email address must be unique.
         /// </remarks>
         /// <param name="body">The details of the new user.</param>
         /// <returns>The action response.</returns>

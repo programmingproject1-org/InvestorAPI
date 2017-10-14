@@ -72,7 +72,7 @@ namespace InvestorApi.Domain.Entities
 
             if (totalAmount > Balance)
             {
-                throw new InvalidTradeException($"The total amount of the transction exceeds the current account balance by ${(totalAmount - Balance):N2}.");
+                throw new InvalidTradeException($"The total amount of the transaction exceeds the current account balance by ${(totalAmount - Balance):N2}.");
             }
 
             // Find an existing position to update. If none exist, create a new one.

@@ -22,7 +22,7 @@ namespace InvestorApi.Yahoo
         private static readonly HttpClient _client = new HttpClient();
 
         /// <summary>
-        /// Returnes the hstorical prices for a shere within a specified period.
+        /// Returns the historical prices for a share within a specified period.
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the prices for.</param>
         /// <param name="endTime">The end time of the period.</param>

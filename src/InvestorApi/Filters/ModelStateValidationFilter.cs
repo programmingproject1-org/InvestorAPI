@@ -7,7 +7,7 @@ namespace InvestorApi.Filters
 {
     /// <summary>
     /// The filter automatically aborts a request and returns an HTTP 400 response if the
-    /// request body has any data annotation valiation attributes which fail validation.
+    /// request body has any data annotation validation attributes which fail validation.
     /// </summary>
     internal sealed class ModelStateValidationFilter : IActionFilter
     {

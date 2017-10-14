@@ -19,7 +19,7 @@ namespace InvestorApi.Domain.Providers
         /// Computes the hash of the supplied secret.
         /// </summary>
         /// <param name="secret">The plain text secret.</param>
-        /// <returns>The hased secret.</returns>
+        /// <returns>The hashed secret.</returns>
         public string ComputeHash(string secret)
         {
             // Calculate a salt to prevent rainbow table attacks.

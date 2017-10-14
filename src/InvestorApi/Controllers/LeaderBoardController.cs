@@ -45,7 +45,7 @@ namespace InvestorApi.Controllers
             [FromQuery][Range(1, 1000)]int? pageNumber,
             [FromQuery][Range(1, 100)]int? pageSize)
         {
-            var users = _leaderBoardService.GetUsers(pageNumber ?? 1, pageSize ?? 100);
+            var users = _leaderBoardService.GetUsers(Request.GetUserId(), pageNumber ?? 1, pageSize ?? 100);
             return Ok(users);
         }
 

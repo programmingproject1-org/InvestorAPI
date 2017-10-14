@@ -10,29 +10,24 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Initializes a new instance of the <see cref="LeaderBoardUser"/> class.
         /// </summary>
-        /// <param name="userId">The unique identifier of the user.</param>
         /// <param name="displayName">The display name.</param>
         /// <param name="totalAccountValue">The total account value.</param>
         /// <param name="profit">The total profit.</param>
         /// <param name="profitPercent">The total profit in percent.</param>
-        public LeaderBoardUser(Guid userId, string displayName, decimal totalAccountValue, decimal profit, decimal profitPercent)
+        /// <param name="isCurrentUser">A value indicating whether the user is the current user.</param>
+        public LeaderBoardUser(string displayName, decimal totalAccountValue, decimal profit, decimal profitPercent, bool isCurrentUser)
         {
-            UserId = userId;
             DisplayName = displayName;
             TotalAccountValue = totalAccountValue;
             Profit = profit;
             ProfitPercent = profitPercent;
+            IsCurrentUser = isCurrentUser;
         }
 
         /// <summary>
         /// Gets or sets the current rank.
         /// </summary>
         public int Rank { get; set; }
-
-        /// <summary>
-        /// Gets the unique identifier of the user.
-        /// </summary>
-        public Guid UserId { get; private set; }
 
         /// <summary>
         /// Gets the display name.
@@ -53,5 +48,10 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the total profit in percent.
         /// </summary>
         public decimal ProfitPercent { get; private set; }
+
+        /// <summary>
+        /// Gets a value indicating whether the user is the current user.
+        /// </summary>
+        public bool IsCurrentUser { get; set; }
     }
 }

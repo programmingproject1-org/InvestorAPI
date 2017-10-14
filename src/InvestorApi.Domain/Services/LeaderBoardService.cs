@@ -36,12 +36,13 @@ namespace InvestorApi.Domain.Services
         /// <summary>
         /// Gets the leader board users.
         /// </summary>
+        /// <param name="currentUserId">The unique identifier of the current user.</param>
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The leader board users.</returns>
-        public ListResult<LeaderBoardUser> GetUsers(int pageNumber, int pageSize)
+        public ListResult<LeaderBoardUser> GetUsers(Guid currentUserId, int pageNumber, int pageSize)
         {
-            var allUsers = GetUsers();
+            var allUsers = GetUsers(currentUserId);
             var users = allUsers
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
@@ -53,16 +54,16 @@ namespace InvestorApi.Domain.Services
         /// <summary>
         /// Gets the leader board users around and including the supplied user.
         /// </summary>
-        /// <param name="userId">The unique identifier of the user to get the leader board for.</param>
+        /// <param name="currentUserId">The unique identifier of the user to get the leader board for.</param>
         /// <param name="neighborCount">The number of neighbors to include</param>
         /// <returns>The leader board users.</returns>
-        public IReadOnlyCollection<LeaderBoardUser> GetUsers(Guid userId, int neighborCount)
+        public IReadOnlyCollection<LeaderBoardUser> GetUsers(Guid currentUserId, int neighborCount)
         {
-            var allUsers = GetUsers();
+            var allUsers = GetUsers(currentUserId);
 
             for (int i = 0; i < allUsers.Count; i++)
             {
-                if (allUsers[i].UserId == userId)
+                if (allUsers[i].IsCurrentUser)
                 {
                     return allUsers
                         .Where(user => user.Rank >= i + 1 - neighborCount)
@@ -77,10 +78,9 @@ namespace InvestorApi.Domain.Services
         /// <summary>
         /// Gets the leader board users.
         /// </summary>
-        /// <param name="pageNumber">Gets the page number to return.</param>
-        /// <param name="pageSize">Gets the page size to apply.</param>
+        /// <param name="currentUserId">The unique identifier of the current user.</param>
         /// <returns>The leader board users.</returns>
-        private IList<LeaderBoardUser> GetUsers()
+        private IList<LeaderBoardUser> GetUsers(Guid currentUserId)
         {
             // Get the starting balance assigned to accounts to calculate the profits.
             // Note, if we later decide to change the balance, we need to extend this logic
@@ -94,7 +94,7 @@ namespace InvestorApi.Domain.Services
             var leaderBoardUsers = users
                 .AsParallel()
                 .WithDegreeOfParallelism(5)
-                .Select(user => GetLeaderBoardUser(user, initialBalance))
+                .Select(user => GetLeaderBoardUser(currentUserId, user, initialBalance))
                 .OrderByDescending(user => user.ProfitPercent)
                 .ToList();
 
@@ -109,10 +109,11 @@ namespace InvestorApi.Domain.Services
         /// <summary>
         /// Gets the leader board user from the supplied user.
         /// </summary>
+        /// <param name="currentUserId">The unique identifier of the current user.</param>
         /// <param name="user">The user to calculate the leader board user from.</param>
         /// <param name="initialBalance">The initial account balance.</param>
         /// <returns>The leader board user.</returns>
-        private LeaderBoardUser GetLeaderBoardUser(User user, decimal initialBalance)
+        private LeaderBoardUser GetLeaderBoardUser(Guid currentUserId, User user, decimal initialBalance)
         {
             // Caculate the total value of all accounts and get the highest one.
             decimal totalAccountValue = user.Accounts
@@ -125,7 +126,7 @@ namespace InvestorApi.Domain.Services
             decimal profitPercent = profit / initialBalance * 100m;
 
             // Create the leader board user.
-            return new LeaderBoardUser(user.Id, user.DisplayName, totalAccountValue, profit, profitPercent);
+            return new LeaderBoardUser(user.DisplayName, totalAccountValue, profit, profitPercent, user.Id == currentUserId);
         }
     }
 }

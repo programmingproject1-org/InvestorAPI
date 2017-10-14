@@ -86,11 +86,11 @@ namespace InvestorApi.Domain.Services
                     {
                         Fixed = new List<CommissionRange>
                         {
-                            new CommissionRange { Min = 0, Max = 1000000, Value = 50 }
+                            new CommissionRange { Min = 0, Max = 100000000, Value = 50 }
                         },
                         Percentage = new List<CommissionRange>
                         {
-                            new CommissionRange { Min = 0, Max = 1000000, Value = 1 }
+                            new CommissionRange { Min = 0, Max = 100000000, Value = 1 }
                         }
                     };
 
@@ -132,11 +132,11 @@ namespace InvestorApi.Domain.Services
                     {
                         Fixed = new List<CommissionRange>
                         {
-                            new CommissionRange { Min = 0, Max = 1000000, Value = 50 }
+                            new CommissionRange { Min = 0, Max = 100000000, Value = 50 }
                         },
                         Percentage = new List<CommissionRange>
                         {
-                            new CommissionRange { Min = 0, Max = 1000000, Value = 0.25m }
+                            new CommissionRange { Min = 0, Max = 100000000, Value = 0.25m }
                         }
                     };
 

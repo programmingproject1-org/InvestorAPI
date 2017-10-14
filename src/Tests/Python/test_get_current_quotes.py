@@ -5,8 +5,7 @@ import unittest
 from pprint import pprint
 from third_party.ddt.ddt import ddt, data, file_data, unpack
 
-from models.api_facade import ApiFacade
-from models.response_validator import ResponseValidator
+from api_client.api_facade import ApiFacade
 
 
 TEST_USER = {
@@ -33,15 +32,11 @@ TOKEN = None
 class CurrentQuotesTestCase(unittest.TestCase):
 	@classmethod
 	def setUpClass(cls):
-		global TOKEN
-		cls.api = ApiFacade()
-		response_code = cls.api.register_user(TEST_USER["displayName"], TEST_USER["email"], TEST_USER["password"])
-		response_code, TOKEN = cls.api.authenticate_user(TEST_USER["email"], TEST_USER["password"])
+		pass
 
 	@classmethod
 	def tearDownClass(cls):
-		global TOKEN
-		cls.api.delete_user(TOKEN)
+		pass
 
 	def setUp(self):
 		pass
@@ -49,68 +44,49 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def tearDown(self):
 		pass
 
-	@file_data("data/current_quotes/singe_symbol_success.json")
+	@file_data("data/current_quotes/single_symbol_success.json")
 	def test_get_single_quote_success(self, symbol):
-		global TOKEN
-		api = ApiFacade()
-		response = api.get_current_quotes(symbol, TOKEN)
 		expected_response_code = 200
-		model = {
-			"key_only": False,
-			"is_collection": True,
-			"accept_empty": False,
-			"model": {
-				"symbol": {"key_only": True, "is_collection": False},
-				"ask": {"key_only": True, "is_collection": False},
-				"askSize": {"key_only": True, "is_collection": False},
-				"bid": {"key_only": True, "is_collection": False},
-				"bidSize": {"key_only": True, "is_collection": False},
-				"last": {"key_only": True, "is_collection": False},
-				"lastSize": {"key_only": True, "is_collection": False},
-				"change": {"key_only": True, "is_collection": False},
-				"changePercent": {"key_only": True, "is_collection": False},
-				"dayLow": {"key_only": True, "is_collection": False},
-				"dayHigh": {"key_only": True, "is_collection": False}
-			}
-		}
+		no_of_quotes = 1
+		expected_keys_in_quote = ["symbol", "ask", "askSize", "bid", "bidSize", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
+		
+		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
+		registration_response = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		currentquotes_response = ApiFacade.get_current_quotes(authentication_response.get_token(), symbol)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
-		self.assertEqual(correct_status, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On Symbol [{0}] - {1}".format(symbol, validator.get_errors()))
+		self.assertEqual(currentquotes_response.get_http_status(), expected_response_code, 
+			msg = "Expected HTTP{0}; got HTTP{1}".format(expected_response_code, currentquotes_response.get_http_status()))
+
+		self.assertEqual(len(currentquotes_response.get_all_quotes()), no_of_quotes, 
+			msg = "Expected {0} quotes; got {1} quotes".format(no_of_quotes, len(currentquotes_response.get_all_quotes())))
+
+		for quote in currentquotes_response.get_all_quotes():
+			for k in expected_keys_in_quote:
+				self.assertIsNotNone(quote[k], msg = "Expected value for key [{0}]; got [{1}]".format(k, None))
 
 	@file_data("data/current_quotes/multiple_symbols_success.json")
 	def test_get_multiple_quotes_success(self, symbols):
-		global TOKEN
-		api = ApiFacade()
-		response = api.get_current_quotes(symbols, TOKEN)
 		expected_response_code = 200
-		symbols_list = symbols.split(',')
-		model = {
-			"key_only": False,
-			"is_collection": True,
-			"accept_empty": False,
-			"model": {
-				"symbol": {"key_only": False, "is_collection": False, "value": symbols_list},
-				"ask": {"key_only": True, "is_collection": False},
-				"askSize": {"key_only": True, "is_collection": False},
-				"bid": {"key_only": True, "is_collection": False},
-				"bidSize": {"key_only": True, "is_collection": False},
-				"last": {"key_only": True, "is_collection": False},
-				"lastSize": {"key_only": True, "is_collection": False},
-				"change": {"key_only": True, "is_collection": False},
-				"changePercent": {"key_only": True, "is_collection": False},
-				"dayLow": {"key_only": True, "is_collection": False},
-				"dayHigh": {"key_only": True, "is_collection": False}
-			}
-		}
+		no_of_quotes = len(symbols)
+		expected_keys_in_quote = ["symbol", "ask", "askSize", "bid", "bidSize", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
+		
+		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
+		registration_response = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		currentquotes_response = ApiFacade.get_current_quotes(authentication_response.get_token(), symbols)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
-		self.assertEqual(correct_status, True, msg = "On Symbol [{0}] - {1}".format(symbols, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On Symbol [{0}] - {1}".format(symbols, validator.get_errors()))
+		self.assertEqual(currentquotes_response.get_http_status(), expected_response_code, 
+			msg = "Expected HTTP{0}; got HTTP{1}".format(expected_response_code, currentquotes_response.get_http_status()))
+
+		self.assertEqual(len(currentquotes_response.get_all_quotes()), no_of_quotes, 
+			msg = "Expected {0} quotes; got {1} quotes".format(no_of_quotes, len(currentquotes_response.get_all_quotes())))
+
+		for quote in currentquotes_response.get_all_quotes():
+			for k in expected_keys_in_quote:
+				self.assertIsNotNone(quote[k], msg = "Expected value for key [{0}]; got [{1}]".format(k, None))
 
 if __name__ == "__main__":
 	unittest.main()

@@ -48,7 +48,16 @@ namespace InvestorApi.Domain.Services
         public AccountDetails GetAccountDetails(Guid userId, Guid accountId)
         {
             Account account = GetAccount(userId, accountId);
+            return GetAccountDetails(account);
+        }
 
+        /// <summary>
+        /// Gets detailed information about a specific trading accounts.
+        /// </summary>
+        /// <param name="account">The trading account to return the details for.</param>
+        /// <returns>The trading account details.</returns>
+        public AccountDetails GetAccountDetails(Account account)
+        {
             IReadOnlyDictionary<string, ShareDetails> shareDetails = _shareDetailsProvider
                 .GetShareDetails(account.Positions.Select(position => position.Symbol));
 
@@ -74,15 +83,17 @@ namespace InvestorApi.Domain.Services
         /// </summary>
         /// <param name="userId">The unique identifier of the user to retrieve the trading account for.</param>
         /// <param name="accountId">The unique identifier of the account to return.</param>
+        /// <param name="startDate">The start date of the range to return.</param>
+        /// <param name="endDate">The end date of the range to return.</param>
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The transactions.</returns>
-        public ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, int pageNumber, int pageSize)
+        public ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, DateTime? startDate, DateTime? endDate, int pageNumber, int pageSize)
         {
             // Verify that account exists and belongs to the user.
             GetAccount(userId, accountId);
 
-            var result = _accountRepository.ListTransactions(accountId, pageNumber, pageSize);
+            var result = _accountRepository.ListTransactions(accountId, startDate, endDate, pageNumber, pageSize);
             return result.Convert(transaction => transaction.ToTransactionInfo());
         }
 
@@ -134,7 +145,7 @@ namespace InvestorApi.Domain.Services
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to buy.</param>
         /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
-        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
+        public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, long quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
@@ -157,7 +168,7 @@ namespace InvestorApi.Domain.Services
         /// <param name="symbol">The share symbol.</param>
         /// <param name="quantity">The quantity to sell.</param>
         /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
-        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, int quantity, long nonce)
+        public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, long quantity, long nonce)
         {
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)

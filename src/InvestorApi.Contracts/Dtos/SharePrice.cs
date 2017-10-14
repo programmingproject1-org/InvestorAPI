@@ -15,41 +15,45 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="high">The highest price in the period.</param>
         /// <param name="low">The lowest price in the period.</param>
         /// <param name="close">The closing price.</param>
-        public SharePrice(DateTime timestamp, decimal open, decimal high, decimal low, decimal close)
+        /// <param name="volume">The traded volume.</param>
+        public SharePrice(DateTimeOffset timestamp, decimal? open, decimal? high, decimal? low, decimal? close, long? volume)
         {
             Timestamp = timestamp;
             Open = open;
             High = high;
             Low = low;
             Close = close;
+            Volume = volume;
         }
 
         /// <summary>
         /// Gets the timestamp.
         /// </summary>
-        public DateTime Timestamp { get; private set; }
+        public DateTimeOffset Timestamp { get; private set; }
 
         /// <summary>
         /// Gets the opening price.
         /// </summary>
-        public decimal Open { get; private set; }
+        public decimal? Open { get; private set; }
 
         /// <summary>
         /// Gets the highest price in the period.
         /// </summary>
-        public decimal High { get; private set; }
+        public decimal? High { get; private set; }
 
         /// <summary>
         /// Gets the lowest price in the period.
         /// </summary>
-        /// <value>
-        /// The low.
-        /// </value>
-        public decimal Low { get; private set; }
+        public decimal? Low { get; private set; }
 
         /// <summary>
         /// Gets the closing price.
         /// </summary>
-        public decimal Close { get; private set; }
+        public decimal? Close { get; private set; }
+
+        /// <summary>
+        /// Gets the traded volume.
+        /// </summary>
+        public long? Volume { get; private set; }
     }
 }

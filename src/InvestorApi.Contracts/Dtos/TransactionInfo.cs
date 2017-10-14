@@ -17,7 +17,16 @@ namespace InvestorApi.Contracts
         /// <param name="balance">The account balance after the transaction.</param>
         public TransactionInfo(DateTime timestampUtc, TransactionType type, string description, decimal amount, decimal balance)
         {
-            TimestampUtc = timestampUtc;
+            TimestampUtc = new DateTime(
+                timestampUtc.Year,
+                timestampUtc.Month,
+                timestampUtc.Day,
+                timestampUtc.Hour,
+                timestampUtc.Minute,
+                timestampUtc.Second,
+                0,
+                DateTimeKind.Utc);
+
             Type = type;
             Description = description;
             Amount = amount;

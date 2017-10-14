@@ -25,8 +25,8 @@ namespace InvestorApi.Models
         /// Gets or sets the quantity.
         /// </summary>
         [Required]
-        [Range(1, 1000000)]
-        public int Quantity { get; set; }
+        [Range(1, 100000000)]
+        public long Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets a unique number used to detect duplicate messages.

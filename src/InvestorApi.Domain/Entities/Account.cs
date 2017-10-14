@@ -57,7 +57,7 @@ namespace InvestorApi.Domain.Entities
             Balance = initialBalance;
         }
 
-        public void BuyShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
+        public void BuyShares(string symbol, long quantity, decimal price, Commissions commissions, long nonce)
         {
             // Check the nonce value. This will though an exception if invalid.
             CheckNonce(nonce);
@@ -89,7 +89,7 @@ namespace InvestorApi.Domain.Entities
 
             // Create the transaction records and update the balances.
             Balance = Balance - amount;
-            Transactions.Add(Transaction.Create(this, TransactionType.Buy, $"Purchased {quantity} shares of {symbol} for ${price:N2} each", -amount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Buy, $"Purchased {quantity} shares of {symbol} for ${price:N3} each", -amount, Balance));
 
             Balance = Balance - percentageCommissionAmount;
             Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommission:N2}%", -percentageCommissionAmount, Balance));
@@ -98,7 +98,7 @@ namespace InvestorApi.Domain.Entities
             Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission", -fixedCommissionAmount, Balance));
         }
 
-        public void SellShares(string symbol, int quantity, decimal price, Commissions commissions, long nonce)
+        public void SellShares(string symbol, long quantity, decimal price, Commissions commissions, long nonce)
         {
             // Check the nonce value. This will though an exception if invalid.
             CheckNonce(nonce);
@@ -132,7 +132,7 @@ namespace InvestorApi.Domain.Entities
 
             // Create the transaction records and update the balances.
             Balance = Balance + amount;
-            Transactions.Add(Transaction.Create(this, TransactionType.Sell, $"Sold {quantity} shares of {symbol} for ${price:N2} each", amount, Balance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Sell, $"Sold {quantity} shares of {symbol} for ${price:N3} each", amount, Balance));
 
             Balance = Balance - percentageCommissionAmount;
             Transactions.Add(Transaction.Create(this, TransactionType.Commission, $"Commission {percentageCommission:N2}%", -percentageCommissionAmount, Balance));

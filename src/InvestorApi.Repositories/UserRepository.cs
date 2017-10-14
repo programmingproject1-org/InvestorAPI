@@ -4,6 +4,7 @@ using InvestorApi.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
@@ -54,6 +55,17 @@ namespace InvestorApi.Repositories
         }
 
         /// <summary>
+        /// Lists all users with their accounts.
+        /// </summary>
+        /// <returns>The users.</returns>
+        public IReadOnlyCollection<User> ListAllUsersWithAccounts()
+        {
+            return _context.Users
+                .Include(user => user.Accounts)
+                .ToList();
+        }
+
+        /// <summary>
         /// Lists all users.
         /// </summary>
         /// <param name="pageNumber">The page number.</param>
@@ -66,9 +78,9 @@ namespace InvestorApi.Repositories
 
             // Now we load the users for the requested page.
             var items = _context.Users
+                .OrderBy(user => user.DisplayName)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderBy(user => user.DisplayName)
                 .ToList();
 
             return new ListResult<User>(items, pageNumber, pageSize, count);

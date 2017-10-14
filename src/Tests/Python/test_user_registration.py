@@ -5,8 +5,7 @@ import unittest
 from pprint import pprint
 from third_party.ddt.ddt import ddt, data, file_data, unpack
 
-from models.api_facade import ApiFacade
-from models.response_validator import ResponseValidator
+from api_client.api_facade import ApiFacade
 
 @ddt
 class UserRegistrationTestCase(unittest.TestCase):
@@ -18,98 +17,87 @@ class UserRegistrationTestCase(unittest.TestCase):
 
 	def clean_up(self, email, password, api, response_code):
 		""" Clean up to run after each test to delete test user if created """
-		auth_status_code, token = api.authenticate_user(email, password)
-		if token is not None and api.delete_user(token) != 204:
-			print("Could not delete test user [{0}, {1}]".format(email, password))
+		pass
 
 	@file_data("data/registration/success.json")
 	def test_registration_success(self, displayName, email, password):
 		"""A new user can register with valid details"""
-		expected_messages = None
+		expected_messages = [None]
 		expected_response_code = 201
-		input_data = (displayName, email, password)
-		model = None
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
+
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 
 	@file_data("data/registration/displayNameIsEmpty.json")
 	def test_registration_displayNameIsEmpty(self, displayName, email, password):
 		"""A new user cannot register with an empty displayName"""
 		expected_messages = ["The DisplayName field is required."]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 
 	@file_data("data/registration/emailIsEmpty.json")
 	def test_registration_emailIsEmpty(self, displayName, email, password):
 		"""A new user cannot register with an empty email"""
 		expected_messages = ["The Email field is required."]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/passwordIsEmpty.json")
 	def test_registration_passwordIsEmpty(self, displayName, email, password):
 		"""A new user cannot register with an empty password"""
 		expected_messages = ["The Password field is required."]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/displayNameIsTooShort.json")
 	def test_registration_displayNameIsTooShort(self, displayName, email, password):
@@ -119,24 +107,20 @@ class UserRegistrationTestCase(unittest.TestCase):
 			"The DisplayName field is required."
 		]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/passwordIsTooShort.json")
 	def test_registration_passwordIsTooShort(self, displayName, email, password):
@@ -146,24 +130,20 @@ class UserRegistrationTestCase(unittest.TestCase):
 			"The Password field is required."
 		]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/displayNameIsTooLong.json")
 	def test_registration_displayNameIsTooLong(self, displayName, email, password):
@@ -173,24 +153,20 @@ class UserRegistrationTestCase(unittest.TestCase):
 			"The DisplayName field is required."
 		]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/passwordIsTooLong.json")
 	def test_registration_passwordIsTooLong(self, displayName, email, password):
@@ -200,24 +176,20 @@ class UserRegistrationTestCase(unittest.TestCase):
 			"The Password field is required."
 		]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 		
 	@file_data("data/registration/emailIsTooLong.json")
 	def test_registration_emailIsTooLong(self, displayName, email, password):
@@ -227,72 +199,60 @@ class UserRegistrationTestCase(unittest.TestCase):
 			"The email address is invalid."
 		]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 
 	@file_data("data/registration/emailIsInvalid.json")
 	def test_registration_emailIsInvalid(self, displayName, email, password):
 		"""A new user cannot register with an invalid email"""
 		expected_messages = ["The email address is invalid."]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 
 	@file_data("data/registration/displayNameIsNotAlphaNumeric.json")
 	def test_registration_displayNameIsNotAlphaNumeric(self, displayName, email, password):
 		"""A new user cannot register with a non-alphanumeric displayName"""
 		expected_messages = ["""The field DisplayName must match the regular expression '^[^~`^$#@%!'*\\(\\)<>=.;:]+$'."""]
 		expected_response_code = 400
-		input_data = (displayName, email, password)
-		model = {
-			"message": {
-				"key_only": True, 
-				"is_collection": False, 
-				"value": expected_messages
-			}
-		}
 
-		api = ApiFacade()
-		response = api.register_user(displayName, email, password)
-		validator = ResponseValidator(response, expected_response_code, model)
-		correct_status, status = validator.response_code_success()
-		correct_body = validator.response_body_success()
+		response_wrapper = ApiFacade.register_user(displayName, email, password)
+		authentication_response = ApiFacade.authenticate_user(email, password)
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
-		if status == 201: self.clean_up(email, password, api, status)
-		self.assertEqual(correct_status, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
-		self.assertEqual(correct_body, True, msg = "On data [{0}][{1}][{2}] - {3}".format(*input_data, validator.get_errors()))
+		response_status_match = response_wrapper.get_http_status() == expected_response_code
+		response_body_match = response_wrapper.get_message() in expected_messages
+
+		self.assertEqual(response_status_match, True, 
+			msg = "Expected HTTP{0}; got HTTP{1}; on data [{2}][{3}][{4}]"
+			.format(expected_response_code, response_wrapper.get_http_status(),
+				displayName, email, password))
+		self.assertEqual(response_body_match, True, 
+			msg = "Expected [{0}]; got [{1}]".format(expected_messages, response_wrapper.get_message()))
 
 if __name__ == "__main__":
 	unittest.main()

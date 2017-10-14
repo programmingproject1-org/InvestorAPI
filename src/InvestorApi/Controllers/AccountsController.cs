@@ -80,6 +80,8 @@ namespace InvestorApi.Controllers
         /// <param name="accountId">The unique identifier of the trading account.</param>
         /// <param name="pageNumber">The page number to return. (Default = 1)</param>
         /// <param name="pageSize">The page size to apply. (Default = 100)</param>
+        /// <param name="startDate">The start date of the range to return.</param>
+        /// <param name="endDate">The end date of the range to return.</param>
         /// <returns>The action response.</returns>
         [HttpGet("{accountId:guid}/transactions")]
         [Authorize]
@@ -90,9 +92,11 @@ namespace InvestorApi.Controllers
         public IActionResult ListTransactions(
             [FromRoute]Guid accountId,
             [FromQuery][Range(1, 1000)]int? pageNumber,
-            [FromQuery][Range(1, 100)]int? pageSize)
+            [FromQuery][Range(1, 100)]int? pageSize,
+            [FromQuery]DateTime? startDate,
+            [FromQuery]DateTime? endDate)
         {
-            var transactions = _accountsService.ListTransactions(Request.GetUserId(), accountId, pageNumber ?? 1, pageSize ?? 100);
+            var transactions = _accountsService.ListTransactions(Request.GetUserId(), accountId, startDate, endDate, pageNumber ?? 1, pageSize ?? 100);
             return Ok(transactions);
         }
 

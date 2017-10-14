@@ -41,10 +41,13 @@ namespace InvestorApi.Contracts
         Guid RegisterUser(string displayName, string email, string password);
 
         /// <summary>
-        /// Makes an existing user an administrator.
+        /// Updates an existing user.
         /// </summary>
         /// <param name="userId">The unique identifier of the user to update.</param>
-        void MakeUserAdministrator(Guid userId);
+        /// <param name="displayName">The display name.</param>
+        /// <param name="email">The email address.</param>
+        /// <param name="level">The new user level.</param>
+        void EditUser(Guid userId, string displayName, string email, UserLevel? level);
 
         /// <summary>
         /// Deletes an existing user.

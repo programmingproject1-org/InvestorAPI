@@ -41,10 +41,12 @@ namespace InvestorApi.Repositories
         /// Lists the account transactions.
         /// </summary>
         /// <param name="accountId">The account identifier.</param>
+        /// <param name="startDate">The start date of the range to return.</param>
+        /// <param name="endDate">The end date of the range to return.</param>
         /// <param name="pageNumber">The page number.</param>
         /// <param name="pageSize">The size of the page.</param>
         /// <returns>The transactions.</returns>
-        public ListResult<Transaction> ListTransactions(Guid accountId, int pageNumber, int pageSize)
+        public ListResult<Transaction> ListTransactions(Guid accountId, DateTime? startDate, DateTime? endDate, int pageNumber, int pageSize)
         {
             // First we have to could the total number of transactions.
             var count = _context.Transactions
@@ -54,6 +56,8 @@ namespace InvestorApi.Repositories
             // Now we load the transactions for the requested page.
             var items = _context.Transactions
                 .Where(transaction => transaction.AccountId == accountId)
+                .Where(transaction => startDate == null || transaction.TimestampUtc >= startDate)
+                .Where(transaction => endDate == null || transaction.TimestampUtc <= endDate)
                 .OrderByDescending(transaction => transaction.TimestampUtc)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)

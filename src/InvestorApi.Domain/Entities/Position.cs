@@ -1,4 +1,3 @@
-using InvestorApi.Contracts.Dtos;
 using System;
 
 namespace InvestorApi.Domain.Entities
@@ -29,8 +28,9 @@ namespace InvestorApi.Domain.Entities
 
         public decimal AveragePrice { get; private set; }
 
-        public static Position Create(Account account, string symbol, long quantity, decimal averagePrice)
+        public static Position Create(Account account, string symbol, long quantity, decimal price, decimal brokerageFees)
         {
+            decimal averagePrice = ((quantity * price) + brokerageFees) / quantity;
             return new Position(Guid.NewGuid(), account.Id, symbol, quantity, averagePrice);
         }
 

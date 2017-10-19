@@ -20,6 +20,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestorApi.Asx", "Investor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestorApi.Yahoo", "InvestorApi.Yahoo\InvestorApi.Yahoo.csproj", "{9C2686DE-F4A2-4CDE-BA33-B07AFF207B75}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5E9A13C0-536E-4CB3-86ED-94F3381A3EB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestorApi.UnitTests", "Tests\InvestorApi.UnitTests\InvestorApi.UnitTests.csproj", "{D811982E-6406-465F-BFC2-CB457B98F658}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{9C2686DE-F4A2-4CDE-BA33-B07AFF207B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C2686DE-F4A2-4CDE-BA33-B07AFF207B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C2686DE-F4A2-4CDE-BA33-B07AFF207B75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D811982E-6406-465F-BFC2-CB457B98F658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D811982E-6406-465F-BFC2-CB457B98F658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D811982E-6406-465F-BFC2-CB457B98F658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D811982E-6406-465F-BFC2-CB457B98F658}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +69,7 @@ Global
 		{6BD54B63-99D4-472F-8CE2-CBF597ECC66B} = {964D080C-B0C4-4972-9DAF-30687BCEFBF7}
 		{E58FCF40-4098-463D-899E-8748F503D19E} = {2375B6B2-6611-4D68-88F6-C760A72B3027}
 		{9C2686DE-F4A2-4CDE-BA33-B07AFF207B75} = {2375B6B2-6611-4D68-88F6-C760A72B3027}
+		{D811982E-6406-465F-BFC2-CB457B98F658} = {5E9A13C0-536E-4CB3-86ED-94F3381A3EB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31AA9DE8-DA87-4F05-B494-3E0AFC137B98}

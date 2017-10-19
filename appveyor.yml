@@ -13,7 +13,7 @@ build_script:
 after_build:
 artifacts:
 clone_depth: 1
-#test_script:
-#  - cmd: dotnet test ./src/Tests/InvestorApi.ComponentTests/InvestorApi.ComponentTests.csproj
+test_script:
+  - cmd: dotnet test ./src/Tests/InvestorApi.UnitTests/InvestorApi.UnitTests.csproj
 on_finish :
 deploy: off

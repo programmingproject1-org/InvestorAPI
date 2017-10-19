@@ -83,7 +83,7 @@ namespace InvestorApi.Domain.Entities
             }
             else
             {
-                position = Position.Create(this, symbol, quantity, price);
+                position = Position.Create(this, symbol, quantity, price, totalFees);
                 Positions.Add(position);
             }
 

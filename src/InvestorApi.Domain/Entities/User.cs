@@ -1,5 +1,6 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using InvestorApi.Domain.Providers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,11 @@ namespace InvestorApi.Domain.Entities
 
         public ICollection<Watchlist> Watchlists { get; private set; }
 
+        public string GravatarUrl
+        {
+            get { return GravatarProvider.GetGravatarUrl(Email); }
+        }
+
         public static User Register(string displayName, string email, string password)
         {
             return new User(Guid.NewGuid(), displayName, email, password, UserLevel.Investor);
@@ -55,7 +61,7 @@ namespace InvestorApi.Domain.Entities
             var accounts = Accounts.Select(a => a.ToAccountInfo()).ToList();
             var watchlists = Watchlists.Select(a => a.ToWatchlistInfo()).ToList();
 
-            return new UserInfo(Id, Email, DisplayName, Level, accounts, watchlists);
+            return new UserInfo(Id, Email, DisplayName, GravatarUrl, Level, accounts, watchlists);
         }
     }
 }

@@ -126,7 +126,7 @@ namespace InvestorApi.Domain.Services
             decimal profitPercent = profit / initialBalance * 100m;
 
             // Create the leader board user.
-            return new LeaderBoardUser(user.DisplayName, totalAccountValue, profit, profitPercent, user.Id == currentUserId);
+            return new LeaderBoardUser(user.DisplayName, user.GravatarUrl, totalAccountValue, profit, profitPercent, user.Id == currentUserId);
         }
     }
 }

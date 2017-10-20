@@ -43,7 +43,7 @@ namespace InvestorApi.UnitTests.Entities
             decimal amount = 5000;
 
             Account account = Account.CreateNew(Guid.NewGuid(), "Test Account", amount * 2);
-            account.Reset(amount);
+            account.Reset(amount, "Test");
 
             Assert.Equal(amount, account.Balance);
             Assert.Equal(1, account.Transactions.Count);

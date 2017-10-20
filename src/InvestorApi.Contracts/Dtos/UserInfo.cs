@@ -14,15 +14,17 @@ namespace InvestorApi.Contracts.Dtos
         /// <param name="id">The unique identifier of the user.</param>
         /// <param name="email">The email address.</param>
         /// <param name="displayName">The display name.</param>
+        /// <param name="gravatarUrl">The gravatar URL.</param>
         /// <param name="level">The permission level.</param>
         /// <param name="accounts">The user's trading accounts.</param>
         /// <param name="watchlists">The user's watchlists.</param>
-        public UserInfo(Guid id, string email, string displayName, UserLevel level,
+        public UserInfo(Guid id, string email, string displayName, string gravatarUrl, UserLevel level,
             IReadOnlyCollection<AccountInfo> accounts, IReadOnlyCollection<WatchlistInfo> watchlists)
         {
             Id = id;
             Email = email;
             DisplayName = displayName;
+            GravatarUrl = gravatarUrl;
             Level = level;
             Accounts = accounts;
             Watchlists = watchlists;
@@ -42,6 +44,11 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the display name.
         /// </summary>
         public string DisplayName { get; private set; }
+
+        /// <summary>
+        /// Gets the gravatar URL.
+        /// </summary>
+        public string GravatarUrl { get; private set; }
 
         /// <summary>
         /// Gets the permission level.

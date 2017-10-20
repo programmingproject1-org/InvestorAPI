@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace InvestorApi.Contracts.Dtos
+﻿namespace InvestorApi.Contracts.Dtos
 {
     /// <summary>
     /// A single user on the leader board.
@@ -11,13 +9,15 @@ namespace InvestorApi.Contracts.Dtos
         /// Initializes a new instance of the <see cref="LeaderBoardUser"/> class.
         /// </summary>
         /// <param name="displayName">The display name.</param>
+        /// <param name="gravatarUrl">The user's gravata URL.</param>
         /// <param name="totalAccountValue">The total account value.</param>
         /// <param name="profit">The total profit.</param>
         /// <param name="profitPercent">The total profit in percent.</param>
         /// <param name="isCurrentUser">A value indicating whether the user is the current user.</param>
-        public LeaderBoardUser(string displayName, decimal totalAccountValue, decimal profit, decimal profitPercent, bool isCurrentUser)
+        public LeaderBoardUser(string displayName, string gravatarUrl, decimal totalAccountValue, decimal profit, decimal profitPercent, bool isCurrentUser)
         {
             DisplayName = displayName;
+            GravatarUrl = gravatarUrl;
             TotalAccountValue = totalAccountValue;
             Profit = profit;
             ProfitPercent = profitPercent;
@@ -33,6 +33,11 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets the display name.
         /// </summary>
         public string DisplayName { get; private set; }
+
+        /// <summary>
+        /// Gets the user's gravatar URL.
+        /// </summary>
+        public string GravatarUrl { get; private set; }
 
         /// <summary>
         /// Gets the total account value.

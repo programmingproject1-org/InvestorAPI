@@ -38,7 +38,7 @@ namespace InvestorApi.Controllers
         [HttpGet]
         [Authorize]
         [SwaggerResponse(200, Description = "Success", Type = typeof(UserInfo))]
-        [SwaggerResponse(401, Description = "User not authenticated")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
         public IActionResult GetUser()
         {
             var user = _userService.GetUserInfo(Request.GetUserId());
@@ -70,6 +70,27 @@ namespace InvestorApi.Controllers
         }
 
         /// <summary>
+        /// Edit an existing user.
+        /// </summary>
+        /// <remarks>
+        /// The API operation enables users to edit their own user profile. All fields are optional and only provided fields will be updated.
+        /// The caller must provide a valid access token.
+        /// </remarks>
+        /// <param name="body">The request body.</param>
+        /// <returns>The action response.</returns>
+        [HttpPut]
+        [Authorize]
+        [SwaggerResponse(204, Description = "User successfully updated")]
+        [SwaggerResponse(400, Description = "Invalid request")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(404, Description = "User not found")]
+        public IActionResult EditUser([FromBody]EditUser body)
+        {
+            _userService.EditUser(Request.GetUserId(), body.DisplayName, body.Email, null);
+            return NoContent();
+        }
+
+        /// <summary>
         /// Delete user profile.
         /// </summary>
         /// <remarks>
@@ -80,7 +101,7 @@ namespace InvestorApi.Controllers
         [HttpDelete]
         [Authorize]
         [SwaggerResponse(204, Description = "User successfully deleted")]
-        [SwaggerResponse(401, Description = "User not authenticated")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
         public IActionResult DeleteUser()
         {
             _userService.DeleteUser(Request.GetUserId());

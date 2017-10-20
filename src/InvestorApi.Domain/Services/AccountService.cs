@@ -133,8 +133,8 @@ namespace InvestorApi.Domain.Services
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
 
             Account account = GetAccount(userId, accountId);
-            account.Reset(settings.InitialBalance);
-            _accountRepository.Save(account);
+            account.Reset(settings.InitialBalance, "Account reset");
+            _accountRepository.Reset(account);
         }
 
         /// <summary>

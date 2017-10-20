@@ -41,8 +41,8 @@ namespace InvestorApi.Controllers.Admin
         [HttpGet("")]
         [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(200, Description = "Success", Type = typeof(ListResult<UserInfo>))]
-        [SwaggerResponse(401, Description = "User not authenticated")]
-        [SwaggerResponse(403, Description = "User not authorized")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         public IActionResult ListUsers(int? pageNumber, int? pageSize)
         {
             var users = _userService.ListUsers(pageNumber ?? 1, pageSize ?? 100);
@@ -61,8 +61,8 @@ namespace InvestorApi.Controllers.Admin
         [HttpGet("{userId:guid}")]
         [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(200, Description = "Success", Type = typeof(UserInfo))]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        [SwaggerResponse(403, Description = "User not authorized")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "User not found")]
         public IActionResult GetUser([FromRoute]Guid userId)
         {
@@ -90,10 +90,10 @@ namespace InvestorApi.Controllers.Admin
         [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(204, Description = "User successfully updated")]
         [SwaggerResponse(400, Description = "Invalid request")]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        [SwaggerResponse(403, Description = "User not authorized")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "User not found")]
-        public IActionResult EditUser([FromRoute]Guid userId, [FromBody]EditUser body)
+        public IActionResult EditUser([FromRoute]Guid userId, [FromBody]EditUserWithLevel body)
         {
             _userService.EditUser(userId, body.DisplayName, body.Email, body.Level);
             return NoContent();
@@ -111,8 +111,8 @@ namespace InvestorApi.Controllers.Admin
         [HttpDelete("{userId:guid}")]
         [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(204, Description = "User successfully deleted")]
-        [SwaggerResponse(401, Description = "User not authenticated")]
-        [SwaggerResponse(403, Description = "User not authorized")]
+        [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "User not found")]
         public IActionResult DeleteUser([FromRoute]Guid userId)
         {

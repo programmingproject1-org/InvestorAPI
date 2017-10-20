@@ -87,6 +87,23 @@ namespace InvestorApi.Repositories
         }
 
         /// <summary>
+        /// Resets the specified account.
+        /// </summary>
+        /// <param name="account">The account to reset.</param>
+        public void Reset(Account account)
+        {
+            // Check if the item exists and then either create or update it in the database.
+            var exists = _context.Accounts.AsNoTracking().Any(x => x.Id == account.Id);
+            if (exists)
+            {
+                _context.Transactions.RemoveRange(_context.Transactions.Where(transaction => transaction.AccountId == account.Id));
+                _context.Accounts.Update(account);
+            }
+
+            _context.SaveChanges();
+        }
+
+        /// <summary>
         /// Deletes the specified account.
         /// </summary>
         /// <param name="account">The account to delete.</param>

@@ -34,6 +34,12 @@ namespace InvestorApi.Domain.Repositories
         void Save(Account account);
 
         /// <summary>
+        /// Resets the specified account.
+        /// </summary>
+        /// <param name="account">The account to reset.</param>
+        void Reset(Account account);
+
+        /// <summary>
         /// Deletes the specified account.
         /// </summary>
         /// <param name="account">The account to delete.</param>

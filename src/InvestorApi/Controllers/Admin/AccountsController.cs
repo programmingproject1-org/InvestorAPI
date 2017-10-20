@@ -1,22 +1,20 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
-using InvestorApi.Extensions;
-using InvestorApi.Models;
+using InvestorApi.Security;
 using InvestorApi.Swagger;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Admin
 {
     /// <summary>
     /// The API controller provides management operations for accounts.
     /// </summary>
-    [Route("api/1.0/accounts")]
-    [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
+    [Route("api/1.0/admin/users/{userId:guid}/accounts")]
+    [ApiExplorerSettings(GroupName = SwaggerConstants.AdministratorsGroup)]
     public class AccountsController : Controller
     {
         private IAccountService _accountsService;
@@ -34,19 +32,21 @@ namespace InvestorApi.Controllers
         /// Get detailed information about a particular trading account.
         /// </summary>
         /// <remarks>
-        /// The API operation enables investors to retrieve detailed information about a particular trading account.
-        /// The caller must provide a valid access token.
+        /// The API operation enables administrators to retrieve detailed information about a particular trading account.
+        /// The caller must provide a valid access token and must be an `Administrator`.
         /// </remarks>
+        /// <param name="userId">The unique identifier of the user who owns the account.</param>
         /// <param name="accountId">The unique identifier of the trading account to retrieve.</param>
         /// <returns>The action response.</returns>
         [HttpGet("{accountId:guid}")]
-        [Authorize]
+        [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(200, Type = typeof(AccountDetails))]
         [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Account not found")]
-        public IActionResult GetAccountDetails([FromRoute]Guid accountId)
+        public IActionResult GetAccountDetails([FromRoute]Guid userId, [FromRoute]Guid accountId)
         {
-            var accounts = _accountsService.GetAccountDetails(Request.GetUserId(), accountId);
+            var accounts = _accountsService.GetAccountDetails(userId, accountId);
             return Ok(accounts);
         }
 
@@ -54,19 +54,21 @@ namespace InvestorApi.Controllers
         /// Reset an existing trading account.
         /// </summary>
         /// <remarks>
-        /// The API operation enables investors to reset an existing trading account to its initial state and starting balance.
-        /// The caller must provide a valid access token.
+        /// The API operation enables administrators to reset an existing trading account to its initial state and starting balance.
+        /// The caller must provide a valid access token and must be an `Administrator`.
         /// </remarks>
+        /// <param name="userId">The unique identifier of the user who owns the account.</param>
         /// <param name="accountId">The unique identifier of the trading account to reset.</param>
         /// <returns>The action response.</returns>
         [HttpPut("{accountId:guid}")]
-        [Authorize]
+        [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(201, Description = "Account successfully reset.")]
         [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Account not found")]
-        public IActionResult ResetAccount([FromRoute]Guid accountId)
+        public IActionResult ResetAccount([FromRoute]Guid userId, [FromRoute]Guid accountId)
         {
-            _accountsService.ResetAccount(Request.GetUserId(), accountId);
+            _accountsService.ResetAccount(userId, accountId);
             return StatusCode(201);
         }
 
@@ -74,9 +76,10 @@ namespace InvestorApi.Controllers
         /// Query account transactions.
         /// </summary>
         /// <remarks>
-        /// The API operation enables investors to retrieve a list of transactions for the trading account.
-        /// The caller must provide a valid access token.
+        /// The API operation enables administrators to retrieve a list of transactions for a trading account.
+        /// The caller must provide a valid access token and must be an `Administrator`.
         /// </remarks>
+        /// <param name="userId">The unique identifier of the user who owns the account.</param>
         /// <param name="accountId">The unique identifier of the trading account.</param>
         /// <param name="pageNumber">The page number to return. (Default = 1)</param>
         /// <param name="pageSize">The page size to apply. (Default = 100)</param>
@@ -84,56 +87,21 @@ namespace InvestorApi.Controllers
         /// <param name="endDate">The end date of the range to return.</param>
         /// <returns>The action response.</returns>
         [HttpGet("{accountId:guid}/transactions")]
-        [Authorize]
+        [Authorize(Policy = AuthorizationPolicies.Administrators)]
         [SwaggerResponse(200, Description = "Success", Type = typeof(ListResult<TransactionInfo>))]
         [SwaggerResponse(401, Description = "Authentication failed")]
+        [SwaggerResponse(403, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Account not found")]
         public IActionResult ListTransactions(
+            [FromRoute]Guid userId,
             [FromRoute]Guid accountId,
             [FromQuery][Range(1, 1000)]int? pageNumber,
             [FromQuery][Range(1, 100)]int? pageSize,
             [FromQuery]DateTime? startDate,
             [FromQuery]DateTime? endDate)
         {
-            var transactions = _accountsService.ListTransactions(Request.GetUserId(), accountId, startDate, endDate, pageNumber ?? 1, pageSize ?? 100);
+            var transactions = _accountsService.ListTransactions(userId, accountId, startDate, endDate, pageNumber ?? 1, pageSize ?? 100);
             return Ok(transactions);
-        }
-
-        /// <summary>
-        /// Place a buy or sell order.
-        /// </summary>
-        /// <remarks>
-        /// The API operation enables investors to buy or sell shares by placing an order using the trading account.
-        /// Specify either `Buy` or `Sell` for the side.
-        /// The caller must provide a valid access token.
-        /// </remarks>
-        /// <param name="accountId">The unique identifier of the trading account.</param>
-        /// <param name="order">The order details.</param>
-        /// <returns>The action response.</returns>
-        [HttpPost("{accountId:guid}/orders")]
-        [Authorize]
-        [SwaggerResponse(200, typeof(AccountDetails))]
-        [SwaggerResponse(400, Description = "Invalid order.")]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        [SwaggerResponse(404, Description = "Account or share not found")]
-        public IActionResult PlaceOrder([FromRoute]Guid accountId, [FromBody]PlaceOrder order)
-        {
-            switch (order.Side)
-            {
-                case OrderSide.Buy:
-                    _accountsService.BuySharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
-                    break;
-
-                case OrderSide.Sell:
-                    _accountsService.SellSharesAtMarketPrice(Request.GetUserId(), accountId, order.Symbol, order.Quantity, order.Nonce);
-                    break;
-
-                default:
-                    return StatusCode(400);
-            }
-
-            var account = _accountsService.GetAccountDetails(Request.GetUserId(), accountId);
-            return Ok(account);
         }
     }
 }

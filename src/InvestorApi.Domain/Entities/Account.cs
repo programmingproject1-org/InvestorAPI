@@ -43,16 +43,18 @@ namespace InvestorApi.Domain.Entities
         public static Account CreateNew(Guid userId, string name, decimal initialBalance)
         {
             Account account = new Account(Guid.NewGuid(), userId, name);
-            account.Reset(initialBalance);
+            account.Reset(initialBalance, "Account opened");
             return account;
         }
 
-        public void Reset(decimal initialBalance)
+        public void Reset(decimal initialBalance, string name)
         {
+            LastNonce = 0;
+
             Positions.Clear();
 
             Transactions.Clear();
-            Transactions.Add(Transaction.Create(this, TransactionType.Transfer, "Account opened", initialBalance, initialBalance));
+            Transactions.Add(Transaction.Create(this, TransactionType.Transfer, name, initialBalance, initialBalance));
 
             Balance = initialBalance;
         }

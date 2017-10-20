@@ -20,3 +20,12 @@ class RemoveFromWatchlistResponseWrapper():
 		except ValueError:
 			body = None
 		return body
+		
+	def get_all_shares(self):
+		return self.get_json_body()
+
+	def get_share_by_symbol(self, symbol):
+		for share in self.get_all_shares():
+			if share["symbol"] == symbol:
+				return share
+		return None

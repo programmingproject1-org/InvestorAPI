@@ -25,7 +25,7 @@ class SellShareTestCase(unittest.TestCase):
 	def test_sell_shares_success(self):
 		"""An authenticated user can sell shares that they own"""
 		expected_response_code = 200
-		symbol_to_buy = "ANZ" 
+		symbol = "DDD" 
 		quantity = 100
 		
 		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
@@ -37,7 +37,13 @@ class SellShareTestCase(unittest.TestCase):
 		viewdetails_response = ApiFacade.view_details(token)
 		account_id = viewdetails_response.get_main_account_id()
 
-		sellshare_response = ApiFacade.sell_share(token, account_id, symbol_to_buy, quantity)
+		# buy shares first
+		buyshare_response = ApiFacade.buy_share(token, account_id, symbol, int(quantity))
+		
+		# sell the shares
+		sellshare_response = ApiFacade.sell_share(token, account_id, symbol, int(quantity / 3))
+
+		deletion_response = ApiFacade.delete_user(token)
 
 		self.assertEqual(sellshare_response.get_http_status(), expected_response_code, 
 			msg = "Expected HTTP{0}; got HTTP{1}"

@@ -39,6 +39,8 @@ class BuyShareTestCase(unittest.TestCase):
 
 		buyshare_response = ApiFacade.buy_share(token, account_id, symbol_to_buy, quantity)
 
+		deletion_response = ApiFacade.delete_user(token)
+
 		self.assertEqual(buyshare_response.get_http_status(), expected_response_code, 
 			msg = "Expected HTTP{0}; got HTTP{1}"
 			.format(expected_response_code, buyshare_response.get_http_status()))

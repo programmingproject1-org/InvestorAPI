@@ -14,6 +14,7 @@ from .request_extensions.removefromwatchlist_request import RemoveFromWatchlistR
 from .request_extensions.historicalprices_request import HistoricalPricesRequest
 from .request_extensions.viewportfolio_request import ViewPortfolioRequest
 from .request_extensions.viewtransactions_request import ViewTransactionsRequest
+from .request_extensions.leaderboard_request import LeaderboardRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -123,6 +124,14 @@ class ApiFacade:
 		session = Session()
 		request = ViewTransactionsRequest(session, token, account_id, page_number, 
 			page_size, start_date, end_date)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_leaderboard(token, page_number = None, page_size = None):
+		session = Session()
+		request = LeaderboardRequest(session, token, page_number, page_size)
 		response = request.get_response()
 		session.close()
 		return response

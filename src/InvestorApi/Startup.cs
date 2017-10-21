@@ -1,4 +1,5 @@
 using InvestorApi.Asx;
+using InvestorApi.Converters;
 using InvestorApi.Domain;
 using InvestorApi.Filters;
 using InvestorApi.Repositories;
@@ -74,6 +75,7 @@ namespace InvestorApi
             .AddJsonOptions(options =>
             {
                 options.SerializerSettings.Converters.Add(new StringEnumConverter());
+                options.SerializerSettings.Converters.Add(new OnlyDateConverter());
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             });
 

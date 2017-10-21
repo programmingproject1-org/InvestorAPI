@@ -35,27 +35,31 @@ namespace InvestorApi.Controllers
         };
 
         private IShareSummaryProvider _shareDetailsProvider;
-        private ISharePriceProvider _sharePriceProvider;
         private IShareQuoteProvider _shareQuoteProvider;
         private IShareFundamentalsProvider _shareFundamentalsProvider;
+        private ISharePriceHistoryProvider _sharePriceHistoryProvider;
+        private IShareDividendHistoryProvider _shareDividendHistoryProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
         /// </summary>
         /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareSummaryProvider"/>.</param>
-        /// <param name="sharePriceProvider">Injected instance of <see cref="ISharePriceProvider"/>.</param>
         /// <param name="shareQuoteProvider">Injected instance of <see cref="IShareQuoteProvider"/>.</param>
         /// <param name="shareFundamentalsProvider">Injected instance of <see cref="IShareFundamentalsProvider"/>.</param>
+        /// <param name="sharePriceHistoryProvider">Injected instance of <see cref="ISharePriceHistoryProvider"/>.</param>
+        /// <param name="shareDividendHistoryProvider">Injected instance of <see cref="IShareDividendHistoryProvider"/>.</param>
         public SharesController(
             IShareSummaryProvider shareDetailsProvider,
-            ISharePriceProvider sharePriceProvider,
             IShareQuoteProvider shareQuoteProvider,
-            IShareFundamentalsProvider shareFundamentalsProvider)
+            IShareFundamentalsProvider shareFundamentalsProvider,
+            ISharePriceHistoryProvider sharePriceHistoryProvider,
+            IShareDividendHistoryProvider shareDividendHistoryProvider)
         {
             _shareDetailsProvider = shareDetailsProvider;
-            _sharePriceProvider = sharePriceProvider;
             _shareQuoteProvider = shareQuoteProvider;
             _shareFundamentalsProvider = shareFundamentalsProvider;
+            _sharePriceHistoryProvider = sharePriceHistoryProvider;
+            _shareDividendHistoryProvider = shareDividendHistoryProvider;
         }
 
         /// <summary>
@@ -122,7 +126,7 @@ namespace InvestorApi.Controllers
                 interval = _intervals[range];
             }
 
-            var prices = _sharePriceProvider.GetHistoricalSharePrices(symbol, endTime ?? DateTime.UtcNow, range, interval);
+            var prices = _sharePriceHistoryProvider.GetPriceHistory(symbol, endTime ?? DateTime.UtcNow, range, interval);
             if (prices == null)
             {
                 return NotFound();
@@ -144,6 +148,34 @@ namespace InvestorApi.Controllers
             };
 
             return Ok(response);
+        }
+
+        /// <summary>
+        /// Get historical dividends for a share.
+        /// </summary>
+        /// <remarks>
+        /// The API operation enables investors to retrieve historical dividends for the share with the supplied symbol.
+        /// The caller must provide a valid access token.
+        /// </remarks>
+        /// <param name="symbol">The symbol of the share to return dividends for.</param>
+        /// <param name="range">The date range. Possible values are: 1y, 2y, 5y, 10y, max</param>
+        /// <returns>The action response.</returns>
+        [HttpGet("{symbol}/dividends")]
+        [Authorize]
+        [SwaggerResponse(200, Type = typeof(Dividend[]))]
+        [SwaggerResponse(401, Description = "Authorization failed")]
+        [SwaggerResponse(404, Description = "Share not found.")]
+        public IActionResult GetDividends(
+            [FromRoute][MinLength(3)]string symbol,
+            [FromQuery]string range)
+        {
+            var dividends = _shareDividendHistoryProvider.GetDividendHistory(symbol, range ?? "max");
+            if (dividends == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(dividends);
         }
 
         /// <summary>

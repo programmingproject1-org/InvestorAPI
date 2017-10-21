@@ -15,7 +15,7 @@ namespace InvestorApi.Yahoo
     /// <remarks>
     /// Documentation: https://bitbucket.org/SeamusBoyleRMIT/asx-data-source-research/src/master/yahoo-finance.md?fileviewer=file-view-default
     /// </remarks>
-    internal sealed class YahooSharePriceProvider : ISharePriceProvider
+    internal sealed class YahooSharePriceHistoryProvider : ISharePriceHistoryProvider
     {
         private const string BaseUrl = @"https://l1-query.finance.yahoo.com/v8/finance/chart/{0}.AX?range={1}&interval={2}&period2={3}&events=div|split|earn";
 
@@ -29,7 +29,7 @@ namespace InvestorApi.Yahoo
         /// <param name="range">The date range. Possible values are: 1d, 5d, 1mo, 3mo, 6mo, 1y, 2y, 5y, 10y, ytd, max</param>
         /// <param name="interval">The time interval.</param>
         /// <returns>The historical prices for the share.</returns>
-        public IReadOnlyCollection<SharePrice> GetHistoricalSharePrices(string symbol, DateTime endTime, string range, string interval)
+        public IReadOnlyCollection<SharePrice> GetPriceHistory(string symbol, DateTime endTime, string range, string interval)
         {
             long period2 = new DateTimeOffset(endTime).ToUnixTimeSeconds();
             string requestUri = string.Format(BaseUrl, symbol, range, interval, period2);

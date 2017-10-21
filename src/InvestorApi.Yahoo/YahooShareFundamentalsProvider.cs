@@ -1,6 +1,7 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 
@@ -84,20 +85,14 @@ namespace InvestorApi.Yahoo
             }
         }
 
-        private static string ParseDate(string text)
+        private static DateTime? ParseDate(string text)
         {
             if (text == "N/A")
             {
                 return null;
             }
 
-            string[] values = text.Split(new char[] { '/', '"' }, StringSplitOptions.RemoveEmptyEntries);
-            if (values.Length == 3)
-            {
-                return new DateTime(int.Parse(values[2]), int.Parse(values[0]), int.Parse(values[1])).ToString("yyyy-MM-dd");
-            }
-
-            return null;
+            return DateTime.ParseExact(text.Replace("\"", ""), "M/d/yyyy", CultureInfo.InvariantCulture);
         }
 
         private static decimal? ParseDecimal(string text)

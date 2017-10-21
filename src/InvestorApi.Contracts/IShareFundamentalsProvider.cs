@@ -3,7 +3,7 @@
 namespace InvestorApi.Contracts
 {
     /// <summary>
-    /// 
+    /// A service to provide share fundamental data.
     /// </summary>
     public interface IShareFundamentalsProvider
     {

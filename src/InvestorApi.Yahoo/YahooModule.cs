@@ -9,8 +9,9 @@ namespace InvestorApi.Yahoo
         {
             // Register the provider in the dependency injection container.
             services.AddSingleton<IShareQuoteProvider, YahooShareQuoteProvider>();
-            services.AddSingleton<ISharePriceProvider, YahooSharePriceProvider>();
             services.AddSingleton<IShareFundamentalsProvider, YahooShareFundamentalsProvider>();
+            services.AddSingleton<ISharePriceHistoryProvider, YahooSharePriceHistoryProvider>();
+            services.AddSingleton<IShareDividendHistoryProvider, YahooShareDividendHistoryProvider>();
         }
     }
 }

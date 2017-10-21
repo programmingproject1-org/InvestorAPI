@@ -61,12 +61,12 @@ namespace InvestorApi.Contracts.Dtos
         /// <summary>
         /// Gets or sets the ex dividend date.
         /// </summary>
-        public string ExDividendDate { get; set; }
+        public DateTime? ExDividendDate { get; set; }
 
         /// <summary>
         /// Gets or sets the dividend pay date.
         /// </summary>
-        public string DividendPayDate { get; set; }
+        public DateTime? DividendPayDate { get; set; }
 
         /// <summary>
         /// Gets or sets the P/E ratio.

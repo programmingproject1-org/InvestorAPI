@@ -10,32 +10,31 @@ namespace InvestorApi.Asx
     /// <summary>
     /// Implements a share finder and information provider using the public ASX company list.
     /// </summary>
-    /// <seealso cref="InvestorApi.Contracts.IShareDetailsProvider" />
-    internal class AsxShareDetailProvider : IShareDetailsProvider
+    internal class AsxShareSummaryProvider : IShareSummaryProvider
     {
         private const string Address = "http://www.asx.com.au/asx/research/ASXListedCompanies.csv";
 
         private static readonly object _syncLock = new object();
-        private static IDictionary<string, ShareDetails> _shares = null;
+        private static IDictionary<string, ShareSummary> _shares = null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AsxShareDetailProvider"/> class.
+        /// Initializes a new instance of the <see cref="AsxShareSummaryProvider"/> class.
         /// </summary>
-        public AsxShareDetailProvider()
+        public AsxShareSummaryProvider()
         {
             Load();
         }
 
         /// <summary>
-        /// Returns detailed information for the share with the provided symbol.
+        /// Returns summary information for the share with the provided symbol.
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public ShareDetails GetShareDetails(string symbol)
+        public ShareSummary GetShareSummary(string symbol)
         {
             Load();
 
-            if (_shares.TryGetValue(symbol, out ShareDetails result))
+            if (_shares.TryGetValue(symbol, out ShareSummary result))
             {
                 return result;
             }
@@ -44,17 +43,17 @@ namespace InvestorApi.Asx
         }
 
         /// <summary>
-        /// Returns detailed information for the shares with the provided symbols.
+        /// Returns summary information for the shares with the provided symbols.
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public IReadOnlyDictionary<string, ShareDetails> GetShareDetails(IEnumerable<string> symbols)
+        public IReadOnlyDictionary<string, ShareSummary> GetShareSummaries(IEnumerable<string> symbols)
         {
             Load();
 
             return symbols
                 .Distinct()
-                .Select(symbol => GetShareDetails(symbol))
+                .Select(symbol => GetShareSummary(symbol))
                 .ToDictionary(share => share.Symbol);
         }
 
@@ -66,7 +65,7 @@ namespace InvestorApi.Asx
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The list of shares which match the search criteria.</returns>
-        public ListResult<ShareDetails> FindShareDetails(string searchTerm, string industry, int pageNumber, int pageSize)
+        public ListResult<ShareSummary> FindShares(string searchTerm, string industry, int pageNumber, int pageSize)
         {
             Load();
 
@@ -81,7 +80,7 @@ namespace InvestorApi.Asx
                     share.Industry == industry)
                 .ToList();
 
-            return new ListResult<ShareDetails>(
+            return new ListResult<ShareSummary>(
                 allResults.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(),
                 pageNumber,
                 pageSize,
@@ -120,7 +119,7 @@ namespace InvestorApi.Asx
             }
         }
 
-        private ShareDetails ReadCsvLine(string line)
+        private ShareSummary ReadCsvLine(string line)
         {
             var values = line.Split(',');
             if (values.Length != 3)
@@ -137,7 +136,7 @@ namespace InvestorApi.Asx
                 industry = null;
             }
 
-            return new ShareDetails(symbol, name, industry);
+            return new ShareSummary(symbol, name, industry);
         }
     }
 }

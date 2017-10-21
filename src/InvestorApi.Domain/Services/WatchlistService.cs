@@ -15,12 +15,12 @@ namespace InvestorApi.Domain.Services
     internal class WatchlistService : IWatchlistService
     {
         private readonly IWatchlistRepository _watchlistRepository;
-        private readonly IShareDetailsProvider _shareDetailsProvider;
+        private readonly IShareSummaryProvider _shareDetailsProvider;
         private readonly IShareQuoteProvider _shareQuoteProvider;
 
         public WatchlistService(
             IWatchlistRepository watchlistRepository,
-            IShareDetailsProvider shareDetailsProvider,
+            IShareSummaryProvider shareDetailsProvider,
             IShareQuoteProvider shareQuoteProvider)
         {
             _watchlistRepository = watchlistRepository;
@@ -38,8 +38,8 @@ namespace InvestorApi.Domain.Services
         {
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
 
-            IReadOnlyDictionary<string, ShareDetails> shareDetails = _shareDetailsProvider
-                .GetShareDetails(watchlist.Symbols);
+            IReadOnlyDictionary<string, ShareSummary> shareDetails = _shareDetailsProvider
+                .GetShareSummaries(watchlist.Symbols);
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
                 .GetQuotes(watchlist.Symbols);

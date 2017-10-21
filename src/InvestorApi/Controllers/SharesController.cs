@@ -34,24 +34,28 @@ namespace InvestorApi.Controllers
             ["max"] = "1mo"
         };
 
-        private IShareDetailsProvider _shareDetailsProvider;
+        private IShareSummaryProvider _shareDetailsProvider;
         private ISharePriceProvider _sharePriceProvider;
         private IShareQuoteProvider _shareQuoteProvider;
+        private IShareFundamentalsProvider _shareFundamentalsProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
         /// </summary>
-        /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareDetailsProvider"/>.</param>
+        /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareSummaryProvider"/>.</param>
         /// <param name="sharePriceProvider">Injected instance of <see cref="ISharePriceProvider"/>.</param>
         /// <param name="shareQuoteProvider">Injected instance of <see cref="IShareQuoteProvider"/>.</param>
+        /// <param name="shareFundamentalsProvider">Injected instance of <see cref="IShareFundamentalsProvider"/>.</param>
         public SharesController(
-            IShareDetailsProvider shareDetailsProvider,
+            IShareSummaryProvider shareDetailsProvider,
             ISharePriceProvider sharePriceProvider,
-            IShareQuoteProvider shareQuoteProvider)
+            IShareQuoteProvider shareQuoteProvider,
+            IShareFundamentalsProvider shareFundamentalsProvider)
         {
             _shareDetailsProvider = shareDetailsProvider;
             _sharePriceProvider = sharePriceProvider;
             _shareQuoteProvider = shareQuoteProvider;
+            _shareFundamentalsProvider = shareFundamentalsProvider;
         }
 
         /// <summary>
@@ -67,14 +71,14 @@ namespace InvestorApi.Controllers
         /// <returns>The action response.</returns>
         [HttpGet("")]
         [Authorize]
-        [SwaggerResponse(200, Type = typeof(ListResult<ShareDetails>))]
+        [SwaggerResponse(200, Type = typeof(ListResult<ShareSummary>))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         public IActionResult FindShares(
             [FromQuery][Required][MinLength(1)]string searchTerm,
             [FromQuery][Range(1, 1000)]int? pageNumber,
             [FromQuery][Range(1, 100)]int? pageSize)
         {
-            var details = _shareDetailsProvider.FindShareDetails(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
+            var details = _shareDetailsProvider.FindShares(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
             return Ok(details);
         }
 
@@ -140,6 +144,32 @@ namespace InvestorApi.Controllers
             };
 
             return Ok(response);
+        }
+
+        /// <summary>
+        /// Get fundamental data for a share.
+        /// </summary>
+        /// <remarks>
+        /// The API operation enables investors to retrieve fundamental data for the share with the supplied symbol.
+        /// The caller must provide a valid access token.
+        /// </remarks>
+        /// <param name="symbol">The symbol of the share to return data for.</param>
+        /// <returns>The action response.</returns>
+        [HttpGet("{symbol}/fundamentals")]
+        [Authorize]
+        [SwaggerResponse(200, Type = typeof(ShareFundamentals))]
+        [SwaggerResponse(401, Description = "Authorization failed")]
+        [SwaggerResponse(404, Description = "Share not found.")]
+        public IActionResult GetFundamentals(
+            [FromRoute][MinLength(3)]string symbol)
+        {
+            var fundamentals = _shareFundamentalsProvider.GetShareFundamentals(symbol);
+            if (fundamentals == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(fundamentals);
         }
 
         /// <summary>

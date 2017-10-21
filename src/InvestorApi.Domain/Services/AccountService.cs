@@ -18,7 +18,7 @@ namespace InvestorApi.Domain.Services
         private readonly ISettingService _settingService;
         private readonly IAccountRepository _accountRepository;
         private readonly IShareQuoteProvider _shareQuoteProvider;
-        private readonly IShareDetailsProvider _shareDetailsProvider;
+        private readonly IShareSummaryProvider _shareDetailsProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountService"/> class.
@@ -31,7 +31,7 @@ namespace InvestorApi.Domain.Services
             ISettingService settingService,
             IAccountRepository accountRepository,
             IShareQuoteProvider shareQuoteProvider,
-            IShareDetailsProvider shareDetailsProvider)
+            IShareSummaryProvider shareDetailsProvider)
         {
             _settingService = settingService;
             _accountRepository = accountRepository;
@@ -58,8 +58,8 @@ namespace InvestorApi.Domain.Services
         /// <returns>The trading account details.</returns>
         public AccountDetails GetAccountDetails(Account account)
         {
-            IReadOnlyDictionary<string, ShareDetails> shareDetails = _shareDetailsProvider
-                .GetShareDetails(account.Positions.Select(position => position.Symbol));
+            IReadOnlyDictionary<string, ShareSummary> shareDetails = _shareDetailsProvider
+                .GetShareSummaries(account.Positions.Select(position => position.Symbol));
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
                 .GetQuotes(account.Positions.Select(position => position.Symbol));

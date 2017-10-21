@@ -8,8 +8,9 @@ namespace InvestorApi.Yahoo
         public static void ConfigureServices(IServiceCollection services)
         {
             // Register the provider in the dependency injection container.
-            services.AddSingleton<IShareQuoteProvider>(new YahooShareQuoteProvider());
-            services.AddSingleton<ISharePriceProvider>(new YahooSharePriceProvider());
+            services.AddSingleton<IShareQuoteProvider, YahooShareQuoteProvider>();
+            services.AddSingleton<ISharePriceProvider, YahooSharePriceProvider>();
+            services.AddSingleton<IShareFundamentalsProvider, YahooShareFundamentalsProvider>();
         }
     }
 }

@@ -2,6 +2,7 @@
 using InvestorApi.Contracts.Dtos;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace InvestorApi.Domain.Services
     /// </summary>
     public class LeaderBoardService : ILeaderBoardService
     {
+        private readonly IMemoryCache _memoryCache;
         private readonly IUserRepository _userRepository;
         private readonly IAccountService _accountService;
         private readonly ISettingService _settingService;
@@ -20,14 +22,17 @@ namespace InvestorApi.Domain.Services
         /// <summary>
         /// Initializes a new instance of the <see cref="LeaderBoardService"/> class.
         /// </summary>
+        /// <param name="memoryCache">The memory cache.</param>
         /// <param name="userRepository">The user repository.</param>
         /// <param name="accountService">The account service.</param>
         /// <param name="settingService">The setting service.</param>
         public LeaderBoardService(
+            IMemoryCache memoryCache,
             IUserRepository userRepository,
             IAccountService accountService,
             ISettingService settingService)
         {
+            _memoryCache = memoryCache;
             _userRepository = userRepository;
             _accountService = accountService;
             _settingService = settingService;
@@ -82,6 +87,15 @@ namespace InvestorApi.Domain.Services
         /// <returns>The leader board users.</returns>
         private IList<LeaderBoardUser> GetUsers(Guid currentUserId)
         {
+            // Try to get from cache.
+            string cacheKey = "LB:" + currentUserId;
+
+            var result = _memoryCache.Get<IList<LeaderBoardUser>>(cacheKey);
+            if (result != null)
+            {
+                return result;
+            }
+
             // Get the starting balance assigned to accounts to calculate the profits.
             // Note, if we later decide to change the balance, we need to extend this logic
             // to get the balance from the first account transaction.
@@ -102,6 +116,12 @@ namespace InvestorApi.Domain.Services
             {
                 leaderBoardUsers[i].Rank = i + 1;
             }
+
+            // Add to cache.
+            var cacheEntryOptions = new MemoryCacheEntryOptions()
+                .SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
+
+            _memoryCache.Set(cacheKey, leaderBoardUsers, cacheEntryOptions);
 
             return leaderBoardUsers;
         }

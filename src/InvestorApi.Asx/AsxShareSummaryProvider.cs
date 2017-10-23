@@ -69,22 +69,23 @@ namespace InvestorApi.Asx
         {
             Load();
 
-            var allResults = _shares
+            var symbolMatches = _shares
                 .Select(share => share.Value)
-                .Where(share =>
-                    searchTerm == null ||
-                    share.Symbol.Equals(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                    share.Name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) > -1)
-                .Where(share =>
-                    industry == null ||
-                    share.Industry == industry)
-                .ToList();
+                .Where(share => searchTerm == null || share.Symbol.Equals(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .Where(share => industry == null || share.Industry == industry);
+
+            var nameMatches = _shares
+                .Select(share => share.Value)
+                .Where(share => searchTerm == null || share.Name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) > -1)
+                .Where(share => industry == null || share.Industry == industry);
+
+            var allMatches = symbolMatches.Union(nameMatches).ToList();
 
             return new ListResult<ShareSummary>(
-                allResults.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(),
+                allMatches.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(),
                 pageNumber,
                 pageSize,
-                allResults.Count);
+                allMatches.Count);
         }
 
         /// <summary>

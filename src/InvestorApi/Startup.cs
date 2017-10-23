@@ -58,6 +58,8 @@ namespace InvestorApi
         /// <param name="services">The service container.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+
             // Enabled CORS to allow access from browser applications on different domains.
             services.AddCors();
 

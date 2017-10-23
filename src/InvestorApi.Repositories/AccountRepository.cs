@@ -51,6 +51,8 @@ namespace InvestorApi.Repositories
             // First we have to could the total number of transactions.
             var count = _context.Transactions
                 .Where(transaction => transaction.AccountId == accountId)
+                .Where(transaction => startDate == null || transaction.TimestampUtc >= startDate)
+                .Where(transaction => endDate == null || transaction.TimestampUtc <= endDate)
                 .Count();
 
             // Now we load the transactions for the requested page.

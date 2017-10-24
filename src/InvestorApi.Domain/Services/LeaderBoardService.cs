@@ -87,43 +87,32 @@ namespace InvestorApi.Domain.Services
         /// <returns>The leader board users.</returns>
         private IList<LeaderBoardUser> GetUsers(Guid currentUserId)
         {
-            // Try to get from cache.
-            string cacheKey = "LB:" + currentUserId;
-
-            var result = _memoryCache.Get<IList<LeaderBoardUser>>(cacheKey);
-            if (result != null)
+            return _memoryCache.GetOrCreate("LB:" + currentUserId, entry =>
             {
-                return result;
-            }
+                // Get the starting balance assigned to accounts to calculate the profits.
+                // Note, if we later decide to change the balance, we need to extend this logic
+                // to get the balance from the first account transaction.
+                decimal initialBalance = _settingService.GetDefaultAccountSettings().InitialBalance;
 
-            // Get the starting balance assigned to accounts to calculate the profits.
-            // Note, if we later decide to change the balance, we need to extend this logic
-            // to get the balance from the first account transaction.
-            decimal initialBalance = _settingService.GetDefaultAccountSettings().InitialBalance;
+                // Get all users.
+                var users = _userRepository.ListAllUsersWithAccounts();
 
-            // Get all users.
-            var users = _userRepository.ListAllUsersWithAccounts();
+                // Calculate the leader board values for each user and return the top users.
+                var leaderBoardUsers = users
+                    .AsParallel()
+                    .WithDegreeOfParallelism(5)
+                    .Select(user => GetLeaderBoardUser(currentUserId, user, initialBalance))
+                    .OrderByDescending(user => user.ProfitPercent)
+                    .ToList();
 
-            // Calculate the leader board values for each user and return the top users.
-            var leaderBoardUsers = users
-                .AsParallel()
-                .WithDegreeOfParallelism(5)
-                .Select(user => GetLeaderBoardUser(currentUserId, user, initialBalance))
-                .OrderByDescending(user => user.ProfitPercent)
-                .ToList();
+                for (int i = 0; i < leaderBoardUsers.Count; i++)
+                {
+                    leaderBoardUsers[i].Rank = i + 1;
+                }
 
-            for (int i = 0; i < leaderBoardUsers.Count; i++)
-            {
-                leaderBoardUsers[i].Rank = i + 1;
-            }
-
-            // Add to cache.
-            var cacheEntryOptions = new MemoryCacheEntryOptions()
-                .SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
-
-            _memoryCache.Set(cacheKey, leaderBoardUsers, cacheEntryOptions);
-
-            return leaderBoardUsers;
+                entry.SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
+                return leaderBoardUsers;
+            });
         }
 
         /// <summary>

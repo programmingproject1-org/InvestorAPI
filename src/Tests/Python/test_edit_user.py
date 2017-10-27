@@ -31,7 +31,7 @@ class UserRegistrationTestCase(unittest.TestCase):
 		token = authentication_response.get_token()
 		edituser_response = ApiFacade.edit_user(token, new_displayName, new_email)
 		viewdetails_response = ApiFacade.view_details(token)
-		#deletion_response = ApiFacade.delete_user(authentication_response.get_token())
+		deletion_response = ApiFacade.delete_user(authentication_response.get_token())
 
 		response_status_match = edituser_response.get_http_status() == expected_response_code
 

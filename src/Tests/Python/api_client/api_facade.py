@@ -18,6 +18,7 @@ from .request_extensions.leaderboard_request import LeaderboardRequest
 from .request_extensions.resetaccount_request import ResetAccountRequest
 from .request_extensions.edituser_request import EditUserRequest
 from .request_extensions.fundamentals_request import FundamentalsRequest
+from .request_extensions.dividends_request import DividendsRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -159,6 +160,14 @@ class ApiFacade:
 	def get_fundamentals(token, symbol):
 		session = Session()
 		request = FundamentalsRequest(session, token, symbol)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_dividends(token, symbol):
+		session = Session()
+		request = DividendsRequest(session, token, symbol)
 		response = request.get_response()
 		session.close()
 		return response

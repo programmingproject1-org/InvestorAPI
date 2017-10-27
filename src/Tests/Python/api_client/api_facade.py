@@ -17,6 +17,7 @@ from .request_extensions.viewtransactions_request import ViewTransactionsRequest
 from .request_extensions.leaderboard_request import LeaderboardRequest
 from .request_extensions.resetaccount_request import ResetAccountRequest
 from .request_extensions.edituser_request import EditUserRequest
+from .request_extensions.fundamentals_request import FundamentalsRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -150,6 +151,14 @@ class ApiFacade:
 	def edit_user(token, displayName, email):
 		session = Session()
 		request = EditUserRequest(session, token, displayName, email)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def get_fundamentals(token, symbol):
+		session = Session()
+		request = FundamentalsRequest(session, token, symbol)
 		response = request.get_response()
 		session.close()
 		return response

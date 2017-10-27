@@ -15,6 +15,7 @@ from .request_extensions.historicalprices_request import HistoricalPricesRequest
 from .request_extensions.viewportfolio_request import ViewPortfolioRequest
 from .request_extensions.viewtransactions_request import ViewTransactionsRequest
 from .request_extensions.leaderboard_request import LeaderboardRequest
+from .request_extensions.resetaccount_request import ResetAccountRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -132,6 +133,14 @@ class ApiFacade:
 	def get_leaderboard(token, page_number = None, page_size = None):
 		session = Session()
 		request = LeaderboardRequest(session, token, page_number, page_size)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def reset_account(token, account_id):
+		session = Session()
+		request = ResetAccountRequest(session, token, account_id)
 		response = request.get_response()
 		session.close()
 		return response

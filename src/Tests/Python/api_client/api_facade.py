@@ -16,6 +16,7 @@ from .request_extensions.viewportfolio_request import ViewPortfolioRequest
 from .request_extensions.viewtransactions_request import ViewTransactionsRequest
 from .request_extensions.leaderboard_request import LeaderboardRequest
 from .request_extensions.resetaccount_request import ResetAccountRequest
+from .request_extensions.edituser_request import EditUserRequest
 
 class ApiFacade:
 	def __init__(self):
@@ -141,6 +142,14 @@ class ApiFacade:
 	def reset_account(token, account_id):
 		session = Session()
 		request = ResetAccountRequest(session, token, account_id)
+		response = request.get_response()
+		session.close()
+		return response
+
+	@staticmethod
+	def edit_user(token, displayName, email):
+		session = Session()
+		request = EditUserRequest(session, token, displayName, email)
 		response = request.get_response()
 		session.close()
 		return response

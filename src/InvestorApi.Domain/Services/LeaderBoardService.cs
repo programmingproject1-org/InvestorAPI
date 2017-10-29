@@ -2,6 +2,7 @@
 using InvestorApi.Contracts.Dtos;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
+using InvestorApi.Domain.Utilities;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,10 @@ namespace InvestorApi.Domain.Services
         /// <returns>The leader board users.</returns>
         public ListResult<LeaderBoardUser> GetUsers(Guid currentUserId, int pageNumber, int pageSize)
         {
+            Validate.NotEmpty(currentUserId, nameof(currentUserId));
+            Validate.Range(pageNumber, 1, 1000, nameof(pageNumber));
+            Validate.Range(pageSize, 1, 100, nameof(pageSize));
+
             var allUsers = GetUsers(currentUserId);
             var users = allUsers
                 .Skip((pageNumber - 1) * pageSize)
@@ -64,6 +69,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The leader board users.</returns>
         public IReadOnlyCollection<LeaderBoardUser> GetUsers(Guid currentUserId, int neighborCount)
         {
+            Validate.NotEmpty(currentUserId, nameof(currentUserId));
+            Validate.Range(neighborCount, 0, 50, nameof(neighborCount));
+
             var allUsers = GetUsers(currentUserId);
 
             for (int i = 0; i < allUsers.Count; i++)

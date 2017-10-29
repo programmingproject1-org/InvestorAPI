@@ -3,15 +3,15 @@ namespace InvestorApi.Contracts.Dtos
     /// <summary>
     /// Contains summary information about a share.
     /// </summary>
-    public class ShareSummary
+    public class ShareInfo
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ShareSummary"/> class.
+        /// Initializes a new instance of the <see cref="ShareInfo"/> class.
         /// </summary>
         /// <param name="symbol">The share symbol.</param>
         /// <param name="name">The display name of the share.</param>
         /// <param name="industry">The industry.</param>
-        public ShareSummary(string symbol, string name, string industry)
+        public ShareInfo(string symbol, string name, string industry)
         {
             Symbol = symbol;
             Name = name;

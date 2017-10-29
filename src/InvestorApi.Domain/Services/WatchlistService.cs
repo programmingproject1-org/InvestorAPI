@@ -3,6 +3,7 @@ using InvestorApi.Contracts.Dtos;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Exceptions;
 using InvestorApi.Domain.Repositories;
+using InvestorApi.Domain.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +16,22 @@ namespace InvestorApi.Domain.Services
     internal class WatchlistService : IWatchlistService
     {
         private readonly IWatchlistRepository _watchlistRepository;
-        private readonly IShareSummaryProvider _shareDetailsProvider;
+        private readonly IShareInfoProvider _shareInfoProvider;
         private readonly IShareQuoteProvider _shareQuoteProvider;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WatchlistService"/> class.
+        /// </summary>
+        /// <param name="watchlistRepository">The watchlist repository.</param>
+        /// <param name="shareInfoProvider">The share information provider.</param>
+        /// <param name="shareQuoteProvider">The share quote provider.</param>
         public WatchlistService(
             IWatchlistRepository watchlistRepository,
-            IShareSummaryProvider shareDetailsProvider,
+            IShareInfoProvider shareInfoProvider,
             IShareQuoteProvider shareQuoteProvider)
         {
             _watchlistRepository = watchlistRepository;
-            _shareDetailsProvider = shareDetailsProvider;
+            _shareInfoProvider = shareInfoProvider;
             _shareQuoteProvider = shareQuoteProvider;
         }
 
@@ -36,9 +43,12 @@ namespace InvestorApi.Domain.Services
         /// <returns>The watchlist details.</returns>
         public WatchlistDetails GetWatchlistDetails(Guid userId, Guid watchlistId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(watchlistId, nameof(watchlistId));
+
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
 
-            IReadOnlyDictionary<string, ShareSummary> shareDetails = _shareDetailsProvider
+            IReadOnlyDictionary<string, ShareInfo> shareDetails = _shareInfoProvider
                 .GetShareSummaries(watchlist.Symbols);
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
@@ -67,6 +77,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The identifier of the newly created watchlist.</returns>
         public Guid CreateWatchlist(Guid userId, string name, IEnumerable<string> symbols)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotNullOrWhitespace(name, nameof(name));
+
             Watchlist watchlist = Watchlist.CreateNew(userId, name, symbols);
             _watchlistRepository.Save(watchlist);
             return watchlist.Id;
@@ -80,6 +93,10 @@ namespace InvestorApi.Domain.Services
         /// <param name="name">The watchlist name.</param>
         public void RenameWatchlist(Guid userId, Guid watchlistId, string name)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(watchlistId, nameof(watchlistId));
+            Validate.NotNullOrWhitespace(name, nameof(name));
+
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
             watchlist.RenameWatchlist(name);
             _watchlistRepository.Save(watchlist);
@@ -92,6 +109,9 @@ namespace InvestorApi.Domain.Services
         /// <param name="watchlistId">The unique identifier of the watchlist to delete.</param>
         public void DeleteWatchlist(Guid userId, Guid watchlistId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(watchlistId, nameof(watchlistId));
+
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
             _watchlistRepository.Delete(watchlist);
         }
@@ -104,6 +124,10 @@ namespace InvestorApi.Domain.Services
         /// <param name="symbol">The share symbol.</param>
         public void AddShare(Guid userId, Guid watchlistId, string symbol)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(watchlistId, nameof(watchlistId));
+            Validate.NotNullOrWhitespace(symbol, nameof(symbol));
+
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
             watchlist.AddShare(symbol);
             _watchlistRepository.Save(watchlist);
@@ -111,6 +135,10 @@ namespace InvestorApi.Domain.Services
 
         public void RemoveShare(Guid userId, Guid watchlistId, string symbol)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(watchlistId, nameof(watchlistId));
+            Validate.NotNullOrWhitespace(symbol, nameof(symbol));
+
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
             watchlist.RemoveShare(symbol);
             _watchlistRepository.Save(watchlist);

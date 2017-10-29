@@ -16,15 +16,20 @@ namespace InvestorApi.Yahoo
     {
         private static readonly HttpClient _client = new HttpClient();
 
-        private readonly IShareSummaryProvider _shareSummaryProvider;
+        private readonly IShareInfoProvider _shareInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="YahooShareFundamentalsProvider"/> class.
         /// </summary>
-        /// <param name="shareSummaryProvider">The share summary provider.</param>
-        public YahooShareFundamentalsProvider(IShareSummaryProvider shareSummaryProvider)
+        /// <param name="shareInfoProvider">The share info provider.</param>
+        public YahooShareFundamentalsProvider(IShareInfoProvider shareInfoProvider)
         {
-            _shareSummaryProvider = shareSummaryProvider;
+            if (shareInfoProvider == null)
+            {
+                throw new ArgumentNullException(nameof(shareInfoProvider));
+            }
+
+            _shareInfoProvider = shareInfoProvider;
         }
 
         /// <summary>
@@ -34,11 +39,16 @@ namespace InvestorApi.Yahoo
         /// <returns>The share's fundamental data.</returns>
         public ShareFundamentals GetShareFundamentals(string symbol)
         {
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
+            }
+
             // Download the data as CSV.
             var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbol}.AX&f=sva2pjkj1dyqr1rb4p6em4m3";
             var csv = _client.GetStringAsync(address).Result;
 
-            // Parse the data.
+            // Parse the CSV data.
             return csv
                 .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(line => ReadCsvLine(line))
@@ -53,7 +63,7 @@ namespace InvestorApi.Yahoo
                 string[] values = line.Split(',');
                 string symbol = values[0].Substring(1, values[0].Length - 2).Split('.').First();
 
-                ShareSummary summary = _shareSummaryProvider.GetShareSummary(symbol);
+                ShareInfo summary = _shareInfoProvider.GetShareSummary(symbol);
                 if (summary == null)
                 {
                     return null;

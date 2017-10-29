@@ -5,14 +5,14 @@ namespace InvestorApi.Contracts.Dtos
     /// <summary>
     /// Contains information about a single dividend.
     /// </summary>
-    public class Dividend
+    public class ShareDividend
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Dividend"/> class.
+        /// Initializes a new instance of the <see cref="ShareDividend"/> class.
         /// </summary>
         /// <param name="date">The date.</param>
         /// <param name="value">The value.</param>
-        public Dividend(DateTime date, decimal value)
+        public ShareDividend(DateTime date, decimal value)
         {
             Date = date;
             Value = value;

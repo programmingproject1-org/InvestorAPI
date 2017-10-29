@@ -4,6 +4,7 @@ using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Exceptions;
 using InvestorApi.Domain.Providers;
 using InvestorApi.Domain.Repositories;
+using InvestorApi.Domain.Utilities;
 using System;
 
 namespace InvestorApi.Domain.Services
@@ -44,6 +45,8 @@ namespace InvestorApi.Domain.Services
         /// <returns>The user with the supplied id.</returns>
         public UserInfo GetUserInfo(Guid userId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+
             var user = _userRepository.GetById(userId);
             return user?.ToUserInfo();
         }
@@ -56,6 +59,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>All users in the system.</returns>
         public ListResult<UserInfo> ListUsers(int pageNumber, int pageSize)
         {
+            Validate.Range(pageNumber, 1, 1000, nameof(pageNumber));
+            Validate.Range(pageSize, 1, 100, nameof(pageSize));
+
             var result = _userRepository.ListUsers(pageNumber, pageSize);
             return result.Convert(user => user.ToUserInfo());
         }
@@ -68,6 +74,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The details of the user if authentication was successful; otherwise false.</returns>
         public UserInfo Login(string email, string password)
         {
+            Validate.NotNullOrWhitespace(email, nameof(email));
+            Validate.NotNullOrWhitespace(password, nameof(password));
+
             User user = _userRepository.GetByEmail(email);
             if (user == null || user.Level == UserLevel.Friend)
             {
@@ -91,6 +100,10 @@ namespace InvestorApi.Domain.Services
         /// <returns>The identifier of the newly created user.</returns>
         public Guid RegisterUser(string displayName, string email, string password)
         {
+            Validate.NotNullOrWhitespace(displayName, nameof(displayName));
+            Validate.NotNullOrWhitespace(email, nameof(email));
+            Validate.NotNullOrWhitespace(password, nameof(password));
+
             // Hash the clear text password.
             string hashedPassword = _passwordHashingProvider.ComputeHash(password);
 
@@ -116,6 +129,8 @@ namespace InvestorApi.Domain.Services
         /// <param name="level">The new user level.</param>
         public void EditUser(Guid userId, string displayName, string email, UserLevel? level)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+
             User user = GetUser(userId);
 
             user.EditUser(
@@ -132,6 +147,8 @@ namespace InvestorApi.Domain.Services
         /// <param name="userId">The unique identifier of the user to delete.</param>
         public void DeleteUser(Guid userId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+
             User user = GetUser(userId);
             _userRepository.Delete(user);
         }

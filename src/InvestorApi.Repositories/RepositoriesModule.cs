@@ -5,10 +5,22 @@ using System;
 
 namespace InvestorApi.Repositories
 {
+    /// <summary>
+    /// This class is used by the startup class to register and initialize the components in this library.
+    /// </summary>
     public static class RepositoriesModule
     {
+        /// <summary>
+        /// Regsiteres the services in this library in the applications IOC container.
+        /// </summary>
+        /// <param name="services">The service collection.</param>
         public static void ConfigureServices(IServiceCollection services)
         {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
             // Register the repositories in the dependency injection container.
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IWatchlistRepository, WatchlistRepository>();
@@ -18,6 +30,10 @@ namespace InvestorApi.Repositories
             ConfigurePostgresDbContext(services);
         }
 
+        /// <summary>
+        /// Configures the Postgres database context.
+        /// </summary>
+        /// <param name="services">The service collection.</param>
         private static void ConfigurePostgresDbContext(IServiceCollection services)
         {
             // Heroku injects the database connection URL as an environment variable.

@@ -10,18 +10,19 @@ namespace InvestorApi.Asx
     /// <summary>
     /// Implements a share finder and information provider using the public ASX company list.
     /// </summary>
-    internal class AsxShareSummaryProvider : IShareSummaryProvider
+    internal class AsxShareInfoProvider : IShareInfoProvider
     {
         private const string Address = "http://www.asx.com.au/asx/research/ASXListedCompanies.csv";
 
         private static readonly object _syncLock = new object();
-        private static IDictionary<string, ShareSummary> _shares = null;
+        private static IDictionary<string, ShareInfo> _shares = null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AsxShareSummaryProvider"/> class.
+        /// Initializes a new instance of the <see cref="AsxShareInfoProvider"/> class.
         /// </summary>
-        public AsxShareSummaryProvider()
+        public AsxShareInfoProvider()
         {
+            // Load the CSV from the ASX website and keep it in memory.
             Load();
         }
 
@@ -30,11 +31,16 @@ namespace InvestorApi.Asx
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public ShareSummary GetShareSummary(string symbol)
+        public ShareInfo GetShareSummary(string symbol)
         {
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
+            }
+
             Load();
 
-            if (_shares.TryGetValue(symbol, out ShareSummary result))
+            if (_shares.TryGetValue(symbol, out ShareInfo result))
             {
                 return result;
             }
@@ -47,7 +53,7 @@ namespace InvestorApi.Asx
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public IReadOnlyDictionary<string, ShareSummary> GetShareSummaries(IEnumerable<string> symbols)
+        public IReadOnlyDictionary<string, ShareInfo> GetShareSummaries(IEnumerable<string> symbols)
         {
             Load();
 
@@ -65,7 +71,7 @@ namespace InvestorApi.Asx
         /// <param name="pageNumber">Gets the page number to return.</param>
         /// <param name="pageSize">Gets the page size to apply.</param>
         /// <returns>The list of shares which match the search criteria.</returns>
-        public ListResult<ShareSummary> FindShares(string searchTerm, string industry, int pageNumber, int pageSize)
+        public ListResult<ShareInfo> FindShares(string searchTerm, string industry, int pageNumber, int pageSize)
         {
             Load();
 
@@ -81,7 +87,7 @@ namespace InvestorApi.Asx
 
             var allMatches = symbolMatches.Union(nameMatches).ToList();
 
-            return new ListResult<ShareSummary>(
+            return new ListResult<ShareInfo>(
                 allMatches.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(),
                 pageNumber,
                 pageSize,
@@ -108,7 +114,7 @@ namespace InvestorApi.Asx
                 using (var client = new HttpClient())
                 {
                     // Download and parse the CSV.
-                    // Note that we need to skip the first two lines because on contains headers and the second is blank.
+                    // Note that we need to skip the first two lines because the first contains headers and the second is blank.
                     var csv = client.GetStringAsync(Address).Result;
                     _shares = csv
                         .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
@@ -120,7 +126,7 @@ namespace InvestorApi.Asx
             }
         }
 
-        private ShareSummary ReadCsvLine(string line)
+        private ShareInfo ReadCsvLine(string line)
         {
             var values = line.Split(',');
             if (values.Length != 3)
@@ -137,7 +143,7 @@ namespace InvestorApi.Asx
                 industry = null;
             }
 
-            return new ShareSummary(symbol, name, industry);
+            return new ShareInfo(symbol, name, industry);
         }
     }
 }

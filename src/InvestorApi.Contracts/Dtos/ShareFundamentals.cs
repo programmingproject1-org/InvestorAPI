@@ -5,7 +5,7 @@ namespace InvestorApi.Contracts.Dtos
     /// <summary>
     /// Contains fundamental information about a share.
     /// </summary>
-    public class ShareFundamentals : ShareSummary
+    public class ShareFundamentals : ShareInfo
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ShareFundamentals"/> class.

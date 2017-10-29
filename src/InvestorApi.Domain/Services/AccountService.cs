@@ -4,6 +4,7 @@ using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Exceptions;
 using InvestorApi.Domain.Repositories;
+using InvestorApi.Domain.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace InvestorApi.Domain.Services
         private readonly ISettingService _settingService;
         private readonly IAccountRepository _accountRepository;
         private readonly IShareQuoteProvider _shareQuoteProvider;
-        private readonly IShareSummaryProvider _shareDetailsProvider;
+        private readonly IShareInfoProvider _shareInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountService"/> class.
@@ -26,17 +27,17 @@ namespace InvestorApi.Domain.Services
         /// <param name="settingService">The setting service.</param>
         /// <param name="accountRepository">The account repository.</param>
         /// <param name="shareQuoteProvider">The share quote provider.</param>
-        /// <param name="shareDetailsProvider">The share details provider.</param>
+        /// <param name="shareInfoProvider">The share info provider.</param>
         public AccountService(
             ISettingService settingService,
             IAccountRepository accountRepository,
             IShareQuoteProvider shareQuoteProvider,
-            IShareSummaryProvider shareDetailsProvider)
+            IShareInfoProvider shareInfoProvider)
         {
             _settingService = settingService;
             _accountRepository = accountRepository;
             _shareQuoteProvider = shareQuoteProvider;
-            _shareDetailsProvider = shareDetailsProvider;
+            _shareInfoProvider = shareInfoProvider;
         }
 
         /// <summary>
@@ -47,6 +48,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The trading account details.</returns>
         public AccountDetails GetAccountDetails(Guid userId, Guid accountId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+
             Account account = GetAccount(userId, accountId);
             return GetAccountDetails(account);
         }
@@ -58,7 +62,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The trading account details.</returns>
         public AccountDetails GetAccountDetails(Account account)
         {
-            IReadOnlyDictionary<string, ShareSummary> shareDetails = _shareDetailsProvider
+            Validate.NotNull(account, nameof(account));
+
+            IReadOnlyDictionary<string, ShareInfo> shareDetails = _shareInfoProvider
                 .GetShareSummaries(account.Positions.Select(position => position.Symbol));
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
@@ -90,6 +96,11 @@ namespace InvestorApi.Domain.Services
         /// <returns>The transactions.</returns>
         public ListResult<TransactionInfo> ListTransactions(Guid userId, Guid accountId, DateTime? startDate, DateTime? endDate, int pageNumber, int pageSize)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+            Validate.Range(pageNumber, 1, 1000, nameof(pageNumber));
+            Validate.Range(pageSize, 1, 100, nameof(pageSize));
+
             // Verify that account exists and belongs to the user.
             GetAccount(userId, accountId);
 
@@ -105,6 +116,9 @@ namespace InvestorApi.Domain.Services
         /// <returns>The identifier of the newly created account.</returns>
         public Guid CreateAccount(Guid userId, string name)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotNullOrWhitespace(name, nameof(name));
+
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
 
             Account account = Account.CreateNew(userId, name, settings.InitialBalance);
@@ -119,6 +133,9 @@ namespace InvestorApi.Domain.Services
         /// <param name="accountId">The unique identifier of the account to delete.</param>
         public void DeleteAccount(Guid userId, Guid accountId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+
             Account account = GetAccount(userId, accountId);
             _accountRepository.Delete(account);
         }
@@ -130,6 +147,9 @@ namespace InvestorApi.Domain.Services
         /// <param name="accountId">The unique identifier of the account to reset.</param>
         public void ResetAccount(Guid userId, Guid accountId)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+
             DefaultAccountSettings settings = _settingService.GetDefaultAccountSettings();
 
             Account account = GetAccount(userId, accountId);
@@ -147,6 +167,10 @@ namespace InvestorApi.Domain.Services
         /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         public void BuySharesAtMarketPrice(Guid userId, Guid accountId, string symbol, long quantity, long nonce)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+            Validate.NotNullOrWhitespace(symbol, nameof(symbol));
+
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
             {
@@ -170,6 +194,10 @@ namespace InvestorApi.Domain.Services
         /// <param name="nonce">The nonce value required to detect duplicate orders.</param>
         public void SellSharesAtMarketPrice(Guid userId, Guid accountId, string symbol, long quantity, long nonce)
         {
+            Validate.NotEmpty(userId, nameof(userId));
+            Validate.NotEmpty(accountId, nameof(accountId));
+            Validate.NotNullOrWhitespace(symbol, nameof(symbol));
+
             Quote quote = _shareQuoteProvider.GetQuote(symbol);
             if (quote == null)
             {

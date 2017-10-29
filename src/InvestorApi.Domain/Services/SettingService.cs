@@ -2,7 +2,9 @@
 using InvestorApi.Contracts.Settings;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
+using InvestorApi.Domain.Utilities;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace InvestorApi.Domain.Services
@@ -65,6 +67,8 @@ namespace InvestorApi.Domain.Services
         /// <param name="settings">The settings.</param>
         public void SaveDefaultAccountSettings(DefaultAccountSettings settings)
         {
+            Validate.NotNull(settings, nameof(settings));
+
             var value = JsonConvert.SerializeObject(settings);
             var setting = Setting.Create(DefaultAccountSettingsKey, value);
             _settingRepository.Save(setting);
@@ -111,6 +115,8 @@ namespace InvestorApi.Domain.Services
         /// <param name="commissions">The commissions.</param>
         public void SaveBuyCommissions(Commissions commissions)
         {
+            Validate.NotNull(commissions, nameof(commissions));
+
             var value = JsonConvert.SerializeObject(commissions);
             var setting = Setting.Create(BuyCommissionsKey, value);
             _settingRepository.Save(setting);
@@ -159,6 +165,8 @@ namespace InvestorApi.Domain.Services
         /// <param name="commissions">The commissions.</param>
         public void SaveSellCommissions(Commissions commissions)
         {
+            Validate.NotNull(commissions, nameof(commissions));
+
             var value = JsonConvert.SerializeObject(commissions);
             var setting = Setting.Create(SellCommissionsKey, value);
             _settingRepository.Save(setting);

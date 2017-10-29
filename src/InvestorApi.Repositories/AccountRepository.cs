@@ -20,6 +20,11 @@ namespace InvestorApi.Repositories
         /// <param name="context">The data context.</param>
         public AccountRepository(DataContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             _context = context;
         }
 

@@ -27,8 +27,18 @@ namespace InvestorApi.Yahoo
         /// <param name="symbol">The share symbol.</param>
         /// <param name="range">The date range. Possible values are: 1y, 2y, 5y, 10y, max</param>
         /// <returns>The dividend history.</returns>
-        public IReadOnlyCollection<Dividend> GetDividendHistory(string symbol, string range)
+        public IReadOnlyCollection<ShareDividend> GetDividendHistory(string symbol, string range)
         {
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(range))
+            {
+                throw new ArgumentException($"Argument '{nameof(range)}' is required.");
+            }
+
             // Get the access cookie and crumb.
             Token token = Authenticate(symbol);
             if (token == null)
@@ -36,7 +46,7 @@ namespace InvestorApi.Yahoo
                 return null;
             }
 
-            // Parse the range.
+            // Parse the range argument (always in years until it's "max").
             if (!int.TryParse(range.Substring(0, range.Length - 1), out int years))
             {
                 years = 25;
@@ -45,7 +55,7 @@ namespace InvestorApi.Yahoo
             // Download the CSV.
             var csv = DownloadDividendHistory(token, DateTimeOffset.UtcNow.AddYears(-years), DateTimeOffset.UtcNow);
 
-            // Parse the data.
+            // Parse the CSV data.
             return csv
                 .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Skip(1)
@@ -55,16 +65,16 @@ namespace InvestorApi.Yahoo
                 .ToList();
         }
 
-        private static Dividend ReadCsvLine(string line)
+        private static ShareDividend ReadCsvLine(string line)
         {
             try
             {
                 var values = line.Split(',');
 
                 var date = DateTime.ParseExact(values[0], "yyyy-MM-dd", CultureInfo.InvariantCulture);
-                var value = decimal.Parse(values[1]);
+                var amount = decimal.Parse(values[1]);
 
-                return new Dividend(date, value);
+                return new ShareDividend(date, amount);
             }
             catch (FormatException)
             {

@@ -31,14 +31,23 @@ namespace InvestorApi.Yahoo
         /// <returns>The historical prices for the share.</returns>
         public IReadOnlyCollection<SharePrice> GetPriceHistory(string symbol, DateTime endTime, string range, string interval)
         {
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
+            }
+
+            // Format the request URL.
             long period2 = new DateTimeOffset(endTime).ToUnixTimeSeconds();
             string requestUri = string.Format(BaseUrl, symbol, range, interval, period2);
+
+            // Download the JSON document.
             HttpResponseMessage response = _client.GetAsync(requestUri).Result;
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
                 return null;
             }
 
+            // Read and parse the JSON document.
             string responseContent = response.Content.ReadAsStringAsync().Result;
 
             JObject results = JObject.Parse(responseContent);

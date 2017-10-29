@@ -34,7 +34,7 @@ namespace InvestorApi.Controllers
             ["max"] = "1mo"
         };
 
-        private IShareSummaryProvider _shareDetailsProvider;
+        private IShareInfoProvider _shareInfoProvider;
         private IShareQuoteProvider _shareQuoteProvider;
         private IShareFundamentalsProvider _shareFundamentalsProvider;
         private ISharePriceHistoryProvider _sharePriceHistoryProvider;
@@ -43,19 +43,19 @@ namespace InvestorApi.Controllers
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
         /// </summary>
-        /// <param name="shareDetailsProvider">Injected instance of <see cref="IShareSummaryProvider"/>.</param>
+        /// <param name="shareInfoProvider">Injected instance of <see cref="IShareInfoProvider"/>.</param>
         /// <param name="shareQuoteProvider">Injected instance of <see cref="IShareQuoteProvider"/>.</param>
         /// <param name="shareFundamentalsProvider">Injected instance of <see cref="IShareFundamentalsProvider"/>.</param>
         /// <param name="sharePriceHistoryProvider">Injected instance of <see cref="ISharePriceHistoryProvider"/>.</param>
         /// <param name="shareDividendHistoryProvider">Injected instance of <see cref="IShareDividendHistoryProvider"/>.</param>
         public SharesController(
-            IShareSummaryProvider shareDetailsProvider,
+            IShareInfoProvider shareInfoProvider,
             IShareQuoteProvider shareQuoteProvider,
             IShareFundamentalsProvider shareFundamentalsProvider,
             ISharePriceHistoryProvider sharePriceHistoryProvider,
             IShareDividendHistoryProvider shareDividendHistoryProvider)
         {
-            _shareDetailsProvider = shareDetailsProvider;
+            _shareInfoProvider = shareInfoProvider;
             _shareQuoteProvider = shareQuoteProvider;
             _shareFundamentalsProvider = shareFundamentalsProvider;
             _sharePriceHistoryProvider = sharePriceHistoryProvider;
@@ -75,14 +75,14 @@ namespace InvestorApi.Controllers
         /// <returns>The action response.</returns>
         [HttpGet("")]
         [Authorize]
-        [SwaggerResponse(200, Type = typeof(ListResult<ShareSummary>))]
+        [SwaggerResponse(200, Type = typeof(ListResult<ShareInfo>))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         public IActionResult FindShares(
             [FromQuery][Required][MinLength(1)]string searchTerm,
             [FromQuery][Range(1, 1000)]int? pageNumber,
             [FromQuery][Range(1, 100)]int? pageSize)
         {
-            var details = _shareDetailsProvider.FindShares(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
+            var details = _shareInfoProvider.FindShares(searchTerm, null, pageNumber ?? 1, pageSize ?? 100);
             return Ok(details);
         }
 
@@ -162,7 +162,7 @@ namespace InvestorApi.Controllers
         /// <returns>The action response.</returns>
         [HttpGet("{symbol}/dividends")]
         [Authorize]
-        [SwaggerResponse(200, Type = typeof(Dividend[]))]
+        [SwaggerResponse(200, Type = typeof(ShareDividend[]))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         [SwaggerResponse(404, Description = "Share not found.")]
         public IActionResult GetDividends(

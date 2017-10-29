@@ -23,6 +23,11 @@ namespace InvestorApi.Yahoo
         /// <returns>The current quote for the share.</returns>
         public Quote GetQuote(string symbol)
         {
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
+            }
+
             var quotes = GetQuotes(new[] { symbol });
             if (quotes.ContainsKey(symbol))
             {
@@ -39,12 +44,17 @@ namespace InvestorApi.Yahoo
         /// <returns>The crurent quotes for the shares.</returns>
         public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
         {
+            if (symbols == null)
+            {
+                throw new ArgumentNullException(nameof(symbols));
+            }
+
             // Download the data as CSV.
             var symbolQuery = string.Join(",", symbols.Distinct().Select(s => s + ".AX"));
             var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3ghc1p2";
             var csv = _client.GetStringAsync(address).Result;
 
-            // Parse the data.
+            // Parse the CSV data.
             return csv
                 .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(line => ReadCsvLine(line))

@@ -1,6 +1,7 @@
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace InvestorApi.Repositories
@@ -18,6 +19,11 @@ namespace InvestorApi.Repositories
         /// <param name="context">The data context.</param>
         public SettingRepository(DataContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             _context = context;
         }
 

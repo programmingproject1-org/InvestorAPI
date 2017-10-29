@@ -23,6 +23,11 @@ namespace InvestorApi.Repositories
         /// <param name="context">The data context.</param>
         public UserRepository(DataContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             _context = context;
         }
 
@@ -62,6 +67,7 @@ namespace InvestorApi.Repositories
         {
             return _context.Users
                 .Include(user => user.Accounts)
+                .ThenInclude(account => account.Positions)
                 .ToList();
         }
 

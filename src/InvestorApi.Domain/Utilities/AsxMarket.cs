@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace InvestorApi.Domain.Utilities
 {
+    /// <summary>
+    /// Provides information about the ASX market.
+    /// </summary>
     internal class AsxMarket
     {
         private static readonly ConcurrentDictionary<int, SortedSet<DateTimeOffset>> publicHolidays =
@@ -12,6 +15,9 @@ namespace InvestorApi.Domain.Utilities
 
         private static TimeZoneInfo _timeZone = null;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AsxMarket"/> class.
+        /// </summary>
         public AsxMarket()
         {
             if (_timeZone == null)
@@ -22,16 +28,26 @@ namespace InvestorApi.Domain.Utilities
             }
         }
 
+        /// <summary>
+        /// Gets the market's current local time.
+        /// </summary>
+        /// <returns>The market's current local time.</returns>
         public DateTimeOffset GetCurrentTime()
         {
             return TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, _timeZone);
         }
 
+        /// <summary>
+        /// Determines whether the market is currently open.
+        /// </summary>
         public bool IsMarketOpen()
         {
             return IsMarketOpen(GetCurrentTime());
         }
 
+        /// <summary>
+        /// Determines whether the market is open at the supplied date and time.
+        /// </summary>
         public bool IsMarketOpen(DateTimeOffset time)
         {
             if (IsTradingDay(time))
@@ -48,11 +64,17 @@ namespace InvestorApi.Domain.Utilities
             return false;
         }
 
+        /// <summary>
+        /// Determines whether today is a trading day.
+        /// </summary>
         public bool IsTradingDay()
         {
             return IsTradingDay(GetCurrentTime());
         }
 
+        /// <summary>
+        /// Determines whether the supplied date is a trading day.
+        /// </summary>
         public bool IsTradingDay(DateTimeOffset date)
         {
             if ((date.DayOfWeek == DayOfWeek.Saturday) || (date.DayOfWeek == DayOfWeek.Sunday))
@@ -68,6 +90,11 @@ namespace InvestorApi.Domain.Utilities
             return true;
         }
 
+        /// <summary>
+        /// Gets the opening time on the supplied date.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns>The opening time on the supplied date.</returns>
         public DateTimeOffset GetOpeningTime(DateTimeOffset date)
         {
             date = TimeZoneInfo.ConvertTime(date, _timeZone);
@@ -80,6 +107,11 @@ namespace InvestorApi.Domain.Utilities
             return DateTimeOffsetUtilities.Create(_timeZone, date, 10, 00);
         }
 
+        /// <summary>
+        /// Gets the closing time on the supplied date.
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns>The closing time on the supplied date.</returns>
         public DateTimeOffset GetClosingTime(DateTimeOffset date)
         {
             date = TimeZoneInfo.ConvertTime(date, _timeZone);
@@ -92,6 +124,11 @@ namespace InvestorApi.Domain.Utilities
             return DateTimeOffsetUtilities.Create(_timeZone, date, 16, 00);
         }
 
+        /// <summary>
+        /// Gets the public holidays dates affecting the market.
+        /// </summary>
+        /// <param name="year">The year.</param>
+        /// <returns>The public holiday dates.</returns>
         private SortedSet<DateTimeOffset> GetPublicHolidays(int year)
         {
             return publicHolidays.GetOrAdd(year, y =>

@@ -26,7 +26,7 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def test_view_leaderboard_success(self):
 		expected_response_code = 200
 		expected_keys_in_leaderboard = ["items", "pageNumber", "pageSize", "totalPageCount", "totalRowCount"]
-		expected_keys_in_leaderboard_items = ["rank", "displayName", "totalAccountValue", "profit", "profitPercent", "isCurrentUser"]
+		expected_keys_in_leaderboard_items = ["gravatarUrl", "rank", "displayName", "totalAccountValue", "profit", "profitPercent", "isCurrentUser"]
 		
 		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
 		registration_response = ApiFacade.register_user(displayName, email, password)

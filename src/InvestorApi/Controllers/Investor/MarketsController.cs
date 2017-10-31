@@ -7,7 +7,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Investor
 {
     /// <summary>
     /// The API controller provides share price and detail information.

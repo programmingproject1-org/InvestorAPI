@@ -8,6 +8,18 @@ namespace InvestorApi.Contracts
     public interface ISettingService
     {
         /// <summary>
+        /// Gets the prediction settings.
+        /// </summary>
+        /// <returns></returns>
+        Predictions GetPredictions();
+
+        /// <summary>
+        /// Saves the prediction settings.
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        void SavePredictions(Predictions settings);
+
+        /// <summary>
         /// Gets the default account settings.
         /// </summary>
         /// <returns></returns>

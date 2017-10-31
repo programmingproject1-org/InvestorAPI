@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Investor
 {
     /// <summary>
     /// The API controller provides management operations for watchlists.

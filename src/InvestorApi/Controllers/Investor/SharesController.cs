@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Investor
 {
     /// <summary>
     /// The API controller provides share price and detail information.
@@ -214,7 +214,6 @@ namespace InvestorApi.Controllers
         /// <param name="symbols">The symbols of the share to return, separated by commas.</param>
         /// <returns>The action response.</returns>
         [HttpGet("quotes")]
-        [Authorize]
         [SwaggerResponse(200, Type = typeof(Quote[]))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         public IActionResult GetQuotes([FromQuery][MinLength(3)]string symbols)

@@ -35,6 +35,7 @@ namespace InvestorApi.Repositories
         public Setting GetByKey(string key)
         {
             return _context.Settings
+                .AsNoTracking()
                 .Where(setting => setting.Key == key)
                 .FirstOrDefault();
         }

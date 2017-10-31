@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.ComponentModel.DataAnnotations;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Investor
 {
     /// <summary>
     /// The API controller provides the leader board.

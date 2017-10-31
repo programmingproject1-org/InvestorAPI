@@ -17,7 +17,7 @@ namespace InvestorApi.Yahoo
     /// </remarks>
     internal sealed class YahooSharePriceHistoryProvider : ISharePriceHistoryProvider
     {
-        private const string BaseUrl = @"https://l1-query.finance.yahoo.com/v8/finance/chart/{0}.AX?range={1}&interval={2}&period2={3}&events=div|split|earn";
+        private const string BaseUrl = @"https://l1-query.finance.yahoo.com/v8/finance/chart/{0}?range={1}&interval={2}&period2={3}&events=div|split|earn";
 
         private static readonly HttpClient _client = new HttpClient();
 
@@ -37,6 +37,7 @@ namespace InvestorApi.Yahoo
             }
 
             // Format the request URL.
+            symbol += symbol.StartsWith("^") ? string.Empty : ".AX";
             long period2 = new DateTimeOffset(endTime).ToUnixTimeSeconds();
             string requestUri = string.Format(BaseUrl, symbol, range, interval, period2);
 

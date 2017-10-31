@@ -10,7 +10,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace InvestorApi.Controllers
+namespace InvestorApi.Controllers.Investor
 {
     /// <summary>
     /// The API controller provides management operations for accounts.

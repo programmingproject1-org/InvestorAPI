@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace InvestorApi.Providers
+namespace InvestorApi.MachineLearning
 {
     /// <summary>
     /// Implements a share predictions provider using predictions provided by machine learning.
@@ -42,9 +42,16 @@ namespace InvestorApi.Providers
         /// <returns>The share's predicitions.</returns>
         public SharePredictions GetSharePredictions(string symbol)
         {
-            // Get the beta value of the share.
-            decimal? beta = GetBeta(symbol);
-            if (beta == null)
+            // Get the last price and the 1-year change of the index.
+            var indexPriceAndChange = GetLastPriceAndChange(IndexSymbol);
+            if (indexPriceAndChange == null)
+            {
+                return null;
+            }
+
+            // Get the last price and the 1-year change of the share.
+            var sharePriceAndChange = GetLastPriceAndChange(symbol);
+            if (sharePriceAndChange == null)
             {
                 return null;
             }
@@ -53,43 +60,46 @@ namespace InvestorApi.Providers
             // These were previsouly stored by the machine learning script.
             IndexPredictions predictions = _settingService.GetIndexPredictions();
 
-            return new SharePredictions(symbol, 0, 0);
+            // Calculate the share's beta value.
+            decimal beta = sharePriceAndChange.Item2 * (1 - indexPriceAndChange.Item2);
+
+            // Claculate the predicted index change in 1 day and 1 week.
+            decimal indexChange1Day = (predictions.IndexInOneDay - indexPriceAndChange.Item1) / indexPriceAndChange.Item1;
+            decimal indexChange1Week = (predictions.IndexInOneWeek - indexPriceAndChange.Item1) / indexPriceAndChange.Item1;
+
+            // Calculate the predicted price change in 1 day and 1 week.
+            decimal priceChange1Day = indexChange1Day * beta;
+            decimal priceChange1Week = indexChange1Week * beta;
+
+            // Clauclate the predicted price in 1 day and 1 week.
+            decimal priceIn1Day = Math.Round(sharePriceAndChange.Item1 * (1 + priceChange1Day), 3);
+            decimal priceIn1Week = Math.Round(sharePriceAndChange.Item1 * (1 + priceChange1Week), 3);
+
+            // Return the predicted prices.
+            return new SharePredictions(symbol, priceIn1Day, priceIn1Week);
         }
 
-        private decimal? GetBeta(string symbol)
-        {
-            // Get the 12 month change of the share.
-            decimal? shareChange = GetChange(symbol);
-            if (shareChange == null)
-            {
-                return null;
-            }
-
-            // Get the 12 month change of the index.
-            decimal indexChange = GetChange(IndexSymbol).Value;
-
-            // Calculate the beta value for the share.
-            return shareChange.Value * (1 - indexChange);
-        }
-
-        private decimal? GetChange(string symbol)
+        private Tuple<decimal, decimal> GetLastPriceAndChange(string symbol)
         {
             return _memoryCache.GetOrCreate("Beta:" + symbol, entry =>
             {
                 entry.SetAbsoluteExpiration(TimeSpan.FromDays(1));
 
                 // Get the historical share prices of the last 12 months.
-                IEnumerable<SharePrice> prices = _sharePriceHistoryProvider.GetPriceHistory(symbol, DateTime.UtcNow, "1y", "1mo");
+                IEnumerable<SharePrice> prices = _sharePriceHistoryProvider.GetPriceHistory(symbol, DateTime.UtcNow, "1y", "1d");
                 if (prices == null)
                 {
-                    return (decimal?)null;
+                    return null;
                 }
 
                 // Calculate the change.
                 decimal[] closes = prices.Where(p => p.Close.HasValue).Select(p => p.Close.Value).ToArray();
                 decimal first = closes.First();
                 decimal last = closes.Last();
-                return (last - first) / first;
+                decimal change = (last - first) / first;
+
+                // Return the previous close and the 1-year change.
+                return new Tuple<decimal, decimal>(last, change);
             });
         }
     }

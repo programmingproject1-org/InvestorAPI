@@ -2,12 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace InvestorApi.Providers
+namespace InvestorApi.MachineLearning
 {
     /// <summary>
     /// This class is used by the startup class to register and initialize the components in this library.
     /// </summary>
-    public static class ProvidersModule
+    public static class MachineLearningProviderModule
     {
         /// <summary>
         /// Regsiteres the services in this library in the applications IOC container.

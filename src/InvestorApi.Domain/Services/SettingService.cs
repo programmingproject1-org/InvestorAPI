@@ -20,7 +20,7 @@ namespace InvestorApi.Domain.Services
 
         private readonly ISettingRepository _settingRepository;
 
-        private Predictions _predictions;
+        private IndexPredictions _predictions;
         private DefaultAccountSettings _defaultAccountSettings;
         private Commissions _buyCommissions;
         private Commissions _sellCommissions;
@@ -38,7 +38,7 @@ namespace InvestorApi.Domain.Services
         /// Gets the prediction settings.
         /// </summary>
         /// <returns></returns>
-        public Predictions GetPredictions()
+        public IndexPredictions GetIndexPredictions()
         {
             if (_predictions == null)
             {
@@ -46,17 +46,17 @@ namespace InvestorApi.Domain.Services
                 if (setting == null)
                 {
                     // No settings found - Create the application default settings.
-                    _predictions = new Predictions
+                    _predictions = new IndexPredictions
                     {
                         IndexInOneDay = 5000,
                         IndexInOneWeek = 5000
                     };
 
-                    SavePredictions(_predictions);
+                    SaveIndexPredictions(_predictions);
                 }
                 else
                 {
-                    _predictions = JsonConvert.DeserializeObject<Predictions>(setting.Value);
+                    _predictions = JsonConvert.DeserializeObject<IndexPredictions>(setting.Value);
                 }
             }
 
@@ -67,7 +67,7 @@ namespace InvestorApi.Domain.Services
         /// Saves the prediction settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
-        public void SavePredictions(Predictions settings)
+        public void SaveIndexPredictions(IndexPredictions settings)
         {
             Validate.NotNull(settings, nameof(settings));
 
@@ -159,6 +159,11 @@ namespace InvestorApi.Domain.Services
         public void SaveBuyCommissions(Commissions commissions)
         {
             Validate.NotNull(commissions, nameof(commissions));
+            Validate.NotNull(commissions.Fixed, nameof(commissions.Fixed));
+            Validate.NotNull(commissions.Percentage, nameof(commissions.Percentage));
+
+            Validate.Minimum(commissions.Fixed.Count, 1, nameof(commissions.Fixed));
+            Validate.Minimum(commissions.Percentage.Count, 1, nameof(commissions.Percentage));
 
             var value = JsonConvert.SerializeObject(commissions);
             var setting = Setting.Create(BuyCommissionsKey, value);
@@ -209,6 +214,11 @@ namespace InvestorApi.Domain.Services
         public void SaveSellCommissions(Commissions commissions)
         {
             Validate.NotNull(commissions, nameof(commissions));
+            Validate.NotNull(commissions.Fixed, nameof(commissions.Fixed));
+            Validate.NotNull(commissions.Percentage, nameof(commissions.Percentage));
+
+            Validate.Minimum(commissions.Fixed.Count, 1, nameof(commissions.Fixed));
+            Validate.Minimum(commissions.Percentage.Count, 1, nameof(commissions.Percentage));
 
             var value = JsonConvert.SerializeObject(commissions);
             var setting = Setting.Create(SellCommissionsKey, value);

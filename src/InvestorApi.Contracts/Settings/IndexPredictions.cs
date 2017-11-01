@@ -3,7 +3,7 @@
     /// <summary>
     /// Stores predicted index values.
     /// </summary>
-    public class Predictions
+    public class IndexPredictions
     {
         /// <summary>
         /// Gets or sets the predicted index value in one day.

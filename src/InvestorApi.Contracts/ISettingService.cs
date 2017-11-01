@@ -8,21 +8,21 @@ namespace InvestorApi.Contracts
     public interface ISettingService
     {
         /// <summary>
-        /// Gets the prediction settings.
+        /// Gets the index prediction settings.
         /// </summary>
-        /// <returns></returns>
-        Predictions GetPredictions();
+        /// <returns>The prediction settings.</returns>
+        IndexPredictions GetIndexPredictions();
 
         /// <summary>
-        /// Saves the prediction settings.
+        /// Saves the index prediction settings.
         /// </summary>
-        /// <param name="settings">The settings.</param>
-        void SavePredictions(Predictions settings);
+        /// <param name="settings">The prediction settings.</param>
+        void SaveIndexPredictions(IndexPredictions settings);
 
         /// <summary>
         /// Gets the default account settings.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The settings.</returns>
         DefaultAccountSettings GetDefaultAccountSettings();
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace InvestorApi.Contracts
         /// <summary>
         /// Gets the buy commissions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The commissions.</returns>
         Commissions GetBuyCommissions();
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace InvestorApi.Contracts
         /// <summary>
         /// Gets the sell commissions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The commissions.</returns>
         Commissions GetSellCommissions();
 
         /// <summary>

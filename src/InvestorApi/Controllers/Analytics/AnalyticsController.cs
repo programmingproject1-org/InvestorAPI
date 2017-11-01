@@ -50,12 +50,12 @@ namespace InvestorApi.Controllers.Analytics
         [SwaggerResponse(204)]
         public IActionResult SetPredictedIndexValues([FromBody]SetPredictedIndexValues body)
         {
-            var predictions = _settingService.GetPredictions();
+            var predictions = _settingService.GetIndexPredictions();
 
             predictions.IndexInOneDay = body.ValueInOneDay ?? predictions.IndexInOneDay;
             predictions.IndexInOneWeek = body.ValueInOneWeek ?? predictions.IndexInOneWeek;
 
-            _settingService.SavePredictions(predictions);
+            _settingService.SaveIndexPredictions(predictions);
 
             return NoContent();
         }

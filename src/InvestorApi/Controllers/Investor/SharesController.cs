@@ -240,6 +240,7 @@ namespace InvestorApi.Controllers.Investor
         /// <param name="symbols">The symbols of the share to return, separated by commas.</param>
         /// <returns>The action response.</returns>
         [HttpGet("quotes")]
+        [Authorize]
         [SwaggerResponse(200, Type = typeof(Quote[]))]
         [SwaggerResponse(401, Description = "Authorization failed")]
         public IActionResult GetQuotes([FromQuery][MinLength(3)]string symbols)

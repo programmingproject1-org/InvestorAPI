@@ -50,16 +50,24 @@ namespace InvestorApi.Yahoo
             }
 
             // Download the data as CSV.
-            var symbolQuery = string.Join(",", symbols.Distinct().Select(s => s + ".AX"));
-            var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3ghc1p2";
-            var csv = _client.GetStringAsync(address).Result;
+            try
+            {
+                var symbolQuery = string.Join(",", symbols.Distinct().Select(s => s + ".AX"));
+                var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbolQuery}&f=saa5bb6l1k3ghc1p2";
+                var csv = _client.GetStringAsync(address).Result;
 
-            // Parse the CSV data.
-            return csv
-                .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(line => ReadCsvLine(line))
-                .Where(quote => quote != null)
-                .ToDictionary(quote => quote.Symbol);
+                // Parse the CSV data.
+                return csv
+                    .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(line => ReadCsvLine(line))
+                    .Where(quote => quote != null)
+                    .ToDictionary(quote => quote.Symbol);
+            }
+            catch
+            {
+                // Temporary hack unti Yahoo CSV API is back up.
+                return new YahooShareQuoteProvider2().GetQuotes(symbols);
+            }
         }
 
         private static Quote ReadCsvLine(string line)

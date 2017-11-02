@@ -2,7 +2,6 @@ using InvestorApi.Asx;
 using InvestorApi.Converters;
 using InvestorApi.Domain;
 using InvestorApi.Filters;
-using InvestorApi.MachineLearning;
 using InvestorApi.Repositories;
 using InvestorApi.Security;
 using InvestorApi.Swagger;
@@ -114,7 +113,6 @@ namespace InvestorApi
             RepositoriesModule.ConfigureServices(services);
             AsxModule.ConfigureServices(services);
             YahooModule.ConfigureServices(services);
-            MachineLearningProviderModule.ConfigureServices(services);
         }
 
         /// <summary>

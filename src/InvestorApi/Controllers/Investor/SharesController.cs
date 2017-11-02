@@ -39,7 +39,6 @@ namespace InvestorApi.Controllers.Investor
         private IShareFundamentalsProvider _shareFundamentalsProvider;
         private ISharePriceHistoryProvider _sharePriceHistoryProvider;
         private IShareDividendHistoryProvider _shareDividendHistoryProvider;
-        private ISharePredictionsProvider _sharePredictionsProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
@@ -49,21 +48,18 @@ namespace InvestorApi.Controllers.Investor
         /// <param name="shareFundamentalsProvider">Injected instance of <see cref="IShareFundamentalsProvider"/>.</param>
         /// <param name="sharePriceHistoryProvider">Injected instance of <see cref="ISharePriceHistoryProvider"/>.</param>
         /// <param name="shareDividendHistoryProvider">Injected instance of <see cref="IShareDividendHistoryProvider"/>.</param>
-        /// <param name="sharePredictionsProvider">Injected instance of <see cref="ISharePredictionsProvider"/>.</param>
         public SharesController(
             IShareInfoProvider shareInfoProvider,
             IShareQuoteProvider shareQuoteProvider,
             IShareFundamentalsProvider shareFundamentalsProvider,
             ISharePriceHistoryProvider sharePriceHistoryProvider,
-            IShareDividendHistoryProvider shareDividendHistoryProvider,
-            ISharePredictionsProvider sharePredictionsProvider)
+            IShareDividendHistoryProvider shareDividendHistoryProvider)
         {
             _shareInfoProvider = shareInfoProvider;
             _shareQuoteProvider = shareQuoteProvider;
             _shareFundamentalsProvider = shareFundamentalsProvider;
             _sharePriceHistoryProvider = sharePriceHistoryProvider;
             _shareDividendHistoryProvider = shareDividendHistoryProvider;
-            _sharePredictionsProvider = sharePredictionsProvider;
         }
 
         /// <summary>
@@ -205,29 +201,6 @@ namespace InvestorApi.Controllers.Investor
             }
 
             return Ok(fundamentals);
-        }
-
-        /// <summary>
-        /// Get predictions data for a share.
-        /// </summary>
-        /// <remarks>
-        /// The API operation enables investors to retrieve predictions calculated through machine learning
-        /// for the share with the supplied symbol. The caller must provide a valid access token.
-        /// </remarks>
-        /// <param name="symbol">The symbol of the share to return predictions for.</param>
-        /// <returns>The action response.</returns>
-        [HttpGet("{symbol}/predictions")]
-        [SwaggerResponse(200, Type = typeof(SharePredictions))]
-        [SwaggerResponse(401, Description = "Authorization failed")]
-        public IActionResult GetPrediction([FromRoute][MinLength(3)]string symbol)
-        {
-            var predictions = _sharePredictionsProvider.GetSharePredictions(symbol);
-            if (predictions == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(predictions);
         }
 
         /// <summary>

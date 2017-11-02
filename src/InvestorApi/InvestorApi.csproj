@@ -49,7 +49,6 @@
     <ProjectReference Include="..\InvestorApi.Domain\InvestorApi.Domain.csproj" />
     <ProjectReference Include="..\InvestorApi.Repositories\InvestorApi.Repositories.csproj" />
     <ProjectReference Include="..\Providers\InvestorApi.Asx\InvestorApi.Asx.csproj" />
-    <ProjectReference Include="..\Providers\InvestorApi.MachineLearning\InvestorApi.MachineLearning.csproj" />
     <ProjectReference Include="..\Providers\InvestorApi.Yahoo\InvestorApi.Yahoo.csproj" />
   </ItemGroup>
 

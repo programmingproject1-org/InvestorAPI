@@ -32,8 +32,7 @@ namespace InvestorApi.Yahoo
             }
 
             // Format the request URL.
-            symbol += symbol.StartsWith("^") ? string.Empty : ".AX";
-            string requestUri = string.Format(BaseUrl, symbol);
+            string requestUri = string.Format(BaseUrl, symbol.StartsWith("^") ? symbol : symbol + ".AX");
 
             // Download the JSON document.
             HttpResponseMessage response = _client.GetAsync(requestUri).Result;
@@ -60,14 +59,16 @@ namespace InvestorApi.Yahoo
             decimal[] close = result["indicators"]["quote"][0]["close"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
             long[] volume = result["indicators"]["quote"][0]["volume"].Values<long?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
 
-            decimal last = close.Last();
+            int decimals = previousClose < 2 ? 3 : 2;
+
+            decimal last = Math.Round(close.Last(), decimals);
             long lastVolume = volume.Where(v => v > 0).DefaultIfEmpty().Last();
 
-            decimal dayLow = low.Min();
-            decimal dayHigh = high.Max();
+            decimal dayLow = Math.Round(low.Min(), decimals);
+            decimal dayHigh = Math.Round(high.Max(), decimals);
 
-            decimal change = last = previousClose;
-            decimal changePercent = change / previousClose * 100;
+            decimal change = Math.Round(last - previousClose, decimals);
+            decimal changePercent = Math.Round(change / previousClose * 100, 2);
 
             decimal ask = last + 0.01m;
             long askSize = lastVolume / 2;

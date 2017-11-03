@@ -65,7 +65,7 @@ namespace InvestorApi.Domain.Services
             Validate.NotNull(account, nameof(account));
 
             IReadOnlyDictionary<string, ShareInfo> shareDetails = _shareInfoProvider
-                .GetShareSummaries(account.Positions.Select(position => position.Symbol));
+                .GetShareInfo(account.Positions.Select(position => position.Symbol));
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
                 .GetQuotes(account.Positions.Select(position => position.Symbol));

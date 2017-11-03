@@ -30,5 +30,41 @@ namespace InvestorApi.Domain.Services
 
             return new MarketInfo(currentTime, isOpen, openingTime.Subtract(currentTime), closingTime.Subtract(currentTime));
         }
+
+        /// <summary>
+        /// Gets the number of decimals to round to.
+        /// </summary>
+        /// <param name="price">The price.</param>
+        /// <returns>The number of decimals for the price.</returns>
+        public int GetNumberOfDecimals(decimal price)
+        {
+            if (price <= 2.00m)
+            {
+                return 3;
+            }
+
+            return 2;
+
+        }
+
+        /// <summary>
+        /// Gets the minimum step size for bid and ask prices.
+        /// </summary>
+        /// <param name="price">The price.</param>
+        /// <returns>The minimum step size.</returns>
+        public decimal GetMinimumStepSize(decimal price)
+        {
+            if (price <= 0.10m)
+            {
+                return 0.001m;
+            }
+
+            if (price <= 2.00m)
+            {
+                return 0.005m;
+            }
+
+            return 0.01m;
+        }
     }
 }

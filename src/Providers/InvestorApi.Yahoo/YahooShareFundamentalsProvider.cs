@@ -1,34 +1,45 @@
 using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace InvestorApi.Yahoo
 {
     /// <summary>
     /// Implements a quote provider using Yahoo.
-    /// API Documentation:
-    /// http://wern-ancheta.com/blog/2015/04/05/getting-started-with-the-yahoo-finance-api/
     /// </summary>
     internal class YahooShareFundamentalsProvider : IShareFundamentalsProvider
     {
+        private const string KeyStatisticsUrl = @"https://query1.finance.yahoo.com/v10/finance/quoteSummary/{0}.AX?formatted=false&lang=en-AU&region=AU&modules=defaultKeyStatistics,financialData,calendarEvents";
+        private const string PriceHistoryUrl = @"https://query1.finance.yahoo.com/v8/finance/chart/{0}.AX?range=1y&interval=1d&includePrePost=false";
+
         private static readonly HttpClient _client = new HttpClient();
 
+        private readonly IMarketInformationService _marketInformationService;
         private readonly IShareInfoProvider _shareInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="YahooShareFundamentalsProvider"/> class.
         /// </summary>
+        /// <param name="marketInformationService">The market information service.</param>
         /// <param name="shareInfoProvider">The share info provider.</param>
-        public YahooShareFundamentalsProvider(IShareInfoProvider shareInfoProvider)
+        public YahooShareFundamentalsProvider(IMarketInformationService marketInformationService, IShareInfoProvider shareInfoProvider)
         {
+            if (marketInformationService == null)
+            {
+                throw new ArgumentNullException(nameof(marketInformationService));
+            }
+
             if (shareInfoProvider == null)
             {
                 throw new ArgumentNullException(nameof(shareInfoProvider));
             }
 
+            _marketInformationService = marketInformationService;
             _shareInfoProvider = shareInfoProvider;
         }
 
@@ -44,124 +55,122 @@ namespace InvestorApi.Yahoo
                 throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
             }
 
-            // Download the data as CSV.
-            var address = $"http://download.finance.yahoo.com/d/quotes.csv?s={symbol}.AX&f=sva2pjkj1dyqr1rb4p6em4m3";
-            var csv = _client.GetStringAsync(address).Result;
+            // Get the share information.
+            ShareInfo info = _shareInfoProvider.GetShareInfo(symbol);
+            if (info == null)
+            {
+                return null;
+            }
 
-            // Parse the CSV data.
-            return csv
-                .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(line => ReadCsvLine(line))
-                .Where(quote => quote != null)
-                .FirstOrDefault();
+            var fundamentals = new ShareFundamentals(info.Symbol, info.Name, info.Industry);
+
+            Task[] tasks = new[]
+            {
+                GetKeyStatistics(symbol, fundamentals),
+                GetPriceHistory(symbol, fundamentals)
+            };
+
+            Task.WaitAll(tasks);
+
+            return fundamentals;
         }
 
-        private ShareFundamentals ReadCsvLine(string line)
+        private async Task GetKeyStatistics(string symbol, ShareFundamentals fundamentals)
         {
-            try
-            {
-                string[] values = line.Split(',');
-                string symbol = values[0].Substring(1, values[0].Length - 2).Split('.').First();
+            // Format the request URL.
+            var requestUrl = string.Format(KeyStatisticsUrl, symbol);
 
-                ShareInfo summary = _shareInfoProvider.GetShareSummary(symbol);
-                if (summary == null)
+            // Download the JSON document.
+            HttpResponseMessage response = await _client.GetAsync(requestUrl);
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                return;
+            }
+
+            // Read and parse the JSON document.
+            string responseContent = await response.Content.ReadAsStringAsync();
+            JObject results = JObject.Parse(responseContent);
+            JToken result = results["quoteSummary"]["result"][0];
+
+            fundamentals.MarketCap = ReadValue<long?>(result, "defaultKeyStatistics", "enterpriseValue");
+            fundamentals.Change52Weeks = ReadValue<decimal?>(result, "defaultKeyStatistics", "52WeekChange");
+            fundamentals.BookValue = ReadValue<decimal?>(result, "defaultKeyStatistics", "bookValue");
+            fundamentals.PriceBook = ReadValue<decimal?>(result, "defaultKeyStatistics", "priceToBook");
+            fundamentals.TrailingEps = ReadValue<decimal?>(result, "defaultKeyStatistics", "trailingEps");
+            fundamentals.ForwardEps = ReadValue<decimal?>(result, "defaultKeyStatistics", "forwardEps");
+            fundamentals.EarningsShare = ReadValue<decimal?>(result, "financialData", "revenuePerShare");
+            fundamentals.TotalRevenue = ReadValue<long?>(result, "financialData", "totalRevenue");
+            fundamentals.EarningsGrowth = ReadValue<decimal?>(result, "financialData", "earningsGrowth");
+            fundamentals.RevenueGrowth = ReadValue<decimal?>(result, "financialData", "revenueGrowth");
+            fundamentals.TargetHighPrice = ReadValue<decimal?>(result, "financialData", "targetHighPrice");
+            fundamentals.TargetLowPrice = ReadValue<decimal?>(result, "financialData", "targetLowPrice");
+            fundamentals.TargetMeanPrice = ReadValue<decimal?>(result, "financialData", "targetMeanPrice");
+            fundamentals.TargetMedianPrice = ReadValue<decimal?>(result, "financialData", "targetMedianPrice");
+            fundamentals.AnalystRecommendation = ReadValue<string>(result, "financialData", "recommendationKey");
+            fundamentals.NumberOfAnalystOpinions = ReadValue<int?>(result, "financialData", "numberOfAnalystOpinions");
+            fundamentals.ExDividendDate = ReadValue<DateTime?>(result, "calendarEvents", "exDividendDate");
+        }
+
+        private async Task GetPriceHistory(string symbol, ShareFundamentals fundamentals)
+        {
+            // Format the request URL.
+            var requestUrl = string.Format(PriceHistoryUrl, symbol);
+
+            // Download the JSON document.
+            HttpResponseMessage response = await _client.GetAsync(requestUrl);
+            if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                return;
+            }
+
+            // Read and parse the JSON document.
+            string responseContent = await response.Content.ReadAsStringAsync();
+            JObject results = JObject.Parse(responseContent);
+            JToken result = results["chart"]["result"][0];
+
+            if (result["timestamp"] == null)
+            {
+                return;
+            }
+
+            long[] volume = result["indicators"]["quote"][0]["volume"].Values<long?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
+            if (volume.Any())
+            {
+                fundamentals.AverageDailyVolume = (long)Math.Round(volume.Average());
+            }
+
+            decimal[] close = result["indicators"]["quote"][0]["close"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).Reverse().ToArray();
+            if (close.Any())
+            {
+                // Get the numbers of decimals to round to.
+                // Note that the previous close is the first price in the array because it has been reversed.
+                int decimals = _marketInformationService.GetNumberOfDecimals(close.Last());
+
+                fundamentals.PreviousClose = Math.Round(close.First(), decimals);
+                fundamentals.Low52Weeks = Math.Round(close.Min(), decimals);
+                fundamentals.High52Weeks = Math.Round(close.Max(), decimals);
+                fundamentals.MovingAverage50Days = Math.Round(close.Take(50).Average(), decimals);
+                fundamentals.MovingAverage200Days = Math.Round(close.Take(200).Average(), decimals);
+            }
+        }
+
+        private T ReadValue<T>(JToken token, params string[] keys)
+        {
+            foreach (string key in keys)
+            {
+                token = token[key];
+                if (token == null)
                 {
-                    return null;
-                }
-
-                return new ShareFundamentals(summary.Symbol, summary.Name, summary.Industry)
-                {
-                    Volume = ParseLong(values[1]),
-                    AverageDailyVolume = ParseLong(values[2]),
-                    PreviousClose = ParseDecimal(values[3]),
-                    Low52Weeks = ParseDecimal(values[4]),
-                    High52Weeks = ParseDecimal(values[5]),
-                    MarketCap = ParseMarketCap(values[6]),
-                    DividendShare = ParseDecimal(values[7]),
-                    DividendYield = ParseDecimal(values[8]),
-                    ExDividendDate = ParseDate(values[9]),
-                    DividendPayDate = ParseDate(values[10]),
-                    PERatio = ParseDecimal(values[11]),
-                    BookValue = ParseDecimal(values[12]),
-                    PriceBook = ParseDecimal(values[13]),
-                    EarningsShare = ParseDecimal(values[14]),
-                    MovingAverage200Days = ParseDecimal(values[15]),
-                    MovingAverage50Days = ParseDecimal(values[16])
-                };
-            }
-            catch (FormatException)
-            {
-                return null;
-            }
-        }
-
-        private static DateTime? ParseDate(string text)
-        {
-            if (text == "N/A")
-            {
-                return null;
-            }
-
-            return DateTime.ParseExact(text.Replace("\"", ""), "M/d/yyyy", CultureInfo.InvariantCulture);
-        }
-
-        private static decimal? ParseDecimal(string text)
-        {
-            if (text == "N/A")
-            {
-                return null;
-            }
-
-            if (decimal.TryParse(text, out decimal value))
-            {
-                return value > 0 ? value : (decimal?)null;
-            }
-
-            return null;
-        }
-
-        private static long? ParseLong(string text)
-        {
-            if (text == "N/A")
-            {
-                return null;
-            }
-
-            if (long.TryParse(text, out long value))
-            {
-                return value > 0 ? value : (long?)null;
-            }
-
-            return null;
-        }
-
-        private static long? ParseMarketCap(string text)
-        {
-            if (text == "N/A")
-            {
-                return null;
-            }
-
-            char multiplierChar = text[text.Length - 1];
-
-            if (decimal.TryParse(text.Substring(0, text.Length - 1), out decimal value))
-            {
-                switch (multiplierChar)
-                {
-                    case 'T':
-                        return (long)(value * 1000000000000);
-                    case 'B':
-                        return (long)(value * 1000000000);
-                    case 'M':
-                        return (long)(value * 1000000);
-                    case 'K':
-                        return (long)(value * 1000);
-                    default:
-                        return (long)Math.Round(value);
+                    return default(T);
                 }
             }
 
-            return null;
+            if (typeof(T) == typeof(DateTime?))
+            {
+                return (T)(object)DateTimeOffset.FromUnixTimeSeconds(token.Value<long>()).DateTime;
+            }
+
+            return token.Value<T>();
         }
     }
 }

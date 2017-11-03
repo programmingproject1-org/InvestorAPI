@@ -49,7 +49,7 @@ namespace InvestorApi.Domain.Services
             Watchlist watchlist = GetWatchlist(userId, watchlistId);
 
             IReadOnlyDictionary<string, ShareInfo> shareDetails = _shareInfoProvider
-                .GetShareSummaries(watchlist.Symbols);
+                .GetShareInfo(watchlist.Symbols);
 
             IReadOnlyDictionary<string, Quote> quotes = _shareQuoteProvider
                 .GetQuotes(watchlist.Symbols);

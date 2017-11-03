@@ -31,7 +31,7 @@ namespace InvestorApi.Asx
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public ShareInfo GetShareSummary(string symbol)
+        public ShareInfo GetShareInfo(string symbol)
         {
             if (string.IsNullOrWhiteSpace(symbol))
             {
@@ -53,13 +53,13 @@ namespace InvestorApi.Asx
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        public IReadOnlyDictionary<string, ShareInfo> GetShareSummaries(IEnumerable<string> symbols)
+        public IReadOnlyDictionary<string, ShareInfo> GetShareInfo(IEnumerable<string> symbols)
         {
             Load();
 
             return symbols
                 .Distinct()
-                .Select(symbol => GetShareSummary(symbol))
+                .Select(symbol => GetShareInfo(symbol))
                 .ToDictionary(share => share.Symbol);
         }
 

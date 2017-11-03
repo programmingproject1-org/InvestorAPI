@@ -23,13 +23,13 @@ namespace InvestorApi.Contracts
         /// </summary>
         /// <param name="symbol">The share symbol to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        ShareInfo GetShareSummary(string symbol);
+        ShareInfo GetShareInfo(string symbol);
 
         /// <summary>
         /// Returns summary information for the shares with the provided symbols.
         /// </summary>
         /// <param name="symbols">The share symbols to retrun the details for.</param>
         /// <returns>The share details.</returns>
-        IReadOnlyDictionary<string, ShareInfo> GetShareSummaries(IEnumerable<string> symbols);
+        IReadOnlyDictionary<string, ShareInfo> GetShareInfo(IEnumerable<string> symbols);
     }
 }

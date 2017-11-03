@@ -24,54 +24,14 @@ namespace InvestorApi.Contracts.Dtos
         public long? MarketCap { get; set; }
 
         /// <summary>
-        /// Gets or sets the volume.
-        /// </summary>
-        public long? Volume { get; set; }
-
-        /// <summary>
-        /// Gets or sets the average daily volume.
-        /// </summary>
-        public long? AverageDailyVolume { get; set; }
-
-        /// <summary>
-        /// Gets or sets the previous close.
+        /// Gets or sets the previous trading day's close..
         /// </summary>
         public decimal? PreviousClose { get; set; }
-
-        /// <summary>
-        /// Gets or sets the 52 week low.
-        /// </summary>
-        public decimal? Low52Weeks { get; set; }
-
-        /// <summary>
-        /// Gets or sets the 52 week high.
-        /// </summary>
-        public decimal? High52Weeks { get; set; }
-
-        /// <summary>
-        /// Gets or sets the dividend per share.
-        /// </summary>
-        public decimal? DividendShare { get; set; }
-
-        /// <summary>
-        /// Gets or sets the dividend yield.
-        /// </summary>
-        public decimal? DividendYield { get; set; }
 
         /// <summary>
         /// Gets or sets the ex dividend date.
         /// </summary>
         public DateTime? ExDividendDate { get; set; }
-
-        /// <summary>
-        /// Gets or sets the dividend pay date.
-        /// </summary>
-        public DateTime? DividendPayDate { get; set; }
-
-        /// <summary>
-        /// Gets or sets the P/E ratio.
-        /// </summary>
-        public decimal? PERatio { get; set; }
 
         /// <summary>
         /// Gets or sets the book value.
@@ -89,6 +49,81 @@ namespace InvestorApi.Contracts.Dtos
         public decimal? EarningsShare { get; set; }
 
         /// <summary>
+        /// Gets or sets the trailing EPS.
+        /// </summary>
+        public decimal? TrailingEps { get; set; }
+
+        /// <summary>
+        /// Gets or sets the forward EPS.
+        /// </summary>
+        public decimal? ForwardEps { get; set; }
+
+        /// <summary>
+        /// Gets or sets the beta.
+        /// </summary>
+        public decimal? Beta { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 52-week change.
+        /// </summary>
+        public decimal? Change52Weeks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the target high price.
+        /// </summary>
+        public decimal? TargetHighPrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the target low price.
+        /// </summary>
+        public decimal? TargetLowPrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the target mean price.
+        /// </summary>
+        public decimal? TargetMeanPrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the target median price.
+        /// </summary>
+        public decimal? TargetMedianPrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the consensus analyst recommendation.
+        /// </summary>
+        public string AnalystRecommendation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of analyst opinions.
+        /// </summary>
+        public int? NumberOfAnalystOpinions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the total revenue.
+        /// </summary>
+        public long? TotalRevenue { get; set; }
+
+        /// <summary>
+        /// Gets or sets the earnings growth.
+        /// </summary>
+        public decimal? EarningsGrowth { get; set; }
+
+        /// <summary>
+        /// Gets or sets the revenue growth.
+        /// </summary>
+        public decimal? RevenueGrowth { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 52 week low.
+        /// </summary>
+        public decimal? Low52Weeks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the 52 week high.
+        /// </summary>
+        public decimal? High52Weeks { get; set; }
+
+        /// <summary>
         /// Gets or sets the 200 day moving average.
         /// </summary>
         public decimal? MovingAverage200Days { get; set; }
@@ -97,5 +132,10 @@ namespace InvestorApi.Contracts.Dtos
         /// Gets or sets the 50 day moving average.
         /// </summary>
         public decimal? MovingAverage50Days { get; set; }
+
+        /// <summary>
+        /// Gets or sets the average daily volume.
+        /// </summary>
+        public long? AverageDailyVolume { get; set; }
     }
 }

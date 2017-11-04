@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InvestorApi.Domain.Utilities
+namespace InvestorApi.Asx.Utilities
 {
     internal static class PublicHolidaysUtilities
     {

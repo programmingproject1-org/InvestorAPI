@@ -1,14 +1,17 @@
-﻿using System;
+﻿using InvestorApi.Asx.Utilities;
+using InvestorApi.Contracts;
+using InvestorApi.Contracts.Dtos;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace InvestorApi.Domain.Utilities
+namespace InvestorApi.Asx
 {
     /// <summary>
-    /// Provides information about the ASX market.
+    /// Provides information about the ASX Market.
     /// </summary>
-    internal class AsxMarket
+    internal class AsxMarketInfoProvider : IMarketInfoProvider
     {
         private static readonly ConcurrentDictionary<int, SortedSet<DateTimeOffset>> publicHolidays =
             new ConcurrentDictionary<int, SortedSet<DateTimeOffset>>();
@@ -16,9 +19,9 @@ namespace InvestorApi.Domain.Utilities
         private static TimeZoneInfo _timeZone = null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AsxMarket"/> class.
+        /// Initializes a new instance of the <see cref="AsxMarketInfoProvider"/> class.
         /// </summary>
-        public AsxMarket()
+        public AsxMarketInfoProvider()
         {
             if (_timeZone == null)
             {
@@ -29,26 +32,75 @@ namespace InvestorApi.Domain.Utilities
         }
 
         /// <summary>
-        /// Gets the market's current local time.
+        /// Gets the market information.
         /// </summary>
-        /// <returns>The market's current local time.</returns>
-        public DateTimeOffset GetCurrentTime()
+        /// <returns>The market information.</returns>
+        public MarketInfo GetMarket()
+        {
+            var currentTime = GetCurrentTime();
+            var isOpen = IsMarketOpen();
+
+            var openingTime = GetOpeningTime(currentTime);
+            if (openingTime < currentTime)
+            {
+                openingTime = GetOpeningTime(openingTime.AddDays(1));
+            }
+
+            var closingTime = GetClosingTime(currentTime);
+            if (closingTime < currentTime)
+            {
+                closingTime = GetClosingTime(closingTime.AddDays(1));
+            }
+
+            return new MarketInfo(currentTime, isOpen, openingTime.Subtract(currentTime), closingTime.Subtract(currentTime));
+        }
+
+        /// <summary>
+        /// Gets the number of decimals to round to.
+        /// </summary>
+        /// <param name="price">The price.</param>
+        /// <returns>The number of decimals for the price.</returns>
+        public int GetNumberOfDecimals(decimal price)
+        {
+            if (price <= 2.00m)
+            {
+                return 3;
+            }
+
+            return 2;
+        }
+
+        /// <summary>
+        /// Gets the minimum step size for bid and ask prices.
+        /// </summary>
+        /// <param name="price">The price.</param>
+        /// <returns>The minimum step size.</returns>
+        public decimal GetMinimumStepSize(decimal price)
+        {
+            if (price <= 0.10m)
+            {
+                return 0.001m;
+            }
+
+            if (price <= 2.00m)
+            {
+                return 0.005m;
+            }
+
+            return 0.01m;
+        }
+
+        private DateTimeOffset GetCurrentTime()
         {
             return TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, _timeZone);
         }
 
-        /// <summary>
-        /// Determines whether the market is currently open.
-        /// </summary>
-        public bool IsMarketOpen()
+        private bool IsMarketOpen()
         {
             return IsMarketOpen(GetCurrentTime());
         }
 
-        /// <summary>
-        /// Determines whether the market is open at the supplied date and time.
-        /// </summary>
-        public bool IsMarketOpen(DateTimeOffset time)
+        private bool IsMarketOpen(DateTimeOffset time)
         {
             if (IsTradingDay(time))
             {
@@ -64,18 +116,12 @@ namespace InvestorApi.Domain.Utilities
             return false;
         }
 
-        /// <summary>
-        /// Determines whether today is a trading day.
-        /// </summary>
-        public bool IsTradingDay()
+        private bool IsTradingDay()
         {
             return IsTradingDay(GetCurrentTime());
         }
 
-        /// <summary>
-        /// Determines whether the supplied date is a trading day.
-        /// </summary>
-        public bool IsTradingDay(DateTimeOffset date)
+        private bool IsTradingDay(DateTimeOffset date)
         {
             if ((date.DayOfWeek == DayOfWeek.Saturday) || (date.DayOfWeek == DayOfWeek.Sunday))
             {
@@ -90,12 +136,7 @@ namespace InvestorApi.Domain.Utilities
             return true;
         }
 
-        /// <summary>
-        /// Gets the opening time on the supplied date.
-        /// </summary>
-        /// <param name="date">The date.</param>
-        /// <returns>The opening time on the supplied date.</returns>
-        public DateTimeOffset GetOpeningTime(DateTimeOffset date)
+        private DateTimeOffset GetOpeningTime(DateTimeOffset date)
         {
             date = TimeZoneInfo.ConvertTime(date, _timeZone);
 
@@ -107,12 +148,7 @@ namespace InvestorApi.Domain.Utilities
             return DateTimeOffsetUtilities.Create(_timeZone, date, 10, 00);
         }
 
-        /// <summary>
-        /// Gets the closing time on the supplied date.
-        /// </summary>
-        /// <param name="date">The date.</param>
-        /// <returns>The closing time on the supplied date.</returns>
-        public DateTimeOffset GetClosingTime(DateTimeOffset date)
+        private DateTimeOffset GetClosingTime(DateTimeOffset date)
         {
             date = TimeZoneInfo.ConvertTime(date, _timeZone);
 
@@ -124,11 +160,6 @@ namespace InvestorApi.Domain.Utilities
             return DateTimeOffsetUtilities.Create(_timeZone, date, 16, 00);
         }
 
-        /// <summary>
-        /// Gets the public holidays dates affecting the market.
-        /// </summary>
-        /// <param name="year">The year.</param>
-        /// <returns>The public holiday dates.</returns>
         private SortedSet<DateTimeOffset> GetPublicHolidays(int year)
         {
             return publicHolidays.GetOrAdd(year, y =>

@@ -19,19 +19,19 @@ namespace InvestorApi.Yahoo
 
         private static readonly HttpClient _client = new HttpClient();
 
-        private readonly IMarketInformationService _marketInformationService;
+        private readonly IMarketInfoProvider _marketInfoProvider;
         private readonly IShareInfoProvider _shareInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="YahooShareFundamentalsProvider"/> class.
         /// </summary>
-        /// <param name="marketInformationService">The market information service.</param>
-        /// <param name="shareInfoProvider">The share info provider.</param>
-        public YahooShareFundamentalsProvider(IMarketInformationService marketInformationService, IShareInfoProvider shareInfoProvider)
+        /// <param name="marketInfoProvider">The market information provider.</param>
+        /// <param name="shareInfoProvider">The share information provider.</param>
+        public YahooShareFundamentalsProvider(IMarketInfoProvider marketInfoProvider, IShareInfoProvider shareInfoProvider)
         {
-            if (marketInformationService == null)
+            if (marketInfoProvider == null)
             {
-                throw new ArgumentNullException(nameof(marketInformationService));
+                throw new ArgumentNullException(nameof(marketInfoProvider));
             }
 
             if (shareInfoProvider == null)
@@ -39,7 +39,7 @@ namespace InvestorApi.Yahoo
                 throw new ArgumentNullException(nameof(shareInfoProvider));
             }
 
-            _marketInformationService = marketInformationService;
+            _marketInfoProvider = marketInfoProvider;
             _shareInfoProvider = shareInfoProvider;
         }
 
@@ -71,6 +71,12 @@ namespace InvestorApi.Yahoo
             };
 
             Task.WaitAll(tasks);
+
+            // PE Ratio not provided by Yahoo. We have to calculate it manually.
+            if (fundamentals.PreviousClose.HasValue && fundamentals.EarningsShare.HasValue)
+            {
+                fundamentals.PERatio = Math.Round(fundamentals.PreviousClose.Value / fundamentals.EarningsShare.Value, 2);
+            }
 
             return fundamentals;
         }
@@ -144,7 +150,7 @@ namespace InvestorApi.Yahoo
             {
                 // Get the numbers of decimals to round to.
                 // Note that the previous close is the first price in the array because it has been reversed.
-                int decimals = _marketInformationService.GetNumberOfDecimals(close.Last());
+                int decimals = _marketInfoProvider.GetNumberOfDecimals(close.Last());
 
                 fundamentals.PreviousClose = Math.Round(close.First(), decimals);
                 fundamentals.Low52Weeks = Math.Round(close.Min(), decimals);

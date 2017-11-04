@@ -22,20 +22,20 @@ namespace InvestorApi.Yahoo
 
         private static readonly HttpClient _client = new HttpClient();
 
-        private readonly IMarketInformationService _marketInformationService;
+        private readonly IMarketInfoProvider _marketInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="YahooShareQuoteProvider"/> class.
         /// </summary>
-        /// <param name="marketInformationService">The market information service.</param>
-        public YahooShareQuoteProvider(IMarketInformationService marketInformationService)
+        /// <param name="marketInfoProvider">The market information provider.</param>
+        public YahooShareQuoteProvider(IMarketInfoProvider marketInfoProvider)
         {
-            if (marketInformationService == null)
+            if (marketInfoProvider == null)
             {
-                throw new ArgumentNullException(nameof(marketInformationService));
+                throw new ArgumentNullException(nameof(marketInfoProvider));
             }
 
-            _marketInformationService = marketInformationService;
+            _marketInfoProvider = marketInfoProvider;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace InvestorApi.Yahoo
             long[] volume = result["indicators"]["quote"][0]["volume"].Values<long?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
 
             // Now calculate or generate all the required values.
-            int decimals = _marketInformationService.GetNumberOfDecimals(previousClose);
+            int decimals = _marketInfoProvider.GetNumberOfDecimals(previousClose);
 
             decimal last = Math.Round(close.Last(), decimals);
             long lastVolume = volume.Where(v => v > 0).DefaultIfEmpty().Last();
@@ -93,31 +93,13 @@ namespace InvestorApi.Yahoo
 
             // Ask and bid prices are no longer provided by Yahoo.
             // We just calculate them using the minimum spread.
-            decimal step = _marketInformationService.GetMinimumStepSize(previousClose);
+            decimal step = _marketInfoProvider.GetMinimumStepSize(previousClose);
 
             decimal ask = last + step;
             decimal bid = last - step;
 
-            // Ask and bid size are no longer provided by Yahoo.
-            // We ranomly generate them instead.
-            int askMultiplier, bidMultiplier;
-
-            if (last > previousClose)
-            {
-                askMultiplier = 4;
-                bidMultiplier = 6;
-            }
-            else
-            {
-                askMultiplier = 6;
-                bidMultiplier = 4;
-            }
-
-            long askSize = averageVolume * askMultiplier;
-            long bidSize = averageVolume * bidMultiplier;
-
             // Now create the quote object an return.
-            return new Quote(symbol, ask, askSize, bid, bidSize, last, lastVolume, change, changePercent, dayLow, dayHigh);
+            return new Quote(symbol, ask, bid, last, lastVolume, change, changePercent, dayLow, dayHigh);
         }
 
         /// <summary>

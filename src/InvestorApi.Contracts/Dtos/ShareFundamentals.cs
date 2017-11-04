@@ -44,6 +44,11 @@ namespace InvestorApi.Contracts.Dtos
         public decimal? PriceBook { get; set; }
 
         /// <summary>
+        /// Gets or sets the P/E ratio.
+        /// </summary>
+        public decimal? PERatio { get; set; }
+
+        /// <summary>
         /// Gets or sets the earnings per share.
         /// </summary>
         public decimal? EarningsShare { get; set; }

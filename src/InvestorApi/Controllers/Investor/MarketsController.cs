@@ -16,15 +16,15 @@ namespace InvestorApi.Controllers.Investor
     [ApiExplorerSettings(GroupName = SwaggerConstants.InvestorsGroup)]
     public class MarketsController : Controller
     {
-        private IMarketInformationService _marketInformationService;
+        private IMarketInfoProvider _marketInfoProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SharesController"/> class.
         /// </summary>
-        /// <param name="marketInformationService">Injected instance of <see cref="IMarketInformationService"/>.</param>
-        public MarketsController(IMarketInformationService marketInformationService)
+        /// <param name="marketInfoProvider">Injected instance of <see cref="IMarketInfoProvider"/>.</param>
+        public MarketsController(IMarketInfoProvider marketInfoProvider)
         {
-            _marketInformationService = marketInformationService;
+            _marketInfoProvider = marketInfoProvider;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace InvestorApi.Controllers.Investor
                 return NotFound();
             }
 
-            var market = _marketInformationService.GetMarket();
+            var market = _marketInfoProvider.GetMarket();
             return Ok(market);
         }
     }

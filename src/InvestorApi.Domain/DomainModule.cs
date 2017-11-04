@@ -28,7 +28,6 @@ namespace InvestorApi.Domain
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<ILeaderBoardService, LeaderBoardService>();
-            services.AddScoped<IMarketInformationService, MarketInformationService>();
 
             services.AddSingleton<PasswordHashingProvider>();
         }

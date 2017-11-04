@@ -39,28 +39,6 @@ namespace InvestorApi.Controllers.Analytics
         }
 
         /// <summary>
-        /// Set the predicted index values.
-        /// </summary>
-        /// <remarks>
-        /// The API operation enables the machine learning service to set the predicted index values.
-        /// </remarks>
-        /// <param name="body">The request body.</param>
-        /// <returns>The action response.</returns>
-        [HttpPut("predictions")]
-        [SwaggerResponse(204)]
-        public IActionResult SetPredictedIndexValues([FromBody]SetPredictedIndexValues body)
-        {
-            var predictions = _settingService.GetIndexPredictions();
-
-            predictions.IndexInOneDay = body.ValueInOneDay ?? predictions.IndexInOneDay;
-            predictions.IndexInOneWeek = body.ValueInOneWeek ?? predictions.IndexInOneWeek;
-
-            _settingService.SaveIndexPredictions(predictions);
-
-            return NoContent();
-        }
-
-        /// <summary>
         /// Get historical prices for a share.
         /// </summary>
         /// <remarks>

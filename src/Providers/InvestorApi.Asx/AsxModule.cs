@@ -21,7 +21,8 @@ namespace InvestorApi.Asx
             }
 
             // Register the provider in the dependency injection container.
-            services.AddSingleton<IShareInfoProvider, AsxShareInfoProvider>();
+            services.AddScoped<IMarketInfoProvider, AsxMarketInfoProvider>();
+            services.AddScoped<IShareInfoProvider, AsxShareInfoProvider>();
         }
     }
 }

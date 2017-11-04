@@ -5,7 +5,7 @@ namespace InvestorApi.Contracts
     /// <summary>
     /// Provides information about the ASX Market.
     /// </summary>
-    public interface IMarketInformationService
+    public interface IMarketInfoProvider
     {
         /// <summary>
         /// Gets the market information.

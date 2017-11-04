@@ -13,14 +13,12 @@ namespace InvestorApi.Domain.Services
     /// </summary>
     public class SettingService : ISettingService
     {
-        private const string PredictionsKey = "PREDICTIONS";
         private const string DefaultAccountSettingsKey = "DEFAULT_ACCOUNT_SETTINGS";
         private const string BuyCommissionsKey = "BUY_COMMISSIONS";
         private const string SellCommissionsKey = "SELL_COMMISSIONS";
 
         private readonly ISettingRepository _settingRepository;
 
-        private IndexPredictions _predictions;
         private DefaultAccountSettings _defaultAccountSettings;
         private Commissions _buyCommissions;
         private Commissions _sellCommissions;
@@ -32,48 +30,6 @@ namespace InvestorApi.Domain.Services
         public SettingService(ISettingRepository settingRepository)
         {
             _settingRepository = settingRepository;
-        }
-
-        /// <summary>
-        /// Gets the prediction settings.
-        /// </summary>
-        /// <returns></returns>
-        public IndexPredictions GetIndexPredictions()
-        {
-            if (_predictions == null)
-            {
-                var setting = _settingRepository.GetByKey(PredictionsKey);
-                if (setting == null)
-                {
-                    // No settings found - Create the application default settings.
-                    _predictions = new IndexPredictions
-                    {
-                        IndexInOneDay = 5000,
-                        IndexInOneWeek = 5000
-                    };
-
-                    SaveIndexPredictions(_predictions);
-                }
-                else
-                {
-                    _predictions = JsonConvert.DeserializeObject<IndexPredictions>(setting.Value);
-                }
-            }
-
-            return _predictions;
-        }
-
-        /// <summary>
-        /// Saves the prediction settings.
-        /// </summary>
-        /// <param name="settings">The settings.</param>
-        public void SaveIndexPredictions(IndexPredictions settings)
-        {
-            Validate.NotNull(settings, nameof(settings));
-
-            var value = JsonConvert.SerializeObject(settings);
-            var setting = Setting.Create(PredictionsKey, value);
-            _settingRepository.Save(setting);
         }
 
         /// <summary>

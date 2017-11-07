@@ -1,84 +1,39 @@
 [
    {
       "symbols":[
-         "IJH",
-         "MOQ"
+         "ANZ",
+         "TGG"
       ]
    },
    {
       "symbols":[
-         "MOQ",
-         "IJH"
+         "TGG",
+         "ANZ"
       ]
    },
    {
       "symbols":[
-         "ONT",
-         "IJH",
-         "MOQ"
+         "STW",
+         "ANZ",
+         "TGG"
       ]
    },
    {
       "symbols":[
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
+         "WMI",
+         "STW",
+         "ANZ",
+         "TGG"
       ]
    },
    {
       "symbols":[
-         "T3D",
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
-      ]
-   },
-   {
-      "symbols":[
-         "TGP",
-         "T3D",
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
-      ]
-   },
-   {
-      "symbols":[
-         "TOT",
-         "TGP",
-         "T3D",
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
-      ]
-   },
-   {
-      "symbols":[
-         "TDO",
-         "TOT",
-         "TGP",
-         "T3D",
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
-      ]
-   },
-   {
-      "symbols":[
-         "DDD",
-         "TDO",
-         "TOT",
-         "TGP",
-         "T3D",
-         "1ST",
-         "ONT",
-         "IJH",
-         "MOQ"
+         "MYR",
+         "WMI",
+         "STW",
+         "ANZ",
+         "TGG",
+         "MQA"
       ]
    }
 ]

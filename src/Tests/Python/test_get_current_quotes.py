@@ -48,7 +48,7 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def test_get_single_quote_success(self, symbol):
 		expected_response_code = 200
 		no_of_quotes = 1
-		expected_keys_in_quote = ["symbol", "ask", "askSize", "bid", "bidSize", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
+		expected_keys_in_quote = ["symbol", "ask", "bid", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
 		
 		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
 		registration_response = ApiFacade.register_user(displayName, email, password)
@@ -70,7 +70,7 @@ class CurrentQuotesTestCase(unittest.TestCase):
 	def test_get_multiple_quotes_success(self, symbols):
 		expected_response_code = 200
 		no_of_quotes = len(symbols)
-		expected_keys_in_quote = ["symbol", "ask", "askSize", "bid", "bidSize", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
+		expected_keys_in_quote = ["symbol", "ask", "bid", "last", "lastSize", "change", "changePercent", "dayLow", "dayHigh"]
 		
 		displayName, email, password = ("John Doe", "johndoe@test.com", "12345678")
 		registration_response = ApiFacade.register_user(displayName, email, password)

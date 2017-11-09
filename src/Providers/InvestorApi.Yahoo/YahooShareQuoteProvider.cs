@@ -82,6 +82,10 @@ namespace InvestorApi.Yahoo
 
             // Download the data from the URL and extract the required values.
             var data = DownloadData(requestUrl);
+            if (data == null)
+            {
+                return null;
+            }
 
             decimal previousClose = data.Item1["meta"]["previousClose"].Value<decimal>();
             decimal[] lows = data.Item2;
@@ -125,6 +129,10 @@ namespace InvestorApi.Yahoo
 
             // Download the data from the URL and extract the required values.
             var data = DownloadData(requestUrl);
+            if (data == null)
+            {
+                return null;
+            }
 
             decimal[] lows = data.Item2;
             decimal[] highs = data.Item3;

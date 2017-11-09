@@ -18,7 +18,7 @@ namespace InvestorApi.Yahoo
     /// </remarks>
     internal class YahooShareQuoteProvider : IShareQuoteProvider
     {
-        private const string BaseUrl = @"https://query1.finance.yahoo.com/v8/finance/chart/{0}?range=1h&includePrePost=false";
+        private const string BaseUrl = @"https://query1.finance.yahoo.com/v8/finance/chart/{0}?includePrePost=false";
 
         private static readonly HttpClient _client = new HttpClient();
 
@@ -50,9 +50,124 @@ namespace InvestorApi.Yahoo
                 throw new ArgumentException($"Argument '{nameof(symbol)}' is required.");
             }
 
-            // Format the request URL.
-            string requestUrl = string.Format(BaseUrl, symbol.StartsWith("^") ? symbol : symbol + ".AX");
+            // First we try to get the quote from the intraday prices.
+            Quote quote = GetIntradayQuote(symbol);
+            if (quote != null)
+            {
+                return quote;
+            }
 
+            // This sometimes fails outside market hours.
+            // In that case we fall back to daily prices and use the last day.
+            return GetOutsideMarketQuote(symbol);
+        }
+
+        /// <summary>
+        /// Returns the current quote for the shares with the provided symbols.
+        /// </summary>
+        /// <param name="symbols">The share symbols to retrun the quotes for.</param>
+        /// <returns>The crurent quotes for the shares.</returns>
+        public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
+        {
+            return symbols.AsParallel()
+                .Select(symbol => new { Symbol = symbol, quote = GetQuote(symbol) })
+                .Where(i => i.quote != null)
+                .ToDictionary(i => i.Symbol, i => i.quote);
+        }
+
+        private Quote GetIntradayQuote(string symbol)
+        {
+            // Format the request URL.
+            string requestUrl = string.Format(BaseUrl + "&range=1h", symbol.StartsWith("^") ? symbol : symbol + ".AX");
+
+            // Download the data from the URL and extract the required values.
+            var data = DownloadData(requestUrl);
+            if (data == null)
+            {
+                return null;
+            }
+
+            decimal previousClose = data.Item1["meta"]["previousClose"].Value<decimal>();
+            decimal[] lows = data.Item2;
+            decimal[] highs = data.Item3;
+            decimal[] closes = data.Item4;
+            long[] volumes = data.Item5;
+
+            // Now calculate or generate all the required values.
+            int decimals = _marketInfoProvider.GetNumberOfDecimals(previousClose);
+
+            decimal last = Math.Round(closes.Last(), decimals);
+            long lastVolume = volumes.Where(v => v > 0).DefaultIfEmpty().Last();
+            long averageVolume = volumes.Sum() / volumes.Count();
+
+            decimal dayLow = Math.Round(lows.Min(), decimals);
+            decimal dayHigh = Math.Round(highs.Max(), decimals);
+
+            decimal change = Math.Round(last - previousClose, decimals);
+            decimal changePercent = Math.Round(change / previousClose * 100, 2);
+
+            // Ask and bid prices are no longer provided by Yahoo.
+            // We just calculate them using the minimum spread.
+            decimal step = _marketInfoProvider.GetMinimumStepSize(previousClose);
+
+            decimal ask = last + step;
+            decimal bid = last - step;
+
+            // Now create the quote object an return.
+            return new Quote(symbol, ask, bid, last, lastVolume, change, changePercent, dayLow, dayHigh);
+        }
+
+        /// <summary>
+        /// Returns the current quote for the share with the provided symbol.
+        /// </summary>
+        /// <param name="symbol">The share symbol to retrun the quote for.</param>
+        /// <returns>The current quote for the share.</returns>
+        private Quote GetOutsideMarketQuote(string symbol)
+        {
+            // Format the request URL.
+            string requestUrl = string.Format(BaseUrl + "&range=1mo&interval=1d", symbol.StartsWith("^") ? symbol : symbol + ".AX");
+
+            // Download the data from the URL and extract the required values.
+            var data = DownloadData(requestUrl);
+            if (data == null)
+            {
+                return null;
+            }
+
+            decimal[] lows = data.Item2;
+            decimal[] highs = data.Item3;
+            decimal[] closes = data.Item4;
+            long[] volumes = data.Item5;
+
+            decimal close = closes.Last();
+            decimal previousClose = closes.Reverse().Skip(1).First();
+
+            // Now calculate or generate all the required values.
+            int decimals = _marketInfoProvider.GetNumberOfDecimals(previousClose);
+
+            decimal last = Math.Round(close, decimals);
+            long lastVolume = volumes.Last();
+            long averageVolume = volumes.Sum() / volumes.Count();
+
+            decimal dayLow = Math.Round(lows.Last(), decimals);
+            decimal dayHigh = Math.Round(highs.Last(), decimals);
+
+            decimal change = Math.Round(last - previousClose, decimals);
+            decimal changePercent = Math.Round(change / previousClose * 100, 2);
+
+            // Ask and bid prices are no longer provided by Yahoo.
+            // We just calculate them using the minimum spread.
+            decimal step = _marketInfoProvider.GetMinimumStepSize(previousClose);
+
+            decimal ask = last + step;
+            decimal bid = last - step;
+
+            // Now create the quote object an return.
+            return new Quote(symbol, ask, bid, last, lastVolume, change, changePercent, dayLow, dayHigh);
+        }
+
+        private Tuple<JToken, decimal[], decimal[], decimal[], long[]> DownloadData(string requestUrl)
+        {
             // Download the JSON document.
             HttpResponseMessage response = _client.GetAsync(requestUrl).Result;
             if (response.StatusCode == HttpStatusCode.NotFound)
@@ -71,54 +186,13 @@ namespace InvestorApi.Yahoo
                 return null;
             }
 
-            decimal previousClose = result["meta"]["previousClose"].Value<decimal>();
-
-            decimal[] low = result["indicators"]["quote"][0]["low"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
-            decimal[] high = result["indicators"]["quote"][0]["high"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
-            decimal[] close = result["indicators"]["quote"][0]["close"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
-            long[] volume = result["indicators"]["quote"][0]["volume"].Values<long?>().Where(v => v.HasValue).Select(v => v.Value).ToArray();
-
-            // Now calculate or generate all the required values.
-            int decimals = _marketInfoProvider.GetNumberOfDecimals(previousClose);
-
-            decimal last = Math.Round(close.Last(), decimals);
-            long lastVolume = volume.Where(v => v > 0).DefaultIfEmpty().Last();
-            long averageVolume = volume.Sum() / volume.Count();
-
-            decimal dayLow = Math.Round(low.Min(), decimals);
-            decimal dayHigh = Math.Round(high.Max(), decimals);
-
-            decimal change = Math.Round(last - previousClose, decimals);
-            decimal changePercent = Math.Round(change / previousClose * 100, 2);
-
-            // Ask and bid prices are no longer provided by Yahoo.
-            // We just calculate them using the minimum spread.
-            decimal step = _marketInfoProvider.GetMinimumStepSize(previousClose);
-
-            decimal ask = last + step;
-            decimal bid = last - step;
-
-            // Now create the quote object an return.
-            return new Quote(symbol, ask, bid, last, lastVolume, change, changePercent, dayLow, dayHigh);
-        }
-
-        /// <summary>
-        /// Returns the current quote for the shares with the provided symbols.
-        /// </summary>
-        /// <param name="symbols">The share symbols to retrun the quotes for.</param>
-        /// <returns>The crurent quotes for the shares.</returns>
-        public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
-        {
-            return symbols.AsParallel()
-                .Select(symbol => new { Symbol = symbol, quote = GetQuote(symbol) })
-                .Where(i => i.quote != null)
-                .ToDictionary(i => i.Symbol, i => i.quote);
-        }
-
-        private DateTimeOffset ReadTimestamp(long timestamp, int offset)
-        {
-            var dt = DateTimeOffset.FromUnixTimeSeconds(timestamp).AddSeconds(offset);
-            return new DateTimeOffset(dt.DateTime, TimeSpan.FromSeconds(offset));
+            // Read the values from the JSON result.
+            return new Tuple<JToken, decimal[], decimal[], decimal[], long[]>(
+                result,
+                result["indicators"]["quote"][0]["low"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray(),
+                result["indicators"]["quote"][0]["high"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray(),
+                result["indicators"]["quote"][0]["close"].Values<decimal?>().Where(v => v.HasValue).Select(v => v.Value).ToArray(),
+                result["indicators"]["quote"][0]["volume"].Values<long?>().Where(v => v.HasValue).Select(v => v.Value).ToArray());
         }
     }
 }

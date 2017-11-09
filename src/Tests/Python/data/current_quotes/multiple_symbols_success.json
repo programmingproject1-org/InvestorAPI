@@ -2,38 +2,38 @@
    {
       "symbols":[
          "ANZ",
-         "TGG"
+         "BHP"
       ]
    },
    {
       "symbols":[
-         "TGG",
+         "WOW",
+         "MQG"
+      ]
+   },
+   {
+      "symbols":[
+         "BXB",
+         "ANZ",
+         "CBA"
+      ]
+   },
+   {
+      "symbols":[
+         "CBA",
+         "MQG",
+         "BHP",
          "ANZ"
       ]
    },
    {
       "symbols":[
-         "STW",
+         "CBA",
+         "MQG",
+         "BHP",
          "ANZ",
-         "TGG"
-      ]
-   },
-   {
-      "symbols":[
-         "WMI",
-         "STW",
-         "ANZ",
-         "TGG"
-      ]
-   },
-   {
-      "symbols":[
-         "MYR",
-         "WMI",
-         "STW",
-         "ANZ",
-         "TGG",
-         "MQA"
+         "CSL",
+         "NAB"
       ]
    }
 ]

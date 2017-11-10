@@ -69,7 +69,8 @@ namespace InvestorApi.Yahoo
         /// <returns>The crurent quotes for the shares.</returns>
         public IReadOnlyDictionary<string, Quote> GetQuotes(IEnumerable<string> symbols)
         {
-            return symbols.AsParallel()
+            return symbols
+                .AsParallel()
                 .Select(symbol => new { Symbol = symbol, quote = GetQuote(symbol) })
                 .Where(i => i.quote != null)
                 .ToDictionary(i => i.Symbol, i => i.quote);
@@ -140,7 +141,11 @@ namespace InvestorApi.Yahoo
             long[] volumes = data.Item5;
 
             decimal close = closes.Last();
-            decimal previousClose = closes.Reverse().Skip(1).First();
+            decimal previousClose = closes.Reverse().Skip(1).FirstOrDefault();
+            if (previousClose == 0)
+            {
+                return null;
+            }
 
             // Now calculate or generate all the required values.
             int decimals = _marketInfoProvider.GetNumberOfDecimals(previousClose);

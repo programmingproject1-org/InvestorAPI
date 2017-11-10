@@ -1,9 +1,11 @@
 ﻿using InvestorApi.Contracts;
 using InvestorApi.Contracts.Dtos;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Net.Http;
+using System.Reflection;
 
 namespace InvestorApi.Asx
 {
@@ -12,7 +14,7 @@ namespace InvestorApi.Asx
     /// </summary>
     internal class AsxShareInfoProvider : IShareInfoProvider
     {
-        private const string Address = "http://www.asx.com.au/asx/research/ASXListedCompanies.csv";
+        private const string ResourcePath = "InvestorApi.Asx.Resources.Shares.json";
 
         private static readonly object _syncLock = new object();
         private static IDictionary<string, ShareInfo> _shares = null;
@@ -95,7 +97,7 @@ namespace InvestorApi.Asx
         }
 
         /// <summary>
-        /// Download the CSV, parse the data and keep it in memory.
+        /// Download the JSON data and keep it in memory.
         /// </summary>
         private void Load()
         {
@@ -106,44 +108,16 @@ namespace InvestorApi.Asx
 
             lock (_syncLock)
             {
-                if (_shares != null)
-                {
-                    return;
-                }
+                Assembly assembly = Assembly.GetExecutingAssembly();
 
-                using (var client = new HttpClient())
+                using (Stream stream = assembly.GetManifestResourceStream(ResourcePath))
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    // Download and parse the CSV.
-                    // Note that we need to skip the first two lines because the first contains headers and the second is blank.
-                    var csv = client.GetStringAsync(Address).Result;
-                    _shares = csv
-                        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)
-                        .Skip(2)
-                        .Select(line => ReadCsvLine(line))
-                        .Where(line => line != null)
+                    _shares = JsonConvert
+                        .DeserializeObject<ShareInfo[]>(reader.ReadToEnd())
                         .ToDictionary(line => line.Symbol);
                 }
             }
-        }
-
-        private ShareInfo ReadCsvLine(string line)
-        {
-            var values = line.Split(',');
-            if (values.Length != 3)
-            {
-                return null;
-            }
-
-            var name = values[0].Substring(1, values[0].Length - 2);
-            var symbol = values[1];
-            var industry = values[2].Substring(1, values[2].Length - 2);
-
-            if (industry == "Not Applic")
-            {
-                industry = null;
-            }
-
-            return new ShareInfo(symbol, name, industry);
         }
     }
 }

@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\InvestorApi.Contracts\InvestorApi.Contracts.csproj" />
-    <ProjectReference Include="..\..\InvestorApi.Domain\InvestorApi.Domain.csproj" />
+    <ProjectReference Include="..\..\src\InvestorApi.Contracts\InvestorApi.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\InvestorApi.Domain\InvestorApi.Domain.csproj" />
   </ItemGroup>
 
 </Project>

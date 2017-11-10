@@ -1,0 +1,8757 @@
+[
+  {
+    "Symbol": "IJH",
+    "Name": "ISHARES S&P MID-CAP ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "MOQ",
+    "Name": "MOQ LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ONT",
+    "Name": "1300 SMILES LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "1ST",
+    "Name": "1ST GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "T3D",
+    "Name": "333D LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "TGP",
+    "Name": "360 CAPITAL GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "TOT",
+    "Name": "360 CAPITAL TOTAL RETURN FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "TDO",
+    "Name": "3D OIL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "DDD",
+    "Name": "3D RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "3PL",
+    "Name": "3P LEARNING LIMITED..",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "4DS",
+    "Name": "4DS MEMORY LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "88E",
+    "Name": "88 ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "8CO",
+    "Name": "8COMMON LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "8IH",
+    "Name": "8I HOLDINGS LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "8EC",
+    "Name": "8IP EMERGING COMPANIES LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "9SP",
+    "Name": "9 SPOKES INTERNATIONAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NNW",
+    "Name": "99 WUXIAN LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "ACB",
+    "Name": "A-CAP RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AYI",
+    "Name": "A1 INVESTMENTS & RESOURCES LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ABP",
+    "Name": "ABACUS PROPERTY GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "ALR",
+    "Name": "ABERDEEN LEADERS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ABL",
+    "Name": "ABILENE OIL AND GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ABU",
+    "Name": "ABM RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AEG",
+    "Name": "ABSOLUTE EQUITY PERFORMANCE FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AJC",
+    "Name": "ACACIA COAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AKG",
+    "Name": "ACADEMIES AUSTRALASIA GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ACS",
+    "Name": "ACCENT RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ACX",
+    "Name": "ACONEX LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ACQ",
+    "Name": "ACORN CAPITAL INVESTMENT FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AIV",
+    "Name": "ACTIVEX LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ADA",
+    "Name": "ADACEL TECHNOLOGIES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ADH",
+    "Name": "ADAIRS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "ADD",
+    "Name": "ADAVALE RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AAU",
+    "Name": "ADCORP AUSTRALIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "ABC",
+    "Name": "ADELAIDE BRIGHTON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ADR",
+    "Name": "ADHERIUM LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AHZ",
+    "Name": "ADMEDUS LTD",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ADY",
+    "Name": "ADMIRALTY RESOURCES NL.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ADJ",
+    "Name": "ADSLOT LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ANO",
+    "Name": "ADVANCE NANOTEK LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ABV",
+    "Name": "ADVANCED BRAKING TECHNOLOGY LTD",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "ASW",
+    "Name": "ADVANCED SHARE REGISTRY LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ADX",
+    "Name": "ADX ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AER",
+    "Name": "AEERIS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AML",
+    "Name": "AEON METALS LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AEI",
+    "Name": "AERIS ENVIRONMENTAL LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "AIS",
+    "Name": "AERIS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AFR",
+    "Name": "AFRICAN ENERGY RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AFT",
+    "Name": "AFT CORPORATION LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "APT",
+    "Name": "AFTERPAY TOUCH GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AGL",
+    "Name": "AGL ENERGY LIMITED.",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "AGJ",
+    "Name": "AGRICULTURAL LAND TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AMN",
+    "Name": "AGRIMIN LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGR",
+    "Name": "AGUIA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AHL",
+    "Name": "AHALIFE HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "APW",
+    "Name": "AIMS PROPERTY SECURITIES FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AGI",
+    "Name": "AINSWORTH GAME TECHNOLOGY LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "AIZ",
+    "Name": "AIR NEW ZEALAND LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "AJL",
+    "Name": "AJ LUCAS GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "AQG",
+    "Name": "ALACER GOLD CORP.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AUQ",
+    "Name": "ALARA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ALY",
+    "Name": "ALCHEMY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ALC",
+    "Name": "ALCIDION GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AL8",
+    "Name": "ALDERAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LEP",
+    "Name": "ALE PROPERTY GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AJX",
+    "Name": "ALEXIUM INTERNATIONAL GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AEB",
+    "Name": "ALGAE.TEC LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AQI",
+    "Name": "ALICANTO MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AQX",
+    "Name": "ALICE QUEEN LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ALK",
+    "Name": "ALKANE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AHQ",
+    "Name": "ALLEGIANCE COAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AMT",
+    "Name": "ALLEGRA ORTHOPAEDICS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AQZ",
+    "Name": "ALLIANCE AVIATION SERVICES LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "AGS",
+    "Name": "ALLIANCE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGE",
+    "Name": "ALLIGATOR ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AYR",
+    "Name": "ALLOY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ALQ",
+    "Name": "ALS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "ARS",
+    "Name": "ALT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATC",
+    "Name": "ALTECH CHEMICALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AIQ",
+    "Name": "ALTERNATIVE INVESTMENT TRUST",
+    "Industry": null
+  },
+  {
+    "Symbol": "1AG",
+    "Name": "ALTERRA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "ALU",
+    "Name": "ALTIUM LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AME",
+    "Name": "ALTO METALS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AOH",
+    "Name": "ALTONA MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AJM",
+    "Name": "ALTURA MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AWC",
+    "Name": "ALUMINA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AMA",
+    "Name": "AMA GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "ANL",
+    "Name": "AMANI GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AYS",
+    "Name": "AMAYSIM AUSTRALIA LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "AMO",
+    "Name": "AMBERTECH LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "AMB",
+    "Name": "AMBITION GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "AMH",
+    "Name": "AMCIL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AMC",
+    "Name": "AMCOR LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ABR",
+    "Name": "AMERICAN PACIFIC BORATE & LITHIUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AOW",
+    "Name": "AMERICAN PATRIOT OIL & GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AMP",
+    "Name": "AMP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "ALT",
+    "Name": "ANALYTICA LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ADN",
+    "Name": "ANDROMEDA METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATM",
+    "Name": "ANEKA TAMBANG (PERSERO) TBK (PT)",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AAR",
+    "Name": "ANGLO AUSTRALIAN RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGG",
+    "Name": "ANGLOGOLD ASHANTI LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AB1",
+    "Name": "ANIMOCA BRANDS CORPORATION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AWV",
+    "Name": "ANOVA METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ANN",
+    "Name": "ANSELL LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ASN",
+    "Name": "ANSON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATT",
+    "Name": "ANTE REAL ESTATE TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AVD",
+    "Name": "ANTILLES OIL AND GAS NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AZY",
+    "Name": "ANTIPA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "APL",
+    "Name": "ANTIPODES GLOBAL INVESTMENT COMPANY LTD",
+    "Industry": null
+  },
+  {
+    "Symbol": "APE",
+    "Name": "AP EAGERS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "APA",
+    "Name": "APA GROUP",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "AQQ",
+    "Name": "APHRODITE GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AHX",
+    "Name": "APIAM ANIMAL HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "APO",
+    "Name": "APN OUTDOOR GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "APD",
+    "Name": "APN PROPERTY GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AOP",
+    "Name": "APOLLO CONSOLIDATED LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AON",
+    "Name": "APOLLO MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATL",
+    "Name": "APOLLO TOURISM & LEISURE LTD",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "APX",
+    "Name": "APPEN LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AD1",
+    "Name": "APPLYDIRECT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AQS",
+    "Name": "AQUIS ENTERTAINMENT LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ARU",
+    "Name": "ARAFURA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARB",
+    "Name": "ARB CORPORATION LIMITED.",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "ARX",
+    "Name": "ARC EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AXE",
+    "Name": "ARCHER EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARL",
+    "Name": "ARDEA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AAD",
+    "Name": "ARDENT LEISURE GROUP",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ADV",
+    "Name": "ARDIDEN LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARF",
+    "Name": "ARENA REIT.",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "ARD",
+    "Name": "ARGENT MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AXT",
+    "Name": "ARGO EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ALI",
+    "Name": "ARGO GLOBAL LISTED INFRASTRUCTURE LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ARG",
+    "Name": "ARGO INVESTMENTS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "ARE",
+    "Name": "ARGONAUT RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGY",
+    "Name": "ARGOSY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARA",
+    "Name": "ARIADNE AUSTRALIA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "ALL",
+    "Name": "ARISTOCRAT LEISURE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "AHK",
+    "Name": "ARK MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AJQ",
+    "Name": "ARMOUR ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AWQ",
+    "Name": "AROWANA AUSTRALASIAN VALUE OPPORTUNITIES FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AWN",
+    "Name": "AROWANA INTERNATIONAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "AR1",
+    "Name": "ARROWHEAD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARV",
+    "Name": "ARTEMIS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AAJ",
+    "Name": "ARUMA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AHY",
+    "Name": "ASALEO CARE LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "AFA",
+    "Name": "ASF GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ASH",
+    "Name": "ASHLEY SERVICES GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "AJD",
+    "Name": "ASIA PACIFIC DATA CENTRE GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "DIG",
+    "Name": "ASIA PACIFIC DIGITAL LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "AJJ",
+    "Name": "ASIAN AMERICAN MEDICAL GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AUF",
+    "Name": "ASIAN MASTERS FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AKF",
+    "Name": "ASK FUNDING LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "APZ",
+    "Name": "ASPEN GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "ASP",
+    "Name": "ASPERMONT LIMITED.",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "AKM",
+    "Name": "ASPIRE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AO1",
+    "Name": "ASSETOWL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "AIR",
+    "Name": "ASTIVITA LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ARO",
+    "Name": "ASTRO RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATR",
+    "Name": "ASTRON CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ASX",
+    "Name": "ASX LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ACG",
+    "Name": "ATCOR MEDICAL HOLDINGS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AHN",
+    "Name": "ATHENA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGO",
+    "Name": "ATLAS IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATP",
+    "Name": "ATLAS PEARLS AND PERFUMES LTD",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "ATU",
+    "Name": "ATRUM COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AUB",
+    "Name": "AUB GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "AIA",
+    "Name": "AUCKLAND INTERNATIONAL AIRPORT LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "ACP",
+    "Name": "AUDALIA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AD8",
+    "Name": "AUDINATE GROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "AKP",
+    "Name": "AUDIO PIXELS HOLDINGS LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "AKN",
+    "Name": "AUKING MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AU8",
+    "Name": "AUMAKE INTERNATIONAL LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "AEE",
+    "Name": "AURA ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AMI",
+    "Name": "AURELIA METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AUR",
+    "Name": "AURIS MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AZJ",
+    "Name": "AURIZON HOLDINGS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "AOU",
+    "Name": "AUROCH MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ABW",
+    "Name": "AURORA ABSOLUTE RETURN FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "AOD",
+    "Name": "AURORA DIVIDEND INCOME TRUST (MANAGED FUND)",
+    "Industry": null
+  },
+  {
+    "Symbol": "AIB",
+    "Name": "AURORA GLOBAL INCOME TRUST",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "A3D",
+    "Name": "AURORA LABS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ARM",
+    "Name": "AURORA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AUP",
+    "Name": "AURORA PROPERTY BUY-WRITE INCOME TRUST",
+    "Industry": null
+  },
+  {
+    "Symbol": "ANW",
+    "Name": "AUS TIN MINING LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ASL",
+    "Name": "AUSDRILL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AUC",
+    "Name": "AUSGOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AMG",
+    "Name": "AUSMEX MINING GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AOA",
+    "Name": "AUSMON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AU1",
+    "Name": "AUSNET FINANCIAL SERVICES LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AST",
+    "Name": "AUSNET SERVICES LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "AQD",
+    "Name": "AUSQUEST LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ASB",
+    "Name": "AUSTAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "AOK",
+    "Name": "AUSTEX OIL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ANG",
+    "Name": "AUSTIN ENGINEERING LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ACK",
+    "Name": "AUSTOCK GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "APG",
+    "Name": "AUSTPAC RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AGD",
+    "Name": "AUSTRAL GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ANZ",
+    "Name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "AYM",
+    "Name": "AUSTRALIA UNITED MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ABX",
+    "Name": "AUSTRALIAN BAUXITE LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AEF",
+    "Name": "AUSTRALIAN ETHICAL INVESTMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AFG",
+    "Name": "AUSTRALIAN FINANCE GROUP LTD",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "AFI",
+    "Name": "AUSTRALIAN FOUNDATION INVESTMENT COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AQF",
+    "Name": "AUSTRALIAN GOVERNANCE MASTERS INDEX FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ALF",
+    "Name": "AUSTRALIAN LEADERS FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AYJ",
+    "Name": "AUSTRALIAN MASTERS YIELD FUND NO 3 LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AYK",
+    "Name": "AUSTRALIAN MASTERS YIELD FUND NO 4 LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AYZ",
+    "Name": "AUSTRALIAN MASTERS YIELD FUND NO 5 LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AUZ",
+    "Name": "AUSTRALIAN MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AQC",
+    "Name": "AUSTRALIAN PACIFIC COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "API",
+    "Name": "AUSTRALIAN PHARMACEUTICAL INDUSTRIES LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "APC",
+    "Name": "AUSTRALIAN POTASH LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ARC",
+    "Name": "AUSTRALIAN RURAL CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AUI",
+    "Name": "AUSTRALIAN UNITED INVESTMENT COMPANY LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AOF",
+    "Name": "AUSTRALIAN UNITY OFFICE FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AVL",
+    "Name": "AUSTRALIAN VANADIUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ATS",
+    "Name": "AUSTRALIS OIL & GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ABA",
+    "Name": "AUSWIDE BANK LTD",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "AIY",
+    "Name": "AUTHORISED INVESTMENT FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "AHG",
+    "Name": "AUTOMOTIVE HOLDINGS GROUP LIMITED.",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "4WD",
+    "Name": "AUTOMOTIVE SOLUTIONS GROUP LTD",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "ASG",
+    "Name": "AUTOSPORTS GROUP LIMITED.",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "AVB",
+    "Name": "AVANCO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AEV",
+    "Name": "AVENIRA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AVN",
+    "Name": "AVENTUS RETAIL PROPERTY FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AOG",
+    "Name": "AVEO GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AVW",
+    "Name": "AVIRA ENERGY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AVJ",
+    "Name": "AVJENNINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AVZ",
+    "Name": "AVZ MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AWE",
+    "Name": "AWE LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "AVQ",
+    "Name": "AXIOM MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AXI",
+    "Name": "AXIOM PROPERTIES LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "AXL",
+    "Name": "AXSESSTODAY LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "AZM",
+    "Name": "AZUMAH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "AZV",
+    "Name": "AZURE HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "AZS",
+    "Name": "AZURE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BBN",
+    "Name": "BABY BUNTING GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "BOQ",
+    "Name": "BANK OF QUEENSLAND LIMITED.",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "BMN",
+    "Name": "BANNERMAN RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BAP",
+    "Name": "BAPCOR LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "BKP",
+    "Name": "BARAKA ENERGY & RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BD1",
+    "Name": "BARD1 LIFE SCIENCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BAR",
+    "Name": "BARRA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BST",
+    "Name": "BARRACK ST INVESTMENTS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "BSE",
+    "Name": "BASE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BSM",
+    "Name": "BASS METALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BAS",
+    "Name": "BASS OIL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BSR",
+    "Name": "BASSARI RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BRL",
+    "Name": "BATHURST RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BAT",
+    "Name": "BATTERY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BMH",
+    "Name": "BAUMART HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "BAU",
+    "Name": "BAUXITE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BCI",
+    "Name": "BC IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BPT",
+    "Name": "BEACH ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BLX",
+    "Name": "BEACON LIGHTING GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "BCN",
+    "Name": "BEACON MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BDR",
+    "Name": "BEADELL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BFG",
+    "Name": "BELL FINANCIAL GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BEN",
+    "Name": "BENDIGO AND ADELAIDE BANK LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "BHD",
+    "Name": "BENJAMIN HORNIGOLD LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "BEL",
+    "Name": "BENTLEY CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BKY",
+    "Name": "BERKELEY ENERGIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BMT",
+    "Name": "BERKUT MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BYI",
+    "Name": "BEYOND INTERNATIONAL LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "BHP",
+    "Name": "BHP BILLITON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BID",
+    "Name": "BIDENERGY LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BRI",
+    "Name": "BIG RIVER INDUSTRIES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BIG",
+    "Name": "BIG UN LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BTH",
+    "Name": "BIGTINCAN HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BBG",
+    "Name": "BILLABONG INTERNATIONAL LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "BIN",
+    "Name": "BINGO INDUSTRIES LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "BTC",
+    "Name": "BIOTECH CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BGS",
+    "Name": "BIRIMIAN LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BIS",
+    "Name": "BISALLOY STEEL GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BSN",
+    "Name": "BISAN LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BKI",
+    "Name": "BKI INVESTMENT COMPANY LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BMZ",
+    "Name": "BLACK MOUNTAIN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BKT",
+    "Name": "BLACK ROCK MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BSP",
+    "Name": "BLACK STAR PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BLK",
+    "Name": "BLACKHAM RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BKL",
+    "Name": "BLACKMORES LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "BSX",
+    "Name": "BLACKSTONE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BWF",
+    "Name": "BLACKWALL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BWR",
+    "Name": "BLACKWALL PROPERTY TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "BLZ",
+    "Name": "BLAZE INTERNATIONAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BGH",
+    "Name": "BLIGH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BDI",
+    "Name": "BLINA MINERALS NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BUL",
+    "Name": "BLUE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BLA",
+    "Name": "BLUE SKY ALTERNATIVE INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BAF",
+    "Name": "BLUE SKY ALTERNATIVES ACCESS FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "BCT",
+    "Name": "BLUECHIIP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "BSL",
+    "Name": "BLUESCOPE STEEL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BLG",
+    "Name": "BLUGLASS LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "BMG",
+    "Name": "BMG RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BOA",
+    "Name": "BOADICEA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BLY",
+    "Name": "BOART LONGYEAR LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "BDA",
+    "Name": "BOD AUSTRALIA LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "BOL",
+    "Name": "BOOM LOGISTICS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "BLD",
+    "Name": "BORAL LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BOE",
+    "Name": "BOSS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BML",
+    "Name": "BOTSWANA METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BOC",
+    "Name": "BOUGAINVILLE COPPER LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BUY",
+    "Name": "BOUNTY OIL & GAS NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BCB",
+    "Name": "BOWEN COKING COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BHL",
+    "Name": "BOYUAN HOLDINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "BPS",
+    "Name": "BPS TECHNOLOGY LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BRC",
+    "Name": "BRAIN RESOURCE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "BRN",
+    "Name": "BRAINCHIP HOLDINGS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BXB",
+    "Name": "BRAMBLES LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "BVS",
+    "Name": "BRAVURA SOLUTIONS LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BRB",
+    "Name": "BREAKER RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BRG",
+    "Name": "BREVILLE GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "BKW",
+    "Name": "BRICKWORKS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BBL",
+    "Name": "BRISBANE BRONCOS LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "BCK",
+    "Name": "BROCKMAN MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BPL",
+    "Name": "BROKEN HILL PROSPECTING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BRK",
+    "Name": "BROOKSIDE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BSA",
+    "Name": "BSA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "BTT",
+    "Name": "BT INVESTMENT MANAGEMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "BUD",
+    "Name": "BUDDY PLATFORM LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BNR",
+    "Name": "BULLETIN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BPF",
+    "Name": "BULLETPROOF GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "BRU",
+    "Name": "BURU ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BUX",
+    "Name": "BUXTON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "BMP",
+    "Name": "BUYMYPLACE.COM.AU LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "BWP",
+    "Name": "BWP TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "BWX",
+    "Name": "BWX LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "BYE",
+    "Name": "BYRON ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "BPG",
+    "Name": "BYTE POWER GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "CAB",
+    "Name": "CABCHARGE AUSTRALIA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CDM",
+    "Name": "CADENCE CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "CAD",
+    "Name": "CAENEUS MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAI",
+    "Name": "CALIDUS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CTX",
+    "Name": "CALTEX AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CAE",
+    "Name": "CANNINDAH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAY",
+    "Name": "CANYON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CFE",
+    "Name": "CAPE LAMBERT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAJ",
+    "Name": "CAPITOL HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "CAA",
+    "Name": "CAPRAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CMM",
+    "Name": "CAPRICORN METALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAQ",
+    "Name": "CAQ HOLDINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CVV",
+    "Name": "CARAVEL MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CRB",
+    "Name": "CARBINE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CNQ",
+    "Name": "CARBINE TUNGSTEN LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CNX",
+    "Name": "CARBON ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CRM",
+    "Name": "CARBON MINERALS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CDV",
+    "Name": "CARDINAL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CDD",
+    "Name": "CARDNO LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "CDP",
+    "Name": "CARINDALE PROPERTY TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CIN",
+    "Name": "CARLTON INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CVN",
+    "Name": "CARNARVON PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CAV",
+    "Name": "CARNAVALE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CCE",
+    "Name": "CARNEGIE CLEAN ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "CAP",
+    "Name": "CARPENTARIA EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAR",
+    "Name": "CARSALES.COM LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CCV",
+    "Name": "CASH CONVERTERS INTERNATIONAL",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "CZI",
+    "Name": "CASSINI RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CCZ",
+    "Name": "CASTILLO COPPER LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CDT",
+    "Name": "CASTLE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CYL",
+    "Name": "CATALYST METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CAT",
+    "Name": "CATAPULT GROUP INTERNATIONAL LTD",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "CXU",
+    "Name": "CAULDRON ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CAZ",
+    "Name": "CAZALY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CBC",
+    "Name": "CBG CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "CBL",
+    "Name": "CBL CORPORATION LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "CT1",
+    "Name": "CCP TECHNOLOGIES LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "CWP",
+    "Name": "CEDAR WOODS PROPERTIES LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CLT",
+    "Name": "CELLNET GROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "CLA",
+    "Name": "CELSIUS RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CTM",
+    "Name": "CENTAURUS METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CTL",
+    "Name": "CENTENNIAL MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CTP",
+    "Name": "CENTRAL PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CAF",
+    "Name": "CENTREPOINT ALLIANCE LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CXM",
+    "Name": "CENTREX METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CNI",
+    "Name": "CENTURIA CAPITAL GROUP",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CIP",
+    "Name": "CENTURIA INDUSTRIAL REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CMA",
+    "Name": "CENTURIA METROPOLITAN REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CYA",
+    "Name": "CENTURY AUSTRALIA INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CVS",
+    "Name": "CERVANTES CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CFO",
+    "Name": "CFOAM LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "CHN",
+    "Name": "CHALICE GOLD MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CEL",
+    "Name": "CHALLENGER ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CGF",
+    "Name": "CHALLENGER LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CIA",
+    "Name": "CHAMPION IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CCA",
+    "Name": "CHANGE FINANCIAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CHP",
+    "Name": "CHAPMANS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CHC",
+    "Name": "CHARTER HALL GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CLW",
+    "Name": "CHARTER HALL LONG WALE REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CQR",
+    "Name": "CHARTER HALL RETAIL REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CHZ",
+    "Name": "CHESSER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CMC",
+    "Name": "CHINA MAGNESIUM CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CDH",
+    "Name": "CHONGHERR INVESTMENTS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CNU",
+    "Name": "CHORUS LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "CII",
+    "Name": "CI RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CIM",
+    "Name": "CIMIC GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "CNW",
+    "Name": "CIRRUS NETWORKS HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CTO",
+    "Name": "CITIGOLD CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CLY",
+    "Name": "CLANCY EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CND",
+    "Name": "CLARIUS GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CL1",
+    "Name": "CLASS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CLZ",
+    "Name": "CLASSIC MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CLQ",
+    "Name": "CLEAN TEQ HOLDINGS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CWY",
+    "Name": "CLEANAWAY WASTE MANAGEMENT LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CVW",
+    "Name": "CLEARVIEW WEALTH LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CAM",
+    "Name": "CLIME CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "CIW",
+    "Name": "CLIME INVESTMENT MANAGEMENT LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CLV",
+    "Name": "CLOVER CORPORATION LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "CMI",
+    "Name": "CMI LIMITED.",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "CGR",
+    "Name": "CML GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CZA",
+    "Name": "COAL OF AFRICA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CA8",
+    "Name": "COASSETS LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "COB",
+    "Name": "COBALT BLUE HOLDINGS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CO1",
+    "Name": "COBALT ONE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "COH",
+    "Name": "COCHLEAR LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "CDA",
+    "Name": "CODAN LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "CGS",
+    "Name": "COGSTATE LTD",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "CHK",
+    "Name": "COHIBA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CKA",
+    "Name": "COKAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CL8",
+    "Name": "COLLABORATE CORPORATION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CLH",
+    "Name": "COLLECTION HOUSE LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CLL",
+    "Name": "COLLERINA COBALT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CKF",
+    "Name": "COLLINS FOODS LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "CRL",
+    "Name": "COMET RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "COI",
+    "Name": "COMET RIDGE LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CBA",
+    "Name": "COMMONWEALTH BANK OF AUSTRALIA.",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "COM",
+    "Name": "COMOPS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CMP",
+    "Name": "COMPUMEDICS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "CPU",
+    "Name": "COMPUTERSHARE LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CNJ",
+    "Name": "CONICO LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CIO",
+    "Name": "CONNECTED IO LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "CXZ",
+    "Name": "CONNEXION MEDIA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "COG",
+    "Name": "CONSOLIDATED OPERATIONS GROUP LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "CZL",
+    "Name": "CONSOLIDATED ZINC LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CEN",
+    "Name": "CONTACT ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "CGA",
+    "Name": "CONTANGO ASSET MANAGEMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CIE",
+    "Name": "CONTANGO INCOME GENERATOR  LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "CTN",
+    "Name": "CONTANGO MICROCAP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CRR",
+    "Name": "CONVENIENCE RETAIL REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "COE",
+    "Name": "COOPER ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CSE",
+    "Name": "COPPER STRIKE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "COY",
+    "Name": "COPPERMOLY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CZN",
+    "Name": "CORAZON MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CXO",
+    "Name": "CORE EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CTD",
+    "Name": "CORPORATE TRAVEL MANAGEMENT LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "COO",
+    "Name": "CORUM GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CGM",
+    "Name": "COUGAR METALS NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CUP",
+    "Name": "COUNTPLUS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "CCJ",
+    "Name": "COUNTY INTERNATIONAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CVT",
+    "Name": "COVATA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CYG",
+    "Name": "COVENTRY GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "CZR",
+    "Name": "COZIRON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CGO",
+    "Name": "CPT GLOBAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CXX",
+    "Name": "CRADLE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CGN",
+    "Name": "CRATER GOLD MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CR8",
+    "Name": "CRE8TEK LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CCP",
+    "Name": "CREDIT CORP GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CMW",
+    "Name": "CROMWELL PROPERTY GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "CUX",
+    "Name": "CROSSLAND STRATEGIC METALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CM8",
+    "Name": "CROWD MOBILE LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "CWN",
+    "Name": "CROWN RESORTS LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "CAS",
+    "Name": "CRUSADER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CSV",
+    "Name": "CSG LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CSR",
+    "Name": "CSR LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CLX",
+    "Name": "CTI LOGISTICS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "CDU",
+    "Name": "CUDECO LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CUE",
+    "Name": "CUE ENERGY RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "CUL",
+    "Name": "CULLEN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "CV1",
+    "Name": "CV CHECK LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CVC",
+    "Name": "CVC LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "CYB",
+    "Name": "CYBG PLC",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "CYQ",
+    "Name": "CYCLIQ GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CYC",
+    "Name": "CYCLOPHARM LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "DCN",
+    "Name": "DACIAN GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DAU",
+    "Name": "DAMPIER GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DNK",
+    "Name": "DANAKALI LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DHR",
+    "Name": "DARK HORSE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DTM",
+    "Name": "DART MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DTL",
+    "Name": "DATA#3 LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DDT",
+    "Name": "DATADOT TECHNOLOGY LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "DTR",
+    "Name": "DATELINE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DAV",
+    "Name": "DAVENPORT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DEG",
+    "Name": "DE GREY MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DEM",
+    "Name": "DE.MEM LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "DSX",
+    "Name": "DECIMAL SOFTWARE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DCG",
+    "Name": "DECMIL GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "DYL",
+    "Name": "DEEP YELLOW LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "DLC",
+    "Name": "DELECTA LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "DMI",
+    "Name": "DEMPSEY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "D13",
+    "Name": "DEPARTMENT 13 INTERNATIONAL LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "DGH",
+    "Name": "DESANE GROUP HOLDINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "DVN",
+    "Name": "DEVINE LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "DXS",
+    "Name": "DEXUS",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "DGO",
+    "Name": "DGO GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DGR",
+    "Name": "DGR GLOBAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DRX",
+    "Name": "DIATREME RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DDR",
+    "Name": "DICKER DATA LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "DMC",
+    "Name": "DIGIMATIC GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DCC",
+    "Name": "DIGITALX LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DM1",
+    "Name": "DIRECTMONEY LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "DAF",
+    "Name": "DISCOVERY AFRICA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DUI",
+    "Name": "DIVERSIFIED UNITED INVESTMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "DJW",
+    "Name": "DJERRIWARRH INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "DCL",
+    "Name": "DOMACOM LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "DME",
+    "Name": "DOME GOLD MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DMP",
+    "Name": "DOMINO'S PIZZA ENTERPRISES LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "DNA",
+    "Name": "DONACO INTERNATIONAL LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "DRM",
+    "Name": "DORAY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DOR",
+    "Name": "DORIEMUS PLC",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "DTZ",
+    "Name": "DOTZ NANO LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "DOW",
+    "Name": "DOWNER EDI LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "DRA",
+    "Name": "DRAGON MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DMG",
+    "Name": "DRAGON MOUNTAIN GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DTS",
+    "Name": "DRAGONTAIL SYSTEMS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DRG",
+    "Name": "DRAIG RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DRK",
+    "Name": "DRAKE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DN8",
+    "Name": "DREAMSCAPE NETWORKS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DRO",
+    "Name": "DRONESHIELD LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "DSE",
+    "Name": "DROPSUITE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DTI",
+    "Name": "DTI GROUP LTD",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "DUB",
+    "Name": "DUBBER CORPORATION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "DKM",
+    "Name": "DUKETON MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "DLX",
+    "Name": "DULUXGROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "D2O",
+    "Name": "DUXTON WATER LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "DWS",
+    "Name": "DWS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "E2M",
+    "Name": "E2 METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EER",
+    "Name": "EAST ENERGY RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EFE",
+    "Name": "EASTERN IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EAS",
+    "Name": "EASTON INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "EBO",
+    "Name": "EBOS GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ECG",
+    "Name": "ECARGO HOLDINGS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "EAR",
+    "Name": "ECHO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EPM",
+    "Name": "ECLIPSE METALS LIMITED.",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ECX",
+    "Name": "ECLIPX GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "EDE",
+    "Name": "EDEN INNOVATIONS LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EGA",
+    "Name": "EGAN STREET RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EHX",
+    "Name": "EHR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EDC",
+    "Name": "EILDON CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ENN",
+    "Name": "ELANOR INVESTORS GROUP",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ERF",
+    "Name": "ELANOR RETAIL PROPERTY FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "EOS",
+    "Name": "ELECTRO OPTIC SYSTEMS HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ELT",
+    "Name": "ELEMENTOS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EXR",
+    "Name": "ELIXIR PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ELK",
+    "Name": "ELK PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ELX",
+    "Name": "ELLEX MEDICAL LASERS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ELO",
+    "Name": "ELMO SOFTWARE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ELS",
+    "Name": "ELSIGHT LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "EYM",
+    "Name": "ELYSIUM RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EMB",
+    "Name": "EMBELTON LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EHL",
+    "Name": "EMECO HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EMR",
+    "Name": "EMERALD RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EMG",
+    "Name": "EMERGENT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EMF",
+    "Name": "EMERGING MARKETS MASTERS FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "EML",
+    "Name": "EML PAYMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ERM",
+    "Name": "EMMERSON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EEG",
+    "Name": "EMPIRE ENERGY GROUP LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ERL",
+    "Name": "EMPIRE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EPD",
+    "Name": "EMPIRED LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "EMU",
+    "Name": "EMU NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ENR",
+    "Name": "ENCOUNTER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ENB",
+    "Name": "ENEABBA GAS LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "ENX",
+    "Name": "ENEGEX LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EMX",
+    "Name": "ENERGIA MINERALS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EAX",
+    "Name": "ENERGY ACTION LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "EME",
+    "Name": "ENERGY METALS LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EOL",
+    "Name": "ENERGY ONE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ERA",
+    "Name": "ENERGY RESOURCES OF AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "EGY",
+    "Name": "ENERGY TECHNOLOGIES LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EWC",
+    "Name": "ENERGY WORLD CORPORATION LTD",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "EGG",
+    "Name": "ENERO GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "EGN",
+    "Name": "ENGENCO LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EOR",
+    "Name": "ENHANCED OIL & GAS RECOVERY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ENC",
+    "Name": "ENICE HOLDING COMPANY LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "EXO",
+    "Name": "ENNOX GROUP LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ENA",
+    "Name": "ENSURANCE LTD",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "ETE",
+    "Name": "ENTEK ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ENT",
+    "Name": "ENTERPRISE METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ESI",
+    "Name": "ENVIRONMENTAL CLEAN TECHNOLOGIES LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "EGL",
+    "Name": "ENVIRONMENTAL GROUP LIMITED (THE)",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EVS",
+    "Name": "ENVIROSUITE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ENZ",
+    "Name": "ENZUMO LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "EPT",
+    "Name": "EPAT TECHNOLOGIES LTD",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "EQT",
+    "Name": "EQT HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "EQX",
+    "Name": "EQUATORIAL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EQE",
+    "Name": "EQUUS MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EPW",
+    "Name": "ERM POWER LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "ESV",
+    "Name": "ESERVGLOBAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ESH",
+    "Name": "ESPORTS MOGUL ASIA PACIFIC LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "EHE",
+    "Name": "ESTIA HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ESR",
+    "Name": "ESTRELLA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ESK",
+    "Name": "ETHERSTACK PLC",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "EBG",
+    "Name": "EUMUNDI GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "EGH",
+    "Name": "EUREKA GROUP HOLDINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "EUC",
+    "Name": "EUROPEAN COBALT LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EUR",
+    "Name": "EUROPEAN LITHIUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EMH",
+    "Name": "EUROPEAN METALS HOLDINGS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EZL",
+    "Name": "EUROZ LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "EGD",
+    "Name": "EVANS & PARTNERS GLOBAL DISRUPTION FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "EVE",
+    "Name": "EVE INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "EVT",
+    "Name": "EVENT HOSPITALITY AND ENTERTAINMENT LTD",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "EVN",
+    "Name": "EVOLUTION MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EVO",
+    "Name": "EVOLVE EDUCATION GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "EVZ",
+    "Name": "EVZ LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "EXG",
+    "Name": "EXCELSIOR GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "EXP",
+    "Name": "EXPERIENCE CO LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "EXU",
+    "Name": "EXPLAURUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FXJ",
+    "Name": "FAIRFAX MEDIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "FZO",
+    "Name": "FAMILY ZONE CYBER SAFETY LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "FAR",
+    "Name": "FAR LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "FFC",
+    "Name": "FARMAFORCE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "FBR",
+    "Name": "FASTBRICK ROBOTICS LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "FE8",
+    "Name": "FASTER ENTERPRISES LTD",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "FPC",
+    "Name": "FAT PROPHETS GLOBAL CONTRARIAN FUND LTD",
+    "Industry": null
+  },
+  {
+    "Symbol": "FFG",
+    "Name": "FATFISH INTERNET GROUP LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "FEL",
+    "Name": "FE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FCR",
+    "Name": "FERRUM CRESCENT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FTZ",
+    "Name": "FERTOZ LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FID",
+    "Name": "FIDUCIAN GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "FSG",
+    "Name": "FIELD SOLUTIONS HOLDINGS LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "FRI",
+    "Name": "FINBAR GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "FND",
+    "Name": "FINDERS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FGR",
+    "Name": "FIRST GRAPHITE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FGF",
+    "Name": "FIRST GROWTH FUNDS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "FCT",
+    "Name": "FIRSTWAVE CLOUD TECHNOLOGY LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "FPH",
+    "Name": "FISHER & PAYKEL HEALTHCARE CORPORATION LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "FZR",
+    "Name": "FITZROY RIVER CORPORATION LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "FSI",
+    "Name": "FLAGSHIP INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "FWD",
+    "Name": "FLEETWOOD CORPORATION LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "FBU",
+    "Name": "FLETCHER BUILDING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FXL",
+    "Name": "FLEXIGROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "FRX",
+    "Name": "FLEXIROAM LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "FLT",
+    "Name": "FLIGHT CENTRE TRAVEL GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "FMS",
+    "Name": "FLINDERS MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FLC",
+    "Name": "FLUENCE CORPORATION LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "FML",
+    "Name": "FOCUS MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FET",
+    "Name": "FOLKESTONE EDUCATION TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "FLK",
+    "Name": "FOLKESTONE LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "FOR",
+    "Name": "FORAGER AUSTRALIAN SHARES FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "4CE",
+    "Name": "FORCE COMMODITIES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FRC",
+    "Name": "FORTE CONSOLIDATED LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FMG",
+    "Name": "FORTESCUE METALS GROUP LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FRN",
+    "Name": "FRASER RANGE METALS GROUP LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FIG",
+    "Name": "FREEDOM INSURANCE GROUP LTD",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "FDM",
+    "Name": "FREEDOM OIL AND GAS LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "FHS",
+    "Name": "FREEHILL MINING LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FLN",
+    "Name": "FREELANCER LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "FPL",
+    "Name": "FREMONT PETROLEUM CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "FDV",
+    "Name": "FRONTIER DIGITAL VENTURES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "FNT",
+    "Name": "FRONTIER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "FSA",
+    "Name": "FSA GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "FFT",
+    "Name": "FUTURE FIBRE TECHNOLOGIES LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "FGG",
+    "Name": "FUTURE GENERATION GLOBAL INVESTMENT COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "FYI",
+    "Name": "FYI RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GMV",
+    "Name": "G MEDICAL INNOVATIONS HOLDINGS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "GUD",
+    "Name": "G.U.D. HOLDINGS LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "GEM",
+    "Name": "G8 EDUCATION LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "GXY",
+    "Name": "GALAXY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GAP",
+    "Name": "GALE PACIFIC LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "G1A",
+    "Name": "GALENA MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GLL",
+    "Name": "GALILEE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GCM",
+    "Name": "GARDA CAPITAL GROUP",
+    "Industry": null
+  },
+  {
+    "Symbol": "GDF",
+    "Name": "GARDA DIVERSIFIED PROPERTY FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GGX",
+    "Name": "GAS2GRID LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GCY",
+    "Name": "GASCOYNE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GTY",
+    "Name": "GATEWAY LIFESTYLE GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GZL",
+    "Name": "GAZAL CORPORATION LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "GBM",
+    "Name": "GBM GOLD LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GBZ",
+    "Name": "GBM RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GBT",
+    "Name": "GBST HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "GDI",
+    "Name": "GDI PROPERTY GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GNE",
+    "Name": "GENESIS ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "GMD",
+    "Name": "GENESIS MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GES",
+    "Name": "GENESIS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GNX",
+    "Name": "GENEX POWER LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "GTK",
+    "Name": "GENTRACK GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "GMA",
+    "Name": "GENWORTH MORTGAGE INSURANCE AUSTRALIA LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "GPR",
+    "Name": "GEOPACIFIC RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GSW",
+    "Name": "GETSWIFT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "GBG",
+    "Name": "GINDALBIE METALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GLA",
+    "Name": "GLADIATOR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GC1",
+    "Name": "GLENNON SMALL COMPANIES LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "GCS",
+    "Name": "GLOBAL CONSTRUCTION SERVICES LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "GEV",
+    "Name": "GLOBAL ENERGY VENTURES LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GFI",
+    "Name": "GLOBAL FORTUNE INVESTMENT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GSC",
+    "Name": "GLOBAL GEOSCIENCE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GGH",
+    "Name": "GLOBAL GOLD HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "GLH",
+    "Name": "GLOBAL HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "GFL",
+    "Name": "GLOBAL MASTERS FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "GBP",
+    "Name": "GLOBAL PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GVF",
+    "Name": "GLOBAL VALUE FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "GLB",
+    "Name": "GLOBE INTERNATIONAL LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "GBE",
+    "Name": "GLOBE METALS & MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GME",
+    "Name": "GME RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GFY",
+    "Name": "GODFREYS GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "GMN",
+    "Name": "GOLD MOUNTAIN LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GOR",
+    "Name": "GOLD ROAD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GCR",
+    "Name": "GOLDEN CROSS RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GED",
+    "Name": "GOLDEN DEEPS LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "G88",
+    "Name": "GOLDEN MILE RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GMR",
+    "Name": "GOLDEN RIM RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GMY",
+    "Name": "GOLDFIELDS MONEY LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "GMG",
+    "Name": "GOODMAN GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GOO",
+    "Name": "GOOROO VENTURES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "GOW",
+    "Name": "GOWING BROS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "GPS",
+    "Name": "GPS ALLIANCE HOLDINGS LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GPT",
+    "Name": "GPT GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GNG",
+    "Name": "GR ENGINEERING SERVICES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GGE",
+    "Name": "GRAND GULF ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GRR",
+    "Name": "GRANGE RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GPX",
+    "Name": "GRAPHEX MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GBR",
+    "Name": "GREAT BOULDER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GTE",
+    "Name": "GREAT WESTERN EXPLORATION LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GSL",
+    "Name": "GREATCELL SOLAR LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "GXL",
+    "Name": "GREENCROSS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "GGG",
+    "Name": "GREENLAND MINERALS AND ENERGY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GPP",
+    "Name": "GREENPOWER ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GRV",
+    "Name": "GREENVALE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "GOZ",
+    "Name": "GROWTHPOINT PROPERTIES AUSTRALIA",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "GTR",
+    "Name": "GTI RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GTN",
+    "Name": "GTN LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "GLF",
+    "Name": "GULF INDUSTRIALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GMC",
+    "Name": "GULF MANGANESE CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GUL",
+    "Name": "GULLEWA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "GWA",
+    "Name": "GWA GROUP LIMITED.",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "GWR",
+    "Name": "GWR GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HMX",
+    "Name": "HAMMER METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HHM",
+    "Name": "HAMPTON HILL MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HNR",
+    "Name": "HANNANS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HSN",
+    "Name": "HANSEN TECHNOLOGIES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "HAO",
+    "Name": "HAOMA MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HAR",
+    "Name": "HARANGA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HT8",
+    "Name": "HARRIS TECHNOLOGY GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "HVN",
+    "Name": "HARVEY NORMAN HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "HAS",
+    "Name": "HASTINGS TECHNOLOGY METALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HAV",
+    "Name": "HAVILAH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HWK",
+    "Name": "HAWKSTONE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HAW",
+    "Name": "HAWTHORN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HZR",
+    "Name": "HAZER GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HSO",
+    "Name": "HEALTHSCOPE LIMITED.",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "HMO",
+    "Name": "HEARMEOUT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "HE8",
+    "Name": "HELIOS ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "HLX",
+    "Name": "HELIX RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HLO",
+    "Name": "HELLOWORLD TRAVEL LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "HRR",
+    "Name": "HERON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HXG",
+    "Name": "HEXAGON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HFA",
+    "Name": "HFA HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "HNG",
+    "Name": "HGL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "HHY",
+    "Name": "HHY FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "HPR",
+    "Name": "HIGH PEAK ROYALTIES LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "HFR",
+    "Name": "HIGHFIELD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HIG",
+    "Name": "HIGHLANDS PACIFIC LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HEG",
+    "Name": "HILL END GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HGO",
+    "Name": "HILLGROVE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HIL",
+    "Name": "HILLS LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "HIT",
+    "Name": "HITECH GROUP AUSTRALIA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "HCT",
+    "Name": "HOLISTA COLLTECH LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "HOM",
+    "Name": "HOMELOANS LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "HRN",
+    "Name": "HORIZON GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HZN",
+    "Name": "HORIZON OIL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "HOR",
+    "Name": "HORSESHOE METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HCH",
+    "Name": "HOT CHILI LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "HOT",
+    "Name": "HOTCOPPER HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "HPI",
+    "Name": "HOTEL PROPERTY INVESTMENTS",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "HRL",
+    "Name": "HRL HOLDINGS LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "HT1",
+    "Name": "HT&E LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "HUB",
+    "Name": "HUB24 LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "HGL",
+    "Name": "HUDSON INVESTMENT GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "HHV",
+    "Name": "HUNTER HALL GLOBAL VALUE LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "HTA",
+    "Name": "HUTCHISON TELECOMMUNICATIONS (AUSTRALIA) LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "IS3",
+    "Name": "I SYNERGY GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "IBN",
+    "Name": "IBUYNEW GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ICI",
+    "Name": "ICANDY INTERACTIVE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ICQ",
+    "Name": "ICAR ASIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "ICT",
+    "Name": "ICOLLEGE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ICN",
+    "Name": "ICON ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ICS",
+    "Name": "ICSGLOBAL LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "IEL",
+    "Name": "IDP EDUCATION LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "IKW",
+    "Name": "IKWEZI MINING LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ILU",
+    "Name": "ILUKA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IMA",
+    "Name": "IMAGE RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IBX",
+    "Name": "IMAGION BIOSYSTEMS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "IMD",
+    "Name": "IMDEX LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IMF",
+    "Name": "IMF BENTHAM LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IPT",
+    "Name": "IMPACT MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IPD",
+    "Name": "IMPEDIMED LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "IPC",
+    "Name": "IMPERIAL PACIFIC LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IHL",
+    "Name": "IMPRESSION HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "IAB",
+    "Name": "INABOX GROUP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "ICG",
+    "Name": "INCA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IPL",
+    "Name": "INCITEC PIVOT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IOG",
+    "Name": "INCREMENTAL OIL AND GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "INK",
+    "Name": "INDAGO ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "IGO",
+    "Name": "INDEPENDENCE GROUP NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IDA",
+    "Name": "INDIANA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IDO",
+    "Name": "INDO MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IDZ",
+    "Name": "INDOOR SKYDIVE AUSTRALIA GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "IDR",
+    "Name": "INDUSTRIA REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "IFN",
+    "Name": "INFIGEN ENERGY",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "IFM",
+    "Name": "INFOMEDIA LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "IFT",
+    "Name": "INFRATIL LIMITED.",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "INA",
+    "Name": "INGENIA COMMUNITIES GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "IAG",
+    "Name": "INSURANCE AUSTRALIA GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "IDX",
+    "Name": "INTEGRAL DIAGNOSTICS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ITL",
+    "Name": "INTEGRATED MEDIA TECHNOLOGY LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "IP1",
+    "Name": "INTEGRATED PAYMENT TECHNOLOGIES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "IRI",
+    "Name": "INTEGRATED RESEARCH LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "IRC",
+    "Name": "INTERMIN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IHS",
+    "Name": "INTERPOSE HOLDINGS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "IAM",
+    "Name": "INTIGER GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "IEC",
+    "Name": "INTRA ENERGY CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "IAU",
+    "Name": "INTREPID MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IVT",
+    "Name": "INVENTIS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "IOF",
+    "Name": "INVESTA OFFICE FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "IVR",
+    "Name": "INVESTIGATOR RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "INV",
+    "Name": "INVESTSMART GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IVO",
+    "Name": "INVIGOR GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "IVC",
+    "Name": "INVOCARE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "IOD",
+    "Name": "IODM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IFL",
+    "Name": "IOOF HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IOT",
+    "Name": "IOT GROUP LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "IPB",
+    "Name": "IPB PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "IPE",
+    "Name": "IPE LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IPH",
+    "Name": "IPH LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "IRE",
+    "Name": "IRESS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "INM",
+    "Name": "IRON MOUNTAIN INCORPORATED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "IRD",
+    "Name": "IRON ROAD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "IBC",
+    "Name": "IRONBARK CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "IBG",
+    "Name": "IRONBARK ZINC LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ISU",
+    "Name": "ISELECT LIMITED.",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "ISD",
+    "Name": "ISENTIA GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ICU",
+    "Name": "ISENTRIC LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "IAA",
+    "Name": "ISHARES ASIA 50 ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IZZ",
+    "Name": "ISHARES CHINA LARGE-CAP ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IEU",
+    "Name": "ISHARES EUROPE ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IOO",
+    "Name": "ISHARES GLOBAL 100 ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IBK",
+    "Name": "ISHARES MSCI BRIC ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IVE",
+    "Name": "ISHARES MSCI EAFE ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IEM",
+    "Name": "ISHARES MSCI EMERGING MARKETS ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IHK",
+    "Name": "ISHARES MSCI HONG KONG ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IJP",
+    "Name": "ISHARES MSCI JAPAN ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "ISG",
+    "Name": "ISHARES MSCI SINGAPORE CAPPED ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IKO",
+    "Name": "ISHARES MSCI SOUTH KOREA CAPPED ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "ITW",
+    "Name": "ISHARES MSCI TAIWAN CAPPED ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IRU",
+    "Name": "ISHARES RUSSELL 2000 ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IVV",
+    "Name": "ISHARES S&P 500 ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "IJR",
+    "Name": "ISHARES S&P SMALL-CAP ETF",
+    "Industry": null
+  },
+  {
+    "Symbol": "ISH",
+    "Name": "ISHINE INTERNATIONAL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ISX",
+    "Name": "ISIGNTHIS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "ITD",
+    "Name": "ITL LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "IGL",
+    "Name": "IVE GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "JIP",
+    "Name": "JACK-IN GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "JKA",
+    "Name": "JACKA RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "JHX",
+    "Name": "JAMES HARDIE INDUSTRIES PLC",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "JAL",
+    "Name": "JAMESON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "JHG",
+    "Name": "JANUS HENDERSON GROUP PLC",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "JHC",
+    "Name": "JAPARA HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "JAT",
+    "Name": "JATENERGY LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "JHL",
+    "Name": "JAYEX HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "JBH",
+    "Name": "JB HI-FI LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "JCI",
+    "Name": "JC INTERNATIONAL GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "JCS",
+    "Name": "JCURVE SOLUTIONS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "JRV",
+    "Name": "JERVOIS MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "JRL",
+    "Name": "JINDALEE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "JLG",
+    "Name": "JOHNS LYNG GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "JYC",
+    "Name": "JOYCE CORPORATION LTD",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "JIN",
+    "Name": "JUMBO INTERACTIVE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "JPR",
+    "Name": "JUPITER ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "JKL",
+    "Name": "JUSTKAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "JVG",
+    "Name": "JV GLOBAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "KSC",
+    "Name": "K & S CORPORATION LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "KAM",
+    "Name": "K2 ASSET MANAGEMENT HOLDINGS LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "KTE",
+    "Name": "K2 ENERGY LIMITED.",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "K2F",
+    "Name": "K2FLY LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "KBU",
+    "Name": "KABUNI LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "KLR",
+    "Name": "KAILI RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "KAI",
+    "Name": "KAIROS MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KZR",
+    "Name": "KALAMAZOO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KPO",
+    "Name": "KALINA POWER LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "KLL",
+    "Name": "KALIUM LAKES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KGM",
+    "Name": "KALNORTH GOLD MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KPT",
+    "Name": "KANGAROO ISLAND PLANTATION TIMBERS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KRL",
+    "Name": "KANGAROO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KAR",
+    "Name": "KAROON GAS AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "KAS",
+    "Name": "KASBAH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KAT",
+    "Name": "KATANA CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "KMD",
+    "Name": "KATHMANDU HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "KPC",
+    "Name": "KAZAKHSTAN POTASH CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KEY",
+    "Name": "KEY PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "KBC",
+    "Name": "KEYBRIDGE CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "KGL",
+    "Name": "KGL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KNL",
+    "Name": "KIBARAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KDR",
+    "Name": "KIDMAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KIN",
+    "Name": "KIN MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KPL",
+    "Name": "KINA PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "KSL",
+    "Name": "KINA SECURITIES LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "KKO",
+    "Name": "KINETIKO ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "KIS",
+    "Name": "KING ISLAND SCHEELITE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KRC",
+    "Name": "KING RIVER COPPER LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KCN",
+    "Name": "KINGSGATE CONSOLIDATED LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KLO",
+    "Name": "KINGSLAND GLOBAL LTD",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "KSN",
+    "Name": "KINGSTON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KME",
+    "Name": "KIP MCGRATH EDUCATION CENTRES LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "KNM",
+    "Name": "KNEOMEDIA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "KNO",
+    "Name": "KNOSYS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "KGN",
+    "Name": "KOGAN.COM LTD",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "KFE",
+    "Name": "KOGI IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KKL",
+    "Name": "KOLLAKORN CORPORATION LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "KKT",
+    "Name": "KONEKT LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "KOR",
+    "Name": "KORAB RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "K2P",
+    "Name": "KORE POTASH LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KOV",
+    "Name": "KORVEST LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "KTA",
+    "Name": "KRAKATOA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KRS",
+    "Name": "KRESTA HOLDINGS LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "KGD",
+    "Name": "KULA GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "KYK",
+    "Name": "KYCKR LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LCR",
+    "Name": "LACONIA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LKE",
+    "Name": "LAKE RESOURCES N.L.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LKO",
+    "Name": "LAKES OIL NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "LHM",
+    "Name": "LAND & HOMES GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LMW",
+    "Name": "LANDMARK WHITE LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LNY",
+    "Name": "LANEWAY RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LGR",
+    "Name": "LANKA GRAPHITE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LTN",
+    "Name": "LANTERN HOTEL GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LAM",
+    "Name": "LARAMIDE RESOURCES LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "LBL",
+    "Name": "LASERBOND LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "LAA",
+    "Name": "LATAM AUTOS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LRS",
+    "Name": "LATIN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LCD",
+    "Name": "LATITUDE CONSOLIDATED LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LMG",
+    "Name": "LATROBE MAGNESIUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LBT",
+    "Name": "LBT INNOVATIONS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "LER",
+    "Name": "LEAF RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LEX",
+    "Name": "LEFROY EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LCY",
+    "Name": "LEGACY IRON ORE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LGD",
+    "Name": "LEGEND CORPORATION LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "LEG",
+    "Name": "LEGEND MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LCK",
+    "Name": "LEIGH CREEK ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "LLC",
+    "Name": "LENDLEASE GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LPD",
+    "Name": "LEPIDICO LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LFC",
+    "Name": "LIFE CORPORATION LTD",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "LHC",
+    "Name": "LIFEHEALTHCARE GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "LSH",
+    "Name": "LIFESPOT HEALTH LTD",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "LIC",
+    "Name": "LIFESTYLE COMMUNITIES LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LML",
+    "Name": "LINCOLN MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LIN",
+    "Name": "LINDIAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LAU",
+    "Name": "LINDSAY AUSTRALIA LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "LNU",
+    "Name": "LINIUS TECHNOLOGIES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LNK",
+    "Name": "LINK ADMINISTRATION HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LIO",
+    "Name": "LION ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "LLO",
+    "Name": "LION ONE METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LSX",
+    "Name": "LION SELECTION GROUP LIMITED.",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "LHB",
+    "Name": "LIONHUB GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "LTR",
+    "Name": "LIONTOWN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LNG",
+    "Name": "LIQUEFIED NATURAL GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "LIT",
+    "Name": "LITHIUM AUSTRALIA NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LI3",
+    "Name": "LITHIUM CONSOLIDATED MINERAL EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LPI",
+    "Name": "LITHIUM POWER INTERNATIONAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LCA",
+    "Name": "LITIGATION CAPITAL MANAGEMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "LVH",
+    "Name": "LIVEHIRE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LVT",
+    "Name": "LIVETILES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LPE",
+    "Name": "LOCALITY PLANNING ENERGY HOLDINGS LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "LSR",
+    "Name": "LODESTAR MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LCM",
+    "Name": "LOGICAMMS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "LCE",
+    "Name": "LONDON CITY EQUITIES LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "LFR",
+    "Name": "LONGFORD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LVE",
+    "Name": "LOVE GROUP GLOBAL LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "LOV",
+    "Name": "LOVISA HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "LOM",
+    "Name": "LUCAPA DIAMOND COMPANY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "LYL",
+    "Name": "LYCOPODIUM LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "LYC",
+    "Name": "LYNAS CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MLD",
+    "Name": "MACA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "M7T",
+    "Name": "MACH7 TECHNOLOGIES LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "MAH",
+    "Name": "MACMAHON HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MRP",
+    "Name": "MACPHERSONS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MQA",
+    "Name": "MACQUARIE ATLAS ROADS GROUP",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "MQG",
+    "Name": "MACQUARIE GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MRN",
+    "Name": "MACQUARIE MEDIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "MAQ",
+    "Name": "MACQUARIE TELECOM GROUP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "MFG",
+    "Name": "MAGELLAN FINANCIAL GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MGG",
+    "Name": "MAGELLAN GLOBAL TRUST",
+    "Industry": null
+  },
+  {
+    "Symbol": "MAG",
+    "Name": "MAGMATIC RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MAU",
+    "Name": "MAGNETIC RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MGT",
+    "Name": "MAGNETITE MINES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MNS",
+    "Name": "MAGNIS RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MPE",
+    "Name": "MAGNUM GAS & POWER LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MGU",
+    "Name": "MAGNUM MINING AND EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MGL",
+    "Name": "MAGONTEC LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MAI",
+    "Name": "MAINSTREAM GROUP HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MAR",
+    "Name": "MALACHITE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MGP",
+    "Name": "MANAGED ACCOUNTS HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MTL",
+    "Name": "MANALTO LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MSR",
+    "Name": "MANAS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MHC",
+    "Name": "MANHATTAN CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MNM",
+    "Name": "MANTLE MINING CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MTR",
+    "Name": "MANTRA GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "MEY",
+    "Name": "MARENICA ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MTM",
+    "Name": "MARETERRAM LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MZN",
+    "Name": "MARINDI METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MCX",
+    "Name": "MARINER CORPORATION LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MEU",
+    "Name": "MARMOTA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MQR",
+    "Name": "MARQUEE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MJP",
+    "Name": "MARTIN AIRCRAFT COMPANY LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MYE",
+    "Name": "MASTERMYNE GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MZZ",
+    "Name": "MATADOR MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MCE",
+    "Name": "MATRIX COMPOSITES & ENGINEERING LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MAT",
+    "Name": "MATSA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MXR",
+    "Name": "MAXIMUS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MXI",
+    "Name": "MAXITRANS INDUSTRIES LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MSP",
+    "Name": "MAXSEC GROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "MFD",
+    "Name": "MAYFIELD CHILDCARE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "MEA",
+    "Name": "MCGRATH LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "MMS",
+    "Name": "MCMILLAN SHAKESPEARE LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "MXT",
+    "Name": "MCP MASTER INCOME TRUST",
+    "Industry": null
+  },
+  {
+    "Symbol": "MCP",
+    "Name": "MCPHERSON'S LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "MSG",
+    "Name": "MCS SERVICES LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "MMR",
+    "Name": "MEC RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MDR",
+    "Name": "MEDADVISOR LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "MPL",
+    "Name": "MEDIBANK PRIVATE LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "MLA",
+    "Name": "MEDICAL AUSTRALIA LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "MGZ",
+    "Name": "MEDIGARD LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "MML",
+    "Name": "MEDUSA MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MP1",
+    "Name": "MEGAPORT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MJC",
+    "Name": "MEJORITY CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MAY",
+    "Name": "MELBANA ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MLB",
+    "Name": "MELBOURNE IT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MVT",
+    "Name": "MERCANTILE INVESTMENT COMPANY LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MHI",
+    "Name": "MERCHANT HOUSE INTERNATIONAL LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "MCY",
+    "Name": "MERCURY NZ LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "MEZ",
+    "Name": "MERIDIAN ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "MED",
+    "Name": "MERLIN DIAMONDS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MBK",
+    "Name": "METAL BANK LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MCT",
+    "Name": "METALICITY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MLM",
+    "Name": "METALLICA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MNE",
+    "Name": "METALLUM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MLS",
+    "Name": "METALS AUSTRALIA LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MLX",
+    "Name": "METALS X LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MTC",
+    "Name": "METALSTECH LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MTS",
+    "Name": "METCASH LIMITED",
+    "Industry": "Food & Staples Retailing"
+  },
+  {
+    "Symbol": "MEI",
+    "Name": "METEORIC RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MEL",
+    "Name": "METGASCO LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MNC",
+    "Name": "METMINCO LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MMI",
+    "Name": "METRO MINING LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MPP",
+    "Name": "METRO PERFORMANCE GLASS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MFF",
+    "Name": "MFF CAPITAL INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MGC",
+    "Name": "MG UNIT TRUST",
+    "Industry": null
+  },
+  {
+    "Symbol": "MWR",
+    "Name": "MGM WIRELESS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MHJ",
+    "Name": "MICHAEL HILL INTERNATIONAL LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "MX1",
+    "Name": "MICRO-X LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "MDI",
+    "Name": "MIDDLE ISLAND RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MWY",
+    "Name": "MIDWAY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MOY",
+    "Name": "MILLENNIUM MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MIL",
+    "Name": "MILLENNIUM SERVICES GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "MLT",
+    "Name": "MILTON CORPORATION LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MNB",
+    "Name": "MINBOS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MCR",
+    "Name": "MINCOR RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MDX",
+    "Name": "MINDAX LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MRC",
+    "Name": "MINERAL COMMODITIES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MDL",
+    "Name": "MINERAL DEPOSITS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MIN",
+    "Name": "MINERAL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MEP",
+    "Name": "MINOTAUR EXPLORATION LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MRR",
+    "Name": "MINREX RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MNW",
+    "Name": "MINT PAYMENTS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MIR",
+    "Name": "MIRRABOOKA INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MGR",
+    "Name": "MIRVAC GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "MSV",
+    "Name": "MITCHELL SERVICES LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MTH",
+    "Name": "MITHRIL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MUA",
+    "Name": "MITULA GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MRM",
+    "Name": "MMA OFFSHORE LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "MNF",
+    "Name": "MNF GROUP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "MBM",
+    "Name": "MOBECOM LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MBO",
+    "Name": "MOBILARM LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "MBE",
+    "Name": "MOBILE EMBRACE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MOB",
+    "Name": "MOBILICOM LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "MOD",
+    "Name": "MOD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MOE",
+    "Name": "MOELIS AUSTRALIA LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MND",
+    "Name": "MONADELPHOUS GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MA1",
+    "Name": "MONASH ABSOLUTE INVESTMENT COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "MOX",
+    "Name": "MONAX MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MNY",
+    "Name": "MONEY3 CORPORATION LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MZM",
+    "Name": "MONTEZUMA MINING COMPANY LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MRV",
+    "Name": "MORETON RESOURCES LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "MEC",
+    "Name": "MORPHIC ETHICAL EQUITIES FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "MOC",
+    "Name": "MORTGAGE CHOICE LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "MOT",
+    "Name": "MOTOPIA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MTO",
+    "Name": "MOTORCYCLE HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "MTB",
+    "Name": "MOUNT BURGESS MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MGX",
+    "Name": "MOUNT GIBSON IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MRD",
+    "Name": "MOUNT RIDLEY MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MRQ",
+    "Name": "MRG METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MPW",
+    "Name": "MSL SOLUTIONS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MSM",
+    "Name": "MSM CORPORATION INTERNATIONAL LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MSI",
+    "Name": "MULTISTACK INTERNATIONAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "MGV",
+    "Name": "MUSGRAVE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MUS",
+    "Name": "MUSTANG RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MPX",
+    "Name": "MUSTERA PROPERTY GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "MYL",
+    "Name": "MYANMAR METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "MYR",
+    "Name": "MYER HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "MYQ",
+    "Name": "MYFIZIQ LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MYO",
+    "Name": "MYOB GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "MYS",
+    "Name": "MYSTATE LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "MZI",
+    "Name": "MZI RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "N1H",
+    "Name": "N1 HOLDINGS LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "NAG",
+    "Name": "NAGAMBIE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NAM",
+    "Name": "NAMOI COTTON LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "NAN",
+    "Name": "NANOSONICS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "NAC",
+    "Name": "NAOS ABSOLUTE OPPORTUNITIES COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "NCC",
+    "Name": "NAOS EMERGING OPPORTUNITIES COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "NAB",
+    "Name": "NATIONAL AUSTRALIA BANK LIMITED",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "NSR",
+    "Name": "NATIONAL STORAGE REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "NVL",
+    "Name": "NATIONAL VETERINARY CARE LTD",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "NML",
+    "Name": "NAVARRE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NVT",
+    "Name": "NAVITAS LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "NEA",
+    "Name": "NEARMAP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NMT",
+    "Name": "NEOMETALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NMS",
+    "Name": "NEPTUNE MARINE SERVICES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NCL",
+    "Name": "NETCCENTRIC LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "NTC",
+    "Name": "NETCOMM WIRELESS LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "NET",
+    "Name": "NETLINKZ LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NTI",
+    "Name": "NEUROTECH INTERNATIONAL LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "NAE",
+    "Name": "NEW AGE EXPLORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NCZ",
+    "Name": "NEW CENTURY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NHC",
+    "Name": "NEW HOPE CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NSE",
+    "Name": "NEW STANDARD ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NTL",
+    "Name": "NEW TALISMAN GOLD MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NCM",
+    "Name": "NEWCREST MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NWF",
+    "Name": "NEWFIELD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NWS",
+    "Name": "NEWS CORPORATION..",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "NWZ",
+    "Name": "NEWZULU LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "NME",
+    "Name": "NEX METALS EXPLORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NXT",
+    "Name": "NEXTDC LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NXM",
+    "Name": "NEXUS MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NGE",
+    "Name": "NGE CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "NHF",
+    "Name": "NIB HOLDINGS LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "NCK",
+    "Name": "NICK SCALI LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "NEC",
+    "Name": "NINE ENTERTAINMENT CO. HOLDINGS LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "NIU",
+    "Name": "NIUMINCO GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NBL",
+    "Name": "NONI B LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "N27",
+    "Name": "NORTHERN COBALT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NTU",
+    "Name": "NORTHERN MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NST",
+    "Name": "NORTHERN STAR RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NWE",
+    "Name": "NORWEST ENERGY NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NOR",
+    "Name": "NORWOOD SYSTEMS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NOV",
+    "Name": "NOVATTI GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NHL",
+    "Name": "NOVITA HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "NLI",
+    "Name": "NOVO LITIO LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NVX",
+    "Name": "NOVONIX LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NWH",
+    "Name": "NRW HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "NSL",
+    "Name": "NSL CONSOLIDATED LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NSX",
+    "Name": "NSX LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "NTM",
+    "Name": "NTM GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NCR",
+    "Name": "NUCOAL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NGY",
+    "Name": "NUENERGY GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "NUF",
+    "Name": "NUFARM LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "NUH",
+    "Name": "NUHEARA LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "NVO",
+    "Name": "NVOI LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "NZM",
+    "Name": "NZME LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "NZC",
+    "Name": "NZURI COPPER LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OAR",
+    "Name": "OAKDALE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OCL",
+    "Name": "OBJECTIVE CORPORATION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "OGC",
+    "Name": "OCEANAGOLD CORPORATION",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OCP",
+    "Name": "OCEANIA CAPITAL PARTNERS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "OCA",
+    "Name": "OCEANIA HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "OXX",
+    "Name": "OCTANEX LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ODY",
+    "Name": "ODYSSEY ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OFX",
+    "Name": "OFX GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "OBL",
+    "Name": "OIL BASINS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OSH",
+    "Name": "OIL SEARCH LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OEX",
+    "Name": "OILEX LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OKU",
+    "Name": "OKLO RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OLH",
+    "Name": "OLDFIELDS HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "OLI",
+    "Name": "OLIVER'S REAL FOOD LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "OMH",
+    "Name": "OM HOLDINGS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OMT",
+    "Name": "OMNI MARKET TIDE LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "1AL",
+    "Name": "ONEALL INTERNATIONAL LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "ONE",
+    "Name": "ONEVIEW HEALTHCARE PLC",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "OVH",
+    "Name": "ONEVUE HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "OML",
+    "Name": "OOH!MEDIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "OOK",
+    "Name": "OOKAMI LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "OPN",
+    "Name": "OPENDNA LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "OIL",
+    "Name": "OPTISCAN IMAGING LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "OPG",
+    "Name": "OPUS GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "OEC",
+    "Name": "ORBITAL CORPORATION LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "ORR",
+    "Name": "ORECORP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ORI",
+    "Name": "ORICA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OTI",
+    "Name": "ORIENTAL TECHNOLOGIES INVESTMENT LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ORG",
+    "Name": "ORIGIN ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OGX",
+    "Name": "ORINOCO GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OEQ",
+    "Name": "ORION EQUITIES LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "OHE",
+    "Name": "ORION HEALTH GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ORM",
+    "Name": "ORION METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ORN",
+    "Name": "ORION MINERALS NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OVL",
+    "Name": "ORO VERDE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ORE",
+    "Name": "OROCOBRE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ORA",
+    "Name": "ORORA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ORL",
+    "Name": "OROTONGROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "OSP",
+    "Name": "OSPREY MEDICAL INC",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "OLV",
+    "Name": "OTHERLEVELS HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "OEL",
+    "Name": "OTTO ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "OVN",
+    "Name": "OVENTUS MEDICAL LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "OTW",
+    "Name": "OVER THE WIRE HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "OVR",
+    "Name": "OVERLAND RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OZL",
+    "Name": "OZ MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "OZG",
+    "Name": "OZGROWTH LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "PAK",
+    "Name": "PACIFIC AMERICAN COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PBX",
+    "Name": "PACIFIC BAUXITE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PAC",
+    "Name": "PACIFIC CURRENT GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PEA",
+    "Name": "PACIFIC ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "PFM",
+    "Name": "PACIFIC MINING LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "PSQ",
+    "Name": "PACIFIC SMILES GROUP LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "PNW",
+    "Name": "PACIFIC STAR NETWORK LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "PMY",
+    "Name": "PACIFICO MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PGH",
+    "Name": "PACT GROUP HOLDINGS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PZC",
+    "Name": "PAN ASIA CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PPP",
+    "Name": "PAN PACIFIC PETROLEUM NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PCL",
+    "Name": "PANCONTINENTAL OIL & GAS NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PSY",
+    "Name": "PANORAMA SYNERGY LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PAN",
+    "Name": "PANORAMIC RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PGI",
+    "Name": "PANTERRA GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PNR",
+    "Name": "PANTORO LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PPY",
+    "Name": "PAPYRUS AUSTRALIA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PGC",
+    "Name": "PARAGON CARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "PNL",
+    "Name": "PARINGA RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PWN",
+    "Name": "PARKWAY MINERALS NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PEK",
+    "Name": "PEAK RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PKO",
+    "Name": "PEAKO LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PEX",
+    "Name": "PEEL MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PPC",
+    "Name": "PEET LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "PUN",
+    "Name": "PEGASUS METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PEL",
+    "Name": "PELICAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PCG",
+    "Name": "PENGANA CAPITAL GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PEN",
+    "Name": "PENINSULA ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PSM",
+    "Name": "PENINSULA MINES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PTL",
+    "Name": "PENTAL LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "PNN",
+    "Name": "PEPINNINI MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PEP",
+    "Name": "PEPPER GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PIL",
+    "Name": "PEPPERMINT INNOVATION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PIC",
+    "Name": "PERPETUAL EQUITY INVESTMENT COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "PPT",
+    "Name": "PERPETUAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PEC",
+    "Name": "PERPETUAL RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PRU",
+    "Name": "PERSEUS MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PRL",
+    "Name": "PETREL ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PSA",
+    "Name": "PETSEC ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PHI",
+    "Name": "PHILEO AUSTRALIA LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "PHK",
+    "Name": "PHOSLOCK WATER SOLUTIONS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "PLL",
+    "Name": "PIEDMONT LITHIUM LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PLS",
+    "Name": "PILBARA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PGY",
+    "Name": "PILOT ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PNI",
+    "Name": "PINNACLE INVESTMENT MANAGEMENT GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PNC",
+    "Name": "PIONEER CREDIT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PIO",
+    "Name": "PIONEER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PGS",
+    "Name": "PLANET GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PGM",
+    "Name": "PLATINA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PAI",
+    "Name": "PLATINUM ASIA INVESTMENTS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "PTM",
+    "Name": "PLATINUM ASSET MANAGEMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PMC",
+    "Name": "PLATINUM CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PL8",
+    "Name": "PLATO INCOME MAXIMISER LIMITED.",
+    "Industry": null
+  },
+  {
+    "Symbol": "PKA",
+    "Name": "PLUKKA LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PLH",
+    "Name": "PLYMOUTH MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PAF",
+    "Name": "PM CAPITAL ASIAN OPPORTUNITIES FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "PGF",
+    "Name": "PM CAPITAL GLOBAL OPPORTUNITIES FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "PMP",
+    "Name": "PMP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "PNX",
+    "Name": "PNX METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PVE",
+    "Name": "PO VALLEY ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "3DP",
+    "Name": "POINTERRA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PXX",
+    "Name": "POLARX LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "POS",
+    "Name": "POSEIDON NICKEL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PVL",
+    "Name": "POWERHOUSE VENTURES LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "POZ",
+    "Name": "POZ MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PPK",
+    "Name": "PPK GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "PPS",
+    "Name": "PRAEMIUM LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PDZ",
+    "Name": "PRAIRIE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PDI",
+    "Name": "PREDICTIVE DISCOVERY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PMV",
+    "Name": "PREMIER INVESTMENTS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "PGO",
+    "Name": "PRIMARY GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PRY",
+    "Name": "PRIMARY HEALTH CARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "PFG",
+    "Name": "PRIME FINANCIAL GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "PRT",
+    "Name": "PRIME MEDIA GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "PME",
+    "Name": "PRO MEDICUS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "PPG",
+    "Name": "PRO-PAC PACKAGING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PCH",
+    "Name": "PROPERTY CONNECT HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PLG",
+    "Name": "PROPERTYLINK GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "PRO",
+    "Name": "PROPHECY INTERNATIONAL HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PSC",
+    "Name": "PROSPECT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "POW",
+    "Name": "PROTEAN ENERGY LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "PSZ",
+    "Name": "PS&C LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "PSI",
+    "Name": "PSC INSURANCE GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "PTB",
+    "Name": "PTB GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "PVD",
+    "Name": "PURA VIDA ENERGY NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "PM1",
+    "Name": "PURE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PPL",
+    "Name": "PUREPROFILE LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PUR",
+    "Name": "PURSUIT MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "PPH",
+    "Name": "PUSHPAY HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PWH",
+    "Name": "PWR HOLDINGS LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "PLX",
+    "Name": "PYROLYX AG",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "QTG",
+    "Name": "Q TECHNOLOGY GROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "QAN",
+    "Name": "QANTAS AIRWAYS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "QIP",
+    "Name": "QANTM INTELLECTUAL PROPERTY LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "QBE",
+    "Name": "QBE INSURANCE GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "QMS",
+    "Name": "QMS MEDIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "QFY",
+    "Name": "QUANTIFY TECHNOLOGY HOLDINGS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "QTM",
+    "Name": "QUANTUM ENERGY LIMITED.",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "QUR",
+    "Name": "QUANTUM RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "QUB",
+    "Name": "QUBE HOLDINGS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "QBL",
+    "Name": "QUEENSLAND BAUXITE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "QMN",
+    "Name": "QUEENSLAND MINING CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "QST",
+    "Name": "QUEST INVESTMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "QNL",
+    "Name": "QUEST MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "QUE",
+    "Name": "QUESTE COMMUNICATIONS LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "QSS",
+    "Name": "QUESTUS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "QHL",
+    "Name": "QUICKSTEP HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "QVE",
+    "Name": "QV EQUITIES LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "R3D",
+    "Name": "R3D GLOBAL LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "RMS",
+    "Name": "RAMELIUS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RHC",
+    "Name": "RAMSAY HEALTH CARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RND",
+    "Name": "RAND MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RAN",
+    "Name": "RANGE INTERNATIONAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RRS",
+    "Name": "RANGE RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RPG",
+    "Name": "RAPTIS GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "RAW",
+    "Name": "RAWSON OIL AND GAS LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RBR",
+    "Name": "RBR GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RCG",
+    "Name": "RCG CORPORATION LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "RCR",
+    "Name": "RCR TOMLINSON LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "REA",
+    "Name": "REA GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RLE",
+    "Name": "REAL ENERGY CORPORATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "REV",
+    "Name": "REAL ESTATE INVESTAR GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RKN",
+    "Name": "RECKON LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RFT",
+    "Name": "RECTIFIER TECHNOLOGIES LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RED",
+    "Name": "RED 5 LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RMP",
+    "Name": "RED EMPEROR RESOURCES NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RHI",
+    "Name": "RED HILL IRON LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RDM",
+    "Name": "RED METAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RMX",
+    "Name": "RED MOUNTAIN MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RVR",
+    "Name": "RED RIVER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ROG",
+    "Name": "RED SKY ENERGY LIMITED.",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RCP",
+    "Name": "REDBANK COPPER LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RBL",
+    "Name": "REDBUBBLE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RDF",
+    "Name": "REDFLEX HOLDINGS LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "RFX",
+    "Name": "REDFLOW LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RDH",
+    "Name": "REDHILL EDUCATION LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "RDS",
+    "Name": "REDSTONE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "REH",
+    "Name": "REECE LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RLC",
+    "Name": "REEDY LAGOON CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RCT",
+    "Name": "REEF CASINO TRUST",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "RFN",
+    "Name": "REFFIND LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "REX",
+    "Name": "REGIONAL EXPRESS HOLDINGS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "REG",
+    "Name": "REGIS HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RRL",
+    "Name": "REGIS RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RWC",
+    "Name": "RELIANCE WORLDWIDE CORPORATION LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RNU",
+    "Name": "RENASCOR RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RNT",
+    "Name": "RENT.COM.AU LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RNE",
+    "Name": "RENU ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "RAP",
+    "Name": "RESAPP HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RMD",
+    "Name": "RESMED INC",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RSG",
+    "Name": "RESOLUTE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RHT",
+    "Name": "RESONANCE HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RBX",
+    "Name": "RESOURCE BASE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RDG",
+    "Name": "RESOURCE DEVELOPMENT GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RES",
+    "Name": "RESOURCE GENERATION LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RMI",
+    "Name": "RESOURCE MINING CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "REZ",
+    "Name": "RESOURCES & ENERGY GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RSH",
+    "Name": "RESPIRI LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "RFG",
+    "Name": "RETAIL FOOD GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "REF",
+    "Name": "REVERSE CORP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "RWD",
+    "Name": "REWARD MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RXH",
+    "Name": "REWARDLE HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RXM",
+    "Name": "REX MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "REY",
+    "Name": "REY RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "RHP",
+    "Name": "RHIPE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RIE",
+    "Name": "RIEDEL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RVY",
+    "Name": "RIFT VALLEY RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RIM",
+    "Name": "RIMFIRE PACIFIC MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RIO",
+    "Name": "RIO TINTO LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RNL",
+    "Name": "RISION LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RIR",
+    "Name": "RIVA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RMT",
+    "Name": "RMA ENERGY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RMG",
+    "Name": "RMG LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RNY",
+    "Name": "RNY PROPERTY TRUST",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "RBO",
+    "Name": "ROBO 3D LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RGI",
+    "Name": "ROTO-GRO INTERNATIONAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "RXL",
+    "Name": "ROX RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RCO",
+    "Name": "ROYALCO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RUL",
+    "Name": "RPMGLOBAL HOLDINGS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RTG",
+    "Name": "RTG MINING INC.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RUB",
+    "Name": "RUBICOR GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "RTR",
+    "Name": "RUMBLE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "RFF",
+    "Name": "RURAL FUNDS GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "RHL",
+    "Name": "RURALCO HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "RXP",
+    "Name": "RXP SERVICES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "RYD",
+    "Name": "RYDER CAPITAL LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "S2R",
+    "Name": "S2 RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SBR",
+    "Name": "SABRE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SGC",
+    "Name": "SACGASCO LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SRH",
+    "Name": "SAFEROADS HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SAN",
+    "Name": "SAGALIO ENERGY LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SLM",
+    "Name": "SALMAT LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SO4",
+    "Name": "SALT LAKE POTASH LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SSN",
+    "Name": "SAMSON OIL & GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SFR",
+    "Name": "SANDFIRE RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SNC",
+    "Name": "SANDON CAPITAL INVESTMENTS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "SMI",
+    "Name": "SANTANA MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "STO",
+    "Name": "SANTOS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SAR",
+    "Name": "SARACEN MINERAL HOLDINGS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SND",
+    "Name": "SAUNDERS INTERNATIONAL LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SYA",
+    "Name": "SAYONA MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SCG",
+    "Name": "SCENTRE GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "SFC",
+    "Name": "SCHAFFER CORPORATION LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "SCL",
+    "Name": "SCHROLE GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SDV",
+    "Name": "SCIDEV LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SCO",
+    "Name": "SCOTTISH PACIFIC GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "SCT",
+    "Name": "SCOUT SECURITY LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SDI",
+    "Name": "SDI LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SLK",
+    "Name": "SEALINK TRAVEL GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SP1",
+    "Name": "SEARCH PARTY GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SES",
+    "Name": "SECOS GROUP LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SEK",
+    "Name": "SEEK LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SEG",
+    "Name": "SEGUE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SEN",
+    "Name": "SENETAS CORPORATION LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SXY",
+    "Name": "SENEX ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SNS",
+    "Name": "SENSEN NETWORKS LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SE1",
+    "Name": "SENSERA LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "SEQ",
+    "Name": "SEQUOIA FINANCIAL GROUP LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "SRV",
+    "Name": "SERVCORP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "SSM",
+    "Name": "SERVICE STREAM LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SVT",
+    "Name": "SERVTECH GLOBAL HOLDINGS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SVW",
+    "Name": "SEVEN GROUP HOLDINGS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SWM",
+    "Name": "SEVEN WEST MEDIA LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "SGF",
+    "Name": "SG FLEET GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SRO",
+    "Name": "SHAREROOT LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SM8",
+    "Name": "SHARK MITIGATION SYSTEMS LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SSG",
+    "Name": "SHAVER SHOP GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SFX",
+    "Name": "SHEFFIELD RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SHJ",
+    "Name": "SHINE CORPORATE LTD",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SCP",
+    "Name": "SHOPPING CENTRES AUSTRALASIA PROPERTY GROUP",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "SHH",
+    "Name": "SHREE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SHM",
+    "Name": "SHRIRO HOLDINGS LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "SBU",
+    "Name": "SIBURAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SIG",
+    "Name": "SIGMA HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SIH",
+    "Name": "SIHAYO GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SLX",
+    "Name": "SILEX SYSTEMS LIMITED",
+    "Industry": "Semiconductors & Semiconductor Equipment"
+  },
+  {
+    "Symbol": "SIV",
+    "Name": "SILVER CHEF LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SCI",
+    "Name": "SILVER CITY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SVH",
+    "Name": "SILVER HERITAGE GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SLR",
+    "Name": "SILVER LAKE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SVL",
+    "Name": "SILVER MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SVA",
+    "Name": "SIMAVITA LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SIO",
+    "Name": "SIMONDS GROUP LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "SGM",
+    "Name": "SIMS METAL MANAGEMENT LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SEH",
+    "Name": "SINO GAS & ENERGY HOLDINGS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SRI",
+    "Name": "SIPA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SIT",
+    "Name": "SITE GROUP INTERNATIONAL LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SAM",
+    "Name": "SIV ASSET MANAGEMENT LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "SKN",
+    "Name": "SKIN ELEMENTS LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "SAS",
+    "Name": "SKY AND SPACE GLOBAL LTD",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "SKT",
+    "Name": "SKY NETWORK TELEVISION LIMITED.",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "SKC",
+    "Name": "SKYCITY ENTERTAINMENT GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SKF",
+    "Name": "SKYFII LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SGH",
+    "Name": "SLATER & GORDON LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SPZ",
+    "Name": "SMART PARKING LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SIQ",
+    "Name": "SMARTGROUP CORPORATION LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SMP",
+    "Name": "SMARTPAY HOLDINGS LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "SMA",
+    "Name": "SMARTTRANS HOLDINGS LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SOM",
+    "Name": "SOMNOMED LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SHL",
+    "Name": "SONIC HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SMG",
+    "Name": "SOON MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SPB",
+    "Name": "SOUTH PACIFIC RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "S32",
+    "Name": "SOUTH32 LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SXE",
+    "Name": "SOUTHERN CROSS ELECTRICAL ENGINEERING LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SXX",
+    "Name": "SOUTHERN CROSS EXPLORATION N.L.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SXL",
+    "Name": "SOUTHERN CROSS MEDIA GROUP LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "SAU",
+    "Name": "SOUTHERN GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SUH",
+    "Name": "SOUTHERN HEMISPHERE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SVM",
+    "Name": "SOVEREIGN METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SKI",
+    "Name": "SPARK INFRASTRUCTURE GROUP",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "SPK",
+    "Name": "SPARK NEW ZEALAND LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "STW",
+    "Name": "SPDR S&P/ASX 200 FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "SLF",
+    "Name": "SPDR S&P/ASX 200 LISTED PROPERTY FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "SFY",
+    "Name": "SPDR S&P/ASX 50 FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "SFH",
+    "Name": "SPECIALTY FASHION GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SPX",
+    "Name": "SPECTRUM RARE EARTHS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SP3",
+    "Name": "SPECTUR LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SDA",
+    "Name": "SPEEDCAST INTERNATIONAL LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "SRS",
+    "Name": "SPICERS LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ST1",
+    "Name": "SPIRIT TELECOM LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "SPI",
+    "Name": "SPITFIRE MATERIALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SFI",
+    "Name": "SPOOKFISH LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SHO",
+    "Name": "SPORTSHERO LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SPO",
+    "Name": "SPOTLESS GROUP HOLDINGS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SFL",
+    "Name": "SPRING FG LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "SIX",
+    "Name": "SPRINTEX LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "SRG",
+    "Name": "SRG LIMITED.",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SBM",
+    "Name": "ST BARBARA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SGQ",
+    "Name": "ST GEORGE MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SMR",
+    "Name": "STANMORE COAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "STL",
+    "Name": "STARGROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "GAS",
+    "Name": "STATE GAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SVY",
+    "Name": "STAVELY MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SDF",
+    "Name": "STEADFAST GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "SST",
+    "Name": "STEAMSHIPS TRADING COMPANY LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SRZ",
+    "Name": "STELLAR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SGP",
+    "Name": "STOCKLAND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "SKS",
+    "Name": "STOKES LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "SHK",
+    "Name": "STONE RESOURCES AUSTRALIA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SWJ",
+    "Name": "STONEWALL RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SRY",
+    "Name": "STORY-I LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "STA",
+    "Name": "STRANDLINE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SXA",
+    "Name": "STRATA-X ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SOR",
+    "Name": "STRATEGIC ELEMENTS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "SER",
+    "Name": "STRATEGIC ENERGY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SMC",
+    "Name": "STRATEGIC MINERALS CORPORATION NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "STX",
+    "Name": "STRIKE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SRK",
+    "Name": "STRIKE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SMN",
+    "Name": "STRUCTURAL MONITORING SYSTEMS PLC",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SGU",
+    "Name": "SUCCESS GLOBAL MEDIA LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "SUM",
+    "Name": "SUMATRA COPPER & GOLD PLC",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SNZ",
+    "Name": "SUMMERSET GROUP HOLDINGS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "SMM",
+    "Name": "SUMMIT RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SUR",
+    "Name": "SUN RESOURCES NL",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SBB",
+    "Name": "SUNBRIDGE GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SUN",
+    "Name": "SUNCORP GROUP LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "SEA",
+    "Name": "SUNDANCE ENERGY AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SDL",
+    "Name": "SUNDANCE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SDG",
+    "Name": "SUNLAND GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "SVS",
+    "Name": "SUNVEST CORPORATION LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "SUL",
+    "Name": "SUPER RETAIL GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SPQ",
+    "Name": "SUPERIOR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SLC",
+    "Name": "SUPERLOOP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "SNL",
+    "Name": "SUPPLY NETWORK LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SRN",
+    "Name": "SUREFIRE RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SWK",
+    "Name": "SWICK MINING SERVICES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SW1",
+    "Name": "SWIFT NETWORKS GROUP LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "SYD",
+    "Name": "SYDNEY AIRPORT",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "SMD",
+    "Name": "SYNDICATED METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "SOP",
+    "Name": "SYNERTEC CORPORATION LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "SYS",
+    "Name": "SYNGAS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "SYT",
+    "Name": "SYNTONIC LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SYR",
+    "Name": "SYRAH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TAH",
+    "Name": "TABCORP HOLDINGS LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TAG",
+    "Name": "TAG PACIFIC LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "TLG",
+    "Name": "TALGA RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TLM",
+    "Name": "TALISMAN MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TPD",
+    "Name": "TALON PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TMK",
+    "Name": "TAMASKA OIL AND GAS LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TWD",
+    "Name": "TAMAWOOD LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "TAM",
+    "Name": "TANAMI GOLD NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TNO",
+    "Name": "TANDO RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TRL",
+    "Name": "TANGA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TAP",
+    "Name": "TAP OIL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TEX",
+    "Name": "TARGET ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TAR",
+    "Name": "TARUGA GOLD LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TAS",
+    "Name": "TASMAN RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TTS",
+    "Name": "TATTS GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TAW",
+    "Name": "TAWANA RESOURCES NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TMP",
+    "Name": "TECH MPIRE LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "TCN",
+    "Name": "TECHNICHE LIMITED.",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "TMT",
+    "Name": "TECHNOLOGY METALS AUSTRALIA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TNE",
+    "Name": "TECHNOLOGY ONE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TLS",
+    "Name": "TELSTRA CORPORATION LIMITED.",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "TPW",
+    "Name": "TEMPLE & WEBSTER GROUP LTD",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "TGG",
+    "Name": "TEMPLETON GLOBAL GROWTH FUND LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "TPP",
+    "Name": "TEMPO AUSTRALIA LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "TER",
+    "Name": "TERRACOM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TMX",
+    "Name": "TERRAIN MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TZN",
+    "Name": "TERRAMIN AUSTRALIA LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TNT",
+    "Name": "TESSERENT LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "CGL",
+    "Name": "THE CITADEL GROUP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "GO2",
+    "Name": "THE GO2 PEOPLE LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "GGL",
+    "Name": "THE GRUDEN GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "PGR",
+    "Name": "THE PAS GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "TRS",
+    "Name": "THE REJECT SHOP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "SGR",
+    "Name": "THE STAR ENTERTAINMENT GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TNK",
+    "Name": "THINK CHILDCARE LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TMZ",
+    "Name": "THOMSON RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "THR",
+    "Name": "THOR MINING PLC",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TGA",
+    "Name": "THORN GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "TOP",
+    "Name": "THORNEY OPPORTUNITIES LTD",
+    "Industry": null
+  },
+  {
+    "Symbol": "TEK",
+    "Name": "THORNEY TECHNOLOGIES LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TPS",
+    "Name": "THREAT PROTECT AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "THD",
+    "Name": "THRED LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "THX",
+    "Name": "THUNDELARRA LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TIA",
+    "Name": "TIAN AN AUSTRALIA LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "TPO",
+    "Name": "TIAN POH RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TIG",
+    "Name": "TIGERS REALM COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TKF",
+    "Name": "TIKFORCE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TML",
+    "Name": "TIMAH RESOURCES LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "TNY",
+    "Name": "TINYBEANS GROUP LTD",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TTM",
+    "Name": "TITAN MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TTT",
+    "Name": "TITOMIC LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TOU",
+    "Name": "TLOU ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TNG",
+    "Name": "TNG LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TRT",
+    "Name": "TODD RIVER RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TOM",
+    "Name": "TOMIZONE LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TBH",
+    "Name": "TOPBETTA HOLDINGS LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TTW",
+    "Name": "TOPTUNG LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TNR",
+    "Name": "TORIAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TOE",
+    "Name": "TORO ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TFG",
+    "Name": "TOTAL FACE GROUP LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TWR",
+    "Name": "TOWER LIMITED",
+    "Industry": "Insurance"
+  },
+  {
+    "Symbol": "TOX",
+    "Name": "TOX FREE SOLUTIONS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "TPC",
+    "Name": "TPC CONSOLIDATED LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "TPM",
+    "Name": "TPG TELECOM LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "TME",
+    "Name": "TRADE ME GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "TTC",
+    "Name": "TRADITIONAL THERAPY CLINICS LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "TTI",
+    "Name": "TRAFFIC TECHNOLOGIES LTD.",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "TKL",
+    "Name": "TRAKA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TSN",
+    "Name": "TRANSACTION SOLUTIONS INTERNATIONAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TTL",
+    "Name": "TRANSCENDENCE TECHNOLOGIES LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "TCO",
+    "Name": "TRANSMETRO CORPORATION LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TCL",
+    "Name": "TRANSURBAN GROUP",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "TKM",
+    "Name": "TREK METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TEG",
+    "Name": "TRIANGLE ENERGY (GLOBAL) LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TBR",
+    "Name": "TRIBUNE RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TIL",
+    "Name": "TRILOGY INTERNATIONAL LIMITED",
+    "Industry": "Household & Personal Products"
+  },
+  {
+    "Symbol": "TNP",
+    "Name": "TRIPLE ENERGY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "TON",
+    "Name": "TRITON MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TRY",
+    "Name": "TROY RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TRM",
+    "Name": "TRUSCOTT MINING CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TAU",
+    "Name": "TRUSTEES AUSTRALIA LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "TTA",
+    "Name": "TTA HOLDINGS LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "TUP",
+    "Name": "TTG FINTECH LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TGN",
+    "Name": "TUNGSTEN MINING NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TV2",
+    "Name": "TV2U INTERNATIONAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "TYK",
+    "Name": "TYCHEAN RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TYX",
+    "Name": "TYRANNA RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "TZL",
+    "Name": "TZ LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "UCW",
+    "Name": "UCW LIMITED",
+    "Industry": "Consumer Services"
+  },
+  {
+    "Symbol": "UIL",
+    "Name": "UIL ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "UUL",
+    "Name": "ULTIMA UNITED LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "UTR",
+    "Name": "ULTRACHARGE LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "UNL",
+    "Name": "UNITED NETWORKS LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "UOS",
+    "Name": "UNITED OVERSEAS AUSTRALIA LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "UBI",
+    "Name": "UNIVERSAL BIOSENSORS INC.",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "UNV",
+    "Name": "UNIVERSAL COAL PLC",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "UPD",
+    "Name": "UPDATER INC",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "UEQ",
+    "Name": "URANIUM EQUITIES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "USA",
+    "Name": "URANIUMSA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "UBN",
+    "Name": "URBANISE.COM LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "URF",
+    "Name": "US MASTERS RESIDENTIAL PROPERTY FUND",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "USR",
+    "Name": "US RESIDENTIAL FUND",
+    "Industry": null
+  },
+  {
+    "Symbol": "USG",
+    "Name": "US SELECT PRIVATE OPPORTUNITIES FUND II",
+    "Industry": null
+  },
+  {
+    "Symbol": "UCM",
+    "Name": "USCOM LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "UUV",
+    "Name": "UUV AQUABOTIX LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "VMX",
+    "Name": "VALMEC LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "VAL",
+    "Name": "VALOR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VAN",
+    "Name": "VANGO MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VAR",
+    "Name": "VARISCAN MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VLT",
+    "Name": "VAULT INTELLIGENCE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VMG",
+    "Name": "VDM GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "VEC",
+    "Name": "VECTOR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VEE",
+    "Name": "VEEM LTD",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "VP7",
+    "Name": "VELOCITY PROPERTY GROUP LIMITED",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "VPC",
+    "Name": "VELPIC LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "VRX",
+    "Name": "VENTNOR RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VMS",
+    "Name": "VENTURE MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VXR",
+    "Name": "VENTUREX RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VMC",
+    "Name": "VENUS METALS CORPORATION LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VRM",
+    "Name": "VERDANT MINERALS LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VRI",
+    "Name": "VERILUMA LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "VRS",
+    "Name": "VERIS LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "VG1",
+    "Name": "VGI PARTNERS GLOBAL INVESTMENTS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "VCX",
+    "Name": "VICINITY CENTRES",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "VIC",
+    "Name": "VICTORY MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VII",
+    "Name": "VIETNAM INDUSTRIAL INVESTMENTS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VKA",
+    "Name": "VIKING MINES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VLW",
+    "Name": "VILLA WORLD LIMITED.",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "VRL",
+    "Name": "VILLAGE ROADSHOW LIMITED",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "VMY",
+    "Name": "VIMY RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "VAH",
+    "Name": "VIRGIN AUSTRALIA HOLDINGS LIMITED",
+    "Industry": "Transportation"
+  },
+  {
+    "Symbol": "VRT",
+    "Name": "VIRTUS HEALTH LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "VGL",
+    "Name": "VISTA GROUP INTERNATIONAL LIMITED.",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "VTG",
+    "Name": "VITA GROUP LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "VML",
+    "Name": "VITAL METALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VVR",
+    "Name": "VIVA ENERGY REIT",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "VIV",
+    "Name": "VIVID TECHNOLOGY LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "VMT",
+    "Name": "VMOTO LIMITED",
+    "Industry": "Automobiles & Components"
+  },
+  {
+    "Symbol": "VOC",
+    "Name": "VOCUS GROUP LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "VHT",
+    "Name": "VOLPARA HEALTH TECHNOLOGIES LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "VPR",
+    "Name": "VOLT POWER GROUP LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "VRC",
+    "Name": "VOLT RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "VIP",
+    "Name": "VOLTAGE IP LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "WKT",
+    "Name": "WALKABOUT RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WAA",
+    "Name": "WAM ACTIVE LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "WAM",
+    "Name": "WAM CAPITAL LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "WLE",
+    "Name": "WAM LEADERS LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "WMI",
+    "Name": "WAM MICROCAP LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "WAX",
+    "Name": "WAM RESEARCH LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "WGL",
+    "Name": "WANGLE TECHNOLOGIES LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "SOL",
+    "Name": "WASHINGTON H SOUL PATTINSON & COMPANY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WRG",
+    "Name": "WATER RESOURCES GROUP LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "WAT",
+    "Name": "WATERCO LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "WGF",
+    "Name": "WATERMARK GLOBAL LEADERS FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "WMK",
+    "Name": "WATERMARK MARKET NEUTRAL FUND LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "WTP",
+    "Name": "WATPAC LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "WAL",
+    "Name": "WAVENET INTERNATIONAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WEB",
+    "Name": "WEBJET LIMITED",
+    "Industry": "Retailing"
+  },
+  {
+    "Symbol": "WBT",
+    "Name": "WEEBIT NANO LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WLL",
+    "Name": "WELLCOM GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "WES",
+    "Name": "WESFARMERS LIMITED",
+    "Industry": "Food & Staples Retailing"
+  },
+  {
+    "Symbol": "WAF",
+    "Name": "WEST AFRICAN RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WWI",
+    "Name": "WEST WITS MINING LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WSA",
+    "Name": "WESTERN AREAS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WFD",
+    "Name": "WESTFIELD CORPORATION",
+    "Industry": "Real Estate"
+  },
+  {
+    "Symbol": "WGX",
+    "Name": "WESTGOLD RESOURCES LIMITED.",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WIC",
+    "Name": "WESTOZ INVESTMENT COMPANY LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "WBC",
+    "Name": "WESTPAC BANKING CORPORATION",
+    "Industry": "Banks"
+  },
+  {
+    "Symbol": "WSI",
+    "Name": "WESTSTAR INDUSTRIAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WCN",
+    "Name": "WHITE CLIFF MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WEC",
+    "Name": "WHITE ENERGY COMPANY LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WRM",
+    "Name": "WHITE ROCK MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WBE",
+    "Name": "WHITEBARK ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WHF",
+    "Name": "WHITEFIELD LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "WHC",
+    "Name": "WHITEHAVEN COAL LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WEL",
+    "Name": "WINCHESTER ENERGY LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WQW",
+    "Name": "WINHA COMMERCE AND TRADE INTL LIMITED",
+    "Industry": "Food & Staples Retailing"
+  },
+  {
+    "Symbol": "WFE",
+    "Name": "WINMAR RESOURCES LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WTC",
+    "Name": "WISETECH GLOBAL LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "WLF",
+    "Name": "WOLF MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WOF",
+    "Name": "WOLF PETROLEUM LTD",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WLC",
+    "Name": "WOLLONGONG COAL LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WMC",
+    "Name": "WONHE MULTIMEDIA COMMERCE LTD",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "WPL",
+    "Name": "WOODSIDE PETROLEUM LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WOW",
+    "Name": "WOOLWORTHS LIMITED",
+    "Industry": "Food & Staples Retailing"
+  },
+  {
+    "Symbol": "WRR",
+    "Name": "WORLD REACH LIMITED",
+    "Industry": "Technology Hardware & Equipment"
+  },
+  {
+    "Symbol": "WOR",
+    "Name": "WORLEYPARSONS LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "WPG",
+    "Name": "WPG RESOURCES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "WPP",
+    "Name": "WPP AUNZ LTD",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "XAM",
+    "Name": "XANADU MINES LTD",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "XIP",
+    "Name": "XENITH IP GROUP LIMITED",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "XRO",
+    "Name": "XERO LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "XPD",
+    "Name": "XPD SOCCER GEAR GROUP LIMITED",
+    "Industry": "Consumer Durables & Apparel"
+  },
+  {
+    "Symbol": "XPE",
+    "Name": "XPED LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "XF1",
+    "Name": "XREF LIMITED",
+    "Industry": "Software & Services"
+  },
+  {
+    "Symbol": "XRF",
+    "Name": "XRF SCIENTIFIC LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "XST",
+    "Name": "XSTATE RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "XTD",
+    "Name": "XTD LTD",
+    "Industry": "Media"
+  },
+  {
+    "Symbol": "XTE",
+    "Name": "XTEK LIMITED.",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "YAL",
+    "Name": "YANCOAL AUSTRALIA LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "YBR",
+    "Name": "YELLOW BRICK ROAD HOLDINGS LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "YOJ",
+    "Name": "YOJEE LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "YNB",
+    "Name": "YONDER AND BEYOND GROUP LIMITED",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "YPB",
+    "Name": "YPB GROUP LTD",
+    "Industry": "Commercial & Professional Services"
+  },
+  {
+    "Symbol": "ZEL",
+    "Name": "Z ENERGY LIMITED.",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ZNT",
+    "Name": "ZENITAS HEALTHCARE LIMITED",
+    "Industry": "Health Care Equipment & Services"
+  },
+  {
+    "Symbol": "ZEN",
+    "Name": "ZENITH ENERGY LIMITED",
+    "Industry": "Utilities"
+  },
+  {
+    "Symbol": "ZNC",
+    "Name": "ZENITH MINERALS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ZER",
+    "Name": "ZETA RESOURCES LIMITED",
+    "Industry": null
+  },
+  {
+    "Symbol": "ZEU",
+    "Name": "ZEUS RESOURCES LIMITED",
+    "Industry": "Energy"
+  },
+  {
+    "Symbol": "ZGL",
+    "Name": "ZICOM GROUP LIMITED",
+    "Industry": "Capital Goods"
+  },
+  {
+    "Symbol": "ZIM",
+    "Name": "ZIMPLATS HOLDINGS LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ZMI",
+    "Name": "ZINC OF IRELAND NL",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ZML",
+    "Name": "ZIPMONEY LTD",
+    "Industry": "Diversified Financials"
+  },
+  {
+    "Symbol": "ZIP",
+    "Name": "ZIPTEL LIMITED",
+    "Industry": "Telecommunication Services"
+  },
+  {
+    "Symbol": "ZNO",
+    "Name": "ZOONO GROUP LIMITED",
+    "Industry": "Materials"
+  },
+  {
+    "Symbol": "ZYB",
+    "Name": "ZYBER HOLDINGS LTD",
+    "Industry": "Software & Services"
+  }
+]

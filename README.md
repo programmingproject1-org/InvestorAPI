@@ -1,12 +1,12 @@
 # InvestorAPI
-The REST API for the Budding Share Market Investor Project.
+The REST API for the FalseProfits Share Market Investor Game.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/65amkvdw2q1f6oej?svg=true)](https://ci.appveyor.com/project/programmingproject1/investorapi)
 
 ## Contributing
 
 #### Environment
-The solution is written with .NET Core 2.0 and C#. In order to contribute you must either install Visual Studio 2017 Community Edition (free, but only available for Windows only) or Visual Studio Code (free). Both can be downloaded from here: 
+The solution is written with .NET Core 2.0 and C#. In order to contribute, you must either install Visual Studio 2017 Community Edition (free, but only available for Windows only) or Visual Studio Code (free). Both can be downloaded from here: 
 https://www.visualstudio.com/downloads/
 
 In addition, you need the .NET Core 2.0 SDK: 

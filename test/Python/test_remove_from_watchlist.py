@@ -60,7 +60,7 @@ class RemoveFromWatchlistTestCase(unittest.TestCase):
 			.format(expected_response_code, removefromwatchlist_response.get_http_status()))
 
 		# check watchlist has been updated
-		self.assertIsNone(removefromwatchlist_response.get_share_by_symbol(symbol), 
+		self.assertIsNone(viewwatchlist_response.get_share_by_symbol(symbol), 
 			msg = "Expected updated watchlist to contain {0} symbol {1}; got {2} match"
 			.format(1, symbol, str(None)))
 

@@ -19,21 +19,19 @@ namespace InvestorApi.Domain.Utilities
         /// </summary>
         /// <param name="value">The argument value to be checked.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException"><paramref name="value" /> is <c>null</c>.</exception>
-        public static object NotNull(object value, string argumentName)
+        public static void NotNull(object value, string argumentName)
         {
             ValidateArgumentName(argumentName);
 
             if (value != null)
             {
-                return value;
+                return;
             }
 
-            var errorMessage = $"The value of '{argumentName}' cannot be null.";
-            throw new ValidationException(errorMessage, new ArgumentNullException(errorMessage, argumentName));
+            throw new ValidationException($"The value of '{argumentName}' cannot be null.");
         }
 
         /// <summary>
@@ -41,24 +39,21 @@ namespace InvestorApi.Domain.Utilities
         /// </summary>
         /// <param name="value">The argument value to be checked.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException">
         /// <paramref name="value" /> is <c>null</c>, empty or contains only whitespace characters.
         /// </exception>
-        public static string NotNullOrWhitespace(string value, string argumentName)
+        public static void NotNullOrWhitespace(string value, string argumentName)
         {
             NotNull(value, argumentName);
 
             if (value.Length != 0 && !value.All(char.IsWhiteSpace))
             {
-                return value;
+                return;
             }
 
-            var errorMessage =
-                $"The string value of '{argumentName}' cannot be empty or contains only whitespace characters.";
-            throw new ValidationException(errorMessage, new ArgumentException(errorMessage, argumentName));
+            throw new ValidationException($"The string value of '{argumentName}' cannot be empty or contains only whitespace characters.");
         }
 
         /// <summary>
@@ -66,21 +61,19 @@ namespace InvestorApi.Domain.Utilities
         /// </summary>
         /// <param name="value">The argument value to be checked.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException"><paramref name="value" /> is <c>Guid.Empty</c></exception>
-        public static Guid NotEmpty(Guid value, string argumentName)
+        public static void NotEmpty(Guid value, string argumentName)
         {
             ValidateArgumentName(argumentName);
 
             if (!Equals(value, Guid.Empty))
             {
-                return value;
+                return;
             }
 
-            var errorMessage = $"The Guid value of '{argumentName}' cannot be Guid.Empty.";
-            throw new ValidationException(errorMessage, new ArgumentException(errorMessage, argumentName));
+            throw new ValidationException($"The Guid value of '{argumentName}' cannot be Guid.Empty.");
         }
 
         /// <summary>
@@ -91,14 +84,13 @@ namespace InvestorApi.Domain.Utilities
         /// <param name="minimum">The minimum value of the specified range.</param>
         /// <param name="maximum">The maximum value of the specified range.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException">
         /// <paramref name="value" /> does not fall within the specified range. It is
         /// either less than <paramref name="minimum" /> value or larger than <paramref name="maximum" /> value specified.
         /// </exception>
-        public static T Range<T>(T value, T minimum, T maximum, string argumentName)
+        public static void Range<T>(T value, T minimum, T maximum, string argumentName)
             where T : IComparable, IComparable<T>
         {
             ValidateArgumentName(argumentName);
@@ -106,12 +98,10 @@ namespace InvestorApi.Domain.Utilities
             var validator = new RangeAttribute(typeof(T), minimum.ToString(), maximum.ToString());
             if (validator.IsValid(value))
             {
-                return value;
+                return;
             }
 
-            var errorMessage =
-                $"The value of '{argumentName}' does not fall within the range of minimum: {minimum} and maximum: {maximum}.";
-            throw new ValidationException(errorMessage, new ArgumentException(errorMessage, argumentName));
+            throw new ValidationException($"The value of '{argumentName}' does not fall within the range of minimum: {minimum} and maximum: {maximum}.");
         }
 
         /// <summary>
@@ -121,24 +111,22 @@ namespace InvestorApi.Domain.Utilities
         /// <param name="value">The argument value to be checked.</param>
         /// <param name="minimum">The minimum value allowed.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException">
         /// <paramref name="value" /> is less than the specified <paramref name="minimum" /> value.
         /// </exception>
-        public static T Minimum<T>(T value, T minimum, string argumentName)
+        public static void Minimum<T>(T value, T minimum, string argumentName)
             where T : IComparable, IComparable<T>
         {
             ValidateArgumentName(argumentName);
 
             if (value.CompareTo(minimum) >= 0)
             {
-                return value;
+                return;
             }
 
-            var errorMessage = $"The value of '{argumentName}' cannot be less than {minimum}.";
-            throw new ValidationException(errorMessage, new ArgumentException(errorMessage, argumentName));
+            throw new ValidationException($"The value of '{argumentName}' cannot be less than {minimum}.");
         }
 
         /// <summary>
@@ -148,24 +136,49 @@ namespace InvestorApi.Domain.Utilities
         /// <param name="value">The argument value to be checked.</param>
         /// <param name="maximum">The maximum value allowed.</param>
         /// <param name="argumentName">The name of the argument.</param>
-        /// <returns>The value that has been successfully checked.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="argumentName" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="argumentName" /> is empty or contains only whitespace characters.</exception>
         /// <exception cref="ValidationException">
         /// <paramref name="value" /> exceeds the specified <paramref name="maximum" /> value.
         /// </exception>
-        public static T Maximum<T>(T value, T maximum, string argumentName)
+        public static void Maximum<T>(T value, T maximum, string argumentName)
             where T : IComparable, IComparable<T>
         {
             ValidateArgumentName(argumentName);
 
             if (value.CompareTo(maximum) <= 0)
             {
-                return value;
+                return;
             }
 
-            var errorMessage = $"The value of '{argumentName}' cannot exceed {maximum}.";
-            throw new ValidationException(errorMessage, new ArgumentException(errorMessage, argumentName));
+            throw new ValidationException($"The value of '{argumentName}' cannot exceed {maximum}.");
+        }
+
+        /// <summary>
+        /// Enforces that a passwords matches certain strength rules.
+        /// </summary>
+        /// <param name="value">The password value to validate.</param>
+        /// <param name="numeric">The minumum required number of numeric characters.</param>
+        /// <param name="lowerCaseCharacters">The minumum required number of lower case characters.</param>
+        /// <param name="upperCaseCharacters">The minumum required number of upper case characters.</param>
+        /// <param name="specialCharacters">The minumum required number of special characters.</param>
+        public static void PasswordStrenth(string value, int numeric, int lowerCaseCharacters, int upperCaseCharacters, int specialCharacters)
+        {
+            int numericMatches = Regex.Matches(value, "[0-9]").Count;
+            int lowerCaseCharacterMatches = Regex.Matches(value, "[a-z]").Count;
+            int upperCaseCharacterMatches = Regex.Matches(value, "[A-Z]").Count;
+            int specialCharacterMatches = value.Length - numericMatches - lowerCaseCharacterMatches - upperCaseCharacterMatches;
+
+            if ((numericMatches >= numeric) &&
+                (lowerCaseCharacterMatches >= lowerCaseCharacters) &&
+                (upperCaseCharacterMatches >= upperCaseCharacters) &&
+                (specialCharacterMatches >= specialCharacters))
+            {
+                return;
+            }
+
+            throw new ValidationException($"The password must have at least {numeric} numeric, {lowerCaseCharacters} " +
+                $"lower case, {upperCaseCharacters} upper case, and {specialCharacters} special character(s).");
         }
 
         /// <summary>

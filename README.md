@@ -1,5 +1,5 @@
 # InvestorAPI
-The REST API for the FalseProfits Share Market Investor Game.
+The REST API for the False Profits Share Market Investor Game.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/65amkvdw2q1f6oej?svg=true)](https://ci.appveyor.com/project/programmingproject1/investorapi)
 

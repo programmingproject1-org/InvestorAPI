@@ -10,6 +10,11 @@ namespace InvestorApi.Contracts
     public interface ILeaderBoardService
     {
         /// <summary>
+        /// Loads and calculates the list and keeps it in memory.
+        /// </summary>
+        void Load();
+
+        /// <summary>
         /// Gets the leader board users.
         /// </summary>
         /// <param name="currentUserId">The unique identifier of the current user.</param>

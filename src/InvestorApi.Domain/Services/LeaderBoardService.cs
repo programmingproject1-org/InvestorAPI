@@ -3,7 +3,6 @@ using InvestorApi.Contracts.Dtos;
 using InvestorApi.Domain.Entities;
 using InvestorApi.Domain.Repositories;
 using InvestorApi.Domain.Utilities;
-using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,28 +14,50 @@ namespace InvestorApi.Domain.Services
     /// </summary>
     public class LeaderBoardService : ILeaderBoardService
     {
-        private readonly IMemoryCache _memoryCache;
         private readonly IUserRepository _userRepository;
         private readonly IAccountService _accountService;
         private readonly ISettingService _settingService;
 
+        private static IList<InternalLeaderBoardUser> _users = new List<InternalLeaderBoardUser>();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LeaderBoardService"/> class.
         /// </summary>
-        /// <param name="memoryCache">The memory cache.</param>
         /// <param name="userRepository">The user repository.</param>
         /// <param name="accountService">The account service.</param>
         /// <param name="settingService">The setting service.</param>
         public LeaderBoardService(
-            IMemoryCache memoryCache,
             IUserRepository userRepository,
             IAccountService accountService,
             ISettingService settingService)
         {
-            _memoryCache = memoryCache;
             _userRepository = userRepository;
             _accountService = accountService;
             _settingService = settingService;
+        }
+
+        /// <summary>
+        /// Loads and calculates the list and keeps it in memory.
+        /// </summary>
+        public void Load()
+        {
+            // Get the starting balance assigned to accounts to calculate the profits.
+            // Note, if we later decide to change the balance, we need to extend this logic
+            // to get the balance from the first account transaction.
+            decimal initialBalance = _settingService.GetDefaultAccountSettings().InitialBalance;
+
+            // Get all users.
+            var users = _userRepository.ListAllUsersWithAccounts();
+
+            // Calculate the leader board values for each user and order by profit.
+            var leaderBoardUsers = users
+                .AsParallel()
+                .WithDegreeOfParallelism(5)
+                .Select(user => GetLeaderBoardUser(user, initialBalance))
+                .OrderByDescending(user => user.ProfitPercent)
+                .ToList();
+
+            _users = leaderBoardUsers;
         }
 
         /// <summary>
@@ -95,42 +116,20 @@ namespace InvestorApi.Domain.Services
         /// <returns>The leader board users.</returns>
         private IList<LeaderBoardUser> GetUsers(Guid currentUserId)
         {
-            return _memoryCache.GetOrCreate("LB:" + currentUserId, entry =>
-            {
-                // Get the starting balance assigned to accounts to calculate the profits.
-                // Note, if we later decide to change the balance, we need to extend this logic
-                // to get the balance from the first account transaction.
-                decimal initialBalance = _settingService.GetDefaultAccountSettings().InitialBalance;
+            int rank = 1;
 
-                // Get all users.
-                var users = _userRepository.ListAllUsersWithAccounts();
-
-                // Calculate the leader board values for each user and return the top users.
-                var leaderBoardUsers = users
-                    .AsParallel()
-                    .WithDegreeOfParallelism(5)
-                    .Select(user => GetLeaderBoardUser(currentUserId, user, initialBalance))
-                    .OrderByDescending(user => user.ProfitPercent)
-                    .ToList();
-
-                for (int i = 0; i < leaderBoardUsers.Count; i++)
-                {
-                    leaderBoardUsers[i].Rank = i + 1;
-                }
-
-                entry.SetAbsoluteExpiration(TimeSpan.FromMinutes(5));
-                return leaderBoardUsers;
-            });
+            return _users
+                .Select(user => user.CreateLeaderBoardUser(rank++, user.UserId == currentUserId))
+                .ToList();
         }
 
         /// <summary>
         /// Gets the leader board user from the supplied user.
         /// </summary>
-        /// <param name="currentUserId">The unique identifier of the current user.</param>
         /// <param name="user">The user to calculate the leader board user from.</param>
         /// <param name="initialBalance">The initial account balance.</param>
         /// <returns>The leader board user.</returns>
-        private LeaderBoardUser GetLeaderBoardUser(Guid currentUserId, User user, decimal initialBalance)
+        private InternalLeaderBoardUser GetLeaderBoardUser(User user, decimal initialBalance)
         {
             // Caculate the total value of all accounts and get the highest one.
             decimal totalAccountValue = user.Accounts
@@ -143,7 +142,38 @@ namespace InvestorApi.Domain.Services
             decimal profitPercent = profit / initialBalance * 100m;
 
             // Create the leader board user.
-            return new LeaderBoardUser(user.DisplayName, user.GravatarUrl, totalAccountValue, profit, profitPercent, user.Id == currentUserId);
+            return new InternalLeaderBoardUser(user.Id, user.DisplayName, user.GravatarUrl, totalAccountValue, profit, profitPercent);
+        }
+
+        private class InternalLeaderBoardUser
+        {
+            public InternalLeaderBoardUser(Guid userId, string displayName, string gravatarUrl,
+                decimal totalAccountValue, decimal profit, decimal profitPercent)
+            {
+                UserId = userId;
+                DisplayName = displayName;
+                GravatarUrl = gravatarUrl;
+                TotalAccountValue = totalAccountValue;
+                Profit = profit;
+                ProfitPercent = profitPercent;
+            }
+
+            public Guid UserId { get; private set; }
+
+            public string DisplayName { get; private set; }
+
+            public string GravatarUrl { get; private set; }
+
+            public decimal TotalAccountValue { get; private set; }
+
+            public decimal Profit { get; private set; }
+
+            public decimal ProfitPercent { get; private set; }
+
+            public LeaderBoardUser CreateLeaderBoardUser(int rank, bool isCurrentUser)
+            {
+                return new LeaderBoardUser(rank, isCurrentUser, DisplayName, GravatarUrl, TotalAccountValue, Profit, ProfitPercent);
+            }
         }
     }
 }

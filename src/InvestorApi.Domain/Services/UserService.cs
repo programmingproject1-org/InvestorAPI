@@ -103,6 +103,7 @@ namespace InvestorApi.Domain.Services
             Validate.NotNullOrWhitespace(displayName, nameof(displayName));
             Validate.NotNullOrWhitespace(email, nameof(email));
             Validate.NotNullOrWhitespace(password, nameof(password));
+            Validate.PasswordStrenth(password, 1, 1, 1, 1);
 
             // Hash the clear text password.
             string hashedPassword = _passwordHashingProvider.ComputeHash(password);

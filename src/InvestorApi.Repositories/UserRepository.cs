@@ -117,6 +117,10 @@ namespace InvestorApi.Repositories
             {
                 throw new ValidationException("There is already a user with this email address.");
             }
+            catch (DbUpdateException ex) when ((ex.InnerException as PostgresException)?.ConstraintName == "Users_DisplayName_Unique")
+            {
+                throw new ValidationException("There is already a user with this display name.");
+            }
         }
 
         /// <summary>

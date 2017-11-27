@@ -10,7 +10,8 @@ CREATE TABLE public."Users"
     "HashedPassword" text COLLATE pg_catalog."default" NOT NULL,
     "Level" smallint NOT NULL,
     CONSTRAINT "Users_pkey" PRIMARY KEY ("Id"),
-    CONSTRAINT "Users_Email_Unique" UNIQUE ("Email")
+    CONSTRAINT "Users_Email_Unique" UNIQUE ("Email"),
+    CONSTRAINT "Users_DisplayName_Unique" UNIQUE ("DisplayName")
 )
 WITH (
     OIDS = FALSE

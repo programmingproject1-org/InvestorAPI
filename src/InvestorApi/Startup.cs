@@ -141,6 +141,9 @@ namespace InvestorApi
             app.UseSwagger();
             app.UseSwaggerUI(SwaggerConfig.ConfigureUI);
             app.UseSwaggerBearerAuthorization();
+
+            // Start the leader board re-calculation timer.
+            DomainModule.StartTimer(app.ApplicationServices);
         }
     }
 }
